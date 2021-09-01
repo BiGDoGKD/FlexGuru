@@ -1,0 +1,156 @@
+/* button css */
+
+.__open-btn {
+  position: fixed;
+  z-index: 9999;
+  top: 50px;
+  right: 20px;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: var(--darkpurple);
+  cursor: pointer;
+  transition: transform 0.4s ease-in 0s, border-radius 0.3s ease-in 0s;
+}
+
+.dots {
+  outline: none;
+  border: 0;
+}
+
+.__open-btn button {
+  height: 45px;
+  background: transparent;
+  width: 10px;
+  cursor: pointer;
+  transform: rotate(90deg) translateY(-50%);
+}
+
+button.dots.dots:after,
+button.dots.dots:before {
+  content: "";
+}
+
+button.dots.dots:after {
+  top: 10px;
+  margin-top: 0px;
+}
+
+button.dots.dots:before {
+  top: 35px;
+  margin-bottom: 0px;
+}
+
+button.dots.dots span,
+button.dots.dots:after,
+button.dots.dots:before {
+  height: 5px;
+  width: 5px;
+  background: var(--light);
+  position: absolute;
+  border-radius: 100px;
+  left: 0;
+  margin: 0 0 0 4px;
+  transform: rotate(0deg);
+  transition: all 0.3s;
+}
+
+button.dots.dots.open:before {
+  width: 35px;
+  transform: rotate(-135deg) translate(19px, -2px);
+  top: 35px;
+  margin-bottom: 0px;
+}
+
+button.dots.dots.open:after {
+  width: 35px;
+  transform: rotate(135deg) translate(19px, 2px);
+  top: 10px;
+  margin-bottom: 0px;
+}
+
+/* sidenav-menu css  */
+
+.sidenav-menu {
+  position: fixed;
+  z-index: 9994;
+  right: 0;
+  height: 100vh;
+  width: 40vw;
+  overflow: hidden;
+}
+
+.sidenav-menu ul {
+  position: absolute;
+  list-style: none;
+  top: 40%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.sidenav-menu li {
+  margin: 10px 0 0 0;
+}
+
+.sidenav-menu li a {
+  transition: 1s;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.sidenav-menu li a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.sidenav-menu li a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.hidden {
+  visibility: hidden;
+  z-index: -9999;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.opacity-1 {
+  opacity: 1;
+  transition: all 1s;
+}
+
+.opacity-0 {
+  opacity: 0;
+  transition: all 0.1s;
+}
+
+.circle-open {
+  position: relative;
+  float: right;
+  background: var(--darkpurple);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  top: 30px;
+  right: 50px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.__changes {
+  transform: translate(-50%, -50%) scale(100);
+  transition: all 1s;
+}

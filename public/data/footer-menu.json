@@ -1,0 +1,46 @@
+{
+    "info-address": "info@flexguru.lk",
+    "local-address": "6391 Elgin St. Celina,</br>Delaware 10299",
+    "policy": "Privacy Policy",
+    "policy-url": "privacy",
+    "footer-menu": [
+        {
+            "menu-title": "Resources",
+            "menu": [
+                {
+                    "item": "How it works",
+                    "url": "about"
+                },
+                {
+                    "item": "Become a tutor",
+                    "url": "role"
+                },
+                {
+                    "item": "Flexguru Affiliates",
+                    "url": "role"
+                },
+                {
+                    "item": "Find Services",
+                    "url": "about"
+                }
+            ]
+        },
+        {
+            "menu-title": "Company",
+            "menu": [
+                {
+                    "item": "Help & Support",
+                    "url": "role"
+                },
+                {
+                    "item": "Contact us",
+                    "url": "about"
+                },
+                {
+                    "item": "About us",
+                    "url": "about"
+                }
+            ]
+        }
+    ]
+}
