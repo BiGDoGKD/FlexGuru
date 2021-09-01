@@ -1,0 +1,14 @@
+[
+    {
+        "url": "pages/docs",
+        "menu": "How it works"
+    },
+    {
+        "url": "info/student",
+        "menu": "Become a Student"
+    },
+    {
+        "url": "pages/about",
+        "menu": "About"
+    }
+]
