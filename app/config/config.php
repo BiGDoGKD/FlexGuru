@@ -25,4 +25,6 @@ define('APPROOT', dirname(dirname(__FILE__)));
 define('URLROOT', 'http://localhost/flexguru');
 
 //Sitename
-define('SITENAME', 'FlexGuru');
+define('SITENAME', 'FlexGuru'); 
+
+

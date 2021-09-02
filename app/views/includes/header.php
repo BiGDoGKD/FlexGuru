@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/visitor/navbar-visitor.css' ?>">
     <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/visitor/login.css' ?>">
     <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/visitor/sidenav-visitor.css' ?>">
+	<link rel="stylesheet" href="<?php echo URLROOT . '/public/css/visitor/tutorreg.css' ?>">
 </head>
 
 <body>
