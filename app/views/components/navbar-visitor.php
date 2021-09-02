@@ -30,7 +30,7 @@
     </ul>
     <ul class="nav-login">
         <li><a onclick="loginFunction()" class="gray pointer">Login</a></li>
-        <li><a href="<?php echo URLROOT ?>/registration/roles"><button class="btn-sm alert-darkpurple white bold">Sign up</button></a></li>
+        <li><a href="<?php echo URLROOT ?>/registration/roles"><button class="btn bg-primary on-primary">Sign up</button></a></li>
     </ul>
 </nav>
 <hr style="width: 99vw; height:0.1px; background:#ededed; position:absolute; transform:translate(-50%,-50%); left:50%;">
@@ -38,7 +38,7 @@
     <div class="hamburger-close">
     </div>
     <ul>
-        <li><a href="#"><button style="font-size:24px; padding: 5px 30px; margin:30px 0 10px;" class="btn alert-darkpurple white bold">Sign up</button></a></li>
+        <li><a href="#"><button style="font-size:24px; padding: 5px 30px; margin:30px 0 10px;" class="btn bg-primary on-primary bold">Sign up</button></a></li>
         <hr style="width:50%; margin:20px 0 0 58px;">
         <li><a href="#" class="gray">Login</a></li>
         <?php
@@ -50,6 +50,6 @@
     </ul>
 </div>
 <div class="dark-overlay close-overlay">
-    <div class="dark-overlay-logo logo bold white hidden" style="margin-top:35px;margin-left: 11.7vw;"><?php echo $main["site-name"] ?></div>
+    <div class="dark-overlay-logo logo bold on-primary hidden" style="margin-top:35px;margin-left: 11.7vw;"><?php echo $main["site-name"] ?></div>
 </div>
 <?php include APPROOT . '/views/components/login.php' ?>

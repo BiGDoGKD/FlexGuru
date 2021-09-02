@@ -25,17 +25,17 @@ include APPROOT . '/views/includes/header.php';
     <div class="form-type">
         <div class="role-cards">
             <div class="card tutor passive-card">
-                <img id="image" class="img filter-darkpurple" src="<?php echo URLROOT . '/public/img/svg/tutor.svg' ?>" alt="">
+                <img id="image" class="img filter-primary" src="<?php echo URLROOT . '/public/img/svg/tutor.svg' ?>" alt="">
                 <span>Tutor</span>
                 <input class="hidden" type="radio" name="role" id="tutor">
             </div>
             <div class="card student passive-card">
-                <img id="image" class="img filter-darkpurple" src="<?php echo URLROOT . '/public/img/svg/reading.svg' ?>" alt="">
+                <img id="image" class="img filter-primary" src="<?php echo URLROOT . '/public/img/svg/reading.svg' ?>" alt="">
                 <span>Student</span>
                 <input class="hidden" type="radio" name="role" id="student">
             </div>
             <div class="card affiliate-marketer passive-card">
-                <img id="image" class="img filter-darkpurple" src="<?php echo URLROOT . '/public/img/svg/businessman.svg' ?>" alt="">
+                <img id="image" class="img filter-primary" src="<?php echo URLROOT . '/public/img/svg/businessman.svg' ?>" alt="">
                 <span>Affiliate Marketer</span>
                 <input class="hidden" type="radio" name="role" id="affiliate-marketer">
             </div>
@@ -44,8 +44,8 @@ include APPROOT . '/views/includes/header.php';
             <p>Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue. <a href="#">terms and conditions</a></p>
         </div>
         <div class="submits">
-            <button onclick="window.history.back()" class="btn darkpurple fg-back bold"><i class="fas fa-arrow-left"></i>BACK</button>
-            <button class="btn white alert-darkpurple fg-continue bold">CONTINUE</button>
+            <button onclick="window.history.back()" class="btn primary fg-back bold"><i class="fas fa-arrow-left"></i>BACK</button>
+            <button class="btn on-primary bg-primary fg-continue bold">CONTINUE</button>
         </div>
     </div>
 </div>
@@ -87,7 +87,7 @@ include APPROOT . '/views/includes/header.php';
 
 
     .fg-role-selection .terms a {
-        color: var(--darkpurple);
+        color: var(--primary);
         text-decoration: none;
     }
 
@@ -125,19 +125,19 @@ include APPROOT . '/views/includes/header.php';
 
 
     /* .fg-role-selection .role-cards .card:hover {
-        color: white;
-        background: var(--darkpurple);
+        color: on-primary;
+        background: var(--primary);
         transition: ease-in 0.4s;
     } */
 
     .active-card {
-        background: var(--darkpurple);
-        color: white;
+        background: var(--primary);
+        color: var(--on-primary);
     }
 
     .passive-card {
-        color: var(--darkpurple);
-        background: white;
+        color: var(--primary);
+        background: var(--on-primary);
     }
 
     .fg-role-selection .role-cards .card img {
@@ -146,11 +146,11 @@ include APPROOT . '/views/includes/header.php';
         margin-bottom: 22px;
     }
 
-    .filter-darkpurple {
+    .filter-primary {
         filter: invert(52%) sepia(5%) saturate(6793%) hue-rotate(202deg) brightness(98%) contrast(93%);
     }
 
-    .filter-white {
+    .filter-on-primary {
         filter: invert(100%) sepia(0%) saturate(7492%) hue-rotate(186deg) brightness(111%) contrast(99%);
     }
 </style>
@@ -194,12 +194,12 @@ include APPROOT . '/views/includes/header.php';
             tutorRadio.checked = true;
             studentRadio.checked = false;
             affiliateRadio.checked = false;
-            tutorCardImg.classList.add("filter-white");
-            tutorCardImg.classList.remove("filter-darkpurple");
-            affiliateCardImg.classList.remove("filter-white");
-            affiliateCardImg.classList.add("filter-darkpurple");
-            studentCardImg.classList.remove("filter-white");
-            studentCardImg.classList.add("filter-darkpurple");
+            tutorCardImg.classList.add("filter-on-primary");
+            tutorCardImg.classList.remove("filter-primary");
+            affiliateCardImg.classList.remove("filter-on-primary");
+            affiliateCardImg.classList.add("filter-primary");
+            studentCardImg.classList.remove("filter-on-primary");
+            studentCardImg.classList.add("filter-primary");
             tutorCard.classList.add("active-card");
             tutorCard.classList.remove("passive-card");
             studentCard.classList.add("passive-card");
@@ -208,8 +208,8 @@ include APPROOT . '/views/includes/header.php';
             affiliateCard.classList.remove("active-card");
         } else {
             resetRadio();
-            tutorCardImg.classList.remove("filter-white");
-            tutorCardImg.classList.add("filter-darkpurple");
+            tutorCardImg.classList.remove("filter-on-primary");
+            tutorCardImg.classList.add("filter-primary");
             tutorCard.classList.remove("active-card");
             tutorCard.classList.add("passive-card");
         }
@@ -223,12 +223,12 @@ include APPROOT . '/views/includes/header.php';
             tutorRadio.checked = false;
             studentRadio.checked = true;
             affiliateRadio.checked = false;
-            studentCardImg.classList.add("filter-white");
-            studentCardImg.classList.remove("filter-darkpurple");
-            tutorCardImg.classList.remove("filter-white");
-            tutorCardImg.classList.add("filter-darkpurple");
-            affiliateCardImg.classList.remove("filter-white");
-            affiliateCardImg.classList.add("filter-darkpurple");
+            studentCardImg.classList.add("filter-on-primary");
+            studentCardImg.classList.remove("filter-primary");
+            tutorCardImg.classList.remove("filter-on-primary");
+            tutorCardImg.classList.add("filter-primary");
+            affiliateCardImg.classList.remove("filter-on-primary");
+            affiliateCardImg.classList.add("filter-primary");
             studentCard.classList.add("active-card");
             studentCard.classList.remove("passive-card");
             tutorCard.classList.add("passive-card");
@@ -237,8 +237,8 @@ include APPROOT . '/views/includes/header.php';
             affiliateCard.classList.remove("active-card");
         } else {
             resetRadio();
-            studentCardImg.classList.remove("filter-white");
-            studentCardImg.classList.add("filter-darkpurple");
+            studentCardImg.classList.remove("filter-on-primary");
+            studentCardImg.classList.add("filter-primary");
             studentCard.classList.remove("active-card");
             studentCard.classList.add("passive-card");
         }
@@ -252,12 +252,12 @@ include APPROOT . '/views/includes/header.php';
             tutorRadio.checked = false;
             studentRadio.checked = false;
             affiliateRadio.checked = true;
-            affiliateCardImg.classList.add("filter-white");
-            affiliateCardImg.classList.remove("filter-darkpurple");
-            studentCardImg.classList.remove("filter-white");
-            studentCardImg.classList.add("filter-darkpurple");
-            tutorCardImg.classList.remove("filter-white");
-            tutorCardImg.classList.add("filter-darkpurple");
+            affiliateCardImg.classList.add("filter-on-primary");
+            affiliateCardImg.classList.remove("filter-primary");
+            studentCardImg.classList.remove("filter-on-primary");
+            studentCardImg.classList.add("filter-primary");
+            tutorCardImg.classList.remove("filter-on-primary");
+            tutorCardImg.classList.add("filter-primary");
             tutorCard.classList.add("passive-card");
             studentCard.classList.add("passive-card");
             affiliateCard.classList.add("active-card");
@@ -266,8 +266,8 @@ include APPROOT . '/views/includes/header.php';
             affiliateCard.classList.remove("passive-card");
         } else {
             resetRadio();
-            affiliateCardImg.classList.remove("filter-white");
-            affiliateCardImg.classList.add("filter-darkpurple");
+            affiliateCardImg.classList.remove("filter-on-primary");
+            affiliateCardImg.classList.add("filter-primary");
             affiliateCard.classList.remove("active-card");
             affiliateCard.classList.add("passive-card");
         }
