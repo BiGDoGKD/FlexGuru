@@ -20,3 +20,8 @@ Razeen Nizar <br />
 
 ![team](https://user-images.githubusercontent.com/73078261/128051531-ae8d9cac-00f1-49b2-9eb1-d583c39a46b8.png)
 
+#Flexguru UI/UX
+
+![UI-UX-CaseStudy-(Viva)- Recovered](https://user-images.githubusercontent.com/73078261/132090108-a85607df-494a-4bfc-b833-98376afd14f9.jpg)
+
+
