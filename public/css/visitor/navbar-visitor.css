@@ -23,7 +23,7 @@
 }
 
 .visitor-nav a:hover {
-  color: var(--darkpurple);
+  color: var(--primary);
   transition: 0.33s;
 }
 
@@ -58,7 +58,7 @@
 .hamburger-menu {
   position: fixed;
   z-index: 9999;
-  background: var(--light);
+  background: var(--background);
   width: 400px;
   top: 0;
   left: -400px;

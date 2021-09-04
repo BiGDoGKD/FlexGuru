@@ -19,23 +19,23 @@
 <script defer src="<?php echo URLROOT . '/public/js/sidenav-visitor.js' ?>"></script>
 </div>
 
-<div class="fg-footer white">
+<div class="fg-footer on-primary">
     <div class="fg-info">
-        <h1 class="footer-title"><?php echo $footermenu["info-address"] ?></h1>
+        <h1 class="footer-title on-primary"><?php echo $footermenu["info-address"] ?></h1>
         <span><?php echo $footermenu["local-address"] ?></span>
-        <h2 class="privacy-policy"><?php echo $footermenu["policy"] ?></h2>
+        <h2 class="privacy-policy on-primary"><?php echo $footermenu["policy"] ?></h2>
     </div>
 
     <?php
     foreach ($footermenu["footer-menu"] as $value) {
     ?>
         <div class="fg-footer-menu">
-            <h1 class="footer-title"><?php echo $value["menu-title"] ?></h1>
+            <h1 class="footer-title on-primary"><?php echo $value["menu-title"] ?></h1>
             <ul>
                 <?php
                 foreach ($value["menu"] as $li) {
                 ?>
-                    <li><a class="white fg-footer-a" href="<?php echo URLROOT . '/pages/' . $li["url"] ?>"><?php echo $li["item"] ?></a></li>
+                    <li><a class="on-primary fg-footer-a" href="<?php echo URLROOT . '/pages/' . $li["url"] ?>"><?php echo $li["item"] ?></a></li>
                 <?php
                 }
                 ?>
@@ -51,7 +51,7 @@
         grid-template-columns: 33% 33% 33%;
         padding: 50px 11.7vw 100px;
         justify-items: center;
-        background: var(--darkpurple);
+        background: var(--primary);
     }
 
     .fg-footer .footer-title {

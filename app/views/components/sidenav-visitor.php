@@ -20,12 +20,16 @@
 <div class="sidenav-menu hidden">
     <div class="circle-open">
     </div>
-    <ul class="bold white hidden opacity-0">
-        <li><a href="#" class="white display-3" onclick="sidenavlogin()">Login</a></li>
+    <ul class="bold on-primary hidden opacity-0">
+        <li><a href="#" class="on-primary" onclick="sidenavlogin()">
+                <h3 class="on-primary">Login</h3>
+            </a></li>
         <?php
         foreach ($navigation as $value) {
         ?>
-            <li><a class="white display-3" onclick="sidenavFunction()" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
+            <li><a class="on-primary" onclick="sidenavFunction()" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>">
+                    <h3 class="on-primary"><?php echo $value["menu"] ?></h3>
+                </a></li>
         <?php
         } ?>
     </ul>
