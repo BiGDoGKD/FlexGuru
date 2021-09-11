@@ -13,9 +13,9 @@
  */
 ?>
 <?php
-$str_navigation = file_get_contents(URLROOT . '/public/data/navigation-details.json');
-$str_sitedetails = file_get_contents(URLROOT . '/public/data/site-details.json');
-$str_footermenu = file_get_contents(URLROOT . '/public/data/footer-menu.json');
+$str_navigation = file_get_contents(APPROOT . '/public/data/navigation-details.json');
+$str_sitedetails = file_get_contents(APPROOT . '/public/data/site-details.json');
+$str_footermenu = file_get_contents(APPROOT . '/public/data/footer-menu.json');
 $navigation = json_decode($str_navigation, true);
 $footermenu = json_decode($str_footermenu, true);
 $main = json_decode($str_sitedetails, true);
