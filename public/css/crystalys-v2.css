@@ -7,6 +7,7 @@
 html,
 body {
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .flex-body {
@@ -33,6 +34,74 @@ body {
   --on-success: #70b276;
   --on-error: #ff6c6c;
 }
+
+/* scroll bar  */
+
+/* width */
+::-webkit-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  opacity: 0;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  transition-property: right, width;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--gray);
+  opacity: 1;
+  width: 10px;
+  margin: 2px;
+  border-radius: 10px;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary); 
+}
+
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+html.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+::-webkit-scrollbarr:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
 
 /* headings  */
 
@@ -127,7 +196,7 @@ h6 {
 
 /* button text  */
 
-.button-txt {
+.btn-txt {
   font-family: "Roboto";
   font-size: 14;
   font-weight: 500;
@@ -161,11 +230,11 @@ h6 {
   line-height: 17.1px;
 }
 
-.all-caps{
+.all-caps {
   text-transform: uppercase;
 }
 
-.small-text{
+.small-text {
   font-family: "Roboto";
   font-size: 10;
   font-weight: 500;

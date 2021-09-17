@@ -5,6 +5,23 @@
     "policy-url": "privacy",
     "footer-menu": [
         {
+            "menu-title": "Company",
+            "menu": [
+                {
+                    "item": "Help & Support",
+                    "url": "role"
+                },
+                {
+                    "item": "Contact us",
+                    "url": "about"
+                },
+                {
+                    "item": "About us",
+                    "url": "about"
+                }
+            ]
+        },
+        {
             "menu-title": "Resources",
             "menu": [
                 {
