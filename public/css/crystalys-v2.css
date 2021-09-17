@@ -7,6 +7,7 @@
 html,
 body {
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .flex-body {
@@ -34,6 +35,74 @@ body {
   --on-error: #ff6c6c;
 }
 
+/* scroll bar  */
+
+/* width */
+::-webkit-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  opacity: 0;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  transition-property: right, width;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--gray);
+  opacity: 1;
+  width: 10px;
+  margin: 2px;
+  border-radius: 10px;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary); 
+}
+
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+html.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+::-webkit-scrollbarr:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+
 /* headings  */
 
 h1,
@@ -50,31 +119,37 @@ h1 {
   font-size: 95;
   font-weight: 300;
   letter-spacing: -1.5px;
+  line-height: 135.7px;
 }
 h2 {
   font-size: 60;
   font-weight: 300;
   letter-spacing: 0.5px;
+  line-height: 85.7px;
 }
 h3 {
   font-size: 48;
   font-weight: 400;
   letter-spacing: 0px;
+  line-height: 68.6px;
 }
 h4 {
   font-size: 35;
   font-weight: 400;
   letter-spacing: 0.25px;
+  line-height: 50px;
 }
 h5 {
   font-size: 25;
   font-weight: 400;
   letter-spacing: 0px;
+  line-height: 35.7px;
 }
 h6 {
   font-size: 21;
   font-weight: 500;
   letter-spacing: 0.15px;
+  line-height: 30px;
 }
 
 /* sub-titles  */
@@ -84,12 +159,22 @@ h6 {
   font-size: 17;
   font-weight: 400;
   letter-spacing: 0.15px;
+  line-height: 24.3px;
 }
 .subtitle-2 {
   font-family: "Poppins";
   font-size: 15;
   font-weight: 500;
   letter-spacing: 0.1px;
+  line-height: 21.4px;
+}
+
+.subtitle-3 {
+  font-family: "Roboto";
+  font-size: 12;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 17.1px;
 }
 
 /* body-text  */
@@ -99,22 +184,25 @@ h6 {
   font-size: 18;
   font-weight: 400;
   letter-spacing: 0.6px;
+  line-height: 25.7px;
 }
 .body-2 {
   font-family: "Roboto";
   font-size: 16;
   font-weight: 400;
   letter-spacing: 0.3px;
+  line-height: 22.9px;
 }
 
 /* button text  */
 
-.button-txt {
+.btn-txt {
   font-family: "Roboto";
   font-size: 14;
   font-weight: 500;
   letter-spacing: 1.25px;
   text-transform: uppercase;
+  line-height: 20px;
 }
 
 .caption {
@@ -122,6 +210,7 @@ h6 {
   font-size: 16;
   font-weight: 400;
   letter-spacing: 0.6px;
+  line-height: 22.9px;
 }
 
 .overline {
@@ -130,6 +219,27 @@ h6 {
   font-weight: 400;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  line-height: 17.1px;
+}
+
+.fg-errors {
+  font-family: "Roboto";
+  font-size: 12;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 17.1px;
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+.small-text {
+  font-family: "Roboto";
+  font-size: 10;
+  font-weight: 500;
+  letter-spacing: 3%;
+  line-height: 15px;
 }
 
 /* button style  */

@@ -7,7 +7,7 @@
  * AUTHORS: Kesara Karannagoda, Avishka Hettiarachchi, Kavindhu Galagedara, Razeen Nizar
  * CO-AUTHORS: 
  * LAST UPDATE BY: Kesara Karannagoda
- * LAST UPDATE DATA : Sep, 01, 2021
+ * LAST UPDATE DATA : Sep, 17, 2021
  * FILE TYPE: View
  * PARENT FOLDER: includes
  */
@@ -21,21 +21,20 @@
 
 <div class="fg-footer on-primary">
     <div class="fg-info">
-        <h1 class="footer-title on-primary"><?php echo $footermenu["info-address"] ?></h1>
-        <span><?php echo $footermenu["local-address"] ?></span>
-        <h2 class="privacy-policy on-primary"><?php echo $footermenu["policy"] ?></h2>
+        <h3 class="primary" style="margin:-22px 0 25px 0;"><?php echo SITENAME ?></h3>
+        <span class="subtitle-1 gray"><?php echo $footermenu["local-address"] ?></span>
+        <h2 class="privacy-policy gray"><?php echo $footermenu["policy"] ?></h2>
     </div>
-
     <?php
     foreach ($footermenu["footer-menu"] as $value) {
     ?>
         <div class="fg-footer-menu">
-            <h1 class="footer-title on-primary"><?php echo $value["menu-title"] ?></h1>
+            <h6 class="on-secondary"><?php echo $value["menu-title"] ?></h6>
             <ul>
                 <?php
                 foreach ($value["menu"] as $li) {
                 ?>
-                    <li><a class="on-primary fg-footer-a" href="<?php echo URLROOT . '/pages/' . $li["url"] ?>"><?php echo $li["item"] ?></a></li>
+                    <li><a class="gray fg-footer-a subtitle-1" href="<?php echo URLROOT . '/pages/' . $li["url"] ?>"><?php echo $li["item"] ?></a></li>
                 <?php
                 }
                 ?>
@@ -44,29 +43,51 @@
     <?php
     }
     ?>
+    <div class="fg-footer-menu">
+        <h6 class="footer-title on-secondary">Follow Us</h6>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook gray"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter gray"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram gray"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin gray"></i></a>
+        </div>
+    </div>
+
 </div>
 <style>
     .fg-footer {
         display: grid;
-        grid-template-columns: 33% 33% 33%;
-        padding: 50px 11.7vw 100px;
+        grid-template-columns: 23% 18% 18% 18% 23%;
+        padding: 100px 11.7vw 100px;
         justify-items: center;
-        background: var(--primary);
+        background: #FFF3F9;
     }
 
-    .fg-footer .footer-title {
-        font-weight: 600;
-        margin: 0 0 37px 0;
-        font-size: 1.8rem;
+    .fg-info{
+        width: 100%;
+    }
+
+    .social-icons{
+        font-size: 36px;
+        margin-top: 40px;
+    }
+
+    .social-icons i{
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .social-icons i:hover{
+        color: var(--primary);
     }
 
     .fg-footer ul {
         list-style: none;
+        color: var(--gray);
+        margin-top: 40px;
     }
 
     .fg-footer ul li {
-        margin: 1rem 0 0 0;
-        font-size: 1rem;
+        margin: 17px 0 0 0;
     }
 
     .fg-footer .privacy-policy {
@@ -91,7 +112,7 @@
         height: 2px;
         left: 50%;
         position: absolute;
-        background: #fff;
+        background: #acacac;
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }

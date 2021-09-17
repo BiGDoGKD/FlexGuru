@@ -17,20 +17,20 @@
         <div class="hamburger">
             <div></div>
         </div>
-        <a href="<?php echo URLROOT ?>/pages/index" class="logo dark"><?php echo $main["site-name"] ?></a>
+        <a href="<?php echo URLROOT ?>/pages/index" class="logo dark"><h5><?php echo $main["site-name"] ?></h5></a>
     </div>
     <ul class="nav-info">
 
         <?php
         foreach ($navigation as $value) {
         ?>
-            <li><a class="gray" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
+            <li><a class="gray subtitle-2" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
         <?php
         } ?>
     </ul>
     <ul class="nav-login">
-        <li><a onclick="loginFunction()" class="gray pointer">Login</a></li>
-        <li><a href="<?php echo URLROOT ?>/registration/roles"><button class="btn bg-primary on-primary">Sign up</button></a></li>
+        <li><a onclick="loginFunction()" class="gray pointer subtitle-2">Login</a></li>
+        <li><a href="<?php echo URLROOT ?>/registration/roles"><button class="btn-text btn bg-primary on-primary ">Sign up</button></a></li>
     </ul>
 </nav>
 <hr style="width: 99vw; height:0.1px; background:#ededed; position:absolute; transform:translate(-50%,-50%); left:50%;">
