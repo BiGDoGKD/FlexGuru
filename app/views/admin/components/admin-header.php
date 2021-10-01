@@ -29,4 +29,52 @@
 </head>
 
 <body>
+    <div class="admin-header">
+        <div class="menu-bar">
+            <div class="admin-title">
+                <h5 class="on-primary">Flexguru Admin</h5>
+            </div>
+            <div class="account-tab">
+                <div class="display-picture">
+                </div>
+                <p class="subtitle-2 gray">Jane Cooper</p>
+            </div>
+        </div>
+    </div>
 
+    <style>
+        .admin-header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 80px;
+            background: var(--primary);
+        }
+
+        .admin-header .account-tab{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 50px;
+            border-radius: 24px;
+            background:var(--on-primary);
+
+        }
+
+        .admin-header .display-picture{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #ededed;
+            margin: 0 20px 0 0;
+        }
+
+        .admin-header .menu-bar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 77.6vw;
+        }
+    </style>
