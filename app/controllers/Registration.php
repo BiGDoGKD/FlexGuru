@@ -28,7 +28,58 @@ class Registration extends Controller
     }
     public function student()
     {
-        $this->view('registration/student');
+        $this->studentModel = $this->model("Student");
+
+        $data = [
+            'username' => 'avishka3213',
+            'firstname' => '',
+            'lastname' => '',
+            'email' => '',
+            'phoneno' => '',
+            'password' => '',
+            'confpassword' => '',
+            'gender' => '',
+            'dob' => '',
+            'role' => '',
+            'city' => '',
+            'photourl' => ''
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            //form process
+            //Sanatize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'username' => 'avishka3213',
+                'firstname' => trim($_POST['firstname']),
+                'lastname' => trim($_POST['lastname']),
+                'email' => trim($_POST['email']),
+                'phoneno' => trim($_POST['phoneno']),
+                'password' => trim($_POST['password']),
+                'confpassword' => trim($_POST['confpassword']),
+                'gender' => trim($_POST['gender']),
+                'dob' => trim($_POST['dob']),
+                'role' => 'st',
+                'city' => trim($_POST['city']),
+                'photourl' => 'abcd'
+            ];
+
+            /**
+             * if(deci){
+             *  stmt;
+             * }else{
+             *  stmt
+             * }
+             */
+
+            if ($this->studentModel->register($data)) {
+                //Ridirect to the main
+                header('location:' . URLROOT . '/pages/about');
+            } else {
+                die('Something went wrong.');
+            }
+        }
+        $this->view('registration/student', $data);
     }
     public function affiliate()
     {

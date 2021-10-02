@@ -106,7 +106,7 @@ include APPROOT . '/views/includes/header.php';
 	<div class="student_registration">
 		<center>
 			<h1 style="font-weight:900;">Student Registration</h1>
-			<form action="">
+			<form action="<?php echo URLROOT; ?>/registration/student" method="POST">
 				<!-- this two same line -->
 				<table>
 					<thead>
@@ -115,12 +115,12 @@ include APPROOT . '/views/includes/header.php';
 					<tbody>
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="firstName" id="firstName" placeholder="FirstName">
+								<div class="input-field"> <input type="text" name="firstname" id="firstname" placeholder="Firstname">
 								</div>
 								<span class="form-errors"></span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="lastName" id="lastName" placeholder="LastName">
+								<div class="input-field"> <input type="text" name="lastname" id="lastName" placeholder="LastName">
 								</div>
 								<span class="form-errors"></span>
 							</td>
@@ -129,12 +129,12 @@ include APPROOT . '/views/includes/header.php';
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="email" name="email" id="email" placeholder="Email">
+								<div class="input-field"> <input type="text" name="email" id="email" placeholder="Email">
 								</div>
 								<span class="form-errors"></span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="phoneNo" id="phoneNo" placeholder="Phone Number">
+								<div class="input-field"> <input type="text" name="phoneno" id="phoneNo" placeholder="Phone Number">
 								</div>
 								<span class="form-errors"></span>
 							</td>
@@ -145,7 +145,7 @@ include APPROOT . '/views/includes/header.php';
 								<div class="input-field"> <input type="password" name="password" id="password" placeholder="Password">
 								</div>
 							<td>
-								<div class="input-field"> <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+								<div class="input-field"> <input type="password" name="confpassword" id="confirmPassword" placeholder="Confirm Password">
 								</div>
 								<span class="form-errors"></span>
 							</td>
@@ -158,21 +158,21 @@ include APPROOT . '/views/includes/header.php';
 								<span class="form-errors"></span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="dateofbirth" id="dateofbirth" placeholder="Date of Birth">
+								<div class="input-field"> <input type="date" name="dob" id="dateofbirth" placeholder="Date of Birth">
 								</div>
 								<span class="form-errors"></span>
 							</td>
 						</tr>
-                        <td>
-								<div class="input-field"> <input type="text" name="City" id="City" placeholder="City">
-								</div>
-								<span class="form-errors"></span>
+						<td>
+							<div class="input-field"> <input type="text" name="city" id="City" placeholder="City">
+							</div>
+							<span class="form-errors"></span>
 						</td>
 					</tbody>
 				</table>
 
 
-				<button class="button_reg">REGISTER</button>
+				<button class="button_reg" id="submit" value="submit" type="submit">REGISTER</button>
 
 				</br>
 
