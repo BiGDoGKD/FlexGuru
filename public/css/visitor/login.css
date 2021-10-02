@@ -27,27 +27,7 @@
   justify-content: space-between;
 }
 
-.fg-login .input-field {
-  margin: 40px 0 0 0;
-}
 
-.fg-login input[type="email"] {
-  width: 350px;
-  border-radius: 24px;
-  outline: none;
-  border: 1px solid #acacac;
-  padding: 13px 25px;
-  font-weight: bold;
-}
-
-.fg-login input[type="password"] {
-  width: 350px;
-  border-radius: 24px;
-  outline: none;
-  border: 1px solid #acacac;
-  padding: 13px 25px;
-  font-weight: bold;
-}
 
 .fg-login button {
   cursor: pointer;

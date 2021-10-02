@@ -51,10 +51,10 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
   opacity: 0;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   transition-property: right, width;
@@ -74,9 +74,8 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary); 
+  background: var(--primary);
 }
-
 
 html.has-scroll-smooth {
   overflow: hidden;
@@ -101,7 +100,6 @@ html.has-scroll-dragging {
 .has-scroll-dragging .c-scrollbar {
   opacity: 1;
 }
-
 
 /* headings  */
 
@@ -1102,3 +1100,60 @@ hr {
 .text-justify {
   text-align: justify;
 }
+
+/* INPUT BOX  */
+.input-field {
+  box-sizing: border-box;
+  position: relative;
+  margin: 10px 20px;
+}
+
+.input-field input {
+  font-weight: 500;
+  width: 350px;
+  font-size: 14px;
+  color: #495055;
+  padding: 13px 25px;
+  border-radius: 24px;
+  border: 2px solid #d9d9d9;
+  outline: none;
+}
+
+div.input-field span.placeholder {
+  position: absolute;
+  margin: 15.5px 0;
+  padding: 0 2px;
+  font-family: Roboto, sans-serif;
+
+  color: #6c757d;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+
+  top: 0;
+  left: 25px;
+
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  background: none;
+  pointer-events: none;
+}
+
+div.input-field input:valid + span.placeholder,
+div.input-field input:focus + span.placeholder {
+  transform: scale(0.8) translateY(-28px);
+  background: #fff;
+}
+
+div.input-field input:focus {
+  color: #284b63;
+  border-color: #284b63;
+}
+
+div.input-field input:focus + span.placeholder {
+  color: #284b63;
+}
+
+/* INPUT BOX END  */
