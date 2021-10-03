@@ -12,4 +12,4 @@
  * PARENT FOLDER: registration
  */
 ?>
-<h1>Tutor Working!</h1>
+<h1>Tutor is working</h1>

@@ -13,20 +13,22 @@
  */
 ?>
 <div class="fg-login bold gray bg-background hidden">
-    <h5 class="bold" style="color:#343A40; margin: 23px 0 48px 0;">Login in to Flexguru</h4>
-    <h4 class="primary bold"><?php echo $main["site-name"] ?></h4>
-    <span style="font-size:18px; margin-top:-9px;">Smart Learning</span>
+    <h6 class="bold gray" style="margin: 23px 0 30px 0;">Login in to Flexguru</h6>
+    <h3 class="primary"><?php echo $main["site-name"] ?></h3>
+    <span class="subtitle-1">Smart Learning</span>
     <form action="">
-        <div class="input-field"> <input type="email" name="email" id="email" placeholder="Email">
+        <div class="input-field"> <input type="text" name="username" id="username" required>
+            <span class="placeholder">Username</span>
         </div>
         <span class="form-errors"></span>
-        <div class="input-field"> <input type="password" name="password" id="password" placeholder="Password">
+        <div class="input-field"> <input type="password" name="password" id="password" required>
+            <span class="placeholder">Password</span>
         </div>
         <span class="form-errors"></span>
         <div class="input-field forgot-password">
-            <div class="remember-me"><input class="pointer" type="checkbox" name="" id=""> Remember Me
+            <div class="remember-me"><input style="width:unset;" class="pointer" type="checkbox" name="" id=""> Remember Me
             </div>
-            <span class="pointer primary">Forgot Password?</span>
+            <div class="pointer primary">Forgot Password?</div>
         </div>
         <button class="on-primary bg-primary bold w-100" style="font-size: 14px;">CONTINUE</button>
         <hr class="gray w-100" style="margin: 20px 0; height:1px">
