@@ -87,4 +87,46 @@ class Database
     {
         return $this->statement->rowCount();
     }
+
+    //Find user by email
+    public function findUserByEmail($email)
+    {
+        //prepared statement
+        $this->query("SELECT * FROM `user` WHERE `email` = :email");
+        $this->bind(':email', $email);
+        $this->execute();
+        if ($this->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Find user by username
+    public function findUserByUsername($username)
+    {
+        //prepared statement
+        $this->query("SELECT * FROM `api`.`user` WHERE `username` = :username");
+        $this->bind(':username', $username);
+        $this->execute();
+        if ($this->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Find user by mobile
+    public function findUserByMobile($phoneno)
+    {
+        //prepared statement
+        $this->query("SELECT * FROM `api`.`user` WHERE `phoneno` = :phoneno");
+        $this->bind(':phoneno', $phoneno);
+        $this->execute();
+        if ($this->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

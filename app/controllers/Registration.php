@@ -13,6 +13,8 @@
  */
 class Registration extends Controller
 {
+    private $val;
+
     public function __construct()
     {
     }
@@ -26,12 +28,13 @@ class Registration extends Controller
     {
         $this->view('registration/tutor');
     }
+
     public function student()
     {
         $this->studentModel = $this->model("Student");
 
         $data = [
-            'username' => 'avishka3213',
+            'username' => '',
             'firstname' => '',
             'lastname' => '',
             'email' => '',
@@ -42,7 +45,16 @@ class Registration extends Controller
             'dob' => '',
             'role' => '',
             'city' => '',
-            'photourl' => ''
+            'photourl' => '',
+            'usernameError' => '',
+            'firstnameError' => '',
+            'lastnameError' => '',
+            'emailError' => '',
+            'phonenoError' => '',
+            'passwordError' => '',
+            'confpasswordError' => '',
+            'genderError' => '',
+            'dobError' => ''
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -50,7 +62,7 @@ class Registration extends Controller
             //Sanatize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
-                'username' => 'avishka3213',
+                'username' => trim($_POST['username']),
                 'firstname' => trim($_POST['firstname']),
                 'lastname' => trim($_POST['lastname']),
                 'email' => trim($_POST['email']),
@@ -61,22 +73,36 @@ class Registration extends Controller
                 'dob' => trim($_POST['dob']),
                 'role' => 'st',
                 'city' => trim($_POST['city']),
-                'photourl' => 'abcd'
+                'photourl' => 'notyet',
+                'usernameError' => '',
+                'firstnameError' => '',
+                'lastnameError' => '',
+                'emailError' => '',
+                'phonenoError' => '',
+                'passwordError' => '',
+                'confpasswordError' => '',
+                'genderError' => '',
+                'dobError' => ''
             ];
 
-            /**
-             * if(deci){
-             *  stmt;
-             * }else{
-             *  stmt
-             * }
-             */
+            //validation begin
+            $this->val = $this->model("Validate");
+            $data["usernameError"] = $this->val->username($data['username']);
+            $data["firstnameError"] = $this->val->name($data['firstname']);
+            $data["lastnameError"] = $this->val->name($data['lastname']);
+            $data["emailError"] = $this->val->email($data['email']);
+            $data["phonenoError"] = $this->val->mobile($data['phoneno']);
+            //validation ends
 
-            if ($this->studentModel->register($data)) {
-                //Ridirect to the main
-                header('location:' . URLROOT . '/pages/about');
-            } else {
-                die('Something went wrong.');
+
+            //if no errors
+            if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError'])) {
+                if ($this->studentModel->register($data)) {
+                    //Ridirect to the main
+                    header('location:' . URLROOT . '/pages/about');
+                } else {
+                    die('Something went wrong.');
+                }
             }
         }
         $this->view('registration/student', $data);

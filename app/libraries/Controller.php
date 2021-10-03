@@ -14,6 +14,9 @@
 //Load the model and the view
 class Controller
 {
+    public function __construct()
+    {
+    }
     public function model($model)
     {
         //Require model file

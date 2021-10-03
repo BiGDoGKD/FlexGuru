@@ -16,21 +16,5 @@ class Info extends Controller
 {
     public function __construct()
     {
-        
-    }
-
-    public function register()
-    {
-        $data = [
-            'username' => '',
-            'username' => '',
-            'username' => '',
-            'username' => '',
-            'username' => '',
-            'username' => '',
-            'username' => '',
-            'username' => '',
-            'username' => ''
-        ];
     }
 }
