@@ -109,6 +109,6 @@ class Registration extends Controller
     }
     public function affiliate()
     {
-        $this->view('registration/affiliate-marketer');
+        $this->view('registration/affiliate');
     }
 }
