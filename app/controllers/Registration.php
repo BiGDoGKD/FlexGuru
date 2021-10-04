@@ -30,11 +30,8 @@ class Registration extends Controller
 // dob need to be added
         $this->tutorModel = $this->model("Tutor");
 
-
-      
-
         $datatutor = [
-            'username' => 'avishka3213',
+            'username' => '',
             'firstname' => '',
             'lastname' => '',
             'email' => '',
@@ -42,19 +39,27 @@ class Registration extends Controller
             'password' => '',
             'confpassword' => '',
             'gender' => '',
+            'dob' => '',
             'role' => '',
             'city' => '',
-            'photourl' => ''
+            'photourl' => '',
+            'usernameError' => '',
+            'firstnameError' => '',
+            'lastnameError' => '',
+            'emailError' => '',
+            'phonenoError' => '',
+            'passwordError' => '',
+            'confpasswordError' => '',
+            'genderError' => '',
+            'dobError' => ''
         ];
-              
+
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //form process
             //Sanatize post data
-
-            // data of birth needs to be added here
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $datatutor = [
-                'username' => 'avish34ka354dg65',
+                'username' => trim($_POST['username']),
                 'firstname' => trim($_POST['firstname']),
                 'lastname' => trim($_POST['lastname']),
                 'email' => trim($_POST['email']),
@@ -62,24 +67,43 @@ class Registration extends Controller
                 'password' => trim($_POST['password']),
                 'confpassword' => trim($_POST['confpassword']),
                 'gender' => trim($_POST['gender']),
-                
+                'dob' => trim($_POST['dob']),
                 'role' => 'st',
                 'city' => trim($_POST['city']),
-                'photourl' => 'abcd'
+                'photourl' => 'notyet',
+                'usernameError' => '',
+                'firstnameError' => '',
+                'lastnameError' => '',
+                'emailError' => '',
+                'phonenoError' => '',
+                'passwordError' => '',
+                'confpasswordError' => '',
+                'genderError' => '',
+                'dobError' => ''
             ];
 
+            //validation begin
+            $this->val = $this->model("Validate");
+            $datatutor["usernameError"] = $this->val->username($datatutor['username']);
+            $datatutor["firstnameError"] = $this->val->name($datatutor['firstname']);
+            $datatutor["lastnameError"] = $this->val->name($datatutor['lastname']);
+            $datatutor["emailError"] = $this->val->email($datatutor['email']);
+            $datatutor["phonenoError"] = $this->val->mobile($datatutor['phoneno']);
+            //validation ends
 
 
-            if ($this->tutorModel->register($datatutor)) {
-                //Ridirect to the main
-                header('location:' . URLROOT . '/pages/about');
-            } else {
-                die('Something went wrong.');
+            //if no errors
+            if (empty($datatutor['usernameError']) && empty($datatutor['emailError']) && empty($datatutor['passwordError']) && empty($datatutor['confpasswordError'])) {
+                if ($this->tutorModel->register($datatutor)) {
+                    //Ridirect to the main
+                    header('location:' . URLROOT . '/pages/about');
+                } else {
+                    die('Something went wrong.');
+                }
             }
         }
-
-  
-        $this->view('registration/tutor',$datatutor);
+        
+        $this->view('registration/tutor', $datatutor);
     }
 
     

@@ -123,7 +123,7 @@ include APPROOT . '/views/includes/header.php';
 
 <div class="tutor_registration">
 		<center>
-			<h1 style="font-weight:600; font-size:60;">Tutor Registration</h1>
+		<h3>Tutor Registration</h3>
 			<form action="<?php echo URLROOT; ?>/registration/tutor" method="POST">
 				<!-- this two same line -->
 				<table>
@@ -133,59 +133,100 @@ include APPROOT . '/views/includes/header.php';
 					<tbody>
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="firstname" id="firstName" placeholder="FirstName">
+								<div class="input-field"> <input type="text" name="firstname" id="firstname" required>
+									<span class="placeholder">Firstname</span>
 								</div>
-								<span class="form-errors"></span>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['firstnameError']; ?>
+								</s pan>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="lastname" id="lastName" placeholder="LastName">
+								<div class="input-field"> <input type="text" name="lastname" id="lastname" required>
+									<span class="placeholder">Lastname</span>
 								</div>
-								<span class="form-errors"></span>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['lastnameError']; ?>
+								</span>
 							</td>
 						</tr>
 
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="email" name="email" id="email" placeholder="Email">
+								<div class="input-field"> <input type="text" name="username" id="username" required>
+									<span class="placeholder">Username</span>
 								</div>
-								<span class="form-errors">  </span>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['usernameError']; ?>
+								</span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="phoneno" id="phoneNo" placeholder="Contact Number">
+
+								<div class="input-field"> <input type="email" name="email" id="email" required>
+									<span class="placeholder">Email</span>
 								</div>
-								<span class="form-errors"></span>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['emailError']; ?>
+								</span>
 							</td>
 						</tr>
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="password" name="password" id="password" placeholder="Password">
+								<div class="input-field"> <input type="password" name="password" id="password" required>
+									<span class="placeholder">Password</span>
 								</div>
 							<td>
-								<div class="input-field"> <input type="password" name="confpassword" id="confirmPassword" placeholder="Confirm Password">
+								<div class="input-field"> <input type="password" name="confpassword" id="confpassword" required>
+									<span class="placeholder">Confirm Password</span>
 								</div>
-								<span class="form-errors"></span>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['confpasswordError']; ?>
+								</span>
 							</td>
 						</tr>
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="gender" id="gender" placeholder="gender">
+								<div class="input-field"> <input type="text" name="gender" id="gender" required>
+									<span class="placeholder">Gender</span>
 								</div>
-								<span class="form-errors"></span>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['genderError']; ?>
+								</span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="city" id="city" placeholder="city">
+								<div class="input-field"> <input type="date" name="dob" id="dob" required>
+									<span class="placeholder" style="transform:scale(0.8) translateY(-28px);background: #fff;">Birthday</span>
 								</div>
-								<span class="form-errors"></span>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['dobError']; ?>
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="input-field"> <input type="text" name="city" id="city" required>
+									<span class="placeholder">City</span>
+								</div>
+								<span class="form-errors error fg-errors">
+
+								</span>
+							</td>
+							<td>
+								<div class="input-field"> <input type="text" name="phoneno" id="phoneno" required>
+									<span class="placeholder">Phone No</span>
+								</div>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['phonenoError']; ?>
+								</span>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 
 
-				<button class="button_reg">CONTINUE</button>
+				<button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">REGISTER</button>
 
 				</br>
 
