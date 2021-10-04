@@ -13,9 +13,9 @@
 
 
 //Database params
-define('DB_HOST', 'localhost'); //Add your db host
+define('DB_HOST', 'localhost:9906'); //Add your db host
 define('DB_USER', 'root'); // Add your DB root
-define('DB_PASS', 'root'); //Add your DB pass
+define('DB_PASS', 'rz123'); //Add your DB pass
 define('DB_NAME', 'api'); //Add your DB Name
 
 //APPROOT

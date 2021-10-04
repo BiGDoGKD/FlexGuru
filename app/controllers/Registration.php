@@ -164,6 +164,80 @@ class Registration extends Controller
     }
     public function affiliate()
     {
-        $this->view('registration/affiliate');
+        $this->affiliateModel = $this->model("affiliate");
+
+        $data = [
+            'username' => '',
+            'firstname' => '',
+            'lastname' => '',
+            'email' => '',
+            'phoneno' => '',
+            'password' => '',
+            'confpassword' => '',
+            'gender' => '',
+            'dob' => '',
+            'role' => '',
+            'city' => '',
+            'photourl' => '',
+            'usernameError' => '',
+            'firstnameError' => '',
+            'lastnameError' => '',
+            'emailError' => '',
+            'phonenoError' => '',
+            'passwordError' => '',
+            'confpasswordError' => '',
+            'genderError' => '',
+            'dobError' => ''
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            //form process
+            //Sanatize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'username' => trim($_POST['username']),
+                'firstname' => trim($_POST['firstname']),
+                'lastname' => trim($_POST['lastname']),
+                'email' => trim($_POST['email']),
+                'phoneno' => trim($_POST['phoneno']),
+                'password' => trim($_POST['password']),
+                'confpassword' => trim($_POST['confpassword']),
+                'gender' => trim($_POST['gender']),
+                'dob' => trim($_POST['dob']),
+                'role' => 'st',
+                'city' => trim($_POST['city']),
+                'photourl' => 'notyet',
+                'usernameError' => '',
+                'firstnameError' => '',
+                'lastnameError' => '',
+                'emailError' => '',
+                'phonenoError' => '',
+                'passwordError' => '',
+                'confpasswordError' => '',
+                'genderError' => '',
+                'dobError' => ''
+            ];
+
+            //validation begin
+            $this->val = $this->model("Validate");
+            $data["usernameError"] = $this->val->username($data['username']);
+            $data["firstnameError"] = $this->val->name($data['firstname']);
+            $data["lastnameError"] = $this->val->name($data['lastname']);
+            $data["emailError"] = $this->val->email($data['email']);
+            $data["phonenoError"] = $this->val->mobile($data['phoneno']);
+            //validation ends
+
+
+            //if no errors
+            if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError'])) {
+                if ($this->affiliateModel->register($data)) {
+                    //Ridirect to the main
+                    header('location:' . URLROOT . '/pages/about');
+                } else {
+                    die('Something went wrong.');
+                }
+            }
+        }
+        $this->view('registration/affiliate', $data);
     }
 }
