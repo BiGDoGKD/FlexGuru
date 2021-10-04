@@ -149,7 +149,7 @@ include APPROOT . '/views/includes/header.php';
 								</span>
 							</td>
 							<td>
-							<div class="input-field"> <input type="text" name="city" id="city" required>
+								<div class="input-field"> <input type="text" name="city" id="city" required>
 									<span class="placeholder">City</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -157,7 +157,7 @@ include APPROOT . '/views/includes/header.php';
 								</span>
 							</td>
 						</tr>
-					
+
 					</tbody>
 				</table>
 

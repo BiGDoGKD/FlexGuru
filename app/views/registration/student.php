@@ -141,7 +141,13 @@ include APPROOT . '/views/includes/header.php';
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="gender" id="gender" required>
+								<div class="input-field">
+									<select class="pointer" type="" name="gender" id="gender" required>
+										<option class="select-option" value="" disabled selected></option>
+										<option class="select-option pointer" value="male">Male</option>
+										<option class="select-option pointer" value="female">Female</option>
+										<option class="select-option pointer" value="other">Other</option>
+									</select>
 									<span class="placeholder">Gender</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -149,8 +155,8 @@ include APPROOT . '/views/includes/header.php';
 								</span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="date" name="dob" id="dob" required>
-									<span class="placeholder" style="transform:scale(0.8) translateY(-28px);background: #fff;">Birthday</span>
+								<div class="input-field"> <input class="pointer" type="text" name="dob" id="dob" onfocus="(this.type='date')" required>
+									<span class="placeholder">Birthday</span>
 								</div>
 								<span class="form-errors error fg-errors">
 									<?php echo $data['dobError']; ?>
@@ -159,7 +165,14 @@ include APPROOT . '/views/includes/header.php';
 						</tr>
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="city" id="city" required>
+								<div class="input-field"> <select class="pointer" type="" name="city" id="city" required>
+										<option class="select-option" value="" disabled selected></option>
+										<?php foreach ($district as $value) {
+										?>
+											<option value="<?php echo $value; ?>" class="select-option pointer"><?php echo $value; ?></option>
+										<?php
+										} ?>
+									</select>
 									<span class="placeholder">City</span>
 								</div>
 								<span class="form-errors error fg-errors">

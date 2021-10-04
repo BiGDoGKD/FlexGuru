@@ -25,13 +25,13 @@ class Registration extends Controller
     }
 
     public function tutor()
-    
+
     {
-// dob need to be added
+        // dob need to be added
         $this->tutorModel = $this->model("Tutor");
 
 
-      
+
 
         $datatutor = [
             'username' => 'avishka3213',
@@ -46,7 +46,7 @@ class Registration extends Controller
             'city' => '',
             'photourl' => ''
         ];
-              
+
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //form process
             //Sanatize post data
@@ -62,8 +62,8 @@ class Registration extends Controller
                 'password' => trim($_POST['password']),
                 'confpassword' => trim($_POST['confpassword']),
                 'gender' => trim($_POST['gender']),
-                
-                'role' => 'st',
+
+                'role' => 'tu',
                 'city' => trim($_POST['city']),
                 'photourl' => 'abcd'
             ];
@@ -78,11 +78,11 @@ class Registration extends Controller
             }
         }
 
-  
-        $this->view('registration/tutor',$datatutor);
+
+        $this->view('registration/tutor', $datatutor);
     }
 
-    
+
 
     public function student()
     {
@@ -165,5 +165,10 @@ class Registration extends Controller
     public function affiliate()
     {
         $this->view('registration/affiliate');
+    }
+
+    public function district()
+    {
+        $this->view('registration/district');
     }
 }
