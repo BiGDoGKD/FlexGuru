@@ -93,7 +93,7 @@ class Registration extends Controller
 
 
             //if no errors
-            if (empty($datatutor['usernameError']) && empty($datatutor['emailError']) && empty($datatutor['passwordError']) && empty($datatutor['confpasswordError'])) {
+            if (empty($datatutor['usernameError']) && empty($datatutor['emailError']) && empty($datatutor['passwordError']) && empty($datatutor['confpasswordError'])&& empty($datatutor['phonenoError'])) {
                 if ($this->tutorModel->register($datatutor)) {
                     //Ridirect to the main
                     header('location:' . URLROOT . '/pages/about');
@@ -175,7 +175,7 @@ class Registration extends Controller
 
 
             //if no errors
-            if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError'])) {
+            if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError'])&& empty($data['phonenoError'])) {
                 if ($this->studentModel->register($data)) {
                     //Ridirect to the main
                     header('location:' . URLROOT . '/pages/about');

@@ -61,23 +61,39 @@ class Validate
         }
     }
 
-    public function mobile($mobile)
+
+
+
+
+public function mobile($mobile)
     {
         if (empty($mobile)) {
             $res = "Please enter mobile.";
-            return $res;
-        } elseif (!preg_match($this->usernameValidation, $mobile)) {
-            $res = "Username can only contain letter(a-z) and numbers (0-9).";
-            return $res;
-        } else {
+         }
+          elseif (!preg_match('/^0[0-9]{9}+$/',$mobile)) {
+            $res = "Should be 10-digit format starting with 0 Ex. 0771234567";
+   
+        }
+        
+
+        else {
             //Check if mobile exists.
             if ($this->db->findUserByMobile($mobile)) {
-                return $mobile . ' is already taken.';
+                $res = $mobile . ' is already taken.';
             } else {
-                return null;
+                $res = null;
+                
             }
-            $res = null;
-            return $res;
+         
         }
+        return $res;
+       
     }
+
+
+
+  
+    
+   
+
 }
