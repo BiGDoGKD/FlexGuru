@@ -91,7 +91,7 @@ include APPROOT . '/views/includes/header.php';
 								</div>
 								<span class="form-errors error fg-errors">
 									<?php echo $data['firstnameError']; ?>
-								</span>
+								</s pan>
 							</td>
 							<td>
 								<div class="input-field"> <input type="text" name="lastname" id="lastname" required>

@@ -41,7 +41,7 @@ class Tutor
         $this->db->bind(':phoneno', $datatutor['phoneno']);
         $this->db->bind(':city', $datatutor['city']);
         $this->db->bind(':role', $datatutor['role']);
-        $this->db->bind(':photourl',$datatutor['photourl']);
+        $this->db->bind(':photourl', $datatutor['photourl']);
 
         //Execute function
         if ($this->db->execute()) {
