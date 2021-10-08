@@ -74,7 +74,15 @@ include APPROOT . '/views/includes/header.php';
 </head>
 
 <body>
-
+    <div id="email-verification">
+        <h5>Please Enter the Code :</h5>
+        <p class="subtitle-1">An email verification code was sent to <?php echo $data['email'] ?></p>
+        <form action="<?php echo URLROOT; ?>/registration/verification" class="verification" method="POST">
+            <input type="text" name="emailcode" id="emailcode">
+            <span><?php echo $data['otpError'] ?></span>
+            <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">CONTINUE</button>
+        </form>
+    </div>
 </body>
 
 </html>

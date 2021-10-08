@@ -14,6 +14,7 @@
 class Registration extends Controller
 {
     private $val;
+    private $mail;
 
     public function __construct()
     {
@@ -32,11 +33,32 @@ class Registration extends Controller
     public function verification()
     {
         if (!isset($_COOKIE['regstudent'])) {
-            header('location:' . URLROOT . 'registration/roles');
+            header('location:' . URLROOT . '/registration/roles');
         } else {
             $data = json_decode($_COOKIE['regstudent'], true);
-            print_r($data['email']);
-            $this->view('registration/email');
+            $code = $_COOKIE['otpem'];
+            $evdata = [
+                'email' => $data['email'],
+                'otp' => '',
+                'otpError' => ''
+            ];
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                //form process
+                //Sanatize post data
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                $evdata = [
+                    'email' => $data['email'],
+                    'otp' => $_POST['emailcode'],
+                    'otpError' => ''
+                ];
+                $uecode = hash('sha256', $evdata['otp']);
+                if ($uecode == $code) {
+                    header('location:' . URLROOT);
+                } else {
+                    $evdata['otpError'] = 'Wrong Code!';
+                }
+            }
+            $this->view('registration/email', $evdata);
         }
     }
 
@@ -152,6 +174,7 @@ class Registration extends Controller
 
             //validation begin
             $this->val = $this->model("Validate");
+            $this->mail = $this->model("Mailer");
             $data["firstnameError"] = $this->val->name($data['firstname']);
             $data["lastnameError"] = $this->val->name($data['lastname']);
             $data["usernameError"] = $this->val->username($data['username']);
@@ -165,8 +188,8 @@ class Registration extends Controller
                 if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError']) && empty($data['firstnameError']) && empty($data['lastnameError']) && empty($data['phonenoError']) && empty($data['dobError'])) {
                     $data['password'] = hash('sha256', $data['password']);
                     $data['confpassword'] = hash('sha256', $data['confpassword']);
-                    $otpcode = rand(0000, 9999);
-                    mail($data['email'], 'Flexguru Verification Code', 'Your verification code is ' . $otpcode);
+                    $otpcode = rand(000000, 999999);
+                    $this->mail->vmail($otpcode, $data['email']);
                     setcookie('regstudent', json_encode($data), time() + 360);
                     setcookie('otpem', hash('sha256', $otpcode), time() + 360);
                     header("location:" . URLROOT . "/registration/verification");
