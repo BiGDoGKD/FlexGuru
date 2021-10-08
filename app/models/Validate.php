@@ -54,18 +54,25 @@ class Validate
         return $res;
     }
 
-    public function mobile($mobile)
+
+
+
+
+public function mobile($mobile)
     {
         if (empty($mobile)) {
             $res = "Please enter mobile.";
-        } elseif (!preg_match('/^[0-9]{10}+$/', $mobile)) {
-            $res = "Should be 10-digit format. Ex. 0771234567";
-        } else {
+         }
+          elseif (!preg_match('/^0[0-9]{9}+$/',$mobile)) {
+            $res = "Should be 10-digit format starting with 0 Ex. 0771234567";
+   
+        }else {
             //Check if mobile exists.
             if ($this->db->findUserByMobile($mobile)) {
                 $res = $mobile . ' is already taken.';
             } else {
                 $res = null;
+
             }
         }
         return $res;
@@ -118,6 +125,6 @@ class Validate
         } else {
             $res = null;
         }
-        return $res;
+        return $res
     }
 }

@@ -1,4 +1,4 @@
-  <?php
+<?php
 
 /** 
  * PROJECT NAME : FLEXGURU
@@ -10,7 +10,7 @@
  * LAST UPDATE DATA : Sep, 01, 2021
  * FILE TYPE: Model File
  */
-class Tutor
+class affiliate
 {
     private $db;
 
@@ -28,25 +28,24 @@ class Tutor
             return $result;
         }
         */
-    public function register($datatutor)
+    public function register($data)
     {
         $this->db->query('INSERT INTO `api`.`user` (`username`, `firstname`, `lastname`, `email`, `password`, `phoneno`, `city`, `role`, `photourl`) VALUES (:username, :firstname, :lastname, :email, :password, :phoneno, :city, :role, :photourl)');
 
         //Bind values
-        $this->db->bind(':username', $datatutor['username']);
-        $this->db->bind(':firstname', $datatutor['firstname']);
-        $this->db->bind(':lastname', $datatutor['lastname']);
-        $this->db->bind(':email', $datatutor['email']);
-        $this->db->bind(':password', $datatutor['password']);
-        $this->db->bind(':phoneno', $datatutor['phoneno']);
-        $this->db->bind(':city', $datatutor['city']);
-        $this->db->bind(':role', $datatutor['role']);
-        $this->db->bind(':photourl', $datatutor['photourl']);
+        $this->db->bind(':username', $data['username']);
+        $this->db->bind(':firstname', $data['firstname']);
+        $this->db->bind(':lastname', $data['lastname']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':password', $data['password']);
+        $this->db->bind(':phoneno', $data['phoneno']);
+        $this->db->bind(':city', $data['city']);
+        $this->db->bind(':role', $data['role']);
+        $this->db->bind(':photourl', $data['photourl']);
 
         //Execute function
         if ($this->db->execute()) {
             return true;
-           
         } else {
             return false;
         }

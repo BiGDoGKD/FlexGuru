@@ -22,14 +22,14 @@ include APPROOT . '/views/includes/header.php';
 	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 
-	.afiliate_registration {
+	.affiliate_registration {
 		width: 80%;
 		align-items: center;
 		margin: 0 auto;
 		padding: 90px;
 	}
 
-	.afiliate_registration td {
+	.affiliate_registration td {
 		position: relative;
 	}
 
@@ -74,9 +74,9 @@ include APPROOT . '/views/includes/header.php';
 </head>
 
 <body>
-	<div class="affiliate registration">
+	<div class="affiliate_registration">
 		<center>
-			<h3>Affiliate Marketer Registration</h3>
+			<h3>Affiliate Registration</h3>
 			<form action="<?php echo URLROOT; ?>/registration/affiliate" method="POST">
 				<!-- this two same line -->
 				<table>
@@ -141,13 +141,24 @@ include APPROOT . '/views/includes/header.php';
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="NIC" id="NIC" required>
-									<span class="placeholder">NIC</span>
+								<div class="input-field"> <input type="text" name="gender" id="gender" required>
+									<span class="placeholder">Gender</span>
 								</div>
 								<span class="form-errors error fg-errors">
-									<?php echo $data['NICError']; ?>
+									<?php echo $data['genderError']; ?>
 								</span>
 							</td>
+							<td>
+
+								<div class="input-field"> <input type="date" name="dob" id="dob" required>
+									<span class="placeholder" style="transform:scale(0.8) translateY(-28px);background: #fff;">Birthday</span>
+								</div>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['dobError']; ?>
+								</span>
+							</td>
+						</tr>
+						<tr>
 							<td>
 								<div class="input-field"> <input type="text" name="city" id="city" required>
 									<span class="placeholder">City</span>
@@ -156,8 +167,15 @@ include APPROOT . '/views/includes/header.php';
 
 								</span>
 							</td>
+							<td>
+								<div class="input-field"> <input type="text" name="phoneno" id="phoneno" required>
+									<span class="placeholder">Phone No</span>
+								</div>
+								<span class="form-errors error fg-errors">
+									<?php echo $data['phonenoError']; ?>
+								</span>
+							</td>
 						</tr>
-
 					</tbody>
 				</table>
 
