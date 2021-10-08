@@ -117,13 +117,13 @@ include APPROOT . '/views/includes/header.php';
 
 <body>
 
-<?php   $errors = array('$firstName'=>'','$lastName'=>'','$phoneNo'=>'','$password'=>'','confirmPassword'=>'','NIC'=> '','City'=>'');
+	<?php $errors = array('$firstName' => '', '$lastName' => '', '$phoneNo' => '', '$password' => '', 'confirmPassword' => '', 'NIC' => '', 'City' => '');
 
-?>
+	?>
 
-<div class="tutor_registration">
+	<div class="tutor_registration">
 		<center>
-		<h3>Tutor Registration</h3>
+			<h3>Tutor Registration</h3>
 			<form action="<?php echo URLROOT; ?>/registration/tutor" method="POST">
 				<!-- this two same line -->
 				<table>
@@ -138,7 +138,7 @@ include APPROOT . '/views/includes/header.php';
 								</div>
 								<span class="form-errors error fg-errors">
 									<?php echo $data['firstnameError']; ?>
-								</s pan>
+								</span>
 							</td>
 							<td>
 								<div class="input-field"> <input type="text" name="lastname" id="lastname" required>
@@ -250,4 +250,3 @@ include APPROOT . '/views/includes/header.php';
 <?php
 include APPROOT . '/views/includes/footer.php';
 ?>
- 
