@@ -149,6 +149,7 @@ include APPROOT . '/views/includes/header.php';
 								</span>
 							</td>
 							<td>
+
 								<div class="input-field"> <input type="date" name="dob" id="dob" required>
 									<span class="placeholder" style="transform:scale(0.8) translateY(-28px);background: #fff;">Birthday</span>
 								</div>

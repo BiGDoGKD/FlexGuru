@@ -9,14 +9,20 @@
  * LAST UPDATE BY: Kesara Karannagoda
  * LAST UPDATE DATA : Sep, 01, 2021
  * FILE TYPE: Controller File
- * 
  */
+
 class Registration extends Controller
 {
     private $val;
+    private $mail;
 
     public function __construct()
     {
+    }
+
+    public function index()
+    {
+        $this->view('registration/roles');
     }
 
     public function roles()
@@ -24,10 +30,41 @@ class Registration extends Controller
         $this->view('registration/roles');
     }
 
-    public function tutor()
-    
+    public function verification()
     {
-// dob need to be added
+        if (!isset($_COOKIE['regstudent'])) {
+            header('location:' . URLROOT . '/registration/roles');
+        } else {
+            $data = json_decode($_COOKIE['regstudent'], true);
+            $code = $_COOKIE['otpem'];
+            $evdata = [
+                'email' => $data['email'],
+                'otp' => '',
+                'otpError' => ''
+            ];
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                //form process
+                //Sanatize post data
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                $evdata = [
+                    'email' => $data['email'],
+                    'otp' => $_POST['emailcode'],
+                    'otpError' => ''
+                ];
+                $uecode = hash('sha256', $evdata['otp']);
+                if ($uecode == $code) {
+                    header('location:' . URLROOT);
+                } else {
+                    $evdata['otpError'] = 'Wrong Code!';
+                }
+            }
+            $this->view('registration/email', $evdata);
+        }
+    }
+
+    public function tutor()
+    {
+        // dob need to be added
         $this->tutorModel = $this->model("Tutor");
 
         $datatutor = [
@@ -57,6 +94,7 @@ class Registration extends Controller
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //form process
             //Sanatize post data
+
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $datatutor = [
                 'username' => trim($_POST['username']),
@@ -67,6 +105,7 @@ class Registration extends Controller
                 'password' => trim($_POST['password']),
                 'confpassword' => trim($_POST['confpassword']),
                 'gender' => trim($_POST['gender']),
+                'role' => 'tu',
                 'dob' => trim($_POST['dob']),
                 'role' => 'st',
                 'city' => trim($_POST['city']),
@@ -102,11 +141,10 @@ class Registration extends Controller
                 }
             }
         }
-        
         $this->view('registration/tutor', $datatutor);
     }
 
-    
+
 
     public function student()
     {
@@ -133,7 +171,8 @@ class Registration extends Controller
             'passwordError' => '',
             'confpasswordError' => '',
             'genderError' => '',
-            'dobError' => ''
+            'dobError' => '',
+            'sub' => 0
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -150,6 +189,7 @@ class Registration extends Controller
                 'confpassword' => trim($_POST['confpassword']),
                 'gender' => trim($_POST['gender']),
                 'dob' => trim($_POST['dob']),
+                'sub' => '',
                 'role' => 'st',
                 'city' => trim($_POST['city']),
                 'photourl' => 'notyet',
@@ -161,28 +201,31 @@ class Registration extends Controller
                 'passwordError' => '',
                 'confpasswordError' => '',
                 'genderError' => '',
-                'dobError' => ''
+                'dobError' => '',
             ];
 
             //validation begin
             $this->val = $this->model("Validate");
-            $data["usernameError"] = $this->val->username($data['username']);
+            $this->mail = $this->model("Mailer");
             $data["firstnameError"] = $this->val->name($data['firstname']);
             $data["lastnameError"] = $this->val->name($data['lastname']);
+            $data["usernameError"] = $this->val->username($data['username']);
             $data["emailError"] = $this->val->email($data['email']);
             $data["phonenoError"] = $this->val->mobile($data['phoneno']);
-            //validation ends
 
+            $data["dobError"] = $this->val->dob($data['dob']);
+            $data["confpasswordError"] = $this->val->password($data['password'], $data['confpassword']);
 
-            //if no errors
-            if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError'])&& empty($data['phonenoError'])) {
-                if ($this->studentModel->register($data)) {
-                    //Ridirect to the main
-                    header('location:' . URLROOT . '/pages/about');
-                } else {
-                    die('Something went wrong.');
-                }
-            }
+            if ($data["confpasswordError"] == null) {
+                // if no errors
+                if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError']) && empty($data['firstnameError']) && empty($data['lastnameError']) && empty($data['phonenoError']) && empty($data['dobError'])) {
+                    $data['password'] = hash('sha256', $data['password']);
+                    $data['confpassword'] = hash('sha256', $data['confpassword']);
+                    $otpcode = rand(000000, 999999);
+                    $this->mail->vmail($otpcode, $data['email']);
+                    setcookie('regstudent', json_encode($data), time() + 360);
+                    setcookie('otpem', hash('sha256', $otpcode), time() + 360);
+                    header("location:" . URLROOT . "/registration/verification");
         }
         $this->view('registration/student', $data);
     }

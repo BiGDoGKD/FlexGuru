@@ -10,6 +10,7 @@
  * LAST UPDATE DATA : Sep, 01, 2021
  * FILE TYPE: Model File
  */
+
 class Student
 {
     private $db;
@@ -28,9 +29,12 @@ class Student
             return $result;
         }
         */
+
     public function register($data)
     {
-        $this->db->query('INSERT INTO `api`.`user` (`username`, `firstname`, `lastname`, `email`, `password`, `phoneno`, `city`, `role`, `photourl`) VALUES (:username, :firstname, :lastname, :email, :password, :phoneno, :city, :role, :photourl)');
+        $data["password"] = hash("sha256", $data["password"]);
+
+        $this->db->query('INSERT INTO `api`.`user` (`username`, `firstname`, `lastname`, `email`, `password`, `phoneno`, `city`, `role`, `photourl`,`dob`, `startdate`, `subscription`) VALUES (:username, :firstname, :lastname, :email, :password, :phoneno, :city, :role, :photourl, :dob, :startdate, :sub)');
 
         //Bind values
         $this->db->bind(':username', $data['username']);
@@ -41,7 +45,10 @@ class Student
         $this->db->bind(':phoneno', $data['phoneno']);
         $this->db->bind(':city', $data['city']);
         $this->db->bind(':role', $data['role']);
+        $this->db->bind(':startdate', date("Y-m-d"));
+        $this->db->bind(':dob', $data['dob']);
         $this->db->bind(':photourl', $data['photourl']);
+        $this->db->bind(':sub', $data['sub']);
 
         //Execute function
         if ($this->db->execute()) {

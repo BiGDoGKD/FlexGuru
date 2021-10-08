@@ -16,6 +16,8 @@
 $str_navigation = file_get_contents(APPROOT . '/data/navigation-details.json');
 $str_sitedetails = file_get_contents(APPROOT . '/data/site-details.json');
 $str_footermenu = file_get_contents(APPROOT . '/data/footer-menu.json');
+$str_district = file_get_contents(APPROOT . '/data/district.json');
 $navigation = json_decode($str_navigation, true);
 $footermenu = json_decode($str_footermenu, true);
 $main = json_decode($str_sitedetails, true);
+$district = json_decode($str_district, true);

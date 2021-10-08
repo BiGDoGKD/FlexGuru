@@ -86,7 +86,7 @@ include APPROOT . '/views/includes/header.php';
 					<tbody>
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="firstname" id="firstname" required>
+								<div class="input-field"> <input type="text" name="firstname" id="firstname" value="<?php echo $data['firstname'] ?>" required>
 									<span class="placeholder">Firstname</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -94,7 +94,7 @@ include APPROOT . '/views/includes/header.php';
 								</s pan>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="lastname" id="lastname" required>
+								<div class="input-field"> <input type="text" name="lastname" id="lastname" value="<?php echo $data['lastname'] ?>" required>
 									<span class="placeholder">Lastname</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -106,7 +106,7 @@ include APPROOT . '/views/includes/header.php';
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="username" id="username" required>
+								<div class="input-field"> <input type="text" name="username" id="username" value="<?php echo $data['username'] ?>" required>
 									<span class="placeholder">Username</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -115,7 +115,7 @@ include APPROOT . '/views/includes/header.php';
 							</td>
 							<td>
 
-								<div class="input-field"> <input type="email" name="email" id="email" required>
+								<div class="input-field"> <input type="email" name="email" id="email" value="<?php echo $data['email'] ?>" required>
 									<span class="placeholder">Email</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -126,11 +126,14 @@ include APPROOT . '/views/includes/header.php';
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="password" name="password" id="password" required>
+								<div class="input-field"> <input type="password" name="password" id="password" value="<?php echo $data['password'] ?>" required>
 									<span class="placeholder">Password</span>
+									<span class="form-errors error fg-errors">
+										<?php echo $data['passwordError']; ?>
+									</span>
 								</div>
 							<td>
-								<div class="input-field"> <input type="password" name="confpassword" id="confpassword" required>
+								<div class="input-field"> <input type="password" name="confpassword" id="confpassword" value="<?php echo $data['confpassword'] ?>" required>
 									<span class="placeholder">Confirm Password</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -141,7 +144,13 @@ include APPROOT . '/views/includes/header.php';
 
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="gender" id="gender" required>
+								<div class="input-field">
+									<select class="pointer" type="" name="gender" id="gender" value="<?php echo $data['gender'] ?>" required>
+										<option class="select-option" value="" disabled selected></option>
+										<option class="select-option pointer" value="male">Male</option>
+										<option class="select-option pointer" value="female">Female</option>
+										<option class="select-option pointer" value="other">Other</option>
+									</select>
 									<span class="placeholder">Gender</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -149,8 +158,8 @@ include APPROOT . '/views/includes/header.php';
 								</span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="date" name="dob" id="dob" required>
-									<span class="placeholder" style="transform:scale(0.8) translateY(-28px);background: #fff;">Birthday</span>
+								<div class="input-field"> <input class="pointer" type="text" name="dob" id="dob" onfocus="(this.type='date')" value="<?php echo $data['dob'] ?>" required>
+									<span class="placeholder">Birthday</span>
 								</div>
 								<span class="form-errors error fg-errors">
 									<?php echo $data['dobError']; ?>
@@ -159,7 +168,14 @@ include APPROOT . '/views/includes/header.php';
 						</tr>
 						<tr>
 							<td>
-								<div class="input-field"> <input type="text" name="city" id="city" required>
+								<div class="input-field"> <select class="pointer" type="" name="city" id="city" value="<?php echo $data['city'] ?>" required>
+										<option class="select-option" value="" disabled selected></option>
+										<?php foreach ($district as $value) {
+										?>
+											<option value="<?php echo $value; ?>" class="select-option pointer"><?php echo $value; ?></option>
+										<?php
+										} ?>
+									</select>
 									<span class="placeholder">City</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -167,7 +183,7 @@ include APPROOT . '/views/includes/header.php';
 								</span>
 							</td>
 							<td>
-								<div class="input-field"> <input type="text" name="phoneno" id="phoneno" required>
+								<div class="input-field"> <input type="text" name="phoneno" id="phoneno" value="<?php echo $data['phoneno'] ?>" required>
 									<span class="placeholder">Phone No</span>
 								</div>
 								<span class="form-errors error fg-errors">
@@ -177,20 +193,20 @@ include APPROOT . '/views/includes/header.php';
 						</tr>
 					</tbody>
 				</table>
-
-
-				<button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">REGISTER</button>
-
-				</br>
-
 				<div class="subscribe">
 
-					<input type="checkbox" id="checksubscribe">
+					<input type="checkbox" id="sub" name="sub" value="<?php echo $data['sub']  ?>">
 
 					<div class="join-now"><span>Subscribe to our flexGuru newsletters and agree to receive emails from FlexGuru</span></div>
 
 
 				</div>
+
+				<button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">REGISTER</button>
+
+				</br>
+
+
 
 			</form>
 		</center>
