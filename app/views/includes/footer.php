@@ -63,20 +63,21 @@
         background: #FFF3F9;
     }
 
-    .fg-info{
+    .fg-info {
         width: 100%;
     }
 
-    .social-icons{
+    .social-icons {
         font-size: 36px;
         margin-top: 40px;
     }
 
-    .social-icons i{
+    .social-icons i {
         margin-right: 10px;
         cursor: pointer;
     }
-    .social-icons i:hover{
+
+    .social-icons i:hover {
         color: var(--primary);
     }
 
