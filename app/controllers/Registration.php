@@ -135,7 +135,7 @@ class Registration extends Controller
             if (empty($datatutor['usernameError']) && empty($datatutor['emailError']) && empty($datatutor['passwordError']) && empty($datatutor['confpasswordError']) && empty($datatutor['phonenoError'])) {
                 if ($this->tutorModel->register($datatutor)) {
                     //Ridirect to the main
-                    header('location:' . URLROOT . '/pages/about');
+                    header('location:' . URLROOT . '/pages/tutorprofileview');
                 } else {
                     die('Something went wrong.');
                 }
