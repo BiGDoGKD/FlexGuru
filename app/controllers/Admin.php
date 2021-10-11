@@ -18,6 +18,14 @@ class Admin extends Controller
     {
     }
 
+    public function login()
+    {
+        $this->view('admin/login/login');
+    }
+    public function verify()
+    {
+        $this->view('admin/login/emailverify');
+    }
     public function index()
     {
         $this->view('admin/admin');
