@@ -17,7 +17,9 @@
         <div class="hamburger">
             <div></div>
         </div>
-        <a href="<?php echo URLROOT ?>/pages/index" class="logo dark"><h5><?php echo $main["site-name"] ?></h5></a>
+        <a href="<?php echo URLROOT ?>/pages/index" class="logo dark">
+            <h5><?php echo $main["site-name"] ?></h5>
+        </a>
     </div>
     <ul class="nav-info">
 
@@ -29,7 +31,7 @@
         } ?>
     </ul>
     <ul class="nav-login">
-        <li><a onclick="loginFunction()" class="gray pointer subtitle-2">Login</a></li>
+        <li><a onclick="loginFunction()" class="gray pointer subtitle-2" style="margin-right:1.5vw;">Login</a></li>
         <li><a href="<?php echo URLROOT ?>/registration/roles"><button class="btn-text btn bg-primary on-primary ">Sign up</button></a></li>
     </ul>
 </nav>

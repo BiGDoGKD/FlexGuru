@@ -227,9 +227,9 @@ class Registration extends Controller
                     setcookie('otpem', hash('sha256', $otpcode), time() + 360);
                     header("location:" . URLROOT . "/registration/verification");
                 }
-                $this->view('registration/student', $data);
             }
         }
+        $this->view('registration/student', $data);
     }
 
     public function affiliate()
