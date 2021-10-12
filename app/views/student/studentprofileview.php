@@ -158,21 +158,6 @@ include APPROOT . '/views/includes/footer.php';
 
 
 
-     <script>
-        function myFunction() {
-            
-        let text;
-        let person = prompt("Insert link");
-        if (person == null || person == "") {
-            text = "Please provide a valid link";
-        } else {
-            text = "Hello " + person + "! How are you today?";
-        }
-
-        document.getElementById("socialmediahidden").innerHTML = text;
-
-            }
-     </script>
 
 
 </body>
