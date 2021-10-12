@@ -67,17 +67,29 @@ include APPROOT . '/views/includes/header.php';
                     <span>Link Your Social Networks</span>
                     <div class="setofsocialmedia">
                         <div id="facebook"><img src="<?php echo URLROOT . '/public/img/studentprofileview/fb.png' ?>" alt=""  class="iconsm"></div>
+                        
                         <div id="twitter" ><img src="<?php echo URLROOT . '/public/img/studentprofileview/twitter.png' ?>" alt=""  class="iconsm"></div>
+                        
                         <div id="youtube" ><img src="<?php echo URLROOT . '/public/img/studentprofileview/youtube.png' ?>" alt=""  class="iconsm"></div>
-                        <div id="instagram" ><img src="<?php echo URLROOT . '/public/img/studentprofileview/insta.png' ?>" alt=""  class="iconsm"></div>
+                        
+                        <div id="Linkedin" ><img src="<?php echo URLROOT . '/public/img/studentprofileview/linkedin.png' ?>" alt=""  class="iconsm"></div>
                     </div>
                         <div class="setofsocialmediaplus">
-                        <div ><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt=""  class="iconsmadd"></div>
+                        <div ><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt=""  class="iconsmadd" onclick="myFunction()"></div>
                         <div ><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt=""  class="iconsmadd"></div>
                         <div ><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt=""  class="iconsmadd"></div>
                         <div ><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt=""  class="iconsmadd"></div>
                         
                     </div>
+
+                    <!-- values of the social media links -->
+
+                    <div id="socialmediahidden facebook"></div>
+                    <div id="socialmediahidden twitter"></div>
+                    <div id="socialmediahidden youtube"></div>
+                    <div id="socialmediahidden linkedin"></div>
+                           
+                
 
                 </div>
 
@@ -143,5 +155,25 @@ include APPROOT . '/views/includes/footer.php';
 
 ?> 
     </footer> -->
+
+
+
+     <script>
+        function myFunction() {
+            
+        let text;
+        let person = prompt("Insert link");
+        if (person == null || person == "") {
+            text = "Please provide a valid link";
+        } else {
+            text = "Hello " + person + "! How are you today?";
+        }
+
+        document.getElementById("socialmediahidden").innerHTML = text;
+
+            }
+     </script>
+
+
 </body>
 </html>
