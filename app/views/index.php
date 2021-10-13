@@ -18,12 +18,19 @@ include APPROOT . '/views/includes/header.php';
 ?>
 
 <div class="fg-cover">
-    <h2 class="dark" style="width: 500px;"><?php echo $main["landing-title"] ?></h2>
-    <p class="body-2 gray">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.</p>
-    <div class="search-bar">
-        <input class="subtitle-2" type="text" name="" id="" placeholder="Search...">
-        <i class="fas fa-search gray"></i>
-        <button class="btn btn-text bg-primary on-primary">learn</button>
+    <div>
+        <h2 class="dark" style="width: 500px;"><?php echo $main["landing-title"] ?></h2>
+        <p class="body-2 gray">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.</p>
+        <div class="search-bar">
+            <input class="subtitle-2" type="text" name="" id="" placeholder="Search...">
+            <i class="fas fa-search gray"></i>
+            <button class="btn btn-text bg-primary on-primary">learn</button>
+        </div>
+    </div>
+    <div class="cover-image">
+        <div class="circle">
+
+        </div>
     </div>
 </div>
 <?php
@@ -34,9 +41,24 @@ include APPROOT . '/views/includes/footer.php';
         width: 100%;
         height: 460px;
         margin: 50px 0 80px 0;
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-between;
     }
 
-    .fg-cover .body-2{
+    .fg-cover .cover-image {
+        width: 37%;
+        padding: 20px;
+    }
+
+    .fg-cover .cover-image .circle {
+        height: 370px;
+        width: 370px;
+        background: yellow;
+        border-radius: 50%;
+    }
+
+    .fg-cover .body-2 {
         width: 500px;
         margin: 25px 0 0 0;
     }
@@ -48,7 +70,7 @@ include APPROOT . '/views/includes/footer.php';
         padding: 0;
     }
 
-    .search-bar i{
+    .search-bar i {
         position: absolute;
         font-size: 20px;
         left: 20px;

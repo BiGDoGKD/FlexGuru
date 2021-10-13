@@ -1,17 +1,16 @@
 <?php
-include APPROOT . '/views/admin/components/admin-header.php';
 include APPROOT . '/views/admin/components/sidebar.php';
+include APPROOT . '/views/admin/components/admin-header.php';
 ?>
 <div class="dashboard-view">
     <iframe id="dashboard-view" style="width: 100%; height:100%;" src="admin/dashboard" frameborder="0"></iframe>
 </div>
 </div>
-
+</div>
 <style>
     .dashboard-view {
         width: 100%;
         height: 100%;
-        background: #f3f3f3;
     }
 </style>
 <script>
@@ -57,5 +56,27 @@ include APPROOT . '/views/admin/components/sidebar.php';
                     break;
             }
         })
+    })
+</script>
+
+<script defer>
+    var Adminsidebar = document.querySelector('.admin-sidebar');
+    var openArrow = document.querySelector('.open-arrow');
+    var Admindashboard = document.querySelector('.admin-dashboard');
+
+
+    var dashboardFlag = true;
+    openArrow.addEventListener('click', () => {
+        if (dashboardFlag) {
+            dashboardFlag = false;
+            Adminsidebar.classList.remove('close-sidebar');
+            Adminsidebar.classList.add('open-sidebar');
+            Admindashboard.classList.add('dashboard-margin')
+        } else {
+            dashboardFlag = true;
+            Adminsidebar.classList.remove('open-sidebar');
+            Adminsidebar.classList.add('close-sidebar');
+            Admindashboard.classList.remove('dashboard-margin')
+        }
     })
 </script>

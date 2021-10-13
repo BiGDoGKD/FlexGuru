@@ -212,7 +212,6 @@ class Registration extends Controller
             $data["usernameError"] = $this->val->username($data['username']);
             $data["emailError"] = $this->val->email($data['email']);
             $data["phonenoError"] = $this->val->mobile($data['phoneno']);
-
             $data["dobError"] = $this->val->dob($data['dob']);
             $data["confpasswordError"] = $this->val->password($data['password'], $data['confpassword']);
 

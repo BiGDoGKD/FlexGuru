@@ -1,1 +1,2 @@
-<h1>Verifications</h1>
+<?php
+include APPROOT . '/views/admin/components/create-admin.php';

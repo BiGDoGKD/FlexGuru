@@ -47,8 +47,8 @@ $district = json_decode($str_district, true);
 </style>
 <div class="fg-login fg-verify bold gray bg-background hidden">
     <h6 class="bold gray" style="margin: 23px 0 30px 0;">Enter the one time password</h6>
-    <form action="<?php echo URLROOT; ?>/admin/verify">
-        <div class="input-field" style="margin:0;"> <input type="password" name="password" id="password" required>
+    <form action="<?php echo URLROOT; ?>/admin">
+        <div class="input-field" style="margin:0;"> <input type="password" name="password" id="password">
             <span class="placeholder">OTP</span>
         </div>
 

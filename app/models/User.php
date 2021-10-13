@@ -28,4 +28,11 @@ class User
             return $result;
         }
         */
+
+    public function getUsers()
+    {
+        $this->db->query("SELECT * FROM user");
+        $result = $this->db->resultSet();
+        return $result;
+    }
 }
