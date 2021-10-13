@@ -67,7 +67,9 @@ class Registration extends Controller
         // dob need to be added
         $this->tutorModel = $this->model("Tutor");
 
-        $datatutor = [
+       
+
+        $data = [
             'username' => '',
             'firstname' => '',
             'lastname' => '',
@@ -88,15 +90,15 @@ class Registration extends Controller
             'passwordError' => '',
             'confpasswordError' => '',
             'genderError' => '',
-            'dobError' => ''
+            'dobError' => '',
+            'sub' => 0
         ];
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //form process
             //Sanatize post data
-
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $datatutor = [
+            $data = [
                 'username' => trim($_POST['username']),
                 'firstname' => trim($_POST['firstname']),
                 'lastname' => trim($_POST['lastname']),
@@ -105,8 +107,8 @@ class Registration extends Controller
                 'password' => trim($_POST['password']),
                 'confpassword' => trim($_POST['confpassword']),
                 'gender' => trim($_POST['gender']),
-                'role' => 'tu',
                 'dob' => trim($_POST['dob']),
+                'sub' => '',
                 'role' => 'st',
                 'city' => trim($_POST['city']),
                 'photourl' => 'notyet',
@@ -118,30 +120,35 @@ class Registration extends Controller
                 'passwordError' => '',
                 'confpasswordError' => '',
                 'genderError' => '',
-                'dobError' => ''
+                'dobError' => '',
             ];
 
             //validation begin
             $this->val = $this->model("Validate");
-            $datatutor["usernameError"] = $this->val->username($datatutor['username']);
-            $datatutor["firstnameError"] = $this->val->name($datatutor['firstname']);
-            $datatutor["lastnameError"] = $this->val->name($datatutor['lastname']);
-            $datatutor["emailError"] = $this->val->email($datatutor['email']);
-            $datatutor["phonenoError"] = $this->val->mobile($datatutor['phoneno']);
-            //validation ends
+            $this->mail = $this->model("Mailer");
+            $data["firstnameError"] = $this->val->name($data['firstname']);
+            $data["lastnameError"] = $this->val->name($data['lastname']);
+            $data["usernameError"] = $this->val->username($data['username']);
+            $data["emailError"] = $this->val->email($data['email']);
+            $data["phonenoError"] = $this->val->mobile($data['phoneno']);
 
+            $data["dobError"] = $this->val->dob($data['dob']);
+            $data["confpasswordError"] = $this->val->password($data['password'], $data['confpassword']);
 
-            //if no errors
-            if (empty($datatutor['usernameError']) && empty($datatutor['emailError']) && empty($datatutor['passwordError']) && empty($datatutor['confpasswordError']) && empty($datatutor['phonenoError'])) {
-                if ($this->tutorModel->register($datatutor)) {
-                    //Ridirect to the main
-                    header('location:' . URLROOT . '/pages/tutorprofileview');
-                } else {
-                    die('Something went wrong.');
+            if ($data["confpasswordError"] == null) {
+                // if no errors
+                if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confpasswordError']) && empty($data['firstnameError']) && empty($data['lastnameError']) && empty($data['phonenoError']) && empty($data['dobError'])) {
+                    $data['password'] = hash('sha256', $data['password']);
+                    $data['confpassword'] = hash('sha256', $data['confpassword']);
+                    $otpcode = rand(000000, 999999);
+                    $this->mail->vmail($otpcode, $data['email']);
+                    setcookie('regstudent', json_encode($data), time() + 360);
+                    setcookie('otpem', hash('sha256', $otpcode), time() + 360);
+                    header("location:" . URLROOT . "/registration/verification");
                 }
             }
         }
-        $this->view('registration/tutor', $datatutor);
+     +-   $this->view('registration/tutor', $data);
     }
 
 
