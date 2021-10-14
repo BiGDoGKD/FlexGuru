@@ -54,6 +54,7 @@ include APPROOT . '/views/includes/header.php';
 		width: 745px;
 		color: white;
 		margin-top: 8px;
+		
 	}
 
 	.join-now {
@@ -105,14 +106,14 @@ include APPROOT . '/views/includes/header.php';
 
 
 						<tr>
-							<td>
-								<div class="input-field"> <input type="text" name="username" id="username" value="<?php echo $data['username'] ?>" required>
-									<span class="placeholder">Username</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['usernameError']; ?>
-								</span>
-							</td>
+								<td>
+									<div class="input-field"> <input type="text" name="username" id="username" value="<?php echo $data['username'] ?>" required>
+										<span class="placeholder">Username</span>
+									</div>
+									<span class="form-errors error fg-errors">
+										<?php echo $data['usernameError']; ?>
+									</span>
+								</td>
 							<td>
 
 								<div class="input-field"> <input type="email" name="email" id="email" value="<?php echo $data['email'] ?>" required>
