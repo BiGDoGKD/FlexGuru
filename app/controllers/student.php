@@ -10,7 +10,4 @@ class student extends Controller
     {
         $this->view('student/studentprofileview');
     }
-
 }
-
-?>

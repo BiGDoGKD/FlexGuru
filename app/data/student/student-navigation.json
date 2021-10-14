@@ -1,0 +1,18 @@
+[
+    {
+        "url": "student/profile",
+        "menu": "Dashboard"
+    },
+    {
+        "url": "student/messages",
+        "menu": "Messages"
+    },
+    {
+        "url": "student/sessions",
+        "menu": "Sessions"
+    },
+    {
+        "url": "marketplace",
+        "menu": "Find Services"
+    }
+]

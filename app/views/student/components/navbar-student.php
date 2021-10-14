@@ -24,15 +24,29 @@
     <ul class="nav-info">
 
         <?php
-        foreach ($navigation as $value) {
+        foreach ($st_navigation as $value) {
         ?>
             <li><a class="gray subtitle-2" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
         <?php
         } ?>
     </ul>
     <ul class="nav-login">
-        <li><a onclick="loginFunction()" class="gray pointer subtitle-2" style="margin-right:1.5vw;">Login</a></li>
-        <li><a href="<?php echo URLROOT ?>/registration/roles"><button class="btn-text btn bg-primary on-primary ">Sign up</button></a></li>
+        <li><a onclick="loginFunction()" class="primary pointer subtitle-2" style="margin-right:1.5vw;">Brody Peterson</a></li>
+        <li><a href="<?php echo URLROOT ?>/registration/roles">
+                <div class="profile-photo"></div>
+                <style>
+                    .profile-photo {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: url(<?php echo URLROOT . '/public/img/students/pexels.webp' ?>);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+
+                        /* background: #acacac; */
+                    }
+                </style>
+            </a></li>
     </ul>
 </nav>
 <hr style="width: 99vw; height:0.1px; background:#ededed; position:absolute; transform:translate(-50%,-50%); left:50%;">
@@ -44,7 +58,7 @@
         <hr style="width:50%; margin:20px 0 0 58px;">
         <li><a href="#" class="gray">Login</a></li>
         <?php
-        foreach ($navigation as $value) {
+        foreach ($st_navigation as $value) {
         ?>
             <li><a class="gray" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
         <?php
