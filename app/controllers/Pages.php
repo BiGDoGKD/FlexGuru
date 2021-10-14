@@ -41,10 +41,26 @@ class Pages extends Controller
     }
     public function becomeastudent()
     {
-        $this->view('pages/becomeastudent');
+        $this->view('info/become-a-student');
     }
      public function studentprofileview()
     {
         $this->view('pages/studentprofileview');
+    }
+    public function becomeatutor()
+    {
+        $this->view('pages/become-a-tutor');
+    }
+    public function findservices()
+    {
+        $this->view('pages/find-services');
+    }
+    public function flexguruaffiliates()
+    {
+        $this->view('flexguru-affiliates');
+    }
+    public function helpandsupport()
+    {
+        $this->view('pages/help-and-support');
     }
 }
