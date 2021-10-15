@@ -223,14 +223,14 @@ padding-left: 100px;
     <div class="links-side">
         <ul>
 
-        <li><a href="./settings.php"  >account</a></li>
+        <li><a href="./settings"  >account</a></li>
 
 
-        <li><a href="./security.php"  >security</a></li>
+        <li><a href="./security"  >security</a></li>
 
-        <li><a href="./notifications.php" >notification</a></li>
+        <li><a href="./notifications" >notification</a></li>
 
-        <li><a href="./billinginformation.php" >billing-information</a></li>
+        <li><a href="./billinginformation" >billing-information</a></li>
 
 
 
