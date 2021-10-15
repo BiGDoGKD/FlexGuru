@@ -11,6 +11,7 @@
  * FILE TYPE: View
  * PARENT FOLDER: pages
  */
+
 ?>
 <?php
 include APPROOT . '/views/includes/data.php';

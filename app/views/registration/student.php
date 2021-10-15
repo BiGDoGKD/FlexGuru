@@ -92,7 +92,7 @@ include APPROOT . '/views/includes/header.php';
 								</div>
 								<span class="form-errors error fg-errors">
 									<?php echo $data['firstnameError']; ?>
-								</s pan>
+								</span>
 							</td>
 							<td>
 								<div class="input-field"> <input type="text" name="lastname" id="lastname" value="<?php echo $data['lastname'] ?>" required>

@@ -42,7 +42,7 @@ include APPROOT . '/views/includes/header.php';
 	#checksubscribe {
 		padding: 20px;
 		background: #ff0000;
-		margin-top: 10px;
+		margin-top: 9px;
 	}
 
 	.button_reg {
