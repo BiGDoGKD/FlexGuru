@@ -27,8 +27,25 @@ include APPROOT . '/views/includes/header.php';
 </style>
 <body class = "primary w-90 text-justify" >
 
-
-
+<p>1. These terms and conditions guide how we provide you with our services, including eLearning sessions.    </p>
+<p>2. Before submitting your registration form to us, please read these terms carefully.     </p>
+<p>3. You are advised to check our Websites regularly to view our most recent privacy policy
+agreement to ensure that you are aware of any changes to it because that may occur at any time.
+    </p>
+<p>4. We develop, distribute and maintain the Product and will also provide login information to you. 
+    We will also manage your access to the services and provide you with assistance if needed. 
+    </p>
+<p>5.You do not copy, modify, transmit, distribute or in any way exploit the Product or any other copyrighted 
+    material provided other than for your training purposes. any other purposes are strictly prohibited by these conditions.     </p>
+<p>6.You strictly do not permit anyone to copy, use, modify, transmit, distribute, or otherwise exploit the Products or any other copyrighted material in any way.     </p>
+<p>7.We provide the material as-is and without any warranties, express or implied, except that which cannot be excluded by law.
+     We also do not guarantee that the materials will be free from errors, including technical errors.    </p>
+<p>8.We use third-party payment providers, depending on the way in which you make payments – Pay here. Payment for the Products must be made at the point of purchase.     </p>
+<p>    </p>
+<p>    </p>
+<p>    </p>
+<p>    </p>
+<p>    </p>
 </body>
 <br>
 <?php
