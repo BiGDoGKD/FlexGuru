@@ -49,7 +49,69 @@ include APPROOT . '/views/includes/header.php';
     <div class="welcome-description w-50">
         <p class="text-center body-1 gray">Flexguru is a tutor freelancing platform where students can find the best tutors to fullfill their requirements in a much more flexible manner and provide a platform for enthusiastic tutors to distribute knowledge in whatever the area they are good at. </p>
     </div>
+</div>
+<div class="fg-actors">
+    <div class="bg-welcome bg-on-primary">
+    </div>
+    <div class="actor-bar">
+        <?php
+        foreach ($actors as $value) {
+        ?>
+            <!-- // echo $value["title"]; -->
 
+
+            <div class="actor-card">
+                <div class="actor-tile" style="border-radius:16px; background: <?php echo $value["background"] ?>; height:100px; width:100px;">
+                    <img height="80px" src="<?php echo URLROOT . '/public/img/visitor/home/' . $value["picture"] . '.svg' ?>" alt="<?php echo $value["picture"] ?>">
+                </div>
+                <h6><?php echo $value["title"] ?></h6>
+                <p class="body-2 text-center gray">
+                    <?php echo $value["description"] ?>
+                </p>
+            </div>
+
+        <?php
+        }
+        ?>
+    </div>
+</div>
+<style>
+    .fg-actors {
+        height: 460px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 80px 0;
+    }
+
+    .actor-bar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .actor-bar .actor-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 200px;
+        min-height: 270px;
+
+    }
+
+    .actor-bar .actor-card .actor-tile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 20px 0;
+    }
+
+    .actor-bar .actor-card p {
+        margin: 10px 0;
+    }
+</style>
 </div>
 <?php
 include APPROOT . '/views/includes/footer.php';
@@ -197,9 +259,11 @@ include APPROOT . '/views/includes/footer.php';
         padding: 0 60px;
         border-radius: 24px;
     }
-    .fg-welcome .globe{
+
+    .fg-welcome .globe {
         margin: 40px 0;
     }
+
     .fg-welcome .welcome-title {
         margin: 0 0 35px 0;
     }
