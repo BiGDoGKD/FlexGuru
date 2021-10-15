@@ -1,4 +1,4 @@
-<?php 
+<?php
 include APPROOT . '/views/includes/data.php';
 
  ?>
@@ -74,8 +74,7 @@ table tbody td{
 }
 
 .table{
-        border-top: 1px solid black;
-    border-bottom: 1px solid black;
+  border: 1px solid #acacac;
 
 
 
@@ -247,7 +246,7 @@ padding-left: 100px;
     <div class="right">
 
 
-
+	<form action="<?php echo URLROOT; ?>/student/settings" method="POST">
         <div class="table">
             <h3>UPDATE ACCOUNT</h3>
         <table style="margin: 5px 0;">
@@ -292,11 +291,12 @@ padding-left: 100px;
 
                 <tr>
                     <td colspan="2">
-                <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">SAVE CHANGES</button>
+                <button class="button_reg pointer btn-text" id="submit" name="submit" value="submit" type="submit">SAVE CHANGES</button>
                     </td>
                 </tr>
 </tbody>
          </table>
+  </form>
 
         <div class="successupdate">
         <i class="far fa-check-circle"></i>

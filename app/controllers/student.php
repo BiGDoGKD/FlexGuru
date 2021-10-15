@@ -1,91 +1,67 @@
 <?php
 
-class student extends Controller
+class Student extends Controller
 {
-    public function __construct()
-    {
-    }
+  public function __construct()
+  {
+  }
 
-    public function studentprofileview()
-    {
-        $this->view('student/studentprofileview');
-    }
 
-    public function billinginformation()
-    {
-      $this->view('student/billinginformation');
+
+
+  public function studentprofileview()
+  {
+    $this->view('student/studentprofileview');
+  }
+
+  public function billinginformation()
+  {
+    $this->view('student/billinginformation');
   }
 
   public function notifications()
   {
     $this->view('student/notifications');
+  }
+
+  public function security()
+  {
+    $this->view('student/security');
+  }
+
+
+  public function settings()
+  {
+
+    $this->settingsModel = $this->model("Settings");
+
+
+    $data = [
+      'firstname' => '',
+      'lastname' => '',
+      'email' => '',
+      'city' => ''
+    ];
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      $data = [
+        'firstname' => trim($_POST['firstname']),
+        'lastname' => trim($_POST['lastname']),
+        'email' => trim($_POST['email']),
+        'city' => trim($_POST['city'])
+      ];
+      if ($this->settingsModel->update($data)) {
+        //Ridirect to the main
+        header('location:' . URLROOT . '/student/studentprofileview');
+      } else {
+        die('Something went wrong.');
+      }
+    }
+    $this->view('student/settings', $data);
+  }
 }
-public function security()
-{
-  $this->view('student/security');
-}
-public function settings()
-{
-//change settings of the student Profile
 
 
-
-// {
-//     $this->studentModel = $this->model("Student");
-//
-//     $data = [
-//         'username' => '',
-//         'firstname' => '',
-//         'lastname' => '',
-//         'email' => '',
-//         'phoneno' => '',
-//         'password' => '',
-//         'confpassword' => '',
-//         'gender' => '',
-//         'dob' => '',
-//         'role' => '',
-//         'city' => '',
-//         'photourl' => '',
-//         'usernameError' => '',
-//         'firstnameError' => '',
-//         'lastnameError' => '',
-//         'emailError' => '',
-//         'phonenoError' => '',
-//         'passwordError' => '',
-//         'confpasswordError' => '',
-//         'genderError' => '',
-//         'dobError' => '',
-//         'sub' => 0
-//     ];
-//
-//     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-//         //form process
-//         //Sanatize post data
-//         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-//         $data = [
-//             'username' => trim($_POST['username']),
-//             'firstname' => trim($_POST['firstname']),
-//             'lastname' => trim($_POST['lastname']),
-//             'email' => trim($_POST['email']),
-//             'phoneno' => trim($_POST['phoneno']),
-//             'password' => trim($_POST['password']),
-//             'confpassword' => trim($_POST['confpassword']),
-//             'gender' => trim($_POST['gender']),
-//             'dob' => trim($_POST['dob']),
-//             'sub' => '',
-//             'role' => 'st',
-//             'city' => trim($_POST['city']),
-//             'photourl' => 'notyet',
-//             'usernameError' => '',
-//             'firstnameError' => '',
-//             'lastnameError' => '',
-//             'emailError' => '',
-//             'phonenoError' => '',
-//             'passwordError' => '',
-//             'confpasswordError' => '',
-//             'genderError' => '',
-//             'dobError' => '',
-//         ];
 //
 //         //validation begin
 //         $this->val = $this->model("Validate");
@@ -113,20 +89,3 @@ public function settings()
 //         }
 //     }
 // }
-
-  $this->view('student/settings');
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-
-?>

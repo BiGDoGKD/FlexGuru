@@ -75,8 +75,8 @@ table tbody td{
 }
 
 .table{
-        border-top: 1px solid black;
-    border-bottom: 1px solid black;
+
+  border:1px solid #acacac;
 
 
 

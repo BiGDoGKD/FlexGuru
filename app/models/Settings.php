@@ -11,7 +11,7 @@
  * FILE TYPE: Model File
  */
 
-class Accountupdate
+class Settings
 {
     private $db;
 
@@ -30,11 +30,14 @@ class Accountupdate
         }
         */
 
+
     public function update($data)
     {
-        $data["password"] = hash("sha256", $data["password"]);
+        // $data["password"] = hash("sha256", $data["password"]);
 
-        $this->db->query('UPDATE `api`.`user` ( `firstname`, `lastname`, `email`, `city`) VALUES (:firstname, :lastname, :email,:city)');
+
+
+        $this->db->query("UPDATE `api`.`user` SET firstname=:firstname , lastname=:lastname, email = :email , city=:city where userid = 1");
 
         //Bind values
 
