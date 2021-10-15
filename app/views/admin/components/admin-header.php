@@ -12,27 +12,15 @@
  * PARENT FOLDER: includes
  */
 ?>
-<html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo SITENAME; ?></title>
-
-
-    <!-- FONT AWESOME CSS FOR ICON PURPOSES  -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-    <!-- ALL CSS STYLESHEETS GOES HERE  -->
-    <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/crystalys-v2.css' ?>">
-</head>
-
-<body>
+<div class="admin-dashboard">
     <div class="admin-header">
         <div class="menu-bar">
             <div class="admin-title">
-                <h5 class="on-primary">Flexguru Admin</h5>
+                <div class="circle">
+                    <i class="fas fa-bars open-arrow"></i>
+                </div>
+                <h5 class="primary">Flexguru Admin</h5>
             </div>
             <div class="account-tab">
                 <div class="display-picture">
@@ -41,29 +29,62 @@
             </div>
         </div>
     </div>
-
     <style>
-        .admin-header{
+        .admin-dashboard {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: 1s ease-in-out;
+        }
+
+        .dashboard-margin {
+            margin-left: 300px;
+        }
+
+        .admin-header {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100vw;
+            width: 100%;
             height: 80px;
-            background: var(--primary);
+            background: #FFF3F9;
         }
 
-        .admin-header .account-tab{
+        .admin-header .menu-bar .admin-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* .admin-header .menu-bar .admin-title .circle:hover {
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background: #acacac;
+            } */
+
+        .admin-header .menu-bar .admin-title i {
+            font-size: 24px;
+            margin: 0 20px 0 0;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .admin-header .account-tab {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 250px;
             height: 50px;
             border-radius: 24px;
-            background:var(--on-primary);
+            background: var(--on-primary);
 
         }
 
-        .admin-header .display-picture{
+        .admin-header .display-picture {
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -71,7 +92,7 @@
             margin: 0 20px 0 0;
         }
 
-        .admin-header .menu-bar{
+        .admin-header .menu-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;

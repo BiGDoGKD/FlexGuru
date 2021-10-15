@@ -6,11 +6,8 @@ class student extends Controller
     {
     }
 
-    public function studentprofileview()
+    public function profile()
     {
         $this->view('student/studentprofileview');
     }
-
 }
-
-?>
