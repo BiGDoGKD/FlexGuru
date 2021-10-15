@@ -85,7 +85,7 @@ include APPROOT . '/views/student/includes/header.php';
 
 
             width: 850;
-            height: 435px;
+            height: 460px;
             margin-top: 63px;
             margin-right: 0px;
             margin-left: 0px;
@@ -276,6 +276,9 @@ include APPROOT . '/views/student/includes/header.php';
                                     <td>
                                         <div class="input-field"> <input type="text" name="firstname" id="username" required>
                                         </div>
+                                        <span class="form-errors error fg-errors">
+                                            <?php echo $data['firstnameError']; ?>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -285,15 +288,21 @@ include APPROOT . '/views/student/includes/header.php';
                                     <td>
                                         <div class="input-field"> <input type="text" name="lastname" id="username" required>
                                         </div>
+                                        <span class="form-errors error fg-errors">
+                                            <?php echo $data['lastnameError']; ?>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        Email
+                                        Phone Number
                                     </td>
                                     <td>
-                                        <div class="input-field"> <input type="text" name="email" id="email" required>
+                                        <div class="input-field"> <input type="text" name="phoneno" id="phoneno" required>
                                         </div>
+                                        <span class="form-errors error fg-errors">
+                                            <?php echo $data['phonenoError']; ?>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -303,6 +312,9 @@ include APPROOT . '/views/student/includes/header.php';
                                     <td>
                                         <div class="input-field"> <input type="text" name="city" id="city" required>
                                         </div>
+                                        <span class="form-errors error fg-errors">
+                                            
+                                        </span>
                                     </td>
                                 </tr>
 
@@ -330,7 +342,7 @@ include APPROOT . '/views/student/includes/header.php';
 
 
                     <div class="whydelete">
-                        <div class="subtitle">What happens when you delete your flexguru Account?</div>
+                        <div class="subtitle-1">What happens when you delete your flexguru Account?</div>
 
                         <ul>
                             <li>Your flexguru content won’t be shown on our system anymore</li>

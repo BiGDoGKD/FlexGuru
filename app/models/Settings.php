@@ -37,13 +37,13 @@ class Settings
 
 
 
-        $this->db->query("UPDATE `api`.`user` SET firstname=:firstname , lastname=:lastname, email = :email , city=:city where userid = 1");
+        $this->db->query("UPDATE `api`.`user` SET firstname=:firstname , lastname=:lastname, phoneno = :phoneno , city=:city where userid = 1");
 
         //Bind values
 
         $this->db->bind(':firstname', $data['firstname']);
         $this->db->bind(':lastname', $data['lastname']);
-        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':phoneno', $data['phoneno']);
         $this->db->bind(':city', $data['city']);
 
 
