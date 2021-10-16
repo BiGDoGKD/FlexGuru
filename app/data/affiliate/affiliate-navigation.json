@@ -1,14 +1,14 @@
 [
     {
-        "url": "student/profile",
+        "url": "affiliate/profile",
         "menu": "Dashboard"
     },
     {
-        "url": "student/messages",
+        "url": "affiliate/messages",
         "menu": "Messages"
     },
     {
-        "url": "student/sessions",
+        "url": "affiliate/sessions",
         "menu": "Sessions"
     },
     {
@@ -16,7 +16,7 @@
         "menu": "Find Services"
     },
     {
-        "url": "student/complaints",
+        "url": "affiliate/complaint",
         "menu": "Complaints"
     }
 ]
