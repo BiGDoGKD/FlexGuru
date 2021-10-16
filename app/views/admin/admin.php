@@ -52,6 +52,9 @@ include APPROOT . '/views/admin/components/admin-header.php';
                     document.getElementById('dashboard-view').src = 'admin/settings';
                     break;
                 case 9:
+                    document.getElementById('dashboard-view').src = 'admin/complaint';
+                    break;
+                case 10:
                     alert("DO YOU WANT TO LEAVE THIS SHIT?")
                     break;
             }
