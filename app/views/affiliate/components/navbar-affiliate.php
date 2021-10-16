@@ -24,7 +24,7 @@
     <ul class="nav-info">
 
         <?php
-        foreach ($st_navigation as $value) {
+        foreach ($af_navigation as $value) {
         ?>
             <li><a class="gray subtitle-2" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
         <?php
@@ -58,7 +58,7 @@
         <hr style="width:50%; margin:20px 0 0 58px;">
         <li><a href="#" class="gray">Login</a></li>
         <?php
-        foreach ($st_navigation as $value) {
+        foreach ($af_navigation as $value) {
         ?>
             <li><a class="gray" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
         <?php
