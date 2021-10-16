@@ -23,3 +23,5 @@ $footermenu = json_decode($str_footermenu, true);
 $main = json_decode($str_sitedetails, true);
 $district = json_decode($str_district, true);
 $st_navigation = json_decode($str_st_navigation, true);
+$af_navigation = json_decode($str_af_navigation, true);
+$str_af_navigation = file_get_contents(APPROOT . '/data/affiliate/affiliate-navigation.json');

@@ -5,13 +5,14 @@ class Affiliate extends Controller
   public function __construct()
   {
   }
-
-
-
-
   public function index()
   {
     $this->view('affiliate/affiliateprofileview');
+  }
+
+  public function complaint()
+  {
+    $this->view('affiliate/complaint');
   }
 
   public function billinginformation()
