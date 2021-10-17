@@ -43,16 +43,16 @@ include APPROOT . '/views/admin/components/admin-header.php';
                     document.getElementById('dashboard-view').src = 'admin/reports';
                     break;
                 case 6:
+                    document.getElementById('dashboard-view').src = 'admin/complaint';
+                    break;    
+                case 7:
                     document.getElementById('dashboard-view').src = 'admin/create';
                     break;
-                case 7:
+                case 8:
                     document.getElementById('dashboard-view').src = 'admin/verifications';
                     break;
-                case 8:
-                    document.getElementById('dashboard-view').src = 'admin/settings';
-                    break;
                 case 9:
-                    document.getElementById('dashboard-view').src = 'admin/complaint';
+                    document.getElementById('dashboard-view').src = 'admin/settings';
                     break;
                 case 10:
                     alert("DO YOU WANT TO LEAVE THIS SHIT?")

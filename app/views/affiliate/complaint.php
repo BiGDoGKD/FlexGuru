@@ -12,6 +12,17 @@ include APPROOT . '/views/affiliate/includes/header.php';
 
   }
 
+  .input{
+  font-weight: 500;
+  width: 350px;
+  font-size: 14px;
+  color: #495055;
+  padding: 13px 25px;
+  border-radius: 24px;
+  border: 2px solid #d9d9d9;
+  outline: none;
+}
+
   footer{
     width:100vw;
     height:10vh;
@@ -32,10 +43,10 @@ include APPROOT . '/views/affiliate/includes/header.php';
   .form{
     position: absolute;
     top: 0;
-    left: 0;
+    left: 40%;
 
-    height: 80%;
-    width: 100%;
+    height: 60%;
+    width: 70%;
 
   }
 
@@ -58,10 +69,12 @@ include APPROOT . '/views/affiliate/includes/header.php';
     overflow-y: auto;
     width: 60%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #d9d9d9;
+    border-radius: 24px;
     box-sizing: border-box;
     resize: vertical;
+    font-weight: 500;
+    
   }
 
   .button{
@@ -100,14 +113,16 @@ include APPROOT . '/views/affiliate/includes/header.php';
 <div class="container">
   <div class="form">
     <form action="../complaint" method="get">
-        <div class="field"><span>Username</span><input type="text" name="username" id="username" placeholder="username"></div>
+        <div class="field"><span >Username</span><input class="input"type="text" name="username" id="username" placeholder="username"></div>
         <div class="field"><span>Email</span><input type="text" name="email" id="email" placeholder="email"></div>
         <div class="field"><span>Complaint type</span>
             <select name="type">
                 <option value="">--Select Type--</option>
-                <option value="">Tutor</option>
-                <option value="">Student</option>
-                <option value="">Affiliate</option>
+                <option value="">Technical related issues</option>
+                <option value="">Service related issues</option>
+                <option value="">Transaction related issues</option>
+                <option value="">Quality related issues</option>
+                <option value="">Other issues</option>
             </select></div>
         <div class="field"><span>Complaint</span><input type="text" name="complaint" id="complaint"></div>
         <button type="submit" name="submit" class="button">Submit</button>
