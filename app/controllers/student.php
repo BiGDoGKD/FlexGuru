@@ -70,9 +70,6 @@ class Student extends Controller
         'lastnameError' => '',
         'phonenoError' => ''
 
-
-
-
       ];
 
 

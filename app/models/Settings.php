@@ -30,6 +30,7 @@ class Settings
         }
         */
 
+        // when considering the update model we can see that if the query is not only id also consider the user type
 
     public function update($data)
     {

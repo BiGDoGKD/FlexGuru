@@ -1,6 +1,6 @@
 <?php
 
-class affiliate  extends Controller
+class Tutor extends Controller
 {
     public function __construct()
     {
@@ -9,7 +9,7 @@ class affiliate  extends Controller
 
 
 
-    public function affiliateprofileview()
+    public function tutorprofileview()
     {
 
         // $data = [
@@ -24,22 +24,22 @@ class affiliate  extends Controller
 
 
 
-        $this->view('affiliate/affiliateprofileview');
+        $this->view('tutor/tutorprofileview');
     }
 
     public function billinginformation()
     {
-        $this->view('affiliate/billinginformation');
+        $this->view('tutor/billinginformation');
     }
 
     public function notifications()
     {
-        $this->view('affiliate/notifications');
+        $this->view('tutor/notifications');
     }
 
     public function security()
     {
-        $this->view('affiliate/security');
+        $this->view('tutor/security');
     }
 
 
@@ -83,13 +83,13 @@ class affiliate  extends Controller
 
                 if ($this->settingsModel->update($data)) {
                     //Ridirect to the main
-                    header('location:' . URLROOT . '/affiliate/affiliateprofileview');
+                    header('location:' . URLROOT . '/tutor/tutorprofileview');
                 } else {
                     die('Something went wrong.');
                 }
             }
         }
-        $this->view('affiliate/settings', $data);
+        $this->view('tutor/settings', $data);
     }
 }
 
