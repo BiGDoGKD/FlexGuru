@@ -33,6 +33,8 @@ body {
   --on-unknown: #ffe564;
   --on-success: #70b276;
   --on-error: #ff6c6c;
+  --rose: #fff3f9;
+  --light-blue: #e9edfc;
 }
 
 /* scroll bar  */
@@ -343,7 +345,9 @@ h6 {
 .on-error {
   color: var(--on-error);
 }
-
+.transparent {
+  color: transparent;
+}
 /* BACKGROUND_COLORS  */
 
 .bg-dark {
@@ -400,7 +404,12 @@ h6 {
 .bg-on-error {
   background: var(--on-error);
 }
-
+.bg-rose {
+  background: var(--rose);
+}
+.bg-light-blue {
+  background: var(--light-blue);
+}
 /* BORDER_COLORS  */
 
 .border-dark {
