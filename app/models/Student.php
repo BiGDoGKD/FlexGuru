@@ -57,4 +57,23 @@ class Student
             return false;
         }
     }
+
+
+    public function showinProfile($data){
+
+        $this->db->query("SELECT * FROM users WHERE id=:id");
+
+        $this->db->bind(':id', $data['userid']);
+        if ($this->db->execute()) {
+            $result = $this->db->execute();
+            return $result;
+             
+        } else {
+            return false;
+        }
+
+    }
+
+
+
 }

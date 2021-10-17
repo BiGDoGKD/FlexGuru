@@ -11,6 +11,19 @@ class Student extends Controller
 
   public function studentprofileview()
   {
+
+    // $data = [
+      
+    //   'city' => ''
+     
+
+    // ];
+    
+        // $data['city'] = $this->Student->showinProfile($data);
+    
+
+
+
     $this->view('student/studentprofileview');
   }
 
