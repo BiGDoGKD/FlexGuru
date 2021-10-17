@@ -28,15 +28,96 @@ include APPROOT . '/views/includes/header.php';
         </div>
     </div>
     <div class="cover-image">
+        <div class="top-tutors">
+            <div class="title-bar"><i class="fas fa-certificate" style="color:#FFD064;"></i><span class="subtitle-1 bold">Top Rated Tutors</span></div>
+            <div class="activity-bar">
+                <div class="filled-bar"></div>
+            </div>
+            <div class="detail-bar"><span class="subtitle-2 gray">95% successful sessions</span></div>
+        </div>
         <div class="circle">
-
         </div>
     </div>
+</div>
+<div class="fg-welcome">
+    <div class="bg-welcome bg-rose"></div>
+    <div class="button-tab overline bg-light-blue">future of smart learning</div>
+    <div class="globe"><img src="<?php echo URLROOT . '/public/img/visitor/home/globe.svg' ?>" width="210" height="210" alt=""></div>
+    <div class="welcome-title">
+        <h2 style="font-weight: 500;" class="text-center">Welcome to <span class="transparent" style="-webkit-text-stroke: 1px var(--dark);"></br>flexguru</span></h2>
+    </div>
+    <div class="welcome-description w-50">
+        <p class="text-center body-1 gray">Flexguru is a tutor freelancing platform where students can find the best tutors to fullfill their requirements in a much more flexible manner and provide a platform for enthusiastic tutors to distribute knowledge in whatever the area they are good at. </p>
+    </div>
+</div>
+<div class="fg-actors">
+    <div class="bg-welcome bg-on-primary">
+    </div>
+    <div class="actor-bar">
+        <?php
+        foreach ($actors as $value) {
+        ?>
+            <!-- // echo $value["title"]; -->
+
+
+            <div class="actor-card">
+                <div class="actor-tile" style="border-radius:16px; background: <?php echo $value["background"] ?>; height:100px; width:100px;">
+                    <img height="80px" src="<?php echo URLROOT . '/public/img/visitor/home/' . $value["picture"] . '.svg' ?>" alt="<?php echo $value["picture"] ?>">
+                </div>
+                <h6><?php echo $value["title"] ?></h6>
+                <p class="body-2 text-center gray">
+                    <?php echo $value["description"] ?>
+                </p>
+            </div>
+
+        <?php
+        }
+        ?>
+    </div>
+</div>
+<style>
+    .fg-actors {
+        height: 460px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 80px 0;
+    }
+
+    .actor-bar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .actor-bar .actor-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 200px;
+        min-height: 270px;
+
+    }
+
+    .actor-bar .actor-card .actor-tile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 20px 0;
+    }
+
+    .actor-bar .actor-card p {
+        margin: 10px 0;
+    }
+</style>
 </div>
 <?php
 include APPROOT . '/views/includes/footer.php';
 ?>
 <style>
+    /* cover css  */
     .fg-cover {
         width: 100%;
         height: 460px;
@@ -47,14 +128,67 @@ include APPROOT . '/views/includes/footer.php';
     }
 
     .fg-cover .cover-image {
+        position: relative;
         width: 37%;
         padding: 20px;
     }
 
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translate(-50%, -800%);
+        }
+
+        100% {
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .fg-cover .cover-image .top-tutors {
+        animation: 1s ease-out 0s 1 slideInFromLeft;
+        position: absolute;
+        width: 225px;
+        height: 108px;
+        left: 0;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        background: #FFFFFF;
+        box-shadow: 0px 0px 12.6px rgba(0, 0, 0, 0.25);
+        border-radius: 18px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .fg-cover .cover-image .top-tutors .title-bar {
+        width: 82%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .fg-cover .cover-image .top-tutors .activity-bar {
+        width: 80%;
+        background: var(--gray);
+        border-radius: 8px;
+        height: 8px;
+    }
+
+    .fg-cover .cover-image .top-tutors .activity-bar .filled-bar {
+        width: 95%;
+        background: var(--primary);
+        border-radius: 8px;
+        height: 100%;
+    }
+
+    .fg-cover .cover-image .top-tutors .detail-bar {}
+
     .fg-cover .cover-image .circle {
         height: 370px;
         width: 370px;
-        background: yellow;
+        background: url(<?php echo URLROOT . '/public/img/visitor/home/cover.webp' ?>);
+        background-position: center;
+        background-size: cover;
         border-radius: 50%;
     }
 
@@ -95,5 +229,42 @@ include APPROOT . '/views/includes/footer.php';
         border: 0.5px #acacac solid;
         outline: 0;
 
+    }
+
+    /* welcome section css  */
+    .fg-welcome {
+        position: relative;
+        width: 100%;
+        padding: 60px 0;
+        margin: 50px 0 80px 0;
+        display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .fg-welcome .bg-welcome {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        z-index: -99999;
+    }
+
+    .fg-welcome .button-tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        padding: 0 60px;
+        border-radius: 24px;
+    }
+
+    .fg-welcome .globe {
+        margin: 40px 0;
+    }
+
+    .fg-welcome .welcome-title {
+        margin: 0 0 35px 0;
     }
 </style>

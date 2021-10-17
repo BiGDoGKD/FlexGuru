@@ -1,6 +1,6 @@
 <?php
 include APPROOT . '/views/includes/data.php';
-include APPROOT . '/views/student/includes/header.php';
+include APPROOT . '/views/affiliate/includes/header.php';
 ?>
 
 

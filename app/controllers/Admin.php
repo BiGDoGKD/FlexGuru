@@ -142,6 +142,10 @@ class Admin extends Controller
     {
         $this->view('admin/pages/messages');
     }
+    public function complaint()
+    {
+        $this->view('admin/pages/complaint');
+    }
     public function payments()
     {
         $this->view('admin/pages/payments');

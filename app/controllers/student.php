@@ -9,7 +9,7 @@ class Student extends Controller
 
 
 
-  public function studentprofileview()
+  public function index()
   {
 
     // $data = [
