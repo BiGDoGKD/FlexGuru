@@ -1,4 +1,19 @@
 <?php
+
+/** 
+ * PROJECT NAME : FLEXGURU
+ * PROJECT DESCRIPTION: Flexguru is a tutor freelancing platform where students can find the best tutors to fullfill their requirements in a much more flexible manner and provide a platform for enthusiastic tutors to distribute knowledge in whatever the area  they are good at. 
+ * @package flexguru
+ * AUTHORS: Kesara Karannagoda, Avishka Hettiarachchi, Kavindhu Galagedara, Razeen Nizar
+ * CO-AUTHORS: 
+ * LAST UPDATE BY: Kesara Karannagoda
+ * LAST UPDATE DATA : Sep, 01, 2021
+ * FILE TYPE: View
+ * PARENT FOLDER: pages
+ */
+
+?>
+<?php
 include APPROOT . '/views/includes/data.php';
 include APPROOT . '/views/includes/header.php';
 ?>
@@ -9,6 +24,8 @@ include APPROOT . '/views/includes/header.php';
 <head>
 	
 </head>
+<h2>Privacy policy of Flexguru</h2>
+
 <body style ="position: absolute;
 width: 1170px;
 height: 1600px;
@@ -28,9 +45,9 @@ letter-spacing: 1.0px;
 color: #7174F1;">
 
 
-<div class="container" id="main-content">
-	<h2>Privacy policy of Flexguru</h2>
-	<p>We’re deeply committed to creating a safe and secure online environment for you.</p>
+
+	
+	<p>We’re deeply committed to creating a safe and secure online environment for you./p>
 
 	<h3>What are the data we get</h3>
 	<p>We collect certain data from you directly, like the information you enter yourself, data about your consumption of content, and data from third-party platforms you connect with Flexguru. We also collect some data automatically, like information about your device and what parts of our Services you interact with or spend time using.</p>

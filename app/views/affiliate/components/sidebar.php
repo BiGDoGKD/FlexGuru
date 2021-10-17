@@ -26,7 +26,6 @@
                     <li class="inactive"><i class="fas fa-chart-line"></i><span class="subtitle-1">Analytics</span></li>
                     <li class="inactive"><i class="fas fa-credit-card"></i><span class="subtitle-1">Payments</span></li>
                     <li class="inactive"><i class="fas fa-flag"></i><span class="subtitle-1">Reports</span></li>
-                    <li class="inactive"><i class="fas fa-angry"></i><span class="subtitle-1">Complaints</span></li>
                     <li class="inactive"><i class="fas fa-plus"></i><span class="subtitle-1">Create</span></li>
                     <li class="inactive"><i class="fas fa-list-ul"></i><span class="subtitle-1">Verifications</span></li>
                     <li class="inactive"><i class="fas fa-cog"></i><span class="subtitle-1">Settings</span></li>
