@@ -95,6 +95,15 @@ include APPROOT . '/views/affiliate/includes/header.php';
     
   }
 
+  .image{
+
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  left: 50px;
+  top: 230px;
+  }
+
   @media only screen and (max-width: 1000px){
     .field span{
         margin: 0;
@@ -109,7 +118,9 @@ include APPROOT . '/views/affiliate/includes/header.php';
   }
     
   </style>
- 
+ <div class="image">
+                <img src="<?php echo URLROOT . '/public/img/svg/complaint.svg' ?>" id="userimg" alt="">
+            </div>
 <div class="container">
   <div class="form">
     <form action="../complaint" method="get">
