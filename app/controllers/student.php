@@ -11,6 +11,19 @@ class Student extends Controller
 
   public function index()
   {
+
+    // $data = [
+      
+    //   'city' => ''
+     
+
+    // ];
+    
+        // $data['city'] = $this->Student->showinProfile($data);
+    
+
+
+
     $this->view('student/studentprofileview');
   }
 
@@ -56,9 +69,6 @@ class Student extends Controller
         'firstnameError' => '',
         'lastnameError' => '',
         'phonenoError' => ''
-
-
-
 
       ];
 

@@ -1,9 +1,6 @@
 <?php
 include APPROOT . '/views/includes/data.php';
-
 include APPROOT . '/views/student/includes/header.php';
-
-
 ?>
 
 
@@ -77,22 +74,26 @@ include APPROOT . '/views/student/includes/header.php';
             height: 5px;
         }
 
-        table tbody td {
-            width: 205px;
+        table {
+            width: 885px;
+            border-spacing: 29px;
+        }
+
+        table thead th,
+        tbody tr,
+        td {
+            width: 170px;
+            border-collapse: collapse;
+            text-align: center;
         }
 
         .table {
-
-            border: 1px solid #acacac;
-
-
-
-            margin-left: 0px;
             width: 850;
             height: 435px;
             margin-top: 63px;
             margin-right: 0px;
             margin-left: 0px;
+            border: 1px solid #acacac;
             padding-top: 22px;
 
         }
@@ -108,7 +109,8 @@ include APPROOT . '/views/student/includes/header.php';
             color: white;
             text-align: center;
             float: right;
-            margin-right: 20px;
+            margin-right: 100px;
+            margin-top: 25px;
             cursor: pointer;
             transition: 0.2s all;
 
@@ -116,7 +118,6 @@ include APPROOT . '/views/student/includes/header.php';
 
 
 
-        /* Adding transformation when the button is active */
 
         .button_reg:active {
             transform: scale(0.98);
@@ -154,16 +155,15 @@ include APPROOT . '/views/student/includes/header.php';
             border: 1px solid #70B276;
         }
 
-
-        .invoice {
-            margin-right: 20px;
+        #passwordpolicy {
+            font-weight: 500;
+            letter-spacing: 0.15px;
+            line-height: 30px;
+            margin-left: 25px;
         }
 
-        #invoice {
-            font-size: 12px;
-            font-family: "Poppins";
-            font-weight: 500;
-
+        .notification {
+            text-align: left;
         }
     </style>
 </head>
@@ -202,52 +202,64 @@ include APPROOT . '/views/student/includes/header.php';
 
 
                 <div class="table">
-                    <table style="margin: 5px 0;">
-                        <h6>BILLING INFORMATION</h6>
 
-                        <p>Provide the following information to receive invoices on a monthly basis via email</p>
+                    <h6>NOTIFICATION SETTINGS</h6>
+                    <table style="margin: 5px 0;">
+
+                        <thead>
+                            <th>NOTIFICATIONS</th>
+                            <th>TYPE</th>
+                            <th>EMAIL</th>
+
+
+
+                        </thead>
+
                         <tbody>
                             <tr>
-                                <td>
-                                    Full Name
+                                <td rowspan="3">
+                                    <div class="notification">
+
+                                        For important updates regarding your Flexguru activity, certain notifications cannot be disabled.
+
+                                    </div>
+
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="fullname" id="fullname" required>
-                                    </div>
+                                    inbox Messages
+
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="inbox" id="inbox">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Full address
+                                    Service Messages
+
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="fulladdress" id="fulladdress" required>
-                                    </div>
+                                    <input type="checkbox" name="service" id="service">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Country
+                                    Service Updates
+
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="country" id="country" required>
-                                    </div>
+                                    <input type="checkbox" name="update" id="update">
                                 </td>
                             </tr>
 
 
-
+                            <tr>
+                                <td colspan="3">
+                                    <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">SAVE CHANGES</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-
-
-                    <div class="invoice">
-                        <input type="checkbox" name="" id=""> <span id="invoice">I am interested in receiving inputs for my payments</span>
-
-
-                        <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">SAVE CHANGES</button>
-                    </div>
-
 
 
 
@@ -255,12 +267,20 @@ include APPROOT . '/views/student/includes/header.php';
                 <!-- all input fields are over  -->
 
 
-            </div>
-    </center>
 
+
+
+
+
+
+            </div>
+
+        </div>
+    </center>
     <?php
     include APPROOT . '/views/includes/footer.php';
     ?>
+
 
 </body>
 
