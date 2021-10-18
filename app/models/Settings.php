@@ -56,4 +56,27 @@ class Settings
             return false;
         }
     }
+
+    // password reset related database functionality
+
+    public function resetpassword($data){
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

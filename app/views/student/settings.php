@@ -339,20 +339,16 @@ include APPROOT . '/views/student/includes/header.php';
                 <div class="subtitle" id="act_del">Account Deletion</div>
                 <div class="deletiondetails" style="width: 100%;">
 
-
-
                     <div class="whydelete">
                         <div class="subtitle-1">What happens when you delete your flexguru Account?</div>
-
                         <ul>
                             <li>Your flexguru content won’t be shown on our system anymore</li>
                             <li>Active sessions will be cancelled.</li>
                             <li>You won’t be able to re-gain last balance of your account.</li>
                             <li>You won’t be able to re-activate the account.</li>
-
                         </ul>
 
-
+                        
                     </div>
 
 
