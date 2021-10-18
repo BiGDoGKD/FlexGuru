@@ -68,131 +68,13 @@ include APPROOT . '/views/includes/header.php';
 	}
 </style>
 
-
-
-
-</head>
-
 <body>
 	<div class="affiliate_registration">
 		<center>
-			<h3>Affiliate Registration</h3>
+			<h3 class="gray">Affiliate Registration</h3>
+			<!-- Affiliate marketer registration starts here  -->
 			<form action="<?php echo URLROOT; ?>/registration/affiliate" method="POST">
-				<!-- this two same line -->
-				<table>
-					<thead>
-
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<div class="input-field"> <input type="text" name="firstname" id="firstname" required>
-									<span class="placeholder">Firstname</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['firstnameError']; ?>
-								</span>
-							</td>
-							<td>
-								<div class="input-field"> <input type="text" name="lastname" id="lastname" required>
-									<span class="placeholder">Lastname</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['lastnameError']; ?>
-								</span>
-							</td>
-						</tr>
-
-
-						<tr>
-							<td>
-								<div class="input-field"> <input type="text" name="username" id="username" required>
-									<span class="placeholder">Username</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['usernameError']; ?>
-								</span>
-							</td>
-							<td>
-
-								<div class="input-field"> <input type="email" name="email" id="email" required>
-									<span class="placeholder">Email</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['emailError']; ?>
-								</span>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<div class="input-field"> <input type="password" name="password" id="password" required>
-									<span class="placeholder">Password</span>
-								</div>
-							<td>
-								<div class="input-field"> <input type="password" name="confpassword" id="confpassword" required>
-									<span class="placeholder">Confirm Password</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['confpasswordError']; ?>
-								</span>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<div class="input-field"> <input type="text" name="gender" id="gender" required>
-									<span class="placeholder">Gender</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['genderError']; ?>
-								</span>
-							</td>
-							<td>
-
-								<div class="input-field"> <input type="date" name="dob" id="dob" required>
-									<span class="placeholder" style="transform:scale(0.8) translateY(-28px);background: #fff;">Birthday</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['dobError']; ?>
-								</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="input-field"> <input type="text" name="city" id="city" required>
-									<span class="placeholder">City</span>
-								</div>
-								<span class="form-errors error fg-errors">
-
-								</span>
-							</td>
-							<td>
-								<div class="input-field"> <input type="text" name="phoneno" id="phoneno" required>
-									<span class="placeholder">Phone No</span>
-								</div>
-								<span class="form-errors error fg-errors">
-									<?php echo $data['phonenoError']; ?>
-								</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-
-				<button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">Continue</button>
-
-				</br>
-
-				<div class="subscribe">
-
-					<input type="checkbox" id="checksubscribe">
-
-					<div class="join-now"><span>Subscribe to our flexGuru newsletters and agree to receive emails from FlexGuru</span></div>
-
-
-				</div>
-
+				<?php include APPROOT . '/views/registration/components/form.php' ?>
 			</form>
 		</center>
 	</div>

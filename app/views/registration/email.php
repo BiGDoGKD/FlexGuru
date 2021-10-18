@@ -19,69 +19,53 @@ include APPROOT . '/views/includes/header.php';
 ?>
 <!-- content  -->
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
-
-    .afiliate_registration {
-        width: 80%;
-        align-items: center;
-        margin: 0 auto;
-        padding: 90px;
+    #email-verification {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0;
+        justify-content: center;
     }
 
-    .afiliate_registration td {
-        position: relative;
-    }
-
-    .subscribe {
-        display: grid;
-        width: 50%;
-        grid-template-columns: 20px 500px;
-    }
-
-    #checksubscribe {
-        padding: 20px;
-        background: #ff0000;
-        margin-top: 10px;
-    }
-
-    .button_reg {
-        background: #7879F1;
-        padding: 13px 25px;
-        border: 1px solid #acacac;
+    #email-verification form input {
+        width: 300px;
+        height: 70px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        padding: 0 0 0 20px;
+        border: 1px solid #ACACAC;
+        box-sizing: border-box;
         border-radius: 24px;
-        outline: none;
-        width: 745px;
-        color: white;
-        margin-top: 8px;
+        font-size: 45px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        color: var(--gray);
     }
 
-    .join-now {
-        font-size: 13px;
-        margin-top: 7px;
+    #email-verification .button_verify {
+        padding: 10px 100px;
+        margin: 5px 0;
     }
 
-    .form-errors {
-        position: absolute;
-        top: 65px;
-        left: 48;
+    #email-verification .resend-button {
+        margin: 10px 0 50px 0;
     }
 </style>
-
-
 
 
 </head>
 
 <body>
     <div id="email-verification">
-        <h5>Please Enter the Code :</h5>
+        <h3>Email Verification</h3>
         <p class="subtitle-1">An email verification code was sent to <?php echo $data['email'] ?></p>
         <form action="<?php echo URLROOT; ?>/registration/verification" class="verification" method="POST">
             <input type="text" name="emailcode" id="emailcode">
-            <span><?php echo $data['otpError'] ?></span>
-            <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">CONTINUE</button>
+            <p class="subtitle-1 error"><?php echo $data['otpError'] ?></p>
+            <button class="btn button_verify pointer on-primary bg-primary btn-text" id="submit" value="submit" type="submit">CONTINUE</button>
         </form>
+        <h5 style="margin:35px 0 10px 0;">Having trouble receiving an account verification code?</h5>
+        <p class="subtitle-1 gray">It coult take up some time code to be delivered</p>
+        <button class="btn bg-primary on-primary resend-button" style="width: 400px;">RESEND ACCOUNT VERIFICATION CODE</button>
     </div>
 </body>
 

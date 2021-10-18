@@ -56,14 +56,14 @@ class Mailer
 
 
             //Reciever & Sender
-            $this->mail->setFrom('kdkarannagoda@gmail.com', 'Mailer');
+            $this->mail->setFrom('kdkarannagoda@gmail.com', 'Flexguru Services');
             $this->mail->addAddress($email);
 
 
             $this->mail->isHTML(true);
             //Content
             $this->mail->Subject = "Flexguru Email Verification.";
-            $this->mail->Body = "<p>Your verification code is : " . $code . "</p>";
+            $this->mail->Body = "<h2>Your verification code is : " . $code . "</h2>";
 
             if (!$this->mail->send()) {
                 echo "Could not be sent. Mailer Error:{$this->mail->ErrorInfo}";

@@ -1192,4 +1192,8 @@ div.input-field input:focus + span.placeholder {
   color: #284b63;
 }
 
+button:active {
+  transform: scale(0.98);
+  transition: ease 0.1s;
+}
 /* INPUT BOX END  */
