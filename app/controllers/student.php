@@ -7,21 +7,8 @@ class Student extends Controller
   }
 
 
-
-
   public function index()
   {
-
-    // $data = [
-
-    //   'city' => ''
-
-
-    // ];
-
-    // $data['city'] = $this->Student->showinProfile($data);
-
-
 
 
     $this->view('student/studentprofileview');
@@ -57,9 +44,9 @@ class Student extends Controller
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
       $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
       $data = [
-        'getPassword' => trim($_POST['firstname']),
-        'password' => trim($_POST['lastname']),
-        'confpassword' => trim($_POST['phoneno']),
+        'getPassword' => trim($_POST['current']),
+        'password' => trim($_POST['new']),
+        'confpassword' => trim($_POST['confirm']),
 
         'getPasswordError' => '',
         'passwordError' => '',
@@ -67,15 +54,11 @@ class Student extends Controller
 
       ];
 
-
-      
+      // --------------------------------------
+      // add the current password error message
+      // --------------------------------------
       $data["passwordError"] = $this->val->password($data['password']);
       $data["confpasswordError"] = $this->val->password($data['confpassword']);
-
-
-      // we have to see whether the current passwords match !!!
-
-
 
 
       if (empty($data["getPasswordError"] && $data['passwordError'] && $data['confpasswordError'])) {
