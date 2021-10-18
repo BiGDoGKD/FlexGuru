@@ -60,13 +60,18 @@ class Settings
     // password reset related database functionality
 
     public function resetpassword($data){
+        $this->db->query("UPDATE `api`.`user` SET password=:password where userid = 1");
+        $this->db->bind(':password', $data['password']);
+        //Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
-
-
-
-
-
+    
     }
 
 
