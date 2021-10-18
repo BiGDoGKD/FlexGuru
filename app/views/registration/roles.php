@@ -20,7 +20,7 @@ include APPROOT . '/views/includes/header.php';
 <!-- content  -->
 <div class="fg-role-selection">
     <div class="title">
-        <h1>Select user type</h1>
+        <h2 class="gray">Select user type</h2>
     </div>
     <div class="form-type">
         <div class="role-cards">
