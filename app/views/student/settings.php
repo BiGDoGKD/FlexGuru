@@ -139,7 +139,7 @@ include APPROOT . '/views/student/includes/header.php';
         .button_reg:active {
             transform: scale(0.98);
             /* Scaling button to 0.98 to its original size */
-            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.24);
+            /* box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.24); */
             /* Lowering the shadow */
         }
 

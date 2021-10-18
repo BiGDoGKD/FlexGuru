@@ -24,10 +24,15 @@ class Student extends Controller
     $this->view('student/notifications');
   }
 
+
+// -------------------------------------------------
+// security page
+// -------------------------------------------------
+
   public function security()
   {
     $this->val = $this->model("Validate");
-    $this->resetPModel = $this->model("resetpassword");
+    $this->settingsModel = $this->model("Settings");
 
 
     $data = [
@@ -54,27 +59,38 @@ class Student extends Controller
 
       ];
 
+      
+   
       // --------------------------------------
       // add the current password error message
       // --------------------------------------
+      if ($this->settingsModel->passwordexist($data)){
+        $data['getPasswordError'] ='The password entered is incorrect';
+      }
+      else{
+          $data['getPasswordError'] = '';
+      }
       $data["passwordError"] = $this->val->password($data['password']);
       $data["confpasswordError"] = $this->val->password($data['confpassword']);
 
 
       if (empty($data["getPasswordError"] && $data['passwordError'] && $data['confpasswordError'])) {
-
+        if ($this->settingsModel->resetpassword($data)) {
           //Ridirect to the main
-  
-      
+          header('location:' . URLROOT . '/student/studentprofileview');
+        } else {
+          die('Something went wrong.');
+        }   
     }
 
 
-
-
-
-    $this->view('student/security');
   }
-  
+
+    $this->view('student/security',$data);
+// -------------------------------------------------
+// settings page
+// -------------------------------------------------
+
   }
   public function settings()
   {
