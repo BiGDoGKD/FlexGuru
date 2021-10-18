@@ -1,6 +1,6 @@
 <?php
 include APPROOT . '/views/includes/data.php';
-include APPROOT . '/views/affiliate/includes/header.php';
+include APPROOT . '/views/student/includes/header.php';
 ?>
 
 
@@ -263,7 +263,7 @@ include APPROOT . '/views/affiliate/includes/header.php';
             <div class="right">
 
 
-                <form action="<?php echo URLROOT; ?>/affiliate/settings" method="POST">
+                <form action="<?php echo URLROOT; ?>/student/settings" method="POST">
                     <div class="table">
                         <h6>UPDATE ACCOUNT</h6>
                         <table style="margin: 5px 0;">
@@ -313,7 +313,7 @@ include APPROOT . '/views/affiliate/includes/header.php';
                                         <div class="input-field"> <input type="text" name="city" id="city" required>
                                         </div>
                                         <span class="form-errors error fg-errors">
-
+                                            
                                         </span>
                                     </td>
                                 </tr>

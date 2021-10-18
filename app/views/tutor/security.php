@@ -1,9 +1,6 @@
 <?php
 include APPROOT . '/views/includes/data.php';
-
 include APPROOT . '/views/student/includes/header.php';
-
-
 ?>
 
 
@@ -78,21 +75,16 @@ include APPROOT . '/views/student/includes/header.php';
         }
 
         table tbody td {
-            width: 205px;
+            width: 170px;
         }
 
         .table {
-
-            border: 1px solid #acacac;
-
-
-
-            margin-left: 0px;
             width: 850;
             height: 435px;
             margin-top: 63px;
             margin-right: 0px;
             margin-left: 0px;
+            border: 1px solid #acacac;
             padding-top: 22px;
 
         }
@@ -116,7 +108,6 @@ include APPROOT . '/views/student/includes/header.php';
 
 
 
-        /* Adding transformation when the button is active */
 
         .button_reg:active {
             transform: scale(0.98);
@@ -154,16 +145,11 @@ include APPROOT . '/views/student/includes/header.php';
             border: 1px solid #70B276;
         }
 
-
-        .invoice {
-            margin-right: 20px;
-        }
-
-        #invoice {
-            font-size: 12px;
-            font-family: "Poppins";
+        #passwordpolicy {
             font-weight: 500;
-
+            letter-spacing: 0.15px;
+            line-height: 30px;
+            margin-left: 25px;
         }
     </style>
 </head>
@@ -202,65 +188,78 @@ include APPROOT . '/views/student/includes/header.php';
 
 
                 <div class="table">
-                    <table style="margin: 5px 0;">
-                        <h6>BILLING INFORMATION</h6>
 
-                        <p>Provide the following information to receive invoices on a monthly basis via email</p>
+                    <h6>CHANGE PASSWORD</h6>
+                    <table style="margin: 5px 0;">
+
                         <tbody>
                             <tr>
                                 <td>
-                                    Full Name
+                                    Current Password
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="fullname" id="fullname" required>
+                                    <div class="input-field"> <input type="text" name="current" id="current" required>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Full address
+                                    New Password
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="fulladdress" id="fulladdress" required>
+                                    <div class="input-field"> <input type="text" name="new" id="new" required>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Country
+                                    Confirm Passoword
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="country" id="country" required>
+                                    <div class="input-field"> <input type="text" name="confirm" id="confirm" required>
                                     </div>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
 
+                                </td>
+                                <td>
+                                    <p id="passwordpolicy">8 characters or longer. Combine upper and lowercase letters and numbers.</p>
+                                </td>
+                            </tr>
 
-
+                            <tr>
+                                <td colspan="2">
+                                    <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">SAVE CHANGES</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
 
-
-                    <div class="invoice">
-                        <input type="checkbox" name="" id=""> <span id="invoice">I am interested in receiving inputs for my payments</span>
-
-
-                        <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">SAVE CHANGES</button>
+                    <div class="successupdate">
+                        <i class="far fa-check-circle"></i>
+                        Settings successfully updated
                     </div>
-
-
-
 
                 </div>
                 <!-- all input fields are over  -->
 
 
-            </div>
-    </center>
 
+
+
+
+
+
+            </div>
+
+        </div>
+    </center>
     <?php
     include APPROOT . '/views/includes/footer.php';
     ?>
+
 
 </body>
 

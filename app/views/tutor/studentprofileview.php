@@ -1,11 +1,10 @@
 <?php
 include APPROOT . '/views/includes/data.php';
-include APPROOT . '/views/affiliate/includes/header.php';
-
+include APPROOT . '/views/student/includes/header.php';
 ?>
 
 
-<link rel="stylesheet" href="<?php echo URLROOT . '/public/css/affiliateprofileview.css' ?>">
+<link rel="stylesheet" href="<?php echo URLROOT . '/public/css/studentprofileview.css' ?>">
 
 <div class="container">
 
@@ -75,12 +74,17 @@ include APPROOT . '/views/affiliate/includes/header.php';
     </div>
 
     <div class="right">
-        <div class="link">
-            <div class="c1-r1">Affiliate Link</div>
-            <div class="c1-r2">https://www.flexguru.lk/register/strudent/AS6HJBSD7</div>
-            <button>Copy Link Address</button>
-            <div class="c2-r1">Student Count</div>
-            <div class="c2-r2">000</div>
+        <div class="activesessions">
+            <span>Active Sessions-0 </span>
+            <select name="" id="activesessionselect">
+                <option default>Active Sessions(0)</option>
+            </select>
+        </div>
+        <div class="requestsessions">
+
+            <span>Request Sessions </span>
+            <button>POST</button>
+
         </div>
 
         <div class="content" id="content1">
@@ -117,7 +121,6 @@ include APPROOT . '/views/affiliate/includes/header.php';
 </div>
 
 </div>
-
 
 <!-- <footer>
          <?php
