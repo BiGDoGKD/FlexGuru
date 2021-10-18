@@ -54,7 +54,6 @@ class Student extends Controller
 
       ];
 
-<<<<<<< Updated upstream
       // --------------------------------------
       // add the current password error message
       // --------------------------------------
@@ -63,25 +62,6 @@ class Student extends Controller
 
 
       if (empty($data["getPasswordError"] && $data['passwordError'] && $data['confpasswordError'])) {
-=======
-      // we have to see whether the current passwords match !!!
-
-        if ($this->settingsModel->resetpassword($data)) {
-          $data["getPasswordError"] = $this->val->password($data['password']);
-          $data["passwordError"] = $this->val->password($data['password']);
-          $data["confpasswordError"] = $this->val->password($data['confpassword']);
-
-             if (empty($data["getPasswordError"] && $data['passwordError'] && $data['confpasswordError'])) {
-
-          header('location:' . URLROOT . '/student/studentprofileview');
-        } else {
-          die('Something went wrong.');
-        }
-
-             }
-
-
->>>>>>> Stashed changes
 
           //Ridirect to the main
   
@@ -94,8 +74,8 @@ class Student extends Controller
 
     $this->view('student/security');
   }
-
-
+  
+  }
   public function settings()
   {
     $this->val = $this->model("Validate");
