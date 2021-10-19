@@ -32,7 +32,6 @@ class Login extends Controller
             //form process
             //Sanatize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
             $data = [
                 'username' => trim($_POST['username']),
                 'password' => hash('sha256', trim($_POST['password'])),
@@ -48,6 +47,7 @@ class Login extends Controller
                 $this->session = $this->model("Session");
                 $this->session->create($data['username'], $data['password']);
             } else {
+
                 $data['passwordError'] = "Invalid login credentials.";
             }
         }

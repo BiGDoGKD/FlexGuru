@@ -9,8 +9,6 @@ class Student extends Controller
 
   public function index()
   {
-
-
     $this->view('student/studentprofileview');
   }
 
@@ -25,9 +23,9 @@ class Student extends Controller
   }
 
 
-// -------------------------------------------------
-// security page
-// -------------------------------------------------
+  // -------------------------------------------------
+  // security page
+  // -------------------------------------------------
 
   public function security()
   {
@@ -36,10 +34,10 @@ class Student extends Controller
 
 
     $data = [
-      'getPassword'=>'',
-      'password'=>'',
-      'confpassword'=>'',
-      'getPasswordError'=>'',
+      'getPassword' => '',
+      'password' => '',
+      'confpassword' => '',
+      'getPasswordError' => '',
       'passwordError' => '',
       'confpasswordError' => ''
     ];
@@ -65,20 +63,18 @@ class Student extends Controller
       // --------------------------------------
       // add the current password error message
       // --------------------------------------
-      if ($this->settingsModel->passwordexist($data['getPassword'])){
-        $data['getPasswordError'] ='The password entered is incorrect';
-      }
-      else{
-          $data['getPasswordError'] = '';
+      if ($this->settingsModel->passwordexist($data['getPassword'])) {
+        $data['getPasswordError'] = 'The password entered is incorrect';
+      } else {
+        $data['getPasswordError'] = '';
       }
 
-      
+
       $data["passwordError"] = $this->val->password($data['password'], $data['confpassword']);
-      if($data['password']==$data['confpassword']){
-        $data['confpasswordError']='';
-      }
-      else{
-          $data['confpasswordError']='Passwords do not match';
+      if ($data['password'] == $data['confpassword']) {
+        $data['confpasswordError'] = '';
+      } else {
+        $data['confpasswordError'] = 'Passwords do not match';
       }
 
 
@@ -89,10 +85,9 @@ class Student extends Controller
         } else {
           die('Something went wrong.');
         }
+      }
     }
-  }
-    $this->view('student/security',$data);
-
+    $this->view('student/security', $data);
   }
 
 

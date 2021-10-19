@@ -18,4 +18,31 @@ class Session
     {
         $this->db = new Database;
     }
+
+    public function create($username, $password)
+    {
+        $this->db->query('SELECT * FROM `api`.`user` WHERE `user`.`username`=:username and `password`=:password');
+        $this->db->bind(':username', $username);
+        $this->db->bind(':password', $password);
+        $this->db->execute();
+        if ($this->db->rowCount() > 0) {
+            $userdata = $this->db->getArray();
+            $data = $userdata[0];
+            switch ($data['role']) {
+                case 'st':
+                    header('location:' . URLROOT . '/student');
+                    break;
+                case 'tu':
+                    header('location:' . URLROOT . '/tutor');
+                    break;
+                case 'af':
+                    header('location:' . URLROOT . '/affiliatemarketer');
+                    break;
+                default:
+                    header('location:' . URLROOT . '/forbidden');
+            }
+        } else {
+            return false;
+        }
+    }
 }
