@@ -80,6 +80,7 @@ class Registration extends Controller
         $this->student = $this->model("Student");
         $this->tutor = $this->model("Tutor");
         $this->affiliate = $this->model("Affiliate");
+        $this->registration = $this->model("Register");
 
         if (!isset($_COOKIE['regdata'])) {
             header('location:' . URLROOT . '/registration/roles');
@@ -111,23 +112,22 @@ class Registration extends Controller
                 if ($uecode == $code) {
                     switch ($data['role']) {
                         case 'st':
-                            $this->student->register($data);
+                            $this->registration->register($data);
                             header("refresh:1; url=" . URLROOT . "/registration/login");
                             break;
                         case 'tu':
                             if (isset($_COOKIE['tutordata']) && isset($_COOKIE['verificationdata'])) {
                                 $tutordata = json_decode($_COOKIE['tutordata']);
                                 $verificationfiles = json_decode($_COOKIE['verificationdata']);
-                                $this->tutor->register($data);
-                                $this->tutor->verification($tutordata);
-                                $this->tutor->verificationfiles($verificationfiles);
+                                $this->registration->register($data);
+                                $this->tutor->register($verificationfiles, $data['username'], $tutordata);
                             } else {
-                                $this->tutor->register($data);
+                                $this->registration->register($data);
                             }
                             header("refresh:1; url=" . URLROOT . "/registration/login");
                             break;
                         case 'af':
-                            $this->affiliate->register($data);
+                            $this->registration->register($data);
                             header("refresh:1; url=" . URLROOT . "/registration/login");
                             break;
                         default:

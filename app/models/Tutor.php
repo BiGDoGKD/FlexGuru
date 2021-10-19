@@ -28,22 +28,18 @@
             return $result;
         }
         */
-        public function register($datatutor)
+        public function register($vfilename, $username, $datatutor)
         {
-            $this->db->query('INSERT INTO `api`.`user` (`username`, `firstname`, `lastname`, `email`, `password`, `phoneno`, `city`, `role`, `photourl`) VALUES (:username, :firstname, :lastname, :email, :password, :phoneno, :city, :role, :photourl)');
-
+            $this->db->query("UPDATE `api`.`tutor` SET tutor.subjects = :subjects, tutor.workplace = :workplace, tutor.occupation = :occupation, tutor.qualification = :qualification, tutor.files = :file where tutor.userid = (select user.userid from `api`.`user` where  user.username = :username); ");
             //Bind values
-            $this->db->bind(':username', $datatutor['username']);
-            $this->db->bind(':firstname', $datatutor['firstname']);
-            $this->db->bind(':lastname', $datatutor['lastname']);
-            $this->db->bind(':email', $datatutor['email']);
-            $this->db->bind(':password', $datatutor['password']);
-            $this->db->bind(':startdate', date("Y-m-d"));
-            $this->db->bind(':phoneno', $datatutor['phoneno']);
-            $this->db->bind(':city', $datatutor['city']);
-            $this->db->bind(':role', $datatutor['role']);
-            $this->db->bind(':photourl', $datatutor['photourl']);
-            $this->db->bind(':dob', $datatutor['dob']);
+            //user table username
+            $this->db->bind(':username', $username);
+
+            $this->db->bind(':subjects', $datatutor['subjects']);
+            $this->db->bind(':workplace', $datatutor['workplace']);
+            $this->db->bind(':occupation', $datatutor['occupation']);
+            $this->db->bind(':qualification', $datatutor['qualification']);
+            $this->db->bind(':file', $vfilename);
 
             //Execute function
             if ($this->db->execute()) {
