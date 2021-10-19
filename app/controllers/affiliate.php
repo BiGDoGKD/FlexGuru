@@ -11,19 +11,10 @@ class affiliate extends Controller
 
     public function index()
     {
-
         // $data = [
-
         //   'city' => ''
-
-
         // ];
-
         // $data['city'] = $this->Student->showinProfile($data);
-
-
-
-
         $this->view('affiliate /affiliateprofileview');
     }
 
@@ -92,6 +83,4 @@ class affiliate extends Controller
         $this->view('affiliate/settings', $data);
     }
 }
-
-
 //

@@ -5,25 +5,12 @@ class Student extends Controller
   public function __construct()
   {
   }
-
-
-
-
   public function index()
   {
-
     // $data = [
-      
     //   'city' => ''
-     
-
     // ];
-    
-        // $data['city'] = $this->Student->showinProfile($data);
-    
-
-
-
+    // $data['city'] = $this->Student->showinProfile($data);
     $this->view('student/studentprofileview');
   }
 
@@ -42,21 +29,18 @@ class Student extends Controller
     $this->view('student/security');
   }
 
-
   public function settings()
   {
     $this->val = $this->model("Validate");
     $this->settingsModel = $this->model("Settings");
-
-
     $data = [
       'firstname' => '',
       'lastname' => '',
       'phoneno' => '',
       'city' => '',
-      'firstnameError' =>'',
-      'lastnameError' =>'',
-      'phonenoError' =>''
+      'firstnameError' => '',
+      'lastnameError' => '',
+      'phonenoError' => ''
 
     ];
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -71,28 +55,20 @@ class Student extends Controller
         'phonenoError' => ''
 
       ];
-
-
-
       $data["firstnameError"] = $this->val->name($data['firstname']);
       $data["lastnameError"] = $this->val->name($data['lastname']);
       $data["phonenoError"] = $this->val->mobile($data['phoneno']);
+      if (empty($data["firstnameError"] && $data['lastnameError'] && $data['phonenoError'])) {
 
-
-      if(empty($data["firstnameError"] && $data['lastnameError'] && $data['phonenoError'])) {
- 
-      if ($this->settingsModel->update($data)) {
-        //Ridirect to the main
-        header('location:' . URLROOT . '/student/studentprofileview');
-      } else {
-        die('Something went wrong.');
+        if ($this->settingsModel->update($data)) {
+          //Ridirect to the main
+          header('location:' . URLROOT . '/student/studentprofileview');
+        } else {
+          die('Something went wrong.');
+        }
       }
-
-  }
     }
     $this->view('student/settings', $data);
   }
 }
-
-
 //

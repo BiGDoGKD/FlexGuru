@@ -31,15 +31,15 @@ include APPROOT . '/views/includes/header.php';
             <h6 class="bold gray" style="margin: 23px 0 30px 0;">Login in to Flexguru</h6>
             <h3 class="primary"><?php echo $main["site-name"] ?></h3>
             <span class="subtitle-1">Smart Learning</span>
-            <form action="">
-                <div class="input-field"> <input type="text" name="username" id="username" required>
+            <form action="<?php echo URLROOT; ?>/login" method="POST">
+                <div class="input-field"> <input type="text" name="username" id="username" value="<?php echo $data['username'] ?>" required>
                     <span class="placeholder">Username</span>
                 </div>
-                <span class="form-errors"></span>
-                <div class="input-field"> <input type="password" name="password" id="password" required>
+                <span class="form-errors on-error"><?php echo $data['usernameError'] ?></span>
+                <div class="input-field"> <input type="password" name="password" id="password" value="<?php echo $data['username'] ?>" required>
                     <span class="placeholder">Password</span>
                 </div>
-                <span class="form-errors"></span>
+                <span class="form-errors on-error"><?php echo $data['passwordError'] ?></span>
                 <div class="input-field forgot-password">
                     <div class="remember-me"><input style="width:unset;" class="pointer" type="checkbox" name="" id=""> Remember Me
                     </div>
