@@ -34,11 +34,11 @@
             //Bind values
             //user table username
             $this->db->bind(':username', $username);
-
-            $this->db->bind(':subjects', $datatutor['subjects']);
-            $this->db->bind(':workplace', $datatutor['workplace']);
-            $this->db->bind(':occupation', $datatutor['occupation']);
-            $this->db->bind(':qualification', $datatutor['qualification']);
+            $data = (array) $datatutor;
+            $this->db->bind(':subjects', strval($data['subjects']));
+            $this->db->bind(':workplace', $data['workplace']);
+            $this->db->bind(':occupation', $data['occupation']);
+            $this->db->bind(':qualification', $data['qualification']);
             $this->db->bind(':file', $vfilename);
 
             //Execute function

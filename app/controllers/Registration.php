@@ -264,9 +264,15 @@ class Registration extends Controller
                             $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                             $fileDestination = APPROOT . '/uploads/verifications/' . $fileNameNew;
                             move_uploaded_file($fileTmpName, $fileDestination);
+
+                            print_r('send mail start');
+                            //send mail
                             $otpcode = rand(000000, 999999);
                             $this->mail = $this->model("Mailer");
-                            $this->mail->vmail($otpcode, $data['email']);
+                            $email = json_decode($_COOKIE['regdata'], true);
+                            $this->mail->vmail($otpcode, $email['email']);
+                            print_r('send mail end');
+
                             setcookie('tutordata', json_encode($data), time() + 360);
                             setcookie('verificationdata', json_encode($fileNameNew), time() + 360);
                             setcookie('otpem', hash('sha256', $otpcode), time() + 360);
