@@ -13,26 +13,20 @@
 class Register
 {
     private $db;
-
     public function __construct()
     {
         $this->db = new Database;
     }
-
     /* Test (database and table needs to exist before this works)
     public function getUsers() {
         $this->db->query("SELECT * FROM users");
-
         $result = $this->db->resultSet();
-
         return $result;
     }
     */
     public function register($data)
     {
-
         $this->db->query('INSERT INTO `api`.`user` (`username`, `firstname`, `lastname`, `email`, `password`, `startdate`, `phoneno`, `city`, `role`, `photourl`, `dob`, `subscription`) VALUES (:username, :firstname, :lastname, :email, :password, :startdate, :phoneno, :city, :role, :photourl, :dob, :subscription)');
-
         //Bind values
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':firstname', $data['firstname']);
@@ -46,13 +40,10 @@ class Register
         $this->db->bind(':photourl', $data['photourl']);
         $this->db->bind(':dob', $data['dob']);
         $this->db->bind(':subscription', $data['sub']);
-
         if ($data['role'] === 'tu') {
-
             $this->db->execute();
             $this->db->query('INSERT INTO `api`.`tutor` (`userid`) SELECT `userid` FROM `api`.`user` WHERE username = :username');
             $this->db->bind(':username', $data['username']);
-
             //Execute function for tutor table
             if ($this->db->execute()) {
                 return true;

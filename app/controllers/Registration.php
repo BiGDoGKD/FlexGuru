@@ -113,7 +113,7 @@ class Registration extends Controller
                     switch ($data['role']) {
                         case 'st':
                             $this->registration->register($data);
-                            header("refresh:1; url=" . URLROOT . "/registration/login");
+                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         case 'tu':
                             if (isset($_COOKIE['tutordata']) && isset($_COOKIE['verificationdata'])) {
@@ -124,11 +124,11 @@ class Registration extends Controller
                             } else {
                                 $this->registration->register($data);
                             }
-                            header("refresh:1; url=" . URLROOT . "/registration/login");
+                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         case 'af':
                             $this->registration->register($data);
-                            header("refresh:1; url=" . URLROOT . "/registration/login");
+                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         default:
                             echo 'something went wrong';
@@ -391,10 +391,5 @@ class Registration extends Controller
             $this->senddata($data);
         }
         $this->view('registration/affiliate', $data);
-    }
-
-    public function login()
-    {
-        $this->view('registration/login');
     }
 }

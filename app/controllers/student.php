@@ -96,7 +96,6 @@ class Student extends Controller
   }
 
 
-
   // -------------------------------------------------
   // settings page
   // -------------------------------------------------
@@ -105,8 +104,6 @@ class Student extends Controller
   {
     $this->val = $this->model("Validate");
     $this->settingsModel = $this->model("Settings");
-
-
     $data = [
       'firstname' => '',
       'lastname' => '',
@@ -129,9 +126,6 @@ class Student extends Controller
         'phonenoError' => ''
 
       ];
-
-
-
       $data["firstnameError"] = $this->val->name($data['firstname']);
       $data["lastnameError"] = $this->val->name($data['lastname']);
       $data["phonenoError"] = $this->val->mobile($data['phoneno']);
@@ -150,6 +144,4 @@ class Student extends Controller
     $this->view('student/settings', $data);
   }
 }
-
-
 //
