@@ -32,6 +32,11 @@ class Tutor extends Controller
         $this->view('tutor/billinginformation');
     }
 
+    public function tutororderprogress()
+    {
+        $this->view('tutor/tutororderprogress');
+    }
+
     public function notifications()
     {
         $this->view('tutor/notifications');

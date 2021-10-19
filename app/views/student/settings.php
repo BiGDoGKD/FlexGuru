@@ -38,6 +38,7 @@ include APPROOT . '/views/student/includes/header.php';
 
         .container .links-side {
             width: 400px;
+
         }
 
         .container .links-side a {
@@ -186,7 +187,7 @@ include APPROOT . '/views/student/includes/header.php';
             width: 728px;
             /* background-color: #7879F1; */
             padding: 20px;
-            margin: 30px 0;
+            margin: -3px 0;
             height: 175px;
         }
 
@@ -227,6 +228,18 @@ include APPROOT . '/views/student/includes/header.php';
         #act_del {
             line-height: 1.3;
             margin-top: 2px;
+        }
+
+        .input-field select {
+            font-weight: 500;
+            width: 432px;
+            font-size: 14px;
+            color: #495055;
+            padding: 4px 0px;
+            border-radius: 24px;
+            border: 2px solid #d9d9d9;
+            outline: none;
+            padding-left: 28px;
         }
     </style>
 </head>
@@ -310,10 +323,18 @@ include APPROOT . '/views/student/includes/header.php';
                                         City
                                     </td>
                                     <td>
-                                        <div class="input-field"> <input type="text" name="city" id="city" required>
+                                        <div class="input-field"> <select class="pointer" type="" name="city" id="city" value="<?php echo $data['city'] ?>" required>
+                                                <option class="select-option" value="" disabled selected></option>
+                                                <?php foreach ($district as $value) {
+                                                ?>
+                                                    <option value="<?php echo $value; ?>" class="select-option pointer"><?php echo $value; ?></option>
+                                                <?php
+                                                } ?>
+                                            </select>
+
                                         </div>
                                         <span class="form-errors error fg-errors">
-                                            
+
                                         </span>
                                     </td>
                                 </tr>
@@ -348,7 +369,7 @@ include APPROOT . '/views/student/includes/header.php';
                             <li>You won’t be able to re-activate the account.</li>
                         </ul>
 
-                        
+
                     </div>
 
 

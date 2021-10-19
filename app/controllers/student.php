@@ -59,8 +59,9 @@ class Student extends Controller
 
       ];
 
-      
-   
+      $data['getPassword'] = hash('sha256', $data['getPassword']);
+      $data['password'] = hash('sha256', $data['password']);
+      $data['confpassword'] = hash('sha256', $data['confpassword']);
       // --------------------------------------
       // add the current password error message
       // --------------------------------------
