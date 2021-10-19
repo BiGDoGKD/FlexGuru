@@ -1,7 +1,3 @@
-        
-
-
-
 
 header{
     width:100vw;
@@ -10,8 +6,6 @@ header{
 
 }
 
-
-        
 footer{
     width:100vw;
     height:10vh;
@@ -20,16 +14,14 @@ footer{
     bottom:0;
 
 }
-
 .container{
     display: flex;
      height:100vh;
      width:80vw;
      margin:0 auto;
      transform:translate(0,4%)
-     
-}
 
+}
 .left{
 
   height:100%;
@@ -39,40 +31,35 @@ margin-left:151px;
 
 
 }
-
 .right{
 
     height:100%;
      margin-right:151px;
 
     width:40vw;
-
 }
 
 .userbox {
 
-    
+
     width: 25vw;
     margin:0 auto;
     margin-top:20px;
     height: 380px;
     border: 1px solid #ACACAC;
     box-sizing: border-box;
-   
 
 }
-
 
 .userbox #name{
     color:#7879F1;
     font-weight:800;
 }
-
 .star_rating{
     margin-top:8px;
 }
 .userbox .details{
-  
+
      width: 20vw;
      height:70px;
     border-bottom:1px solid #b6b4b4;
@@ -91,33 +78,25 @@ margin-left:151px;
      display: flex;
      justify-content: space-between;
 
-   
-
 }
 .userbox .details #from{
 
     padding:3px 0;
-  
-   
 
 }
 
-
 .userbox .cityandmembership{
-  
-  
+
+
     padding-top:3px;
     padding-bottom:4px;
       align-items:center;
       margin:0 15px;
 
-   
-   
 }
 
 
 .socialmedia{
-
     width: 25vw;
     margin:0 auto;
     margin-top:40px;
@@ -137,7 +116,7 @@ margin-left:151px;
     width:30px;
 
 }
-.socialmedia span{     
+.socialmedia span{
     font-size:18px;
     position: relative;
     top:30px;
@@ -145,11 +124,7 @@ margin-left:151px;
     margin-left:20px;
     width:100%;
     font-weight:600;
-    
-   
-
 }
-
 .setofsocialmedia{
     display: flex;
     justify-content: space-around;
@@ -173,7 +148,6 @@ display: grid;
 justify-content: space-between;
 grid-template-columns: 12fr 12fr;
 }
-
 .requestsessions{
 
 width: 30vw;
@@ -187,7 +161,6 @@ display: grid;
 justify-content: space-between;
 grid-template-columns: 12fr 12fr;
 
-
 }
 
 .activesessions span{
@@ -196,7 +169,6 @@ grid-template-columns: 12fr 12fr;
 
 
 .content{
-
 width: 30vw;
 height: 187px;
 left: 558px;
@@ -206,7 +178,6 @@ margin-top:40px;
 
 border: 1px solid #ACACAC;
 }
-
 #activesessionselect{
 margin:15px 0px 0px 20px ;
 width: 11vw;
@@ -221,7 +192,6 @@ padding:5px;
 padding-left:50px;
 cursor: pointer;
 }
-
 .requestsessions span{
        margin:20px 0px 0px 20px ;
 }
@@ -236,61 +206,49 @@ height: 40px;
   margin:18px 0px 0px 20px ;
   border-radius: 24px;
   border:1px transparent solid;
-  
-
-
-
 
 }
-
 
 .detailimg{
     width:25px;
     height:25px;
 }
 .requestsessions button:hover,button:active  {
-
         cursor: pointer;
 }
 
 
-
-
-#content1 p{     
+#content1 p{
     font-size:12px;
     margin-top:10px;
-    
-    width:100%;
-    
 
+    width:100%;
 }
 
 #content1 #firstheading{
         font-size:12px;
     margin-top:30px;
     margin-left:30px;
-    
+
     width:100%;
 }
-
-#content2 span{     
+#content2 span{
     font-size:12px;
     margin-top:20px;
     margin-left:20px;
     width:100%;
     position:relative;
     top:5px;
-
 }
 
-#content1 span:after{ 
+#content1 span:after{
    content: '';
   border-bottom: 3px solid #000;
   width: 10px;
 }
 
 #contentpara1{
-   
+
 width: 28vw;
 height: 110px;
 
@@ -332,6 +290,13 @@ margin-left: 20px;
 
 #socialmediahidden{
     display:none;
+}
+#passwordpolicy {
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    line-height: 30px;
+    margin-left: 25px;
+    font-size: 15px;
 }
 /* -------------------------------------------------------------- */
 
@@ -488,4 +453,3 @@ h6 {
 }
 
 /* sub-titles  */
-

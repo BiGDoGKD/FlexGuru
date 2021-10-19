@@ -38,6 +38,7 @@ include APPROOT . '/views/student/includes/header.php';
 
         .container .links-side {
             width: 400px;
+
         }
 
         .container .links-side a {
@@ -139,7 +140,7 @@ include APPROOT . '/views/student/includes/header.php';
         .button_reg:active {
             transform: scale(0.98);
             /* Scaling button to 0.98 to its original size */
-            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.24);
+            /* box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.24); */
             /* Lowering the shadow */
         }
 
@@ -186,7 +187,7 @@ include APPROOT . '/views/student/includes/header.php';
             width: 728px;
             /* background-color: #7879F1; */
             padding: 20px;
-            margin: 30px 0;
+            margin: -3px 0;
             height: 175px;
         }
 
@@ -227,6 +228,18 @@ include APPROOT . '/views/student/includes/header.php';
         #act_del {
             line-height: 1.3;
             margin-top: 2px;
+        }
+
+        .input-field select {
+            font-weight: 500;
+            width: 432px;
+            font-size: 14px;
+            color: #495055;
+            padding: 4px 0px;
+            border-radius: 24px;
+            border: 2px solid #d9d9d9;
+            outline: none;
+            padding-left: 28px;
         }
     </style>
 </head>
@@ -310,10 +323,18 @@ include APPROOT . '/views/student/includes/header.php';
                                         City
                                     </td>
                                     <td>
-                                        <div class="input-field"> <input type="text" name="city" id="city" required>
+                                        <div class="input-field"> <select class="pointer" type="" name="city" id="city" value="<?php echo $data['city'] ?>" required>
+                                                <option class="select-option" value="" disabled selected></option>
+                                                <?php foreach ($district as $value) {
+                                                ?>
+                                                    <option value="<?php echo $value; ?>" class="select-option pointer"><?php echo $value; ?></option>
+                                                <?php
+                                                } ?>
+                                            </select>
+
                                         </div>
                                         <span class="form-errors error fg-errors">
-                                            
+
                                         </span>
                                     </td>
                                 </tr>
@@ -339,17 +360,13 @@ include APPROOT . '/views/student/includes/header.php';
                 <div class="subtitle" id="act_del">Account Deletion</div>
                 <div class="deletiondetails" style="width: 100%;">
 
-
-
                     <div class="whydelete">
                         <div class="subtitle-1">What happens when you delete your flexguru Account?</div>
-
                         <ul>
                             <li>Your flexguru content won’t be shown on our system anymore</li>
                             <li>Active sessions will be cancelled.</li>
                             <li>You won’t be able to re-gain last balance of your account.</li>
                             <li>You won’t be able to re-activate the account.</li>
-
                         </ul>
 
 

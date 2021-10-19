@@ -14,9 +14,5 @@
     {
         "url": "marketplace",
         "menu": "Find Services"
-    },
-    {
-        "url": "student/complaints",
-        "menu": "Complaints"
     }
 ]
