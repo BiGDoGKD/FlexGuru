@@ -44,8 +44,67 @@ class Tutor extends Controller
 
     public function security()
     {
-        $this->view('tutor/security');
+        $this->val = $this->model("Validate");
+        $this->settingsModel = $this->model("Settings");
+
+
+        $data = [
+            'getPassword' => '',
+            'password' => '',
+            'confpassword' => '',
+            'getPasswordError' => '',
+            'passwordError' => '',
+            'confpasswordError' => ''
+        ];
+
+
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'getPassword' => trim($_POST['current']),
+                'password' => trim($_POST['new']),
+                'confpassword' => trim($_POST['confirm']),
+
+                'getPasswordError' => '',
+                'passwordError' => '',
+                'confpasswordError' => ''
+
+            ];
+
+            $data['getPassword'] = hash('sha256', $data['getPassword']);
+            $data['password'] = hash('sha256', $data['password']);
+            $data['confpassword'] = hash('sha256', $data['confpassword']);
+            // --------------------------------------
+            // add the current password error message
+            // --------------------------------------
+            if ($this->settingsModel->passwordexist($data['getPassword'])) {
+                $data['getPasswordError'] = 'The password entered is incorrect';
+            } else {
+                $data['getPasswordError'] = '';
+            }
+
+
+            $data["passwordError"] = $this->val->password($data['password'], $data['confpassword']);
+            if ($data['password'] == $data['confpassword']) {
+                $data['confpasswordError'] = '';
+            } else {
+                $data['confpasswordError'] = 'Passwords do not match';
+            }
+
+
+            if (empty($data["getPasswordError"] && $data['passwordError'] && $data['confpasswordError'])) {
+                if ($this->settingsModel->resetpassword($data)) {
+                    //Ridirect to the main
+                    header('location:' . URLROOT . '/tutor/tutorprofileview');
+                } else {
+                    die('Something went wrong.');
+                }
+            }
+        }
+        $this->view('tutor/security', $data);
     }
+
 
 
     public function settings()

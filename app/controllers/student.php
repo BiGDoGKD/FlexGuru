@@ -45,7 +45,7 @@ class Student extends Controller
     ];
 
 
-    
+
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
       $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
       $data = [
@@ -65,14 +65,21 @@ class Student extends Controller
       // --------------------------------------
       // add the current password error message
       // --------------------------------------
-      if ($this->settingsModel->passwordexist($data)){
+      if ($this->settingsModel->passwordexist($data['getPassword'])){
         $data['getPasswordError'] ='The password entered is incorrect';
       }
       else{
           $data['getPasswordError'] = '';
       }
-      $data["passwordError"] = $this->val->password($data['password']);
-      $data["confpasswordError"] = $this->val->password($data['confpassword']);
+
+      
+      $data["passwordError"] = $this->val->password($data['password'], $data['confpassword']);
+      if($data['password']==$data['confpassword']){
+        $data['confpasswordError']='';
+      }
+      else{
+          $data['confpasswordError']='Passwords do not match';
+      }
 
 
       if (empty($data["getPasswordError"] && $data['passwordError'] && $data['confpasswordError'])) {
@@ -81,18 +88,19 @@ class Student extends Controller
           header('location:' . URLROOT . '/student/studentprofileview');
         } else {
           die('Something went wrong.');
-        }   
+        }
     }
-
-
   }
-
     $this->view('student/security',$data);
-// -------------------------------------------------
-// settings page
-// -------------------------------------------------
 
   }
+
+
+
+  // -------------------------------------------------
+  // settings page
+  // -------------------------------------------------
+
   public function settings()
   {
     $this->val = $this->model("Validate");

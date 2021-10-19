@@ -70,12 +70,12 @@ class Settings
         }
     }
 
-    public function passwordexist($data)
+    public function passwordexist($password)
     {
-        $this->db->query("SELECT * FROM `api`.`user` where userid =1 and  password:password ");
-        $this->db->bind(':password', $data['getPassword']);
+        $this->db->query("SELECT * FROM `api`.`user` where userid =1 and  password=:password ");
+        $this->db->bind(':password',$password);
         //Execute function
-        if ($this->db->execute()) {
+        if($this->db->execute()) {
             return true;
         } else {
             return false;
@@ -83,17 +83,5 @@ class Settings
     }
 
 
-    
+
     }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -84,7 +84,7 @@ public function mobile($mobile)
             $res = "Please enter a password";
         } else if ($password != $confpassword) {
             $res = "Password not matching";
-        } else if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $password)) {
+        } else if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{6,30}$/', $password)) {
             $res = "Password should contain (A-Z,a-z,0-9) characters with Special Characters";
         } else {
             $res = null;
