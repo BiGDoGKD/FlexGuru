@@ -56,4 +56,32 @@ class Settings
             return false;
         }
     }
-}
+
+    // password reset related database functionality
+
+    public function resetpassword($data){
+        $this->db->query("UPDATE `api`.`user` SET password=:password where userid = 1");
+        $this->db->bind(':password', $data['password']);
+        //Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function passwordexist($password)
+    {
+        $this->db->query("SELECT * FROM `api`.`user` where userid =1 and  password=:password ");
+        $this->db->bind(':password',$password);
+        //Execute function
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+    }

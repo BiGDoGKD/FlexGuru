@@ -13,7 +13,7 @@ include APPROOT . '/views/student/includes/header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile settings
     </title>
-    <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/crystalys-v2.css' ?>">
+    <link rel="stylesheet" href="<?php echo URLROOT .'/public/css/crystalys-v2.css'?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
@@ -150,6 +150,7 @@ include APPROOT . '/views/student/includes/header.php';
             letter-spacing: 0.15px;
             line-height: 30px;
             margin-left: 25px;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -186,64 +187,78 @@ include APPROOT . '/views/student/includes/header.php';
             <div class="right">
 
 
+                <form action="<?php echo URLROOT; ?>/student/security" method="POST">
+                    <div class="table">
 
-                <div class="table">
+                        <h6>CHANGE PASSWORD</h6>
+                        <table style="margin: 5px 0;">
 
-                    <h6>CHANGE PASSWORD</h6>
-                    <table style="margin: 5px 0;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Current Password
+                                    </td>
+                                    <td>
+                                        <div class="input-field"> <input type="text" name="current" id="current" required>
+                                        </div>
+                                        <!-- change this error to say current password is incorrect try again later. If we attempt more
+                                than  5 times per disable  -->
+                                        <span class="form-errors error fg-errors">
+                                            <?php echo $data['getPasswordError']; ?>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        New Password
+                                    </td>
+                                    <td>
+                                        <div class="input-field"> <input type="text" name="new" id="new" required>
+                                        </div>
+                                        <span class="form-errors error fg-errors">
+                                            <?php echo $data['passwordError']; ?>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Confirm Passoword
+                                    </td>
+                                    <td>
+                                        <div class="input-field"> <input type="text" name="confirm" id="confirm" required>
+                                        </div>
+                                        <!-- Error to get all errors when passowrd does not matches  -->
+                                        <span class="form-errors error fg-errors">
+                                            <?php echo $data['confpasswordError']; ?>
+                                        </span>
+                                    </td>
 
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Current Password
-                                </td>
-                                <td>
-                                    <div class="input-field"> <input type="text" name="current" id="current" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    New Password
-                                </td>
-                                <td>
-                                    <div class="input-field"> <input type="text" name="new" id="new" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Confirm Passoword
-                                </td>
-                                <td>
-                                    <div class="input-field"> <input type="text" name="confirm" id="confirm" required>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
 
-                                </td>
-                                <td>
-                                    <p id="passwordpolicy">8 characters or longer. Combine upper and lowercase letters and numbers.</p>
-                                </td>
-                            </tr>
+                                </tr>
+                                <tr>
+                                    <td>
 
-                            <tr>
-                                <td colspan="2">
-                                    <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">SAVE CHANGES</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <td>
+                                        <p id="passwordpolicy">8 characters or longer. Combine upper and lowercase letters and numbers.</p>
+                                    </td>
+                                </tr>
 
-                    <div class="successupdate">
-                        <i class="far fa-check-circle"></i>
-                        Settings successfully updated
+                                <tr>
+                                    <td colspan="2">
+                                        <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">SAVE CHANGES</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                     </form>
+                        <div class="successupdate">
+                            <i class="far fa-check-circle"></i>
+                            Settings successfully updated
+                        </div>
+
                     </div>
-
-                </div>
-                <!-- all input fields are over  -->
+                    <!-- all input fields are over  -->
 
 
 
