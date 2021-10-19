@@ -4,6 +4,16 @@ class Student extends Controller
 {
   public function __construct()
   {
+    session_start();
+    if (isset($_SESSION['STUACCESS'])) {
+      if ($_SESSION['STUACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+        //do nothing
+      } else {
+        die(header('location:' . URLROOT . '/login'));
+      }
+    } else {
+      die(header('location:' . URLROOT . '/login'));
+    }
   }
 
 

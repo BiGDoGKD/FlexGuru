@@ -21,15 +21,22 @@ class Session
 
     public function create($username, $password)
     {
-        $this->db->query('SELECT * FROM `api`.`user` WHERE `user`.`username`=:username and `password`=:password');
+        $this->db->query('SELECT `username`,`firstname`,`lastname`,`email`,`startdate`,`phoneno`,`city`, `role`,`photourl`,`dob` FROM `api`.`user` WHERE `user`.`username`=:username and `password`=:password');
         $this->db->bind(':username', $username);
         $this->db->bind(':password', $password);
         $this->db->execute();
         if ($this->db->rowCount() > 0) {
             $userdata = $this->db->getArray();
             $data = $userdata[0];
+
             switch ($data['role']) {
                 case 'st':
+                    //Start the session
+                    session_start();
+                    //Set session variables
+                    $_SESSION['type'] = 'student';
+                    $_SESSION['userdata'] = $data;
+                    $_SESSION['STUACCESS'] = hash('sha256', $_SESSION['userdata']['username']);
                     header('location:' . URLROOT . '/student');
                     break;
                 case 'tu':
