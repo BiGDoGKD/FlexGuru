@@ -60,7 +60,10 @@ class Register
                 return false;
             }
         } elseif ($data['role'] === 'af') {
-
+            $this->db->execute();
+            $this->db->query('INSERT INTO `api`.`affiliatemarketer` (`userid`, `affiliatelink`)  VALUES((SELECT `userid` FROM `api`.`user` WHERE username = :username),:affiliatelink)');
+            $this->db->bind(':username', $data['username']);
+            $this->db->bind(':affiliatelink', uniqid('', true));
             //Execute function
             if ($this->db->execute()) {
                 return true;
@@ -68,7 +71,9 @@ class Register
                 return false;
             }
         } elseif ($data['role'] === 'st') {
-
+            $this->db->execute();
+            $this->db->query('INSERT INTO `api`.`student` (`userid`)  VALUES(SELECT `userid` FROM `api`.`user` WHERE username = :username)');
+            $this->db->bind(':username', $data['username']);
             //Execute function
             if ($this->db->execute()) {
                 return true;
@@ -76,7 +81,6 @@ class Register
                 return false;
             }
         } else {
-
             return false;
         }
     }

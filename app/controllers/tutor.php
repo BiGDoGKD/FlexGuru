@@ -11,19 +11,6 @@ class Tutor extends Controller
 
     public function tutorprofileview()
     {
-
-        // $data = [
-
-        //   'city' => ''
-
-
-        // ];
-
-        // $data['city'] = $this->Student->showinProfile($data);
-
-
-
-
         $this->view('tutor/tutorprofileview');
     }
 
