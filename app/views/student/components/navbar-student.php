@@ -31,22 +31,114 @@
         } ?>
     </ul>
     <ul class="nav-login">
-        <li><a onclick="loginFunction()" class="primary pointer subtitle-2" style="margin-right:1.5vw;">Brody Peterson</a></li>
-        <li><a href="<?php echo URLROOT ?>/login/logout">
+        <li><a class="primary pointer subtitle-2" style="margin-right:1.5vw;"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></a></li>
+        <li><a href="<?php echo URLROOT ?>/registration/roles">
                 <div class="profile-photo"></div>
-                <style>
-                    .profile-photo {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        background: url(<?php echo URLROOT . '/public/img/students/pexels.webp' ?>);
-                        background-repeat: no-repeat;
-                        background-size: cover;
+            </a>
+            <div class="dropdown-content">
+                <ul>
+                    <a href="<?php
+                                switch ($_SESSION['userdata']['role']) {
+                                    case 'st':
+                                        echo URLROOT . '/student/profile';
+                                        break;
+                                    case 'tu':
+                                        echo URLROOT . '/tutor/profile';
+                                        break;
+                                    case 'af':
+                                        echo URLROOT . '/affiliate/profile';
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                ?>">
+                        <li>Profile</li>
+                    </a>
+                    <a href="<?php
+                                switch ($_SESSION['userdata']['role']) {
+                                    case 'st':
+                                        echo URLROOT . '/student/settings';
+                                        break;
+                                    case 'tu':
+                                        echo URLROOT . '/tutor/settings';
+                                        break;
+                                    case 'af':
+                                        echo URLROOT . '/affiliate/settings';
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                ?>">
+                        <li>Settings</li>
+                    </a>
+                    <a href="<?php
+                                switch ($_SESSION['userdata']['role']) {
+                                    case 'st':
+                                        echo URLROOT . '/support/student';
+                                        break;
+                                    case 'tu':
+                                        echo URLROOT . '/support/tutor';
+                                        break;
+                                    case 'af':
+                                        echo URLROOT . '/support/affiliate';
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                ?>">
+                        <li>Support</li>
+                    </a>
+                    <a href="<?php echo URLROOT ?>/login/logout">
+                        <li>Logout</li>
+                    </a>
+                </ul>
+            </div>
+            <style>
+                .nav-login {
+                    position: relative;
+                }
 
-                        /* background: #acacac; */
-                    }
-                </style>
-            </a></li>
+                .nav-login .profile-photo {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: url(<?php echo URLROOT . '/public/img/students/pexels.webp' ?>);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    /* background: #acacac; */
+                }
+
+                .nav-login:hover .dropdown-content {
+                    display: block;
+                }
+
+                .nav-login .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    border: 1px solid #ededed;
+                    right: 0;
+                    z-index: 2;
+                    min-width: 150px;
+                    background: #fff;
+                    color: var(--gray);
+                    padding: 0 20px;
+                }
+
+                .nav-login .dropdown-content ul li {
+                    margin: 15px 0;
+                    list-style: none;
+                }
+
+                .nav-login .dropdown-content ul li:hover {
+                    cursor: pointer;
+                    color: var(--primary);
+                }
+
+                .nav-login .profile-photo:hover .dropdow-menu {
+                    display: block;
+                }
+            </style>
+        </li>
     </ul>
 </nav>
 <hr style="width: 99vw; height:0.1px; background:#ededed; position:absolute; transform:translate(-50%,-50%); left:50%;">
@@ -65,7 +157,3 @@
         } ?>
     </ul>
 </div>
-<div class="dark-overlay close-overlay">
-    <div class="dark-overlay-logo logo bold on-primary hidden" style="margin-top:35px;margin-left: 11.7vw;"><?php echo $main["site-name"] ?></div>
-</div>
-<?php include APPROOT . '/views/components/login.php' ?>
