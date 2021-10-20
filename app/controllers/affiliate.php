@@ -6,9 +6,6 @@ class affiliate extends Controller
     {
     }
 
-
-
-
     public function index()
     {
         // $data = [
