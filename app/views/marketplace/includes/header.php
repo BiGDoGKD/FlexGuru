@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/crystalys-v2.css' ?>">
     <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/marketplace/main.css' ?>">
     <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/marketplace/navbar.css' ?>">
+    <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/marketplace/gigcard.css' ?>">
 </head>
 
 <body>
