@@ -33,7 +33,12 @@
 
 <body>
     <div class="flex-body">
-		<!-- if a session exists -->
-        <?php include APPROOT . '/views/publicprofileview/components/navbar-student.php'; ?>
-		<!-- else load -->
-		 <?php include APPROOT . '/views/publicprofileview/components/navbar-visitor.php'; ?>
+        <?php
+        if(isset($_SESSION['STUACCESS'])){
+        include APPROOT . '/views/publicprofileview/components/navbar-student.php'; 
+        }
+        else{
+         include APPROOT . '/views/publicprofileview/components/navbar-visitor.php'; 
+        }
+
+        ?>
