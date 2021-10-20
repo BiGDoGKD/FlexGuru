@@ -6,10 +6,7 @@ class Tutor extends Controller
     {
     }
 
-
-
-
-    public function tutorprofileview()
+    public function index()
     {
         $this->view('tutor/tutorprofileview');
     }

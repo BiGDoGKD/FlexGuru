@@ -40,9 +40,21 @@ class Session
                     header('location:' . URLROOT . '/student');
                     break;
                 case 'tu':
+                    //Start the session
+                    session_start();
+                    //Set session variables
+                    $_SESSION['type'] = 'tutor';
+                    $_SESSION['userdata'] = $data;
+                    $_SESSION['TUTACCESS'] = hash('sha256', $_SESSION['userdata']['username']);
                     header('location:' . URLROOT . '/tutor');
                     break;
                 case 'af':
+                    //Start the session
+                    session_start();
+                    //Set session variables
+                    $_SESSION['type'] = 'affiliate';
+                    $_SESSION['userdata'] = $data;
+                    $_SESSION['AFFACCESS'] = hash('sha256', $_SESSION['userdata']['username']);
                     header('location:' . URLROOT . '/affiliatemarketer');
                     break;
                 default:

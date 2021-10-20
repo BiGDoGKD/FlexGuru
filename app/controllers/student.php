@@ -11,6 +11,10 @@ class Student extends Controller
       } else {
         die(header('location:' . URLROOT . '/login'));
       }
+    } elseif (isset($_SESSION['TUTACCESS'])) {
+      die(header('location:' . URLROOT . '/tutor'));
+    } elseif (isset($_SESSION['AFFACCESS'])) {
+      die(header('location:' . URLROOT . '/affiliate'));
     } else {
       die(header('location:' . URLROOT . '/login'));
     }
