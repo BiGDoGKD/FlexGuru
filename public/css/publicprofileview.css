@@ -184,16 +184,16 @@ footer{
   height:100%;
   width:40vw;
 position: relative;
-margin-left:130px; 
+margin-left:-75px; 
 
 
 }
 .right{
 
     height:100%;
-     margin-right:151px;
+     /* margin-right:100px; */
 
-    width:40vw;
+    width:52vw;
 }
 
 .fa .fa-star  {
@@ -275,6 +275,8 @@ margin-left:130px;
     width:30px;
 
 }
+
+
 .socialmedia span{
     font-size:18px;
     position: relative;
@@ -457,4 +459,54 @@ margin-left: 20px;
     line-height: 30px;
     margin-left: 25px;
     font-size: 15px;
+}
+.picture{
+        margin-right:40px;
+     width:max-content; 
+     border:1px solid black;
+     margin-bottom:40px;
+}
+
+.picturereview{
+        margin-right:40px;
+     width:max-content; 
+  
+     margin-bottom:40px;
+}
+
+.reviews{
+    display: grid;
+    padding-left: 30px;
+    grid-template-columns: 6fr 6fr 6fr;
+    color:#817b7b;
+    border-bottom: 1px solid #acacac;
+}
+.sectionreview{
+
+
+}
+
+#reviewimg{
+  height: 133px;
+width: 798px;
+margin-left: -35px;
+}
+
+.picturefeedback{
+        margin-right:40px;
+     width:max-content; 
+    border-bottom: 2px solid #acacac;
+     margin-bottom:40px;
+  
+    
+}
+
+
+
+#feedbackimg{
+  height: 214px;
+width: 798px;
+margin-left: -4px;
+ 
+
 }

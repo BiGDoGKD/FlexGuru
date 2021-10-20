@@ -73,7 +73,7 @@ include APPROOT . '/views/student/includes/header.php';
     <div class="right">
         <div class="activesessions">
             <span>Active Sessions-0 </span>
-            <select name="" id="activesessionselect">
+            <select name="" id="activesessionselect" style="font-size: 14px; padding-left:20px">
                 <option default>Active Sessions(0)</option>
             </select>
         </div>
