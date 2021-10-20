@@ -24,8 +24,7 @@ include APPROOT . '/views/includes/header.php';
 <head>
 	
 </head>
-<h2>Privacy policy of Flexguru</h2>
-
+<p>Privacy policy of Flexguru</p>
 <body style ="position: absolute;
 width: 1170px;
 height: 1600px;
@@ -47,7 +46,7 @@ color: #7174F1;">
 
 
 	
-	<p>We’re deeply committed to creating a safe and secure online environment for you./p>
+	<p>We’re deeply committed to creating a safe and secure online environment for you.</p>
 
 	<h3>What are the data we get</h3>
 	<p>We collect certain data from you directly, like the information you enter yourself, data about your consumption of content, and data from third-party platforms you connect with Flexguru. We also collect some data automatically, like information about your device and what parts of our Services you interact with or spend time using.</p>

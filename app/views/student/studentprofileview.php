@@ -27,14 +27,14 @@ include APPROOT . '/views/student/includes/header.php';
                 <span><b> N/A </b> (n/a) </span>
 
                 <div class="details">
-                    <div id="from" class="cityandmembership">
+                    <div id="from" class="cityandmembership" style="margin-top:15px; margin-bottom: 20px;">
                         <img src="<?php echo URLROOT . '/public/img/studentprofileview/map.png' ?>" class="detailimg" id="from" alt="">
-                        <span><?php echo $_SESSION['userdata']['city'] ?></span>
+                        <p style=""><?php echo $_SESSION['userdata']['city'] ?></p>
 
                     </div>
                     <div id="membersince" class="cityandmembership">
                         <img src="<?php echo URLROOT . '/public/img/studentprofileview/usersmall.png' ?>" class="detailimg" id="usersince" alt="">
-                        <span>Month,Year</span>
+                        <p>Month,Year</p>
                     </div>
 
                 </div>
@@ -72,7 +72,7 @@ include APPROOT . '/views/student/includes/header.php';
 
     <div class="right">
         <div class="activesessions">
-            <span>Active Sessions-0 </span>
+            <p style="font-size:15px; margin-top:24px; padding-left:20px;">Active Sessions-0 </p>
             <select name="" id="activesessionselect" style="font-size: 14px; padding-left:20px">
                 <option default>Active Sessions(0)</option>
             </select>

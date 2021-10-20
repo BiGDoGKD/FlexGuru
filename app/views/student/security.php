@@ -199,7 +199,7 @@ include APPROOT . '/views/student/includes/header.php';
                                         Current Password
                                     </td>
                                     <td>
-                                        <div class="input-field"> <input type="text" name="current" id="current" required>
+                                        <div class="input-field"> <input type="password" name="current" id="current" required>
                                         </div>
                                         <!-- change this error to say current password is incorrect try again later. If we attempt more
                                 than  5 times per disable  -->
@@ -213,7 +213,7 @@ include APPROOT . '/views/student/includes/header.php';
                                         New Password
                                     </td>
                                     <td>
-                                        <div class="input-field"> <input type="text" name="new" id="new" required>
+                                        <div class="input-field"> <input type="password" name="new" id="new" required>
                                         </div>
                                         <span class="form-errors error fg-errors">
                                             <?php echo $data['passwordError']; ?>
@@ -225,7 +225,7 @@ include APPROOT . '/views/student/includes/header.php';
                                         Confirm Passoword
                                     </td>
                                     <td>
-                                        <div class="input-field"> <input type="text" name="confirm" id="confirm" required>
+                                        <div class="input-field"> <input type="password" name="confirm" id="confirm" required>
                                         </div>
                                         <!-- Error to get all errors when passowrd does not matches  -->
                                         <span class="form-errors error fg-errors">
