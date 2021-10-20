@@ -30,6 +30,15 @@
             <button class="btn on-primary bg-primary btn-text">Search</button>
         </form>
     </ul>
+
+    <?php
+    if (!isset($_SESSION['userdata']['role'])) {
+        
+    }else{
+
+    }
+    ?>
+
     <ul class="nav-login">
         <li><a class="primary pointer subtitle-2" style="margin-right:1.5vw;"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></a></li>
         <li><a href="<?php echo URLROOT ?>/registration/roles">
