@@ -23,13 +23,10 @@
             <div class="reviews"><i class="fas fa-star" style="color: var(--star);"><span class="subtitle-2">4<span class="gray" style="font-size: 10px;"> (56 sessions)</span></span></i></div>
             <div class="price subtitle-2">LKR 1500</div>
         </div>
-
     </div>
 </div>
 
 <style>
-    
-
     .gig-card .img-container {
         height: 50%;
         width: 100%;
@@ -39,7 +36,7 @@
         background-repeat: no-repeat;
     }
 
-    
+
 
     .gig-card .tutor-details .tutor-picture {
         height: 40px;
@@ -51,6 +48,4 @@
         background-repeat: no-repeat;
         margin: 0 10px 0 0;
     }
-
-   
 </style>
