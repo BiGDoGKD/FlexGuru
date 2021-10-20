@@ -12,6 +12,20 @@
             <li><i class="fas fa-check"></i>Tutorials will be provided</li>
         </ul>
     </div>
-    <div class="continue"><button onclick="location.href='<?php echo URLROOT . '/marketplace/payment' ?>'" class="price-box-button">Continue (LRK 1000)</button></div>
-    <div class="contact"> <button class="price-box-button">Contact Tutor</button></div>
+
+    <?php
+    if (!isset($_SESSION['userdata']['role'])) {
+    ?>
+        <div class="continue"><button onclick="location.href='<?php echo URLROOT . '/login' ?>'" class="price-box-button">Continue (LRK 1000)</button></div>
+        <div class="contact"><button onclick="location.href='<?php echo URLROOT . '/login' ?>'" class="price-box-button">Contact Tutor</button></div>
+    <?php
+    } else {
+    ?>
+        <div class="continue"><button onclick="location.href='<?php echo URLROOT . '/marketplace/payment' ?>'" class="price-box-button">Continue (LRK 1000)</button></div>
+        <div class="contact"> <button class="price-box-button">Contact Tutor</button></div>
+    <?php
+    }
+    ?>
+
+
 </div>
