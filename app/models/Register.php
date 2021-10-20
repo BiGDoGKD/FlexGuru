@@ -39,7 +39,7 @@ class Register
         $this->db->bind(':role', $data['role']);
         $this->db->bind(':photourl', $data['photourl']);
         $this->db->bind(':dob', $data['dob']);
-        $this->db->bind(':subscription', $data['sub']);
+        $this->db->bind(':subscription', 1);
         if ($data['role'] === 'tu') {
             $this->db->execute();
             $this->db->query('INSERT INTO `api`.`tutor` (`userid`) SELECT `userid` FROM `api`.`user` WHERE username = :username');

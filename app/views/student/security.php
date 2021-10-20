@@ -199,7 +199,7 @@ include APPROOT . '/views/student/includes/header.php';
                                         Current Password
                                     </td>
                                     <td>
-                                        <div class="input-field"> <input type="text" name="current" id="current" required>
+                                        <div class="input-field"> <input type="password" name="current" id="current" required>
                                         </div>
                                         <!-- change this error to say current password is incorrect try again later. If we attempt more
                                 than  5 times per disable  -->
