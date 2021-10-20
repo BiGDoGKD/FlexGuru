@@ -217,15 +217,6 @@ margin-left:130px;
     font-weight:800;
 }
 
-.userbox .details{
-
-     width: 20vw;
-     height:px;
-   
-     border-top:1px solid #b6b4b4;
-    padding:0 18px;
-    margin-top:20px;
-}
 
 .userbox .details #from{
      display: flex;
@@ -457,4 +448,13 @@ margin-left: 20px;
     line-height: 30px;
     margin-left: 25px;
     font-size: 15px;
+}
+
+
+.userbox .details{
+width: 20vw;
+height: px;
+border-top: 1px solid #b6b4b4;
+padding: 20px 18px;
+margin-top: 17px;
 }
