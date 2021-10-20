@@ -56,6 +56,8 @@ class Login extends Controller
 
     public function logout()
     {
+        session_start();
         session_destroy();
+        header('location:' . URLROOT . '/login');
     }
 }
