@@ -16,11 +16,16 @@ class Marketplace extends Controller
 {
     public function __construct()
     {
+        session_start();
     }
 
     public function index()
     {
-
         $this->view('marketplace/index');
+    }
+
+    public function service()
+    {
+        $this->view('marketplace/pages/service');
     }
 }

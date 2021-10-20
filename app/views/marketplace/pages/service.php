@@ -15,50 +15,6 @@ include APPROOT . '/views/marketplace/includes/header.php';
         </ul>
     </div>
 
-    <div class="filtering-options">
-        <div class="heading">
-            <h4>All Services</h4>
-        </div>
-        <div class="filter-options">
-            <div class="select">
-                <select name="education" id="">
-                    <option value="">Education Level</option>
-                </select>
-            </div>
-            <div class="select">
-                <select name="subject" id="">
-                    <option value="">Subject</option>
-                </select>
-            </div>
-            <div class="select">
-                <select name="budget" id="">
-                    <option value="">Budget</option>
-                </select>
-            </div>
-            <div class="select">
-                <select name="level" id="">
-                    <option value="">Tutor Level</option>
-                </select>
-            </div>
-        </div>
-        <div class="services-details">
-            <div class="available-services"><span class="subtitle-2 gray">789 services available</span></div>
-            <div class="sort-by"><span class="subtitle-2 gray">Sort by: <span class="subtitle-3 dark">Price: low to high</span></span></div>
-        </div>
-    </div>
-    <div class="marketplace">
-        <?php
-        for ($i = 0; $i < 30; $i++) {
-        ?>
-            <a href="<?php echo URLROOT . '/marketplace/service' ?>">
-                <?php
-                include APPROOT . './views/marketplace/components/gigcard.php';
-                ?>
-            </a>
-        <?php
-        }
-        ?>
-    </div>
 </div>
 <style>
     .market {
@@ -77,7 +33,7 @@ include APPROOT . '/views/marketplace/includes/header.php';
         justify-content: space-between;
     }
 
-    .marketplace a{
+    .marketplace a {
         text-decoration: none;
     }
 
