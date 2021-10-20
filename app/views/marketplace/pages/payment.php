@@ -1,11 +1,11 @@
 <?php
 include APPROOT . '/views/includes/data.php';
-// include APPROOT . '/views/marketplace/includes/header.php';
+include APPROOT . '/views/marketplace/includes/header.php';
 ?>
 
 
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="style.css">
+
+
 
 <style>
     * {
@@ -16,30 +16,23 @@ include APPROOT . '/views/includes/data.php';
     }
 
     .container {
-        background-color: #eeffaa;
-        width: 1000px;
-        height: 1000px;
-        margin-left: 260px;
+
+
+
         display: flex;
 
 
     }
 
-    .header {
-        height: 60px;
-        width: 100vw;
-        background-color: #aabbcc;
-        display: flex;
-        flex-wrap: nowrap;
-    }
 
     .left {
 
         height: 675px;
         width: 600px;
-        background-color: #767564;
 
+        border: 1px solid #acacac;
         margin-top: 60px;
+        border-radius: 24px;
 
     }
 
@@ -47,12 +40,13 @@ include APPROOT . '/views/includes/data.php';
 
         height: 675px;
         width: 550px;
-        background-color: red;
+
         position: relative;
 
         margin-top: 60px;
         margin-left: 30px;
-
+        border: 1px solid #acacac;
+        border-radius: 24px;
 
 
 
@@ -73,29 +67,33 @@ include APPROOT . '/views/includes/data.php';
 
 
 
-    
+
 
 
     .heading {
         height: 60px;
         width: 100%;
-        background-color: #aabbcc;
+        background-color: var(--primary);
+
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
         padding-left: 30px;
-    }
+        border-radius: 24px 24px 0 0;
 
-    .heading p {
-        font-size: 24px;
-        font-weight: 700;
 
     }
+
+    .heading h5 {
+        color: #fff;
+    }
+
+
 
     .checkboxvisa {
         height: 60px;
         width: 100%;
-        background-color: #aacccc;
+
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
@@ -113,7 +111,7 @@ include APPROOT . '/views/includes/data.php';
     .checkboxpaypal {
         height: 60px;
         width: 100%;
-        background-color: #aabbcc;
+
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
@@ -308,47 +306,26 @@ include APPROOT . '/views/includes/data.php';
         background: url('paypal-logo.svg') no-repeat 65% 56% #009cde;
     }
 
-    * {
-        box-sizing: border-box;
-    }
 
-    body,
-    html {
-        height: 100%;
-        min-height: 100%;
+    .gigdata {
+        width: 83%;
+        height: 90%;
+        margin: 15px auto;
+        font-size: 15px;
     }
-
-    body {
-        font-family: 'Roboto',
-            sans-serif;
-        margin: 0;
-        background-color: #e7e7e7;
+    .basicdetails{
+        line-height: 1.3;
     }
 </style>
 
-<div class="header">
 
-    <div class="logo">
-
-    </div>
-
-
-    <div class="steps">
-
-        <div class="step1 step"></div>
-        <div class="step2 step"></div>
-        <div class="step3 step"></div>
-
-    </div>
-
-</div>
 
 <div class="container">
 
     <div class="left">
 
         <div class="paymentoptions heading">
-            <p>Payment Options</p>
+            <h5 class="bold">Payment Options</h5>
         </div>
 
         <div class="checkboxvisa">
@@ -462,13 +439,30 @@ include APPROOT . '/views/includes/data.php';
     <div class="right">
 
         <div class="Summary heading">
-            <p>Summary</p>
+            <h5 class="bold">Summary</h5>
         </div>
 
 
         <div class="summarydetails">
 
+            <div class="gigdata">
 
+                <div class="basicdetails">
+
+                    <div class="subtitle-1">Tutor: Mr.Maithreepala Sirisena</div>
+                    <div class="subtitle-1">Subject: Political Science</div>
+                    <div class="subtitle-1">Deadline: 2021.10.25 00:00</div>
+
+
+
+                </div>
+
+                <?php
+                include APPROOT . '/views/marketplace/components/test.php';
+
+                ?>
+
+            </div>
 
 
 
