@@ -14,11 +14,8 @@ include APPROOT . '/views/student/includes/header.php';
             <div class="img">
                 <img src="<?php echo URLROOT . '/public/img/studentprofileview/user.png' ?>" id="userimg" alt="">
             </div>
-            <center><span id="name">FirstName LastName</span>
+            <center><span id="name"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></span>
                 <div class="star_rating">
-
-
-
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -32,7 +29,7 @@ include APPROOT . '/views/student/includes/header.php';
                 <div class="details">
                     <div id="from" class="cityandmembership">
                         <img src="<?php echo URLROOT . '/public/img/studentprofileview/map.png' ?>" class="detailimg" id="from" alt="">
-                        <span>City Name</span>
+                        <span><?php echo $_SESSION['userdata']['city'] ?></span>
 
                     </div>
                     <div id="membersince" class="cityandmembership">

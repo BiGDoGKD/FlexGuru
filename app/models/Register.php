@@ -63,7 +63,7 @@ class Register
             }
         } elseif ($data['role'] === 'st') {
             $this->db->execute();
-            $this->db->query('INSERT INTO `api`.`student` (`userid`)  VALUES(SELECT `userid` FROM `api`.`user` WHERE username = :username)');
+            $this->db->query('INSERT INTO `api`.`student` (`userid`)  VALUES((SELECT `userid` FROM `api`.`user` WHERE username = :username))');
             $this->db->bind(':username', $data['username']);
             //Execute function
             if ($this->db->execute()) {

@@ -32,7 +32,7 @@
     </ul>
     <ul class="nav-login">
         <li><a onclick="loginFunction()" class="primary pointer subtitle-2" style="margin-right:1.5vw;">Brody Peterson</a></li>
-        <li><a href="<?php echo URLROOT ?>/registration/roles">
+        <li><a href="<?php echo URLROOT ?>/login/logout">
                 <div class="profile-photo"></div>
                 <style>
                     .profile-photo {
