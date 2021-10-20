@@ -38,7 +38,7 @@ class Settings
 
 
 
-        $this->db->query("UPDATE `api`.`user` SET firstname=:firstname , lastname=:lastname, phoneno = :phoneno , city=:city where userid = 1");
+        $this->db->query("UPDATE `api`.`user` SET firstname=:firstname , lastname=:lastname, phoneno = :phoneno , city=:city where username = :username");
 
         //Bind values
 
@@ -46,6 +46,7 @@ class Settings
         $this->db->bind(':lastname', $data['lastname']);
         $this->db->bind(':phoneno', $data['phoneno']);
         $this->db->bind(':city', $data['city']);
+        $this->db->bind(':username', $_SESSION['userdata']['username']);
 
 
 
@@ -60,8 +61,9 @@ class Settings
     // password reset related database functionality
 
     public function resetpassword($data){
-        $this->db->query("UPDATE `api`.`user` SET password=:password where userid = 1");
+        $this->db->query("UPDATE `api`.`user` SET password=:password where username = :username");
         $this->db->bind(':password', $data['password']);
+        $this->db->bind(':username', $_SESSION['userdata']['username']);
         //Execute function
         if ($this->db->execute()) {
             return true;
@@ -72,7 +74,8 @@ class Settings
 
     public function passwordexist($password)
     {
-        $this->db->query("SELECT * FROM `api`.`user` where userid =1 and  password=:password ");
+        $this->db->query("SELECT * FROM `api`.`user` where username = :username and  password=:password ");
+        $this->db->bind(':username', $_SESSION['userdata']['username']);
         $this->db->bind(':password',$password);
         //Execute function
         if($this->db->execute()) {

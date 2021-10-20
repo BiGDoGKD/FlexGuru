@@ -198,7 +198,7 @@ include APPROOT . '/views/student/includes/header.php';
                                     Current Password
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="current" id="current" required>
+                                    <div class="input-field"> <input type="password" name="current" id="current" required>
                                     </div>
                                 </td>
                             </tr>
@@ -207,7 +207,7 @@ include APPROOT . '/views/student/includes/header.php';
                                     New Password
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="new" id="new" required>
+                                    <div class="input-field"> <input type="password" name="new" id="new" required>
                                     </div>
                                 </td>
                             </tr>
@@ -216,7 +216,7 @@ include APPROOT . '/views/student/includes/header.php';
                                     Confirm Passoword
                                 </td>
                                 <td>
-                                    <div class="input-field"> <input type="text" name="confirm" id="confirm" required>
+                                    <div class="input-field"> <input type="password" name="confirm" id="confirm" required>
                                     </div>
                                 </td>
                             </tr>
