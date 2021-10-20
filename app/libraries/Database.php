@@ -75,6 +75,11 @@ class Database
         return $this->statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getArray()
+    {
+        return $this->statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     //Return a specific row as an object
     public function single()
     {

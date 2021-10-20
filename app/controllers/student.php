@@ -4,13 +4,21 @@ class Student extends Controller
 {
   public function __construct()
   {
+    session_start();
+    if (isset($_SESSION['STUACCESS'])) {
+      if ($_SESSION['STUACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+        //do nothing
+      } else {
+        die(header('location:' . URLROOT . '/login'));
+      }
+    } else {
+      die(header('location:' . URLROOT . '/login'));
+    }
   }
 
 
   public function index()
   {
-
-
     $this->view('student/studentprofileview');
   }
 
@@ -25,9 +33,9 @@ class Student extends Controller
   }
 
 
-// -------------------------------------------------
-// security page
-// -------------------------------------------------
+  // -------------------------------------------------
+  // security page
+  // -------------------------------------------------
 
   public function security()
   {
@@ -36,10 +44,10 @@ class Student extends Controller
 
 
     $data = [
-      'getPassword'=>'',
-      'password'=>'',
-      'confpassword'=>'',
-      'getPasswordError'=>'',
+      'getPassword' => '',
+      'password' => '',
+      'confpassword' => '',
+      'getPasswordError' => '',
       'passwordError' => '',
       'confpasswordError' => ''
     ];
@@ -65,20 +73,18 @@ class Student extends Controller
       // --------------------------------------
       // add the current password error message
       // --------------------------------------
-      if ($this->settingsModel->passwordexist($data['getPassword'])){
-        $data['getPasswordError'] ='The password entered is incorrect';
-      }
-      else{
-          $data['getPasswordError'] = '';
+      if ($this->settingsModel->passwordexist($data['getPassword'])) {
+        $data['getPasswordError'] = 'The password entered is incorrect';
+      } else {
+        $data['getPasswordError'] = '';
       }
 
-      
+
       $data["passwordError"] = $this->val->password($data['password'], $data['confpassword']);
-      if($data['password']==$data['confpassword']){
-        $data['confpasswordError']='';
-      }
-      else{
-          $data['confpasswordError']='Passwords do not match';
+      if ($data['password'] == $data['confpassword']) {
+        $data['confpasswordError'] = '';
+      } else {
+        $data['confpasswordError'] = 'Passwords do not match';
       }
 
 
@@ -89,12 +95,10 @@ class Student extends Controller
         } else {
           die('Something went wrong.');
         }
+      }
     }
+    $this->view('student/security', $data);
   }
-    $this->view('student/security',$data);
-
-  }
-
 
 
   // -------------------------------------------------
@@ -105,8 +109,6 @@ class Student extends Controller
   {
     $this->val = $this->model("Validate");
     $this->settingsModel = $this->model("Settings");
-
-
     $data = [
       'firstname' => '',
       'lastname' => '',
@@ -129,9 +131,6 @@ class Student extends Controller
         'phonenoError' => ''
 
       ];
-
-
-
       $data["firstnameError"] = $this->val->name($data['firstname']);
       $data["lastnameError"] = $this->val->name($data['lastname']);
       $data["phonenoError"] = $this->val->mobile($data['phoneno']);
@@ -150,6 +149,4 @@ class Student extends Controller
     $this->view('student/settings', $data);
   }
 }
-
-
 //

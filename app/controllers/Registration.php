@@ -42,6 +42,16 @@ class Registration extends Controller
 
     public function __construct()
     {
+        session_start();
+        if (!isset($_SESSION['STUACCESS'])) {
+            if ($_SESSION['STUACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+                //do nothing
+            } else {
+                die(header('location:' . URLROOT . '/student'));
+            }
+        } else {
+            die(header('location:' . URLROOT . '/student'));
+        }
     }
 
     //validate function for every user
@@ -80,6 +90,7 @@ class Registration extends Controller
         $this->student = $this->model("Student");
         $this->tutor = $this->model("Tutor");
         $this->affiliate = $this->model("Affiliate");
+        $this->registration = $this->model("Register");
 
         if (!isset($_COOKIE['regdata'])) {
             header('location:' . URLROOT . '/registration/roles');
@@ -111,24 +122,23 @@ class Registration extends Controller
                 if ($uecode == $code) {
                     switch ($data['role']) {
                         case 'st':
-                            $this->student->register($data);
-                            header("refresh:1; url=" . URLROOT . "/registration/login");
+                            $this->registration->register($data);
+                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         case 'tu':
                             if (isset($_COOKIE['tutordata']) && isset($_COOKIE['verificationdata'])) {
                                 $tutordata = json_decode($_COOKIE['tutordata']);
                                 $verificationfiles = json_decode($_COOKIE['verificationdata']);
-                                $this->tutor->register($data);
-                                $this->tutor->verification($tutordata);
-                                $this->tutor->verificationfiles($verificationfiles);
+                                $this->registration->register($data);
+                                $this->tutor->register($verificationfiles, $data['username'], $tutordata);
                             } else {
-                                $this->tutor->register($data);
+                                $this->registration->register($data);
                             }
-                            header("refresh:1; url=" . URLROOT . "/registration/login");
+                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         case 'af':
-                            $this->affiliate->register($data);
-                            header("refresh:1; url=" . URLROOT . "/registration/login");
+                            $this->registration->register($data);
+                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         default:
                             echo 'something went wrong';
@@ -264,9 +274,15 @@ class Registration extends Controller
                             $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                             $fileDestination = APPROOT . '/uploads/verifications/' . $fileNameNew;
                             move_uploaded_file($fileTmpName, $fileDestination);
+
+                            print_r('send mail start');
+                            //send mail
                             $otpcode = rand(000000, 999999);
                             $this->mail = $this->model("Mailer");
-                            $this->mail->vmail($otpcode, $data['email']);
+                            $email = json_decode($_COOKIE['regdata'], true);
+                            $this->mail->vmail($otpcode, $email['email']);
+                            print_r('send mail end');
+
                             setcookie('tutordata', json_encode($data), time() + 360);
                             setcookie('verificationdata', json_encode($fileNameNew), time() + 360);
                             setcookie('otpem', hash('sha256', $otpcode), time() + 360);
@@ -385,10 +401,5 @@ class Registration extends Controller
             $this->senddata($data);
         }
         $this->view('registration/affiliate', $data);
-    }
-
-    public function login()
-    {
-        $this->view('registration/login');
     }
 }
