@@ -28,4 +28,9 @@ class Marketplace extends Controller
     {
         $this->view('marketplace/pages/service');
     }
+
+    public function payment()
+    {
+        $this->view('marketplace/pages/payment');
+    }
 }
