@@ -53,4 +53,9 @@ class Login extends Controller
         }
         $this->view('registration/login', $data);
     }
+
+    public function logout()
+    {
+        session_destroy();
+    }
 }
