@@ -23,9 +23,9 @@ class Complaints
     public function insert($data)
     {
 
-        $this->db->query("INSERT INTO complaints VALUES (':username',':email',':type',':complaint');");
-
-        //Bind values
+        $this->db->query("INSERT INTO complaints (`username` , `email` , `complainttype` , `complaint`) VALUES (:username,:email,:type,:complaint);");
+        
+        //Bind values   
 
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':email', $data['email']);
@@ -40,4 +40,5 @@ class Complaints
             return false;
         }
     }
+
 }
