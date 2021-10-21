@@ -24,7 +24,7 @@ include APPROOT . '/views/marketplace/includes/header.php';
         color:#7174f1;
         font-size: 100px;
         line-height: 200px;
-        margin-left:-15px;
+        margin-left:50px;
       }
       .card {
         background: white;

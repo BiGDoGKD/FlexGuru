@@ -84,6 +84,7 @@ include APPROOT . '/views/student/includes/header.php';
     right: 100px;
     background-color: #7879F1;
     color: white;
+    top:466px;
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -94,6 +95,7 @@ include APPROOT . '/views/student/includes/header.php';
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     margin: 10px;
+    
 
   }
 
@@ -128,6 +130,12 @@ include APPROOT . '/views/student/includes/header.php';
     top: -121px;
     left: 166px;
   }
+
+  #complaint{
+    position: absolute;
+    left: 232px;
+    top: 245px;
+  }
 </style>
 <div class="image">
   <img src="<?php echo URLROOT . '/public/img/svg/complaint.svg' ?>" id="userimg" alt="">
@@ -147,7 +155,12 @@ include APPROOT . '/views/student/includes/header.php';
           <option value="">Other issues</option>
         </select>
       </div>
-      <div class="field"><span>Complaint</span><input type="text" name="complaint" id="complaint"></div>
+
+      <div class="field"><span>Complaint</span>
+
+        <textarea cols="50" rows="10" name="complaint" id="complaint"></textarea>
+
+      </div>
       <button type="submit" name="submit" class="button">Submit</button>
     </form>
   </div>
