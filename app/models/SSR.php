@@ -22,7 +22,7 @@ class SSR
 
     public function request($data)
     {
-        $this->db->query('INSERT INTO `api`.`specialservicerequest` (`title`, `description`, `subject`, `category`, `days`, `budget`,`date`) VALUES (:title, :description, :subject, :category, :days, :budget,:date)');
+        $this->db->query('INSERT INTO `api`.`ssrmessage` (`title`, `description`, `subject`, `category`, `days`, `budget`,`date`) VALUES (:title, :description, :subject, :category, :days, :budget,:date)');
 
         //Bind values
         $this->db->bind(':title', $data['title']);
@@ -43,7 +43,7 @@ class SSR
 
     public function getRequests()
     {
-        $this->db->query("SELECT * FROM specialservicerequest");
+        $this->db->query("SELECT * FROM ssrmessage");
         $result = $this->db->resultSet();
         return $result;
     }

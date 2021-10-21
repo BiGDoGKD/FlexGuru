@@ -272,7 +272,7 @@ class Registration extends Controller
                         if ($fileSize < 1000000) {
                             print_r('came here');
                             $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                            $fileDestination = APPROOT . '/uploads/verifications/' . $fileNameNew;
+                            $fileDestination = APPROOT . '/../public/uploads/verifications/' . $fileNameNew;
                             move_uploaded_file($fileTmpName, $fileDestination);
 
                             print_r('send mail start');
