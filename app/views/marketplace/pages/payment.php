@@ -9,45 +9,31 @@ include APPROOT . '/views/marketplace/includes/header.php';
 
 <style>
     .container {
-
-
-
         display: flex;
-
-
+        justify-content: center;
     }
 
 
     .left {
-
         height: 675px;
         width: 600px;
-
         border: 1px solid #acacac;
         margin-top: 60px;
         border-radius: 24px;
-
     }
 
     .right {
-
         height: 675px;
         width: 550px;
-
         position: relative;
-
         margin-top: 60px;
         margin-left: 30px;
         border: 1px solid #acacac;
         border-radius: 24px;
-
-
-
     }
 
 
     .right .summarydetails {
-
         width: 360px;
         height: 535px;
         margin: 60px auto 0;
@@ -57,24 +43,14 @@ include APPROOT . '/views/marketplace/includes/header.php';
         box-shadow: 1px 2px 3px 0 rgb(0 0 0 / 10%);
     }
 
-
-
-
-
-
-
     .heading {
         height: 60px;
-        width: 100%;
         background-color: var(--primary);
-
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
         padding-left: 30px;
         border-radius: 24px 24px 0 0;
-
-
     }
 
     .heading h5 {

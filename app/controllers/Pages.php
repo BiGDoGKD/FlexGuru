@@ -20,6 +20,10 @@ class Pages extends Controller
             if ($_SESSION['STUACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
                 die(header('location:' . URLROOT . '/student'));
             }
+        } elseif (isset($_SESSION['TUTACCESS'])) {
+            if ($_SESSION['TUTACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+                die(header('location:' . URLROOT . '/tutor'));
+            }
         }
     }
 

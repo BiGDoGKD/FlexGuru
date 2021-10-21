@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  width: 100%;
+  color: var(--dark);
+  margin: 30px 0 50px 0;
+}
+.container form {
+  width: 100%;
+}
+.container .container-image {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container img {
+  width: 80%;
+}
+.ssr-block {
+  margin: 20px 0;
+}
+
+.ssr-block #description {
+  resize: none;
+  border-radius: 10px;
+  border: 1px solid #acacac;
+  padding: 15px;
+}
+
+.ssr-block p {
+  margin: 10px 0;
+}
+
+.ssr-block .categories {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.ssr-block .categories .subject {
+  width: 45%;
+}
+.ssr-block .categories .sub-category {
+  display: flex;
+  width: 45%;
+  justify-content: flex-end;
+}
+
+.ssr-block select {
+  font-weight: 500;
+  width: 100%;
+  font-size: 14px;
+  color: #495055;
+  padding: 10px 25px;
+  border-radius: 24px;
+  border: 2px solid #d9d9d9;
+  outline: none;
+}
+.ssr-block input {
+  font-weight: 500;
+  width: 100%;
+  font-size: 14px;
+  color: #495055;
+  padding: 10px 25px;
+  border-radius: 24px;
+  border: 2px solid #d9d9d9;
+  outline: none;
+}
+
+.ssr-block button {
+  width: 100%;
+}

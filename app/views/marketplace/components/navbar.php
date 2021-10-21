@@ -110,7 +110,7 @@
                                             break;
                                     }
                                     ?>">
-                            <li>Settings</li>
+                            <li>Support</li>
                         </a>
                         <a href="<?php echo URLROOT ?>/login/logout">
                             <li>Logout</li>

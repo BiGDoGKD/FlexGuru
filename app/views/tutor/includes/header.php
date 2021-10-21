@@ -33,4 +33,4 @@
 
 <body>
     <div class="flex-body">
-        <?php include APPROOT . '/views/student/components/navbar-student.php'; ?>
+        <?php include APPROOT . '/views/tutor/components/navbar-tutor.php'; ?>

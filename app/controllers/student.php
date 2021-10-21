@@ -11,6 +11,10 @@ class Student extends Controller
       } else {
         die(header('location:' . URLROOT . '/login'));
       }
+    } elseif (isset($_SESSION['TUTACCESS'])) {
+      die(header('location:' . URLROOT . '/tutor'));
+    } elseif (isset($_SESSION['AFFACCESS'])) {
+      die(header('location:' . URLROOT . '/affiliate'));
     } else {
       die(header('location:' . URLROOT . '/login'));
     }
@@ -32,6 +36,38 @@ class Student extends Controller
     $this->view('student/notifications');
   }
 
+  // special service request 
+
+  public function specialrequest()
+  {
+    $data = [
+      'title' => '',
+      'description' => '',
+      'subject' => '',
+      'category' => '',
+      'days' => '',
+      'budget' => ''
+    ];
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+      $this->ssr = $this->model("SSR");
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      $data = [
+        'title' => $_POST['title'],
+        'description' => $_POST['description'],
+        'subject' => $_POST['subject'],
+        'category' => $_POST['category'],
+        'days' => $_POST['days'],
+        'budget' => $_POST['budget']
+      ];
+
+      if ($this->ssr->request($data)) {
+        header('location:' . URLROOT . '/student/requests');
+      }
+    }
+
+    $this->view('student/pages/specialservicerequest', $data);
+  }
 
   // -------------------------------------------------
   // security page
@@ -149,13 +185,22 @@ class Student extends Controller
     $this->view('student/settings', $data);
   }
 
+
+  //requests
+
+  public function requests()
+  {
+    $this->ssr = $this->model("SSR");
+    $resultArray = $this->ssr->getRequests();
+    $this->view('student/pages/requests', $resultArray);
+  }
+  public function responses()
+  {
+    $this->view('student/pages/responses');
+  }
   public function complaint()
   {
     $this->view('student/complaint');
   }
-
-
-
 }
 //
-

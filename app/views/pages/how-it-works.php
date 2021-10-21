@@ -27,7 +27,6 @@ include APPROOT . '/views/includes/header.php';
       margin-bottom: 1em;
   }
 </style>
-<body class = "primary w-90 text-justify" >
 <h2>Terms and Conditions of our platform</h1>
 <p>1. These terms and conditions guide how we provide you with our services, including eLearning sessions.    </p>
 <p>2. Before submitting your registration form to us, please read these terms carefully.     </p>
@@ -83,7 +82,6 @@ it will contain a provision for you to opt out of receiving any further informat
  or requests are strictly prohibited to make changes in  the ranking process
 
 </p>
-</body>
 <br>
 <?php
 include APPROOT . '/views/includes/footer.php';

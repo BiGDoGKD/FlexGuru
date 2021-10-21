@@ -26,8 +26,6 @@ include APPROOT . '/views/includes/header.php';
     letter-spacing: 1.5px;
   }
 </style>
-
-<body class="primary w-90 text-justify">
   <h1 class=primary>ABOUT US</h1>
   <h3 class=primary>Our Vision</h3>
   <br>
@@ -48,7 +46,6 @@ include APPROOT . '/views/includes/header.php';
     in the learning process but there are no perfect solutions to overcome it. According to our country, every student does not get enough resources while learning and clearing doubts. <br>
     so we group of undergraduate students came up with this idea to help students and professionals to give an easily accessible and flexible education as our vision suggests with a personalized learning dashboard.<br></p>
   <br>
-</body>
 <br>
 
 

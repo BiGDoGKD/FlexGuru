@@ -56,12 +56,12 @@
 
             .close-sidebar {
                 left: -300;
-                transition: ease-in-out 1s;
+                transition: ease-in-out 0.7s;
             }
 
             .open-sidebar {
                 left: 0;
-                transition: ease-in-out 1s;
+                transition: ease-in-out 0.7s;
             }
 
             .icon-bar .open-arrow {
