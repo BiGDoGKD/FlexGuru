@@ -37,7 +37,7 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            transition: 1s ease-in-out;
+            transition: 0.7s ease-in-out;
         }
 
         .dashboard-margin {
