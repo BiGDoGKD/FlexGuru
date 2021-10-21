@@ -44,7 +44,9 @@ include APPROOT . '/views/student/includes/header.php';
                 <input type="text" name="budget" id="budget">
             </div>
             <div class="ssr-block">
-                <button type="submit" class="btn bg-primary on-primary">Submit Request</button>
+                <a href="<?php echo URLROOT . '/student/requests' ?>">
+                    <div style="width: 96.5%;" class="btn bg-primary on-primary">Submit Request</div>
+                </a>
             </div>
         </form>
     </div>

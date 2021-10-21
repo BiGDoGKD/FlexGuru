@@ -12,7 +12,11 @@
         "menu": "Sessions"
     },
     {
+        "url": "student/requests",
+        "menu": "Requests"
+    },
+    {
         "url": "marketplace",
-        "menu": "Find Services"
+        "menu": "Marketplace"
     }
 ]

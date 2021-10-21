@@ -80,7 +80,7 @@ include APPROOT . '/views/student/includes/header.php';
         <div class="requestsessions">
 
             <span>Request Sessions </span>
-            <button>POST</button>
+            <button onclick="location.href='<?php echo URLROOT . '/student/specialrequest' ?>'">POST</button>
 
         </div>
 
