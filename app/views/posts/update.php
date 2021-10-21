@@ -10,12 +10,16 @@
 
 <div class="container center">
     <h1>
-        Create new post
+        Update post
     </h1>
 
-    <form action="<?php echo URLROOT; ?>/posts/create" method="POST">
+    <form
+    action="<?php echo URLROOT; ?>/posts/update/<?php echo $data['post']->id ?>" method="POST">
         <div class="form-item">
-            <input type="text" name="title" placeholder="Title...">
+            <input
+                type="text"
+                name="title"
+                value="<?php echo $data['post']->title ?>">
 
             <span class="invalidFeedback">
                 <?php echo $data['titleError']; ?>
@@ -23,7 +27,7 @@
         </div>
 
         <div class="form-item">
-            <textarea name="body" placeholder="Enter your post..."></textarea>
+            <textarea name="body" placeholder="Enter your post..."><?php echo $data['post']->body ?></textarea>
 
             <span class="invalidFeedback">
                 <?php echo $data['bodyError']; ?>
