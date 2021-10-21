@@ -32,5 +32,7 @@ class Complaint extends Controller
         die('Something went wrong.');
       }
     }
+
+    $this->view('includes/complaint', $data);
   }
 }

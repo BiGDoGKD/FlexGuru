@@ -373,7 +373,7 @@ include APPROOT . '/views/marketplace/includes/header.php';
                     </div>
 
                     <!-- Buttons -->
-                    <button type="submit" class="proceed-btn"><a href="#">Proceed</a></button>
+                    <button type="submit" class="proceed-btn"><a href="<?php echo URLROOT . '/marketplace/paymentcompleted' ?>">Proceed</a></button>
                     <button type="submit" class="paypal-btn"><a href="#">Pay With</a></button>
                 </div>
             </form>

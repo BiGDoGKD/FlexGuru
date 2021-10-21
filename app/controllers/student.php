@@ -198,5 +198,9 @@ class Student extends Controller
   {
     $this->view('student/pages/responses');
   }
+  public function complaint()
+  {
+    $this->view('student/complaint');
+  }
 }
 //
