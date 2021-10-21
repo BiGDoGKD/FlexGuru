@@ -48,4 +48,26 @@
                 return false;
             }
         }
+
+        public function getVerifications()
+        {
+            $this->db->query("SELECT * FROM tutor");
+            $result = $this->db->resultSet();
+            return $result;
+        }
+
+        public function approve($data)
+        {
+            $this->db->query("UPDATE `api`.`tutor` SET `status` = :approve WHERE (`tuid` = :tuid);");
+            $this->db->bind(':approve', 'verified');
+            $this->db->bind(':tuid', $data);
+            $this->db->execute();
+        }
+        public function decline($data)
+        {
+            $this->db->query("UPDATE `api`.`tutor` SET `status` = :declined WHERE (`tuid` = :tuid);");
+            $this->db->bind(':declined', 'disabled');
+            $this->db->bind(':tuid', $data);
+            $this->db->execute();
+        }
     }

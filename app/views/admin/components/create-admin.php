@@ -192,11 +192,7 @@ include APPROOT . '/views/includes/data.php';
                     </tbody>
                 </table>
                 <button class="button_reg pointer btn-text" id="submit" value="submit" type="submit">CREATE ADMIN</button>
-
                 </br>
-
-
-
             </form>
         </center>
     </div>

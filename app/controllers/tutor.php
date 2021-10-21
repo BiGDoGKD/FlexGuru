@@ -18,6 +18,7 @@ class Tutor extends Controller
         } else {
             die(header('location:' . URLROOT . '/login'));
         }
+        
     }
 
     public function index()
@@ -30,7 +31,8 @@ class Tutor extends Controller
         $this->view('tutor/billinginformation');
     }
 
-    public function gigdetail(){
+    public function gigdetail()
+    {
         $this->view('tutor/publishgig/gigdetail');
     }
     public function tutororderprogress()
@@ -156,6 +158,8 @@ class Tutor extends Controller
         }
         $this->view('tutor/settings', $data);
     }
+
+
 }
 
 
