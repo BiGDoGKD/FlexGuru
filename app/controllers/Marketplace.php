@@ -33,4 +33,8 @@ class Marketplace extends Controller
     {
         $this->view('marketplace/pages/payment');
     }
+    public function gigdetail()
+    {
+        $this->view('marketplace/pages/gigdetail');
+    }
 }
