@@ -148,5 +148,14 @@ class Student extends Controller
     }
     $this->view('student/settings', $data);
   }
+
+  public function complaint()
+  {
+    $this->view('student/complaint');
+  }
+
+
+
 }
 //
+
