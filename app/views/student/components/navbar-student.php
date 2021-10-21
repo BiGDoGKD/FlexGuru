@@ -88,6 +88,11 @@
                                 ?>">
                         <li>Support</li>
                     </a>
+                    <a href="<?php
+                                echo URLROOT . '/student/complaint';
+                                ?>">
+                        <li>Complaints</li>
+                    </a>
                     <a href="<?php echo URLROOT ?>/login/logout">
                         <li>Logout</li>
                     </a>

@@ -19,6 +19,9 @@ class Tutor extends Controller
         $this->view('tutor/billinginformation');
     }
 
+    public function gigdetail(){
+        $this->view('tutor/publishgig/gigdetail');
+    }
     public function tutororderprogress()
     {
         $this->view('tutor/tutororderprogress');
