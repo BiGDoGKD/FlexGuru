@@ -13,3 +13,5 @@ class Post {
 
         return $results;
     }
+
+}    
