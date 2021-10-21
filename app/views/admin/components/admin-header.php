@@ -12,7 +12,6 @@
  * PARENT FOLDER: includes
  */
 ?>
-
 <div class="admin-dashboard">
     <div class="admin-header">
         <div class="menu-bar">
