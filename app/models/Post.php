@@ -15,11 +15,12 @@ class Post {
     }
 
     public function addPost($data) {
-        $this->db->query('INSERT INTO posts (user_id, title, body) VALUES (:user_id, :title, :body)');
+        $this->db->query('INSERT INTO posts (user_id, title, body,created_at) VALUES (:user_id, :title, :body, :date)');
 
         $this->db->bind(':user_id', $data['user_id']);
         $this->db->bind(':title', $data['title']);
         $this->db->bind(':body', $data['body']);
+        $this->db->bind(':date', date("Y-m-d"));
 
         if ($this->db->execute()) {
             return true;

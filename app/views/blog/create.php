@@ -1,19 +1,15 @@
 <?php
-   require APPROOT . '/views/includes/header.php';
+include APPROOT . '/views/admin/components/admin-header.php';
 ?>
 
-<div class="navbar">
-    <?php
-       require APPROOT . '/views/includes/navigation-visitor.php';
-    ?>
-</div>
+
 
 <div class="container center">
     <h1>
         Create new post
     </h1>
 
-    <form action="<?php echo URLROOT; ?>/posts/create" method="POST">
+    <form action="<?php echo URLROOT; ?>/blog/create" method="POST">
         <div class="form-item">
             <input type="text" name="title" placeholder="Title...">
 
