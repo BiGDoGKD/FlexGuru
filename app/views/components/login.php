@@ -16,7 +16,7 @@
     <h6 class="bold gray" style="margin: 23px 0 30px 0;">Login in to Flexguru</h6>
     <h3 class="primary"><?php echo $main["site-name"] ?></h3>
     <span class="subtitle-1">Smart Learning</span>
-    <form action="">
+    <form action="<?php echo URLROOT . '/login' ?>" method="POST">
         <div class="input-field"> <input type="text" name="username" id="username" required>
             <span class="placeholder">Username</span>
         </div>

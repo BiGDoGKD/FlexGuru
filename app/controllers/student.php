@@ -36,6 +36,12 @@ class Student extends Controller
     $this->view('student/notifications');
   }
 
+  // special service request 
+
+  public function specialrequest()
+  {
+    $this->view('student/pages/specialservicerequest');
+  }
 
   // -------------------------------------------------
   // security page
