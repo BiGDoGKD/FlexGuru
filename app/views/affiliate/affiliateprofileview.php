@@ -17,15 +17,11 @@ include APPROOT . '/views/affiliate/includes/header.php';
             </div>
             <center><span id="name">FirstName LastName</span>
                 <div class="star_rating">
-
-
-
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star unchecked"></span>
                     <span class="fa fa-star unchecked"></span>
-
                 </div>
 
                 <span><b> N/A </b> (n/a) </span>

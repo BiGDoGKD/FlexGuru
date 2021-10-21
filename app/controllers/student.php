@@ -40,7 +40,33 @@ class Student extends Controller
 
   public function specialrequest()
   {
-    $this->view('student/pages/specialservicerequest');
+    $data = [
+      'title' => '',
+      'description' => '',
+      'subject' => '',
+      'category' => '',
+      'days' => '',
+      'budget' => ''
+    ];
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+      $this->ssr = $this->model("SSR");
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      $data = [
+        'title' => $_POST['title'],
+        'description' => $_POST['description'],
+        'subject' => $_POST['subject'],
+        'category' => $_POST['category'],
+        'days' => $_POST['days'],
+        'budget' => $_POST['budget']
+      ];
+
+      if ($this->ssr->request($data)) {
+        header('location:' . URLROOT . '/student/requests');
+      }
+    }
+
+    $this->view('student/pages/specialservicerequest', $data);
   }
 
   // -------------------------------------------------
@@ -164,7 +190,13 @@ class Student extends Controller
 
   public function requests()
   {
-    $this->view('student/pages/requests');
+    $this->ssr = $this->model("SSR");
+    $resultArray = $this->ssr->getRequests();
+    $this->view('student/pages/requests', $resultArray);
+  }
+  public function responses()
+  {
+    $this->view('student/pages/responses');
   }
 }
 //

@@ -21,11 +21,14 @@ class Session
 
     public function create($username, $password)
     {
+
         $this->db->query('SELECT `username`,`firstname`,`lastname`,`email`,`startdate`,`phoneno`,`city`, `role`,`photourl`,`dob` FROM `api`.`user` WHERE `user`.`username`=:username and `password`=:password');
         $this->db->bind(':username', $username);
         $this->db->bind(':password', $password);
         $this->db->execute();
+
         if ($this->db->rowCount() > 0) {
+
             $userdata = $this->db->getArray();
             $data = $userdata[0];
 

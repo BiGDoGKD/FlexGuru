@@ -13,9 +13,7 @@ include APPROOT . '/views/student/includes/header.php';
             align-items: center;
         }
 
-        .container {
-            min-height: 440px;
-        }
+
 
         .users-accounts {
             border-collapse: collapse;
@@ -63,34 +61,32 @@ include APPROOT . '/views/student/includes/header.php';
             color: var(--primary);
         }
     </style>
-    <h4 style="margin: 30px 0;">Special Service Requests</h4>
+    <h4 style="margin: 30px 0;">Special Service Responses</h4>
     <table class="users-accounts">
         <thead center>
             <tr>
-                <th>Request ID</th>
+                <th>Response ID</th>
                 <th>Title</th>
                 <th>Date</th>
                 <th>Description</th>
-                <th>Expected Date</th>
+                <th>Tutor</th>
                 <th>Budget</th>
-                <th>Responses</th>
             </tr>
         </thead>
         <tbody class="">
             <?php
-            $i = 1;
-            foreach ($data as $row) {
-                $i++;
+
+            for ($i = 0; $i < 12; $i++) {
+
             ?>
 
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $row['title'] ?></td>
-                    <td><?php echo $row['date'] ?></td>
-                    <td><?php echo $row['description'] ?></td>
-                    <td><?php echo $row['days'] ?></td>
-                    <td><?php echo $row['budget'] ?></td>
-                    <td><a href="<?php echo URLROOT . '/student/responses' ?>">12</a></td>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>22-10-2021</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, accusantium!</td>
+                    <td></td>
+                    <td>1500</td>
                 </tr>
 
             <?php
