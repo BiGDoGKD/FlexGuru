@@ -1,5 +1,5 @@
 <?php
-class Posts extends Controller {
+class Blog extends Controller {
     public function __construct() {
         $this->postModel = $this->model('Post');
     }
@@ -15,9 +15,9 @@ class Posts extends Controller {
     }
 
     public function create() {
-        if(!isLoggedIn()) {
+       /* if(!isLoggedIn()) {
             header("Location: " . URLROOT . "/posts");
-        }
+        } */
 
         $data = [
             'title' => '',
