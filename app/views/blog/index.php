@@ -11,7 +11,7 @@ include APPROOT . '/views/admin/components/admin-header.php';
     top: 0;
     bottom: 0;
     font-family: 'Lato', sans-serif;
-    background-color: #f2f2f2;
+    background-color: #fff;
 }
 
 a {
