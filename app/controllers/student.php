@@ -198,9 +198,38 @@ class Student extends Controller
   {
     $this->view('student/pages/responses');
   }
+
+
   public function complaint()
   {
-    $this->view('student/complaint');
+    $this->complaintsModel = $this->model("Complaints");
+    $data = [
+      'username' => '',
+      'email' => '',
+      'type' => '',
+      'complaint' => ''
+    ];
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      $data = [
+        'username' => trim($_POST['username']),
+        'email' => trim($_POST['email']),
+        'type' => trim($_POST['type']),
+        'complaint' => trim($_POST['complaint'])
+      ];
+
+      if($this->complaintsModel->insert($data)) {
+       
+        header('location:' . URLROOT . '/student/studentprofileview');
+      } else {
+        die('Something went wrong.');
+      }
+    }
+
+    $this->view('student/complaint',$data);
   }
+
+
 }
 //

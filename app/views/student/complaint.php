@@ -84,7 +84,7 @@ include APPROOT . '/views/student/includes/header.php';
     right: 100px;
     background-color: #7879F1;
     color: white;
-    top:466px;
+    top: 466px;
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -95,7 +95,7 @@ include APPROOT . '/views/student/includes/header.php';
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     margin: 10px;
-    
+
 
   }
 
@@ -131,29 +131,45 @@ include APPROOT . '/views/student/includes/header.php';
     left: 166px;
   }
 
-  #complaint{
+  #complaint {
     position: absolute;
     left: 232px;
     top: 245px;
   }
 </style>
+
+
+
+
+
+
 <div class="image">
+
   <img src="<?php echo URLROOT . '/public/img/svg/complaint.svg' ?>" id="userimg" alt="">
+
 </div>
+
 <div class="container">
+
   <div class="form">
-    <form action="../complaint" method="get">
+
+    <form action="<?php echo URLROOT; ?>/student/complaint" method="POST">
+
       <div class="field"><span>Username</span><input class="input" type="text" name="username" id="username" placeholder="username"></div>
       <div class="field"><span>Email</span><input type="text" name="email" id="email" placeholder="email"></div>
       <div class="field"><span>Complaint type</span>
+
         <select name="type">
+
           <option value="">--Select Type--</option>
-          <option value="">Technical related issues</option>
-          <option value="">Service related issues</option>
-          <option value="">Transaction related issues</option>
-          <option value="">Quality related issues</option>
-          <option value="">Other issues</option>
+          <option value="Technical related issues">Technical related issues</option>
+          <option value="Service related issues">Service related issues</option>
+          <option value="Transaction related issues">Transaction related issues</option>
+          <option value="Quality related issues">Quality related issues</option>
+          <option value="Other issues">Other issues</option>
+
         </select>
+
       </div>
 
       <div class="field"><span>Complaint</span>
