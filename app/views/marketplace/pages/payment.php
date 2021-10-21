@@ -8,12 +8,7 @@ include APPROOT . '/views/marketplace/includes/header.php';
 
 
 <style>
-    * {
-
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+  
 
     .container {
 
