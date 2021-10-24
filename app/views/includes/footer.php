@@ -20,37 +20,52 @@
 </div>
 
 <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/public/footer/style.css' ?>">
+
+<?php
+$footer_string = file_get_contents(APPROOT . '/views/includes/data/footer.json');
+$footer = json_decode($footer_string, true);
+?>
 <div class="fg-footer gray">
     <div class="fg-info">
-        <h5 class="primary">Flexguru</h5>
-        <p class="subtitle-1">Colombo, Sri Lanka</p>
-        <p class="subtitle-2 privacy-policy bold">Privacy Policy</p>
+        <h5 class="primary"><?php echo $footer['title'] ?></h5>
+        <p class="subtitle-1"><?php echo $footer['info-address'] ?></p>
+        <p class="subtitle-1"><?php echo $footer['local-address'] ?></p>
+        <p class="subtitle-2 privacy-policy bold"><?php echo $footer['policy'] ?></p>
     </div>
     <div class="fg-resources menu">
         <h6>Resources</h6>
         <ul>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
+            <?php
+            foreach ($footer['footer-menu'][0]['menu'] as $item) {
+            ?>
+                <li><a href="#"><?php echo $item['item'] ?></a></li>
+            <?php
+            }
+            ?>
         </ul>
     </div>
     <div class="fg-support menu">
         <h6>Support</h6>
         <ul>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
+            <?php
+            foreach ($footer['footer-menu'][1]['menu'] as $item) {
+            ?>
+                <li><a href="#"><?php echo $item['item'] ?></a></li>
+            <?php
+            }
+            ?>
         </ul>
     </div>
     <div class="fg-company menu">
         <h6>Company</h6>
         <ul>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
-            <li><a href="#">item 1</a></li>
+            <?php
+            foreach ($footer['footer-menu'][2]['menu'] as $item) {
+            ?>
+                <li><a href="#"><?php echo $item['item'] ?></a></li>
+            <?php
+            }
+            ?>
         </ul>
     </div>
     <div class="fg-social menu">
