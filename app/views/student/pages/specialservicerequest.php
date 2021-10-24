@@ -27,6 +27,8 @@ include APPROOT . '/views/student/includes/header.php';
                             <option value="Subject">Subject</option>
                             <option value="Mathematics">Mathematics</option>
                             <option value="Science">Science</option>
+                            <option value="Science">ICT</option>
+                            <option value="Science">Statistics</option>
                         </select></div>
                     <div class="sub-category"><input type="text" name="category" id="category" placeholder="Category" required></div>
                 </div>
