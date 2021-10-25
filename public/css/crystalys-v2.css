@@ -16,10 +16,10 @@ body {
 
 :root {
   --dark: #343a40;
-  --gray: #7a7d85;
-  --primary: #7879f1;
+  --gray: #202124;
+  --primary: #8931ef;
   --primary-v: #8086ff;
-  --secondary: #ffabab;
+  --secondary: #000;
   --secondary-v: #ffdede;
   --background: #ffffff;
   --surface: #ffffff;
@@ -117,37 +117,83 @@ h6 {
 }
 
 h1 {
-  font-size: 95;
+  font-size: 95px;
   font-weight: 300;
   letter-spacing: -1.5px;
   line-height: 135.7px;
 }
 h2 {
-  font-size: 60;
+  font-size: 60px;
   font-weight: 300;
   letter-spacing: 0.5px;
   line-height: 85.7px;
 }
 h3 {
-  font-size: 48;
+  font-size: 48px;
   font-weight: 400;
   letter-spacing: 0px;
   line-height: 68.6px;
 }
 h4 {
-  font-size: 35;
+  font-size: 35px;
   font-weight: 400;
   letter-spacing: 0.25px;
   line-height: 50px;
 }
 h5 {
-  font-size: 25;
+  font-size: 25px;
   font-weight: 400;
   letter-spacing: 0px;
   line-height: 35.7px;
 }
 h6 {
-  font-size: 21;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  line-height: 30px;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Poppins";
+  color: var(--dark);
+}
+
+.h1 {
+  font-size: 95px;
+  font-weight: 300;
+  letter-spacing: -1.5px;
+  line-height: 135.7px;
+}
+.h2 {
+  font-size: 60px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 85.7px;
+}
+.h3 {
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 68.6px;
+}
+.h4 {
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 50px;
+}
+.h5 {
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 35.7px;
+}
+.h6 {
+  font-size: 21px;
   font-weight: 500;
   letter-spacing: 0.15px;
   line-height: 30px;
@@ -157,14 +203,14 @@ h6 {
 
 .subtitle-1 {
   font-family: "Poppins";
-  font-size: 17;
+  font-size: 17px;
   font-weight: 400;
   letter-spacing: 0.15px;
   line-height: 24.3px;
 }
 .subtitle-2 {
   font-family: "Poppins";
-  font-size: 15;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.1px;
   line-height: 21.4px;
@@ -172,7 +218,7 @@ h6 {
 
 .subtitle-3 {
   font-family: "Roboto";
-  font-size: 12;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1px;
   line-height: 17.1px;
@@ -182,14 +228,14 @@ h6 {
 
 .body-1 {
   font-family: "Roboto";
-  font-size: 18;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.6px;
   line-height: 25.7px;
 }
 .body-2 {
   font-family: "Roboto";
-  font-size: 16;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.3px;
   line-height: 22.9px;
@@ -199,7 +245,7 @@ h6 {
 
 .btn-txt {
   font-family: "Roboto";
-  font-size: 14;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1.25px;
   text-transform: uppercase;
@@ -208,7 +254,7 @@ h6 {
 
 .caption {
   font-family: "Roboto";
-  font-size: 16;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.6px;
   line-height: 22.9px;
@@ -216,7 +262,7 @@ h6 {
 
 .overline {
   font-family: "Roboto";
-  font-size: 12;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 1.75px;
   text-transform: uppercase;
@@ -225,7 +271,7 @@ h6 {
 
 .fg-errors {
   font-family: "Roboto";
-  font-size: 12;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0px;
   line-height: 17.1px;
@@ -237,7 +283,7 @@ h6 {
 
 .small-text {
   font-family: "Roboto";
-  font-size: 10;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 3%;
   line-height: 15px;
@@ -246,7 +292,7 @@ h6 {
 /* button style  */
 .btn {
   font-family: "Roboto";
-  font-size: 14;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1.25px;
   text-transform: uppercase;
@@ -269,7 +315,7 @@ h6 {
 
 .btn-lg {
   font-family: "Roboto";
-  font-size: 14;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1.25px;
   text-transform: uppercase;
@@ -291,7 +337,7 @@ h6 {
 }
 .btn-sm {
   font-family: "Roboto";
-  font-size: 12;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.25px;
   text-transform: uppercase;

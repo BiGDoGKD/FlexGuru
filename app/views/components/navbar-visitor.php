@@ -18,7 +18,7 @@
             <div></div>
         </div>
         <a href="<?php echo URLROOT ?>/pages/index" class="logo dark">
-            <h5><?php echo $main["site-name"] ?></h5>
+            <p class="subtitle-1"><?php echo $main["site-name"] ?></p>
         </a>
     </div>
     <ul class="nav-info">
@@ -41,7 +41,6 @@
     </div>
     <ul>
         <li><a href="#"><button style="font-size:24px; padding: 5px 30px; margin:30px 0 10px;" class="btn bg-primary on-primary bold">Sign up</button></a></li>
-        <hr style="width:50%; margin:20px 0 0 58px;">
         <li><a href="#" class="gray">Login</a></li>
         <?php
         foreach ($navigation as $value) {

@@ -21,13 +21,13 @@ include APPROOT . '/views/includes/header.php';
 <div class="fg-page">
     <div class="cover">
         <div class="overlay">
-            <h2 class="surface">How does it works</h2>
-            <h6 class="surface">Lorem ipsum dolor sit amet.</h6>
+            <h1 class="surface">How does it works</h1>
+            <p class="surface body-1">Lorem ipsum dolor sit amet.</p>
         </div>
     </div>
     <div class="container reverse">
         <div class="fg-description">
-            <h4 class="dark">Register into the system</h4>
+            <p class="dark h4">Register into the system</p>
             <div class="fg-image" style="
                 position: relative;
                 background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
@@ -35,9 +35,9 @@ include APPROOT . '/views/includes/header.php';
                 background-position: center;
                 background-repeat: no-repeat;
               ">
-                <a href="#">
-                    <div class="secondary-overlay"></div>
-                </a>
+
+                <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
+
             </div>
             <p class="body-1 gray">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
@@ -61,14 +61,12 @@ include APPROOT . '/views/includes/header.php';
               background-position: center;
               background-repeat: no-repeat;
             ">
-            <a href="#">
-                <div class="secondary-overlay"></div>
-            </a>
+            <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
         </div>
     </div>
     <div class="container">
         <div class="fg-description">
-            <h4 class="dark">Register into the system</h4>
+            <p class="dark h4">Register into the system</p>
             <div class="fg-image" style="
                 position: relative;
                 background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
@@ -76,9 +74,7 @@ include APPROOT . '/views/includes/header.php';
                 background-position: center;
                 background-repeat: no-repeat;
               ">
-                <a href="#">
-                    <div class="secondary-overlay"></div>
-                </a>
+                <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
             </div>
             <p class="body-1 gray">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
@@ -102,14 +98,13 @@ include APPROOT . '/views/includes/header.php';
               background-position: center;
               background-repeat: no-repeat;
             ">
-            <a href="#">
-                <div class="secondary-overlay"></div>
-            </a>
+
+            <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
         </div>
     </div>
     <div class="container reverse">
         <div class="fg-description">
-            <h4 class="dark">Register into the system</h4>
+            <p class="dark h4">Register into the system</p>
             <div class="fg-image" style="
                 position: relative;
                 background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
@@ -117,9 +112,7 @@ include APPROOT . '/views/includes/header.php';
                 background-position: center;
                 background-repeat: no-repeat;
               ">
-                <a href="#">
-                    <div class="secondary-overlay"></div>
-                </a>
+                <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
             </div>
             <p class="body-1 gray">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
@@ -143,9 +136,8 @@ include APPROOT . '/views/includes/header.php';
               background-position: center;
               background-repeat: no-repeat;
             ">
-            <a href="#">
-                <div class="secondary-overlay"></div>
-            </a>
+
+            <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
         </div>
     </div>
 </div>
