@@ -1,0 +1,72 @@
+{
+    "title": "Flexguru",
+    "info-address": "info@flexguru.lk",
+    "local-address": "Colombo, Sri Lanka",
+    "policy": "Privacy Policy",
+    "policy-url": "privacy",
+    "footer-menu": [
+        {
+            "menu-title": "Resources",
+            "menu": [
+                {
+                    "item": "Affiliate Program",
+                    "url": "role"
+                },
+                {
+                    "item": "Service Request",
+                    "url": "about"
+                },
+                {
+                    "item": "News Feed",
+                    "url": "about"
+                },
+                {
+                    "item": "FAQ",
+                    "url": "about"
+                }
+            ]
+        },
+        {
+            "menu-title": "Support",
+            "menu": [
+                {
+                    "item": "How it Works",
+                    "url": "about"
+                },
+                {
+                    "item": "Become a Tutor",
+                    "url": "role"
+                },
+                {
+                    "item": "Become a Student",
+                    "url": "role"
+                },
+                {
+                    "item": "Get Help",
+                    "url": "about"
+                }
+            ]
+        },
+        {
+            "menu-title": "Company",
+            "menu": [
+                {
+                    "item": "Our Team",
+                    "url": "role"
+                },
+                {
+                    "item": "Contact Us",
+                    "url": "about"
+                },
+                {
+                    "item": "About Us",
+                    "url": "about"
+                },
+                {
+                    "item": "Terms & Conditions",
+                    "url": "about"
+                }
+            ]
+        }
+    ]
+}

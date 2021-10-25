@@ -17,97 +17,130 @@
 include APPROOT . '/views/includes/data.php';
 include APPROOT . '/views/includes/header.php';
 ?>
-<div class="head">
-    <h1>How Does It Work</h1>
-    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <br />
-        deserunt mollit anim id est laborum.</p>
-</div>
-<div class="card-container">
-    <div class="cards-row">
-        <div class="card background">
-            <img src="<?php echo URLROOT . '/public/img/visitor/book-64.png' ?>" alt="book icon">
-            <h3>Students</h3>
-            <p>You can now buy products from USA stores that do not ship internationally. How? Place an order on our website and we'll buy the items on your behalf and ship them to your international address.</p>
-        </div>
-        <div class="card">
-            <img src="<?php echo URLROOT . '/public/img/visitor/book-64.png' ?>" alt="book icon">
-            <h3>Tutors</h3>
-            <p>You can now buy products from USA stores that do not ship internationally. How? Place an order on our website and we'll buy the items on your behalf and ship them to your international address.</p>
-        </div>
-        <div class="card">
-            <img src="<?php echo URLROOT . '/public/img/visitor/book-64.png' ?>" alt="book icon">
-            <h3>Admin</h3>
-            <p>You can now buy products from USA stores that do not ship internationally. How? Place an order on our website and we'll buy the items on your behalf and ship them to your international address.</p>
+<link rel="stylesheet" href="<?php echo URLROOT . '/public/css/public/pages/how-it-works/style.css' ?>" />
+<div class="fg-page">
+    <div class="cover">
+        <div class="overlay">
+            <h1 class="surface">How does it works</h1>
+            <p class="surface body-1">Lorem ipsum dolor sit amet.</p>
         </div>
     </div>
-    <div class="cards-row">
-        <div class="card background">
-            <img src="<?php echo URLROOT . '/public/img/visitor/book-64.png' ?>" alt="book icon">
-            <h3>Affiliate Marketers</h3>
-            <p>You can now buy products from USA stores that do not ship internationally. How? Place an order on our website and we'll buy the items on your behalf and ship them to your international address.</p>
+    <div class="container reverse">
+        <div class="fg-description">
+            <p class="dark h4">Register into the system</p>
+            <div class="fg-image" style="
+                position: relative;
+                background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+              ">
+
+                <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
+
+            </div>
+            <p class="body-1 gray">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                deserunt commodi minus? Tenetur, obcaecati eum. Porro quis natus,
+                quo laboriosam totam, atque facilis ipsa iusto explicabo excepturi
+                molestiae ducimus fuga dolores? Ut odio rerum nesciunt blanditiis
+                quia doloribus mollitia eius culpa, exercitationem praesentium
+                officiis nemo, vel incidunt ipsam sequi perferendis corporis hic
+                voluptate dolor architecto maiores perspiciatis. Eos molestiae
+                saepe, labore doloremque quo temporibus dolores facilis unde
+                minus. Omnis suscipit illo optio nobis natus sequi, sint iusto eum
+                placeat corporis harum ea corrupti id explicabo facilis possimus
+                dolorem ratione voluptas reprehenderit veniam expedita culpa,
+                fugit debitis dignissimos. Iste, repellat exercitationem?
+            </p>
         </div>
-        <div class="card">
-            <img src="<?php echo URLROOT . '/public/img/visitor/book-64.png' ?>" alt="book icon">
-            <h3>Service Gigs</h3>
-            <p>You can now buy products from USA stores that do not ship internationally. How? Place an order on our website and we'll buy the items on your behalf and ship them to your international address.</p>
+        <div class="fg-image" style="
+              position: relative;
+              background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+            ">
+            <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
         </div>
-        <div class="card">
-            <img src="<?php echo URLROOT . '/public/img/visitor/book-64.png' ?>" alt="book icon">
-            <h3>Special Service Request</h3>
-            <p>You can now buy products from USA stores that do not ship internationally. How? Place an order on our website and we'll buy the items on your behalf and ship them to your international address.</p>
+    </div>
+    <div class="container">
+        <div class="fg-description">
+            <p class="dark h4">Register into the system</p>
+            <div class="fg-image" style="
+                position: relative;
+                background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+              ">
+                <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
+            </div>
+            <p class="body-1 gray">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                deserunt commodi minus? Tenetur, obcaecati eum. Porro quis natus,
+                quo laboriosam totam, atque facilis ipsa iusto explicabo excepturi
+                molestiae ducimus fuga dolores? Ut odio rerum nesciunt blanditiis
+                quia doloribus mollitia eius culpa, exercitationem praesentium
+                officiis nemo, vel incidunt ipsam sequi perferendis corporis hic
+                voluptate dolor architecto maiores perspiciatis. Eos molestiae
+                saepe, labore doloremque quo temporibus dolores facilis unde
+                minus. Omnis suscipit illo optio nobis natus sequi, sint iusto eum
+                placeat corporis harum ea corrupti id explicabo facilis possimus
+                dolorem ratione voluptas reprehenderit veniam expedita culpa,
+                fugit debitis dignissimos. Iste, repellat exercitationem?
+            </p>
+        </div>
+        <div class="fg-image" style="
+              position: relative;
+              background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+            ">
+
+            <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
+        </div>
+    </div>
+    <div class="container reverse">
+        <div class="fg-description">
+            <p class="dark h4">Register into the system</p>
+            <div class="fg-image" style="
+                position: relative;
+                background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+              ">
+                <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
+            </div>
+            <p class="body-1 gray">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                deserunt commodi minus? Tenetur, obcaecati eum. Porro quis natus,
+                quo laboriosam totam, atque facilis ipsa iusto explicabo excepturi
+                molestiae ducimus fuga dolores? Ut odio rerum nesciunt blanditiis
+                quia doloribus mollitia eius culpa, exercitationem praesentium
+                officiis nemo, vel incidunt ipsam sequi perferendis corporis hic
+                voluptate dolor architecto maiores perspiciatis. Eos molestiae
+                saepe, labore doloremque quo temporibus dolores facilis unde
+                minus. Omnis suscipit illo optio nobis natus sequi, sint iusto eum
+                placeat corporis harum ea corrupti id explicabo facilis possimus
+                dolorem ratione voluptas reprehenderit veniam expedita culpa,
+                fugit debitis dignissimos. Iste, repellat exercitationem?
+            </p>
+        </div>
+        <div class="fg-image" style="
+              position: relative;
+              background: url(<?php echo URLROOT . '/public/img/public/pages/how-it-works/student.jpg' ?>);
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+            ">
+
+            <div onclick="location.href='#'" class="secondary-overlay pointer"></div>
         </div>
     </div>
 </div>
-
-<style>
-    .head {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .head p {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .card-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        align-content: flex-start;
-    }
-
-    .card-container .cards-row {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: var(--background);
-        margin: .5rem;
-        align-items: center;
-        padding: 2rem;
-        height: auto;
-    }
-
-    .card img {
-        width: 50px;
-        height: auto;
-    }
-
-    .card p {
-        color: var(--dark);
-        text-align: center;
-        justify-self: center;
-        line-height: 1.6;
-    }
-</style>
-<br>
 <?php
 include APPROOT . '/views/includes/footer.php';
 ?>
