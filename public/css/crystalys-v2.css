@@ -16,10 +16,11 @@ body {
 
 :root {
   --dark: #343a40;
-  --gray: #202124;
-  --primary: #8931ef;
+  --gray: #414141;
+  /* --primary: #0070BA; */
+  --primary: #0F5299;
   --primary-v: #8086ff;
-  --secondary: #000;
+  --secondary: #009cde;
   --secondary-v: #ffdede;
   --background: #ffffff;
   --surface: #ffffff;
