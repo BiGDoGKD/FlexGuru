@@ -17,6 +17,7 @@
 <script defer src="<?php echo URLROOT . '/public/js/login.js' ?>"></script>
 <script defer src="<?php echo URLROOT . '/public/js/navbar-visitor.js' ?>"></script>
 <script defer src="<?php echo URLROOT . '/public/js/sidenav-visitor.js' ?>"></script>
+<script defer src="<?php echo URLROOT . '/public/js/smooth-scroll.js' ?>"></script>
 </div>
 
 <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/public/footer/style.css' ?>">

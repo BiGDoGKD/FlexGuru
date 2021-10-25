@@ -1,0 +1,41 @@
+.cover .overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* cover image of the how it works page  */
+.cover {
+  position: relative;
+  background: url(../../../../img/public/pages/how-it-works/student.jpg);
+  width: 100vw;
+  transform: translateX(-50%);
+  left: 50%;
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fg-page{
+    margin-bottom: 200px;
+}
+
+.fg-page .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 1200px) {
+}
