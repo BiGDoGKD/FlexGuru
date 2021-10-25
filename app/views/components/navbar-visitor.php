@@ -18,7 +18,7 @@
             <div></div>
         </div>
         <a href="<?php echo URLROOT ?>/pages/index" class="logo dark">
-            <p class="subtitle-1"><?php echo $main["site-name"] ?></p>
+            <p class="h5"><?php echo $main["site-name"] ?></p>
         </a>
     </div>
     <ul class="nav-info">
