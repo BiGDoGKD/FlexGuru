@@ -84,11 +84,11 @@ With ease
                 <span>We designed FlexGuru to open doors of oppurtunity to all Students ,Tutors and Professionals in our country so you can provide your service with ease while earning money.</span><br><br>
                 <span>Flexguru provides variety of areas to learn so students have the flexibility to learn most of the important things through our platform.</span>
             </p>
-                <img src="images/stu.png" style="height: 20%; width: 40%;border-radius: 10px;padding-left:10%;">
+                <img src="/public/img/public/how/stu.png" style="height: 20%; width: 40%;border-radius: 10px;padding-left:10%;">
         </div>
         <h2 class="line">Becoming a Student in Flexguru is a very simple task. Lets see.</h2>
         <div class="wrapper side">
-            <img src="images/tut1.jpg" style="height: 20%; width: 50%;border-radius: 10px;">
+            <img src="/public/img/public/how/tut1.jpg" style="height: 20%; width: 50%;border-radius: 10px;">
             <p class="line">
                 <span>1.Just visit Flexguru website and Choose to register as a Student.</span><br><br>
                 <span>2.Then you need to give some regular details in the form to sign up as a student</span>
@@ -100,11 +100,11 @@ With ease
                 <span>3.Students do not need to provide any documents after filling the registration form</span><br><br>
                 <span>4.After registering as a Student you have to verify your mail using the unique OTP sent to your mail.</span>
             </p>
-                <img src="images/tut2.jpg" style="height: 20%; width: 50%;border-radius: 10px;">
+                <img src="/public/img/public/how/tut2.jpg" style="height: 20%; width: 50%;border-radius: 10px;">
         </div>
 
         <div class="wrapper side">
-            <img src="images/mail.png" style="height: 20%; width: 50%;border-radius: 10px;">
+            <img src="/public/img/public/how/mail.png" style="height: 20%; width: 50%;border-radius: 10px;">
             <p class="line">
                 <span>5.You will recieve a five digit OTP to verify your Email.</span><br><br>
                 
