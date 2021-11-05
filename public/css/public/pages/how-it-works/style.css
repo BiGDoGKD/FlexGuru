@@ -99,3 +99,12 @@
     flex-direction: column-reverse;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .fg-page .cover .overlay h1 {
+    font-size: 40px;
+  }
+  .fg-page .container .h4 {
+    font-size: 30px;
+  }
+}

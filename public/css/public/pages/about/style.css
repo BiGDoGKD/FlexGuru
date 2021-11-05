@@ -26,8 +26,8 @@
   background-size: cover;
 }
 
-.fg-page{
-    margin-bottom: 200px;
+.fg-page {
+  margin-bottom: 200px;
 }
 
 .fg-page .content {
@@ -38,4 +38,12 @@
 }
 
 @media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 768px) {
+  .fg-page .cover .overlay h1 {
+    font-size: 60px;
+  }
+  .fg-page .content .h3 {
+    font-size: 30px;
+  }
 }
