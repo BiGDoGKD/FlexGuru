@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head class="scroll">
     <meta charset="UTF-8">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
