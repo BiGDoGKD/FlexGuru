@@ -4,7 +4,6 @@ include APPROOT . '/views/includes/header.php';
 ?>
 <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/crystalys-v2.css' ?>">
 <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/visitor/login.css' ?>">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,8 +71,8 @@ include APPROOT . '/views/includes/header.php';
 <body>
     <div class="wrapper">
         <p class="title">
-Looking For <br>
-Freelance job?
+Want to Learn <br>
+With ease
 
         </p>
         <p class="subtitle">Welcome to FlexGuru</p>
@@ -83,23 +82,23 @@ Freelance job?
         <div class="wrapper side">
             <p class="line">
                 <span>We designed FlexGuru to open doors of oppurtunity to all Students ,Tutors and Professionals in our country so you can provide your service with ease while earning money.</span><br><br>
-                <span>Flexguru provides variety of areas to teach so tutors have the flexibility to teach their best skill</span>
+                <span>Flexguru provides variety of areas to learn so students have the flexibility to learn most of the important things through our platform.</span>
             </p>
                 <img src="/public/img/public/how/stu.png" style="height: 20%; width: 40%;border-radius: 10px;padding-left:10%;">
         </div>
-        <h2 class="line">Becoming a tutor in Flexguru is a very simple task. Lets see.</h2>
+        <h2 class="line">Becoming a Student in Flexguru is a very simple task. Lets see.</h2>
         <div class="wrapper side">
             <img src="/public/img/public/how/tut1.jpg" style="height: 20%; width: 50%;border-radius: 10px;">
             <p class="line">
-                <span>1.Just visit Flexguru website and Choose to register as a tutor.</span><br><br>
-                <span>2.Then you need to give some regular details in the form to sign up as a tutor</span>
+                <span>1.Just visit Flexguru website and Choose to register as a Student.</span><br><br>
+                <span>2.Then you need to give some regular details in the form to sign up as a student</span>
             </p>
                 
         </div>
         <div class="wrapper side">
             <p class="line">
-                <span>3.Tutor need to submit some documents to our system for verification process</span><br><br>
-                <span>4.Tutor registration has a manual verification process and tutors have to prove the validity of their qualifications.</span>
+                <span>3.Students do not need to provide any documents after filling the registration form</span><br><br>
+                <span>4.After registering as a Student you have to verify your mail using the unique OTP sent to your mail.</span>
             </p>
                 <img src="/public/img/public/how/tut2.jpg" style="height: 20%; width: 50%;border-radius: 10px;">
         </div>
@@ -112,7 +111,6 @@ Freelance job?
             </p>
                 
         </div>
-
         <article>
             <div class="why">
     
@@ -122,12 +120,12 @@ Freelance job?
     
                 <ul class>
             <li>
-                <h3>Wide variety of areas to teach</h3>
+                <h3>Wide variety of areas to learn</h3>
                 <p>Our platform is not limited to specific areas of subjects like other E-learning platforms.</p>
             </li>
             <li>
-                <h3>Ranking process to give tutors extra advantages</h3>
-                <p>Ranking process gives extra advantage to loyal tutors of our platform</p>
+                <h3>Ranking process gives extra advantages</h3>
+                <p>Ranking process gives extra advantage to loyal Students of our platform</p>
             </li>
             <li>
                 <h3>Flexible and customisable shedules </h3>
@@ -135,7 +133,7 @@ Freelance job?
             </li>
             <li>
                 <h3>Secure payment options through a secured gateway.</h3>
-                <p>Get paid on time, every time. Payment is transferred to you upon completion.</p>
+                <p>Students can make their payments any time using our payment gateway with many transwer options.</p>
             </li>
     </ul>
     
