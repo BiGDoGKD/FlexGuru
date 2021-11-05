@@ -419,7 +419,7 @@ include APPROOT . '/views/marketplace/includes/header.php';
 
                 <div class="basicdetails">
 
-                    <div class="subtitle-1">Tutor: Mr.Maithreepala Sirisena</div>
+                    <div class="subtitle-1">Tutor: Mr.Daya Senarathne</div>
                     <div class="subtitle-1">Subject: Political Science</div>
                     <div class="subtitle-1">Deadline: 2021.10.25 00:00</div>
 

@@ -27,6 +27,9 @@ class Pages extends Controller
         }
     }
 
+
+    
+
     public function index()
     {
         $data = [
@@ -48,6 +51,11 @@ class Pages extends Controller
     public function docs()
     {
         $this->view('pages/how-it-works');
+    }
+        
+    public function faq()
+    {
+        $this->view('pages/faq');
     }
     public function becomeastudent()
     {
