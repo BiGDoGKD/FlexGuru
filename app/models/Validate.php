@@ -2,13 +2,21 @@
 class Validate
 {
     private $db;
+    private $api;
+
     public function __construct()
     {
         $this->db = new Database;
+        $this->api = new API;
     }
 
     public function email($email)
     {
+        //REQUEST FORMAT
+        $url = 'http://localhost/api-flexguru/api/link/email.php';
+        $data = [
+            'email' => $email
+        ];
         //Validate email
         if (empty($email)) {
             $res = 'Please enter email address.';
@@ -16,8 +24,12 @@ class Validate
             $res = 'Please enter the correct format.';
         } else {
             //Check if email exists.
-            if ($this->db->findUserByEmail($email)) {
-                $res = $email . ' is already taken.';
+            $get_data = $this->api->call('POST', $url, json_encode($data));
+            $response = json_decode($get_data, true);
+            print_r($get_data);
+            print_r($response);
+            if ($response['status']) {
+                $res = $response['message'];
             } else {
                 $res = null;
             }
@@ -42,6 +54,25 @@ class Validate
         return $res;
     }
 
+
+    public function mobile($mobile)
+    {
+        if (empty($mobile)) {
+            $res = "Please enter mobile.";
+        } elseif (!preg_match('/^0[0-9]{9}+$/', $mobile)) {
+            $res = "Should be 10-digit format starting with 0 Ex. 0771234567";
+        } else {
+            //Check if mobile exists.
+            if ($this->db->findUserByMobile($mobile)) {
+                $res = $mobile . ' is already taken.';
+            } else {
+                $res = null;
+            }
+        }
+        return $res;
+    }
+
+
     public function name($name)
     {
         if (empty($name)) {
@@ -58,25 +89,7 @@ class Validate
 
 
 
-public function mobile($mobile)
-    {
-        if (empty($mobile)) {
-            $res = "Please enter mobile.";
-         }
-          elseif (!preg_match('/^0[0-9]{9}+$/',$mobile)) {
-            $res = "Should be 10-digit format starting with 0 Ex. 0771234567";
-   
-        }else {
-            //Check if mobile exists.
-            if ($this->db->findUserByMobile($mobile)) {
-                $res = $mobile . ' is already taken.';
-            } else {
-                $res = null;
 
-            }
-        }
-        return $res;
-    }
 
     function password($password, $confpassword)
     {
