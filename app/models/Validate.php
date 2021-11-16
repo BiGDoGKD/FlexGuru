@@ -13,7 +13,7 @@ class Validate
     public function email($email)
     {
         //REQUEST FORMAT
-        $url = 'http://localhost/api-flexguru/api/link/email.php';
+        $url = APIURL . 'email.php';
         $data = [
             'email' => $email
         ];
@@ -26,8 +26,6 @@ class Validate
             //Check if email exists.
             $get_data = $this->api->call('POST', $url, json_encode($data));
             $response = json_decode($get_data, true);
-            print_r($get_data);
-            print_r($response);
             if ($response['status']) {
                 $res = $response['message'];
             } else {
@@ -35,6 +33,34 @@ class Validate
             }
         }
         return $res;
+    }
+
+    public function validate($email, $username, $phoneno)
+    {
+        //REQUEST METHOD
+        $url = APIURL . 'validate.php';
+        $data = [
+            'email' => $email,
+            'username' => $username,
+            'phoneno' => $phoneno,
+            'emailError' => '',
+            'usernameError' => '',
+            'phonenoError' => ''
+        ];
+        //Validate email
+        $get_data = $this->api->call('POST', $url, json_encode($data));
+        $response = json_decode($get_data, true);
+        if ($response['emailStatus']) {
+            $data['emailError'] = $response['emailMessage'];
+        }
+        if ($response['usernameStatus']) {
+            $data['usernameError'] = $response['usernameMessage'];
+        }
+        if ($response['phonenoStatus']) {
+            $data['phonenoError'] = $response['phonenoMessage'];
+        }
+
+        return $data;
     }
 
     public function username($username)
@@ -54,7 +80,6 @@ class Validate
         return $res;
     }
 
-
     public function mobile($mobile)
     {
         if (empty($mobile)) {
@@ -72,7 +97,6 @@ class Validate
         return $res;
     }
 
-
     public function name($name)
     {
         if (empty($name)) {
@@ -84,12 +108,6 @@ class Validate
         }
         return $res;
     }
-
-
-
-
-
-
 
     function password($password, $confpassword)
     {
@@ -104,10 +122,6 @@ class Validate
         }
         return $res;
     }
-
-
-
-
 
     function spdob($dob)
     {

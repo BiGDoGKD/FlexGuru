@@ -62,9 +62,16 @@ class Registration extends Controller
         $this->mail = $this->model("Mailer");
         $data["firstnameError"] = $this->val->name($data['firstname']);
         $data["lastnameError"] = $this->val->name($data['lastname']);
-        $data["usernameError"] = $this->val->username($data['username']);
-        $data["emailError"] = $this->val->email($data['email']);
-        $data["phonenoError"] = $this->val->mobile($data['phoneno']);
+        // $data["usernameError"] = $this->val->username($data['username']);
+        // $data["emailError"] = $this->val->email($data['email']);
+        // $data["phonenoError"] = $this->val->mobile($data['phoneno']);
+
+        $res = $this->val->validate($data['email'], $data['username'], $data['phoneno']);
+
+        $data["emailError"] = $res['emailError'];
+        $data["usernameError"] = $res['usernameError'];
+        $data["phonenoError"] = $res['phonenoError'];
+
         if ($data["role"] == 'st') {
             $data["dobError"] = $this->val->dob($data['dob']);
         } else {
