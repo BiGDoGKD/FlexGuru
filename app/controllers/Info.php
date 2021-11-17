@@ -20,6 +20,6 @@ class Info extends Controller
 
     public function student()
     {
-        $this->view('info/become-a-student');
+        $this->view('pages/become-a-student');
     }
 }

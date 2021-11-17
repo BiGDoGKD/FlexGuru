@@ -16,6 +16,7 @@ class Register
     public function __construct()
     {
         $this->db = new Database;
+        $this->api = new API;
     }
     /* Test (database and table needs to exist before this works)
     public function getUsers() {
@@ -26,51 +27,36 @@ class Register
     */
     public function register($data)
     {
-        $this->db->query('INSERT INTO `api`.`user` (`username`, `firstname`, `lastname`, `email`, `password`, `startdate`, `phoneno`, `city`, `role`, `photourl`, `dob`, `subscription`) VALUES (:username, :firstname, :lastname, :email, :password, :startdate, :phoneno, :city, :role, :photourl, :dob, :subscription)');
-        //Bind values
-        $this->db->bind(':username', $data['username']);
-        $this->db->bind(':firstname', $data['firstname']);
-        $this->db->bind(':lastname', $data['lastname']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':password', $data['password']);
-        $this->db->bind(':startdate', date("Y-m-d"));
-        $this->db->bind(':phoneno', $data['phoneno']);
-        $this->db->bind(':city', $data['city']);
-        $this->db->bind(':role', $data['role']);
-        $this->db->bind(':photourl', $data['photourl']);
-        $this->db->bind(':dob', $data['dob']);
-        $this->db->bind(':subscription', 1);
+
+
+        $user = [
+            'username' => $data['username'],
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'email' => $data['email'],
+            'password' => $data['password'],
+            'startdate' => date("Y-m-d"),
+            'phoneno' => $data['phoneno'],
+            'city' => $data['city'],
+            'role' => $data['role'],
+            'photourl' => $data['photourl'],
+            'dob' => $data['dob'],
+            'gender' => $data['gender'],
+            'subscription' => 1
+        ];
+
+        $this->api->call("POST", APIURL . 'registration/register', json_encode($user));
+
+
         if ($data['role'] === 'tu') {
-            $this->db->execute();
-            $this->db->query('INSERT INTO `api`.`tutor` (`userid`) SELECT `userid` FROM `api`.`user` WHERE username = :username');
-            $this->db->bind(':username', $data['username']);
-            //Execute function for tutor table
-            if ($this->db->execute()) {
-                return true;
-            } else {
-                return false;
-            }
+            $this->api->call("POST", APIURL . 'registration/tutor', json_encode(array('username' => $user['username'])));
+            return true;
         } elseif ($data['role'] === 'af') {
-            $this->db->execute();
-            $this->db->query('INSERT INTO `api`.`affiliatemarketer` (`userid`, `affiliatelink`)  VALUES((SELECT `userid` FROM `api`.`user` WHERE username = :username),:affiliatelink)');
-            $this->db->bind(':username', $data['username']);
-            $this->db->bind(':affiliatelink', uniqid('', true));
-            //Execute function
-            if ($this->db->execute()) {
-                return true;
-            } else {
-                return false;
-            }
+            $this->api->call("POST", APIURL . 'registration/affiliate', json_encode(array('username' => $user['username'])));
+            return true;
         } elseif ($data['role'] === 'st') {
-            $this->db->execute();
-            $this->db->query('INSERT INTO `api`.`student` (`userid`)  VALUES((SELECT `userid` FROM `api`.`user` WHERE username = :username))');
-            $this->db->bind(':username', $data['username']);
-            //Execute function
-            if ($this->db->execute()) {
-                return true;
-            } else {
-                return false;
-            }
+            $this->api->call("POST", APIURL . 'registration/student', json_encode(array('username' => $user['username'])));
+            return true;
         } else {
             return false;
         }

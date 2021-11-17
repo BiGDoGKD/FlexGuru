@@ -33,6 +33,7 @@ $footer = json_decode($footer_string, true);
         <p class="subtitle-1"><?php echo $footer['local-address'] ?></p>
         <p class="subtitle-2 privacy-policy bold"><?php echo $footer['policy'] ?></p>
     </div>
+
     <div class="fg-resources menu">
         <p class="h6">Resources</p>
         <ul>
@@ -45,6 +46,7 @@ $footer = json_decode($footer_string, true);
             ?>
         </ul>
     </div>
+
     <div class="fg-support menu">
         <p class="h6">Support</p>
         <ul>
@@ -57,6 +59,7 @@ $footer = json_decode($footer_string, true);
             ?>
         </ul>
     </div>
+
     <div class="fg-company menu">
         <p class="h6">Company</p>
         <ul>
@@ -69,6 +72,7 @@ $footer = json_decode($footer_string, true);
             ?>
         </ul>
     </div>
+
     <div class="fg-social menu">
         <p class="h6">Follow Us</p>
         <div class="social-icons">
@@ -91,6 +95,7 @@ $footer = json_decode($footer_string, true);
                 </i></a>
         </div>
     </div>
+
 </div>
 </body>
 

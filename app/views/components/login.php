@@ -35,3 +35,10 @@
         <div class="join-now"><span>Not a member yet?</span><span class="primary pointer">Join now</span></div>
     </form>
 </div>
+
+
+<style>
+    .fg-login .input-field input {
+        width: 310px;
+    }
+</style>

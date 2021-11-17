@@ -21,7 +21,6 @@ $navigation = json_decode($str_navigation, true);
 $footermenu = json_decode($str_footermenu, true);
 $main = json_decode($str_sitedetails, true);
 $district = json_decode($str_district, true);
-
 ?>
 <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/crystalys-v2.css' ?>">
 <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/visitor/login.css' ?>">
@@ -38,11 +37,9 @@ $district = json_decode($str_district, true);
         <div class="input-field"> <input type="text" name="username" id="username">
             <span class="placeholder">Username</span>
         </div>
-
         <div class="input-field"> <input type="password" name="password" id="password">
             <span class="placeholder">Password</span>
         </div>
-
         <button class="on-primary bg-primary bold w-100" style="font-size: 14px;">CONTINUE</button>
     </form>
 </div>

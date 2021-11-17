@@ -19,27 +19,32 @@ class Session
         $this->db = new Database;
     }
 
-    public function create($username, $password)
+    public function create($data)
     {
 
-        $this->db->query('SELECT `username`,`firstname`,`lastname`,`email`,`startdate`,`phoneno`,`city`, `role`,`photourl`,`dob` FROM `api`.`user` WHERE `user`.`username`=:username and `password`=:password');
-        $this->db->bind(':username', $username);
-        $this->db->bind(':password', $password);
-        $this->db->execute();
-
-        if ($this->db->rowCount() > 0) {
-
-            $userdata = $this->db->getArray();
-            $data = $userdata[0];
-
-            switch ($data['role']) {
+        $userData = [
+            'username' => $data['username'],
+            'password' => $data['password']
+        ];
+        $api = new API;
+        $get_data = $api->call('POST', APIURL . 'authentication/login', json_encode($userData));
+        $res = json_decode($get_data, true);
+        if (isset($res['status'])) {
+            if ($res['status']) {
+                return 'Contact System Administrator!';
+            } else {
+                return $res['message'];
+            }
+        } else if (isset($res['refreshToken'])) {
+            setcookie('ref', $res['refreshToken'], 0, '/', null, null, true);
+            switch ($res['data'][0]['role']) {
                 case 'st':
                     //Start the session
                     session_start();
                     //Set session variables
                     $_SESSION['type'] = 'student';
-                    $_SESSION['userdata'] = $data;
-                    $_SESSION['STUACCESS'] = hash('sha256', $_SESSION['userdata']['username']);
+                    $_SESSION['userdata'] = $res['data'][0];
+                    $_SESSION['STUACCESS'] = $res['token'];
                     header('location:' . URLROOT . '/student');
                     break;
                 case 'tu':
@@ -47,8 +52,8 @@ class Session
                     session_start();
                     //Set session variables
                     $_SESSION['type'] = 'tutor';
-                    $_SESSION['userdata'] = $data;
-                    $_SESSION['TUTACCESS'] = hash('sha256', $_SESSION['userdata']['username']);
+                    $_SESSION['userdata'] = $res['data'][0];
+                    $_SESSION['TUTACCESS'] = $res['token'];
                     header('location:' . URLROOT . '/tutor');
                     break;
                 case 'af':
@@ -56,15 +61,20 @@ class Session
                     session_start();
                     //Set session variables
                     $_SESSION['type'] = 'affiliate';
-                    $_SESSION['userdata'] = $data;
-                    $_SESSION['AFFACCESS'] = hash('sha256', $_SESSION['userdata']['username']);
+                    $_SESSION['userdata'] = $res['data'][0];
+                    $_SESSION['AFFACCESS'] = $res['token'];
                     header('location:' . URLROOT . '/affiliatemarketer');
                     break;
                 default:
                     header('location:' . URLROOT . '/forbidden');
             }
-        } else {
-            return false;
         }
+    }
+
+    public function destroy()
+    {
+        session_start();
+        session_destroy();
+        header('location:' . URLROOT . '/login');
     }
 }

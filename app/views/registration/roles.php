@@ -55,7 +55,7 @@ include APPROOT . '/views/includes/header.php';
         display: flex;
         flex-direction: column;
         width: 100%;
-
+        margin: 0 0 100px 0;
     }
 
     .fg-role-selection .form-type {

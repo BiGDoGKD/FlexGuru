@@ -63,6 +63,10 @@ include APPROOT . '/views/includes/header.php';
         display: flex;
     }
 
+    .login-content .input-field input {
+        width: 310px;
+    }
+
     .login-content .login-background {
         position: absolute;
         top: 50%;
