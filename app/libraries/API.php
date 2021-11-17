@@ -29,7 +29,8 @@ class API
         // OPTIONS:
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
+            "Content-Type: application/json",
+            "Accept: application/json",
         ));
         curl_setopt($curl, CURLOPT_USERPWD, $this->username . ":" . $this->password);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -49,5 +50,38 @@ class API
 
         curl_close($curl);
         return $result;
+    }
+
+    public function checktoken($token)
+    {
+        $url = 'http://localhost/api-flexguru/authentication/checktoken';
+
+        $method = 'POST';
+
+        $data = [
+            'token' => $token
+        ];
+
+        $get_data = $this->call($method, $url, json_encode($data));
+
+        $response = json_decode($get_data, true);
+
+        if (isset($response['token'])) {
+            if (isset($_COOKIE['ref'])) {
+                unset($_COOKIE['ref']);
+                setcookie('ref', $response['refreshToken'], 0, '/', null, null, true);
+                session_start();
+                if (isset($_SESSION['STUACCESS'])) {
+                    $_SESSION['STUACCESS'] = $response['token'];
+                } else if (isset($_SESSION['TUTACCESS'])) {
+                    $_SESSION['TUTACCESS'] = $response['token'];
+                } else if (isset($_SESSION['AFFACCESS'])) {
+                    $_SESSION['AFFACCESS'] = $response['token'];
+                }
+            }
+            return $response['deny'];
+        } else {
+            return $response['deny'];
+        }
     }
 }

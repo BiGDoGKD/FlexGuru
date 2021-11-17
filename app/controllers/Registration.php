@@ -60,6 +60,7 @@ class Registration extends Controller
         //validation begin
         $this->val = $this->model("Validate");
         $this->mail = $this->model("Mailer");
+
         $data["firstnameError"] = $this->val->name($data['firstname']);
         $data["lastnameError"] = $this->val->name($data['lastname']);
         // $data["usernameError"] = $this->val->username($data['username']);
@@ -130,7 +131,7 @@ class Registration extends Controller
                     switch ($data['role']) {
                         case 'st':
                             $this->registration->register($data);
-                            header("refresh:0; url=" . URLROOT . "/login");
+                            // header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         case 'tu':
                             if (isset($_COOKIE['tutordata']) && isset($_COOKIE['verificationdata'])) {
@@ -171,15 +172,15 @@ class Registration extends Controller
                 if ($data['role'] == 'tu') {
                     $data['password'] = hash('sha256', $data['password']);
                     $data['confpassword'] = hash('sha256', $data['confpassword']);
-                    setcookie('regdata', json_encode($data), time() + 1800);
+                    setcookie('regdata', json_encode($data), time() + 1800, '/', null, null, true);
                     header("location:" . URLROOT . "/registration/tutorverification");
                 } else {
                     $data['password'] = hash('sha256', $data['password']);
                     $data['confpassword'] = hash('sha256', $data['confpassword']);
-                    $otpcode = rand(000000, 999999);
+                    $otpcode = rand(100000, 999999);
                     $this->mail->vmail($otpcode, $data['email']);
-                    setcookie('regdata', json_encode($data), time() + 360);
-                    setcookie('otpem', hash('sha256', $otpcode), time() + 360);
+                    setcookie('regdata', json_encode($data), time() + 360, '/', null, null, true);
+                    setcookie('otpem', hash('sha256', $otpcode), time() + 360, '/', null, null, true);
                     //If validation pass, rediect the visitor to registration/verification 
                     header("location:" . URLROOT . "/registration/verification");
                 }

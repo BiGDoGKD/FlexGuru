@@ -4,12 +4,15 @@ class Student extends Controller
 {
   public function __construct()
   {
+    $api = new API;
+    $session = $this->model("Session");
     session_start();
     if (isset($_SESSION['STUACCESS'])) {
-      if ($_SESSION['STUACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+      if ($api->checktoken($_COOKIE['ref'])) {
         //do nothing
-      } else {
+        $session->destroy();
         die(header('location:' . URLROOT . '/login'));
+      } else {
       }
     } elseif (isset($_SESSION['TUTACCESS'])) {
       die(header('location:' . URLROOT . '/tutor'));
@@ -219,17 +222,15 @@ class Student extends Controller
         'complaint' => trim($_POST['complaint'])
       ];
 
-      if($this->complaintsModel->insert($data)) {
-       
+      if ($this->complaintsModel->insert($data)) {
+
         header('location:' . URLROOT . '/student/studentprofileview');
       } else {
         die('Something went wrong.');
       }
     }
 
-    $this->view('student/complaint',$data);
+    $this->view('student/complaint', $data);
   }
-
-
 }
 //

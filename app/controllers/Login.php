@@ -22,12 +22,6 @@ class Login extends Controller
 
     public function index()
     {
-        $data = [
-            'username' => '',
-            'password' => '',
-            'usernameError' => '',
-            'passwordError' => ''
-        ];
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //form process
             //Sanatize post data
@@ -39,25 +33,9 @@ class Login extends Controller
                 'passwordError' => ''
             ];
 
-            $this->loginModel = $this->model("Authlogin");
-
-            if ($this->loginModel->username($data['username'])) {
-                $data['usernameError'] = "This user doesn't exists.";
-            } elseif ($this->loginModel->login($data['username'], $data['password'])) {
-                $this->session = $this->model("Session");
-                $this->session->create($data['username'], $data['password']);
-            } else {
-
-                $data['passwordError'] = "Invalid login credentials.";
-            }
+            $session = $this->model('Session');
+            $data['passwordError'] = $session->create($data);
         }
         $this->view('registration/login', $data);
-    }
-
-    public function logout()
-    {
-        session_start();
-        session_destroy();
-        header('location:' . URLROOT . '/login');
     }
 }
