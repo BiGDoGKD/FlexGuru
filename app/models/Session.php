@@ -13,9 +13,11 @@
 class Session
 {
     private $db;
+    private $api;
 
     public function __construct()
     {
+        $this->api = new API;
         $this->db = new Database;
     }
 
@@ -26,8 +28,8 @@ class Session
             'username' => $data['username'],
             'password' => $data['password']
         ];
-        $api = new API;
-        $get_data = $api->call('POST', APIURL . 'authentication/login', json_encode($userData));
+
+        $get_data = $this->api->call('POST', APIURL . 'authentication/login', json_encode($userData));
         $res = json_decode($get_data, true);
         if (isset($res['status'])) {
             if ($res['status']) {
@@ -73,8 +75,14 @@ class Session
 
     public function destroy()
     {
-        session_start();
-        session_destroy();
-        header('location:' . URLROOT . '/login');
+        if (isset($_COOKIE['ref'])) {
+            $data = [
+                'refreshToken' => $_COOKIE['ref']
+            ];
+            session_start();
+            session_destroy();
+            $this->api->call('POST', APIURL . 'authentication/logout', json_encode($data));
+            die(header('location:' . URLROOT . '/login'));
+        }
     }
 }

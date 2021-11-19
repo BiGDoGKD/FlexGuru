@@ -22,6 +22,28 @@ class Login extends Controller
 
     public function index()
     {
+        session_start();
+        if (isset($_SESSION['type'])) {
+            switch ($_SESSION['type']) {
+                case 'student':
+                    die(header('location:' . URLROOT . '/student'));
+                    break;
+                case 'tutor';
+                    die(header('location' . URLROOT . '/student'));
+                    break;
+                case 'affiliate':
+                    die(header('location' . URLROOT . '/affiliatemarketer'));
+                    break;
+            }
+        }
+
+        $data = [
+            'username' => '',
+            'password' => '',
+            'usernameError' => '',
+            'passwordError' => ''
+        ];
+
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             //form process
             //Sanatize post data
@@ -37,5 +59,11 @@ class Login extends Controller
             $data['passwordError'] = $session->create($data);
         }
         $this->view('registration/login', $data);
+    }
+
+    public function logout()
+    {
+        $session = $this->model("Session");
+        $session->destroy();
     }
 }

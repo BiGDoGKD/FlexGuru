@@ -12,7 +12,6 @@ class Student extends Controller
         //do nothing
         $session->destroy();
         die(header('location:' . URLROOT . '/login'));
-      } else {
       }
     } elseif (isset($_SESSION['TUTACCESS'])) {
       die(header('location:' . URLROOT . '/tutor'));
