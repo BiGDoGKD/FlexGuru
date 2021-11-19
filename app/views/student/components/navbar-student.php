@@ -17,7 +17,7 @@
         <div class="hamburger">
             <div></div>
         </div>
-        <a href="<?php echo URLROOT ?>/pages/index" class="logo dark">
+        <a href="<?php echo URLROOT ?>/student" class="logo dark">
             <h5><?php echo $main["site-name"] ?></h5>
         </a>
     </div>

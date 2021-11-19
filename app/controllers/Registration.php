@@ -43,13 +43,17 @@ class Registration extends Controller
     public function __construct()
     {
         session_start();
-        if (isset($_SESSION['STUACCESS'])) {
-            if ($_SESSION['STUACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
-                die(header('location:' . URLROOT . '/student'));
-            }
-        } elseif (isset($_SESSION['TUTACCESS'])) {
-            if ($_SESSION['TUTACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
-                die(header('location:' . URLROOT . '/tutor'));
+        if (isset($_SESSION['type'])) {
+            switch ($_SESSION['type']) {
+                case 'student':
+                    die(header('location:' . URLROOT . '/student'));
+                    break;
+                case 'tutor';
+                    die(header('location' . URLROOT . '/student'));
+                    break;
+                case 'affiliate':
+                    die(header('location' . URLROOT . '/affiliatemarketer'));
+                    break;
             }
         }
     }

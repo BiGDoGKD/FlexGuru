@@ -16,6 +16,20 @@ class Info extends Controller
 {
     public function __construct()
     {
+        session_start();
+        if (isset($_SESSION['type'])) {
+            switch ($_SESSION['type']) {
+                case 'student':
+                    header('location:' . URLROOT . '/student');
+                    break;
+                case 'tutor';
+                    header('location' . URLROOT . '/student');
+                    break;
+                case 'affiliate':
+                    header('location' . URLROOT . '/affiliatemarketer');
+                    break;
+            }
+        }
     }
 
     public function student()
