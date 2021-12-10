@@ -59,7 +59,7 @@ class Pages extends Controller
     }
     public function becomeastudent()
     {
-        $this->view('info/become-a-student');
+        $this->view('info/becomeastudent');
     }
     public function studentprofileview()
     {
