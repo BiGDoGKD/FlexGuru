@@ -25,10 +25,7 @@ class Pages extends Controller
                 die(header('location:' . URLROOT . '/tutor'));
             }
         }
-    }
-
-
-    
+    }    
 
     public function index()
     {

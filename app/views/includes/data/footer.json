@@ -10,19 +10,19 @@
             "menu": [
                 {
                     "item": "Affiliate Program",
-                    "url": "role"
+                    "url": "resources/affiliates"
                 },
                 {
                     "item": "Service Request",
-                    "url": "about"
+                    "url": "resources/services"
                 },
                 {
                     "item": "News Feed",
-                    "url": "about"
+                    "url": "resources/news"
                 },
                 {
                     "item": "FAQ",
-                    "url": "about"
+                    "url": "resources/faq"
                 }
             ]
         },
@@ -31,19 +31,19 @@
             "menu": [
                 {
                     "item": "How it Works",
-                    "url": "about"
+                    "url": "support/works"
                 },
                 {
                     "item": "Become a Tutor",
-                    "url": "role"
+                    "url": "support/tutor"
                 },
                 {
                     "item": "Become a Student",
-                    "url": "role"
+                    "url": "support/student"
                 },
                 {
                     "item": "Get Help",
-                    "url": "about"
+                    "url": "support/help"
                 }
             ]
         },
@@ -52,19 +52,19 @@
             "menu": [
                 {
                     "item": "Our Team",
-                    "url": "role"
+                    "url": "company/team"
                 },
                 {
                     "item": "Contact Us",
-                    "url": "about"
+                    "url": "company/contact"
                 },
                 {
                     "item": "About Us",
-                    "url": "about"
+                    "url": "company/about"
                 },
                 {
                     "item": "Terms & Conditions",
-                    "url": "about"
+                    "url": "company/terms"
                 }
             ]
         }

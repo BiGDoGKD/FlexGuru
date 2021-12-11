@@ -40,7 +40,7 @@ $footer = json_decode($footer_string, true);
             <?php
             foreach ($footer['footer-menu'][0]['menu'] as $item) {
             ?>
-                <li><a href="#"><?php echo $item['item'] ?></a></li>
+                <li><a href="<?php echo URLROOT.'/'.$item['url'] ?>"><?php echo $item['item'] ?></a></li>
             <?php
             }
             ?>
@@ -53,7 +53,7 @@ $footer = json_decode($footer_string, true);
             <?php
             foreach ($footer['footer-menu'][1]['menu'] as $item) {
             ?>
-                <li><a href="#"><?php echo $item['item'] ?></a></li>
+                <li><a href="<?php echo URLROOT.'/'.$item['url'] ?>"><?php echo $item['item'] ?></a></li>
             <?php
             }
             ?>
@@ -66,7 +66,7 @@ $footer = json_decode($footer_string, true);
             <?php
             foreach ($footer['footer-menu'][2]['menu'] as $item) {
             ?>
-                <li><a href="#"><?php echo $item['item'] ?></a></li>
+                <li><a href="<?php echo URLROOT.'/'.$item['url'] ?>"><?php echo $item['item'] ?></a></li>
             <?php
             }
             ?>
