@@ -70,14 +70,14 @@ include APPROOT . '/views/marketplace/includes/header.php';
     }
 
     .marketplace {
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        justify-content: space-evenly;
+        grid-auto-flow: row;
+        grid-gap: 25px;
     }
 
-    .marketplace a{
+    .marketplace a {
         text-decoration: none;
     }
 
@@ -161,6 +161,46 @@ include APPROOT . '/views/marketplace/includes/header.php';
 
     .subject-line ul li:hover {
         color: var(--primary);
+    }
+
+    @media screen and (max-width: 1600px) {
+        .marketplace {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            justify-content: space-evenly;
+            grid-auto-flow: row;
+            grid-gap: 25px;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .marketplace {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            justify-content: space-evenly;
+            grid-auto-flow: row;
+            grid-gap: 25px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .marketplace {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            justify-content: space-evenly;
+            grid-auto-flow: row;
+            grid-gap: 25px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .marketplace {
+            display: grid;
+            grid-template-columns: 100%;
+            justify-content: space-evenly;
+            grid-auto-flow: row;
+            grid-gap: 25px;
+        }
     }
 </style>
 

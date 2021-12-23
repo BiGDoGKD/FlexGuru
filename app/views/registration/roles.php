@@ -157,7 +157,7 @@ include APPROOT . '/views/includes/header.php';
 
 <script defer>
     // selectors 
-
+    
     roleSelectCards = document.querySelectorAll(".fg-role-selection .role-cards .card");
 
     tutorCard = document.querySelector(".role-cards .tutor");

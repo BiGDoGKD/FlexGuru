@@ -135,7 +135,7 @@ class Registration extends Controller
                     switch ($data['role']) {
                         case 'st':
                             $this->registration->register($data);
-                            // header("refresh:0; url=" . URLROOT . "/login");
+                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         case 'tu':
                             if (isset($_COOKIE['tutordata']) && isset($_COOKIE['verificationdata'])) {

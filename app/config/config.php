@@ -19,7 +19,7 @@ define('DB_NAME', 'api'); //Add your DB Name
 
 
 //API params
-define('APIURL', 'http://localhost/api-flexguru/');
+define('APIURL', 'https://api.flexguru.tk/');
 define('APIUSER', 'kesara');
 define('APIPASS', '12345');
 define('APITOKEN', 'asd');

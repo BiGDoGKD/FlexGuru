@@ -45,7 +45,7 @@ class API
         $result = curl_exec($curl);
 
         if (!$result) {
-            die("Connection Failure");
+            die("Connection Failures");
         }
 
         curl_close($curl);
