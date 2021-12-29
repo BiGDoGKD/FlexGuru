@@ -43,7 +43,7 @@ class API
 
         // EXECUTE:
         $result = curl_exec($curl);
-
+        print_r($result);
         if (!$result) {
             die("Connection Failures");
         }
@@ -54,7 +54,7 @@ class API
 
     public function checktoken($token)
     {
-        $url = 'http://localhost/api-flexguru/authentication/checktoken';
+        $url = 'https://api.flexguru.tk/authentication/checktoken';
 
         $method = 'POST';
 
