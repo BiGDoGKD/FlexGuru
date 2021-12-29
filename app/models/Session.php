@@ -28,9 +28,11 @@ class Session
             'username' => $data['username'],
             'password' => $data['password']
         ];
-
+        print_r($data['password']);
         $get_data = $this->api->call('POST', APIURL . 'authentication/login', json_encode($userData));
+        print_r($get_data);
         $res = json_decode($get_data, true);
+        print_r($res);
         if (isset($res['status'])) {
             if ($res['status']) {
                 return 'Contact System Administrator!';
