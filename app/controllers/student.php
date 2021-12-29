@@ -4,22 +4,22 @@ class Student extends Controller
 {
   public function __construct()
   {
-    $api = new API;
-    $session = $this->model("Session");
-    session_start();
-    if (isset($_SESSION['STUACCESS'])) {
-      if ($api->checktoken($_COOKIE['ref'])) {
-        //do nothing
-        $session->destroy();
-        die(header('location:' . URLROOT . '/login'));
-      }
-    } elseif (isset($_SESSION['TUTACCESS'])) {
-      die(header('location:' . URLROOT . '/tutor'));
-    } elseif (isset($_SESSION['AFFACCESS'])) {
-      die(header('location:' . URLROOT . '/affiliate'));
-    } else {
-      die(header('location:' . URLROOT . '/login'));
-    }
+    // $api = new API;
+    // $session = $this->model("Session");
+    // session_start();
+    // if (isset($_SESSION['STUACCESS'])) {
+    //   if ($api->checktoken($_COOKIE['ref'])) {
+    //     //do nothing
+    //     $session->destroy();
+    //     die(header('location:' . URLROOT . '/login'));
+    //   }
+    // } elseif (isset($_SESSION['TUTACCESS'])) {
+    //   die(header('location:' . URLROOT . '/tutor'));
+    // } elseif (isset($_SESSION['AFFACCESS'])) {
+    //   die(header('location:' . URLROOT . '/affiliate'));
+    // } else {
+    //   die(header('location:' . URLROOT . '/login'));
+    // }
   }
 
 

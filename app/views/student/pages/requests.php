@@ -28,13 +28,15 @@ include APPROOT . '/views/student/includes/header.php';
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             color: var(--on-secondary);
         }
-
+/*
         .users-accounts thead tr {
             background-color: var(--primary);
             color: #ffffff;
             text-align: left;
             font-weight: bold;
         }
+
+
 
         .users-accounts th,
         .users-accounts td {
@@ -61,7 +63,114 @@ include APPROOT . '/views/student/includes/header.php';
         .users-accounts tbody tr.active-row {
             font-weight: bold;
             color: var(--primary);
+        }*/
+
+
+
+
+
+body {
+    margin: 0;
+    /*background: linear-gradient(45deg, #49a09d, #5f2c82);*/
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: var(--primary);
+    color: #fff;
+}
+
+th {
+    text-align: left;
+}
+
+
+    th {
+        background-color: #55608f;
+    }
+
+
+
+    tr,tr:hover {
+            background-color: rgba(255,255,255,0.3);
         }
+    
+    td:hover {
+            
+                content: "";
+                
+                left: 0;
+                right: 0;
+                top: -9999px;
+                bottom: -9999px;
+                background-color: rgba(255,255,255,0.2);
+                opacity: 0.3;
+               
+            
+        }
+    
+
+.users-accounts tbody tr:hover {
+            font-weight: bold;
+            color: #e6e6e6;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
     <h4 style="margin: 30px 0;">Special Service Requests</h4>
     <table class="users-accounts">
