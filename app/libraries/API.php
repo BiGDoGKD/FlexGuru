@@ -10,6 +10,8 @@ class API
 
     public function call($method, $url, $data)
     {
+        // print_r($method."".$url."".$data);
+
         $curl = curl_init();
         switch ($method) {
             case "POST":
@@ -40,7 +42,7 @@ class API
             //If an error occured, throw an Exception.
             throw new Exception(curl_error($curl));
         }
-
+        print_r($curl);
         // EXECUTE:
         $result = curl_exec($curl);
         print_r($result . "menna meka");

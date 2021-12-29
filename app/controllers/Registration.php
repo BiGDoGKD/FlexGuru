@@ -8,7 +8,7 @@
  * CO-AUTHORS: 
  * LAST UPDATE BY: Kesara Karannagoda
  * LAST UPDATE DATA : Sep, 01, 2021
- * FILE TYPE: Controller File
+ * FILE TYPE:   troller File
  */
 
 class Registration extends Controller
