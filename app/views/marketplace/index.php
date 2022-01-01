@@ -52,7 +52,7 @@ include APPROOT . '/views/marketplace/includes/header.php';
         ?>
             <a href="<?php echo URLROOT . '/marketplace/service' ?>">
                 <?php
-                include APPROOT . './views/marketplace/components/gigcard.php';
+                include APPROOT . '/views/marketplace/components/gigcard.php';
                 ?>
             </a>
         <?php
