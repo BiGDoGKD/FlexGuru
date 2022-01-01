@@ -69,12 +69,7 @@ include APPROOT . '/views/student/includes/header.php';
 
 
 
-body {
-    margin: 0;
-    /*background: linear-gradient(45deg, #49a09d, #5f2c82);*/
-    font-family: sans-serif;
-    font-weight: 100;
-}
+
 
 table {
     width: 800px;
@@ -83,13 +78,19 @@ table {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-th,
+th{
+    color: #fff;
+    padding: 15px;
+}
 td {
     padding: 15px;
-    background-color: var(--primary);
-    color: #fff;
-}
+    background-color: #fdedff;
+    color: var(--primary);
 
+}
+tr:hover{
+        background-color: #e5bdea;
+        }
 th {
     text-align: left;
 }
@@ -100,12 +101,12 @@ th {
     }
 
 
-
+/*
     tr,tr:hover {
             background-color: rgba(255,255,255,0.3);
-        }
+        }*/
     
-    td:hover {
+   /* td:hover {
             
                 content: "";
                 
@@ -119,56 +120,11 @@ th {
             
         }
     
-
+*/
 .users-accounts tbody tr:hover {
             font-weight: bold;
-            color: #e6e6e6;
+            background-color: #ffb5ef;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </style>
