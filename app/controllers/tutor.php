@@ -40,6 +40,11 @@ class Tutor extends Controller
         $this->view('tutor/tutororderprogress');
     }
 
+    public function alreadypublishedgigs()
+    {
+        $this->view('tutor/alreadypublishedgigs');
+    }
+
     public function notifications()
     {
         $this->view('tutor/notifications');

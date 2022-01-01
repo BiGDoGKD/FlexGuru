@@ -204,6 +204,10 @@ class Student extends Controller
   {
     $this->view('student/pages/tutordetailspopup');
   }
+  public function purchasehistory()
+  {
+    $this->view('student/purchasehistory');
+  }
 
   public function complaint()
   {
