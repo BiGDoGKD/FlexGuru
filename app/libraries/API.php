@@ -45,7 +45,6 @@ class API
         print_r($curl);
         // EXECUTE:
         $result = curl_exec($curl);
-        print_r($result . "menna meka");
         if (!$result) {
             die("Connection Failures");
         }
