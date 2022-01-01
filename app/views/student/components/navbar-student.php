@@ -31,7 +31,7 @@
         } ?>
     </ul>
     <ul class="nav-login">
-        <li><a class="primary pointer subtitle-2" style="margin-right:1.5vw;"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></a></li>
+        <li><a class="primary pointer subtitle-2" style="margin-right:1.5vw;"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'].' '.$_SESSION['userdata']['userid'] ?></a></li>
         <li><a href="<?php echo URLROOT ?>/registration/roles">
                 <div class="profile-photo"></div>
             </a>

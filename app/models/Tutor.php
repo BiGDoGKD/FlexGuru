@@ -33,25 +33,6 @@
         public function register($vfilename, $username, $datatutor)
         {
             $this->api->call("POST", APIURL . 'tutor/register', json_encode(array($vfilename, $username, $datatutor)));
-            die();
-            // return true;
-            // $this->db->query("UPDATE `api`.`tutor` SET tutor.subjects = :subjects, tutor.workplace = :workplace, tutor.occupation = :occupation, tutor.qualification = :qualification, tutor.files = :file where tutor.userid = (select user.userid from `api`.`user` where  user.username = :username); ");
-            // //Bind values
-            // //user table username
-            // $this->db->bind(':username', $username);
-            // $data = (array) $datatutor;
-            // $this->db->bind(':subjects', strval($data['subjects']));
-            // $this->db->bind(':workplace', $data['workplace']);
-            // $this->db->bind(':occupation', $data['occupation']);
-            // $this->db->bind(':qualification', $data['qualification']);
-            // $this->db->bind(':file', $vfilename);
-
-            // //Execute function
-            // if ($this->db->execute()) {
-            //     return true;
-            // } else {
-            //     return false;
-            // }
         }
 
         public function getVerifications()

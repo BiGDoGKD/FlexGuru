@@ -14,6 +14,10 @@
 class Registration extends Controller
 {
     private $val;
+    private $student;
+    private $tutor;
+    private $affiliate;
+    private $registration;
     private $mail;
     private $data = [
         'username' => '',
@@ -56,15 +60,20 @@ class Registration extends Controller
                     break;
             }
         }
+
+        //Load Models
+        $this->mail = $this->model("Mailer");
+        $this->val = $this->model("Validate");
+        $this->student = $this->model("Student");
+        $this->tutor = $this->model("Tutor");
+        $this->affiliate = $this->model("Affiliate");
+        $this->registration = $this->model("Register");
     }
 
     //validate function for every user
     private function validate($data)
     {
         //validation begin
-        $this->val = $this->model("Validate");
-        $this->mail = $this->model("Mailer");
-
         $data["firstnameError"] = $this->val->name($data['firstname']);
         $data["lastnameError"] = $this->val->name($data['lastname']);
         // $data["usernameError"] = $this->val->username($data['username']);
@@ -99,11 +108,6 @@ class Registration extends Controller
 
     public function verification()
     {
-        $this->student = $this->model("Student");
-        $this->tutor = $this->model("Tutor");
-        $this->affiliate = $this->model("Affiliate");
-        $this->registration = $this->model("Register");
-
         if (!isset($_COOKIE['regdata'])) {
             header('location:' . URLROOT . '/registration/roles');
         } else {
@@ -143,10 +147,11 @@ class Registration extends Controller
                                 $verificationfiles = json_decode($_COOKIE['verificationdata']);
                                 $this->registration->register($data);
                                 $this->tutor->register($verificationfiles, $data['username'], $tutordata);
+                                header("refresh:0; url=" . URLROOT . "/login");
                             } else {
                                 $this->registration->register($data);
+                                header("refresh:0; url=" . URLROOT . "/login");
                             }
-                            header("refresh:0; url=" . URLROOT . "/login");
                             break;
                         case 'af':
                             $this->registration->register($data);
@@ -184,7 +189,7 @@ class Registration extends Controller
                     $otpcode = rand(100000, 999999);
                     $this->mail->vmail($otpcode, $data['email']);
                     setcookie('regdata', json_encode($data), time() + 360, '/', null, null, true);
-                    setcookie('otpem', hash('sha256', $otpcode), time() + 360, '/', null, null, true);
+                    setcookie('otpem', hash('sha256', $otpcode), time() + 360);
                     //If validation pass, rediect the visitor to registration/verification 
                     header("location:" . URLROOT . "/registration/verification");
                 }
@@ -227,7 +232,7 @@ class Registration extends Controller
             ];
 
             //form validation
-            $data = $this->validate($data);
+            // $data = $this->validate($data);
 
             //send to verify email
             $this->senddata($data);
@@ -282,18 +287,13 @@ class Registration extends Controller
                 if (in_array($fileActualExt, $allowed)) {
                     if ($fileError === 0) {
                         if ($fileSize < 1000000) {
-                            print_r('came here');
                             $fileNameNew = uniqid('', true) . "." . $fileActualExt;
                             $fileDestination = APPROOT . '/../public/uploads/verifications/' . $fileNameNew;
                             move_uploaded_file($fileTmpName, $fileDestination);
-                            
-                            print_r('send mail start');
                             //send mail
                             $otpcode = rand(000000, 999999);
-                            $this->mail = $this->model("Mailer");
                             $email = json_decode($_COOKIE['regdata'], true);
                             $this->mail->vmail($otpcode, $email['email']);
-                            print_r('send mail end');
 
                             setcookie('tutordata', json_encode($data), time() + 360);
                             setcookie('verificationdata', json_encode($fileNameNew), time() + 360);
@@ -321,7 +321,6 @@ class Registration extends Controller
         } else {
             $data = json_decode($_COOKIE['regdata'], true);
             $otpcode = rand(000000, 999999);
-            $this->mail = $this->model("Mailer");
             $this->mail->vmail($otpcode, $data['email']);
             setcookie('otpem', hash('sha256', $otpcode), time() + 360);
             header('location:' . URLROOT . '/registration/verification');
@@ -363,7 +362,7 @@ class Registration extends Controller
             ];
 
             //form validation
-            $data = $this->validate($data);
+            // $data = $this->validate($data);
 
             //send to verify email
             $this->senddata($data);
@@ -407,7 +406,7 @@ class Registration extends Controller
             ];
 
             //form validation
-            $data = $this->validate($data);
+            // $data = $this->validate($data);
 
             //send to verify email
             $this->senddata($data);
