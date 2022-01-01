@@ -28,7 +28,7 @@ define('APITOKEN', 'asd');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //URLROOT (Dynamic links)
-define('URLROOT', 'http://localhost/FlexGuru');
+define('URLROOT', 'http://localhost');
 
 //Sitename
 define('SITENAME', 'FlexGuru');
