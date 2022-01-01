@@ -80,7 +80,7 @@ include APPROOT . '/views/tutor/includes/header.php';
 
     <div class="liveGigs">
         <?php
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 4; $i++) {
         ?>
             <a href="<?php echo URLROOT . '/marketplace/service' ?>">
                 <?php

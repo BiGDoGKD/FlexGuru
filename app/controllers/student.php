@@ -209,6 +209,11 @@ class Student extends Controller
     $this->view('student/purchasehistory');
   }
 
+  public function gigreview()
+  {
+    $this->view('student/gigreview');
+  }
+
   public function complaint()
   {
     $this->complaintsModel = $this->model("Complaints");

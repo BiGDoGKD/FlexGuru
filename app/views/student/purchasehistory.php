@@ -68,13 +68,13 @@ include APPROOT . '/views/student/includes/header.php';
             <tr>
                 <th>Session ID</th>
                 <th>Purchase Date</th>
-                <th>Completed Date</th>
                 <th>Tutor</th>
                 <th>Subject</th>
                 <th>Area</th>
                 <th>Description</th>
                 <th>Price</th>
-                
+                <th>Status</th>
+
             </tr>
         </thead>
         <tbody class="">
@@ -87,12 +87,13 @@ include APPROOT . '/views/student/includes/header.php';
                 <tr>
                     <td><?php echo $i ?></td>
                     <td>10-10-2021</td>
-                    <td>22-10-2021</td>
                     <td>Mr.Kumarasiri Withana</td>
                     <td>Mathematics</td>
                     <td>Calculus</td>
                     <td>Grade 12 Lesson Calculus</td>
                     <td>1500</td>
+
+                    <td>Completed <!-- get the status of the gig from database --><?php ?></td>
                 </tr>
 
             <?php
@@ -109,20 +110,3 @@ include APPROOT . '/views/includes/footer.php';
 
 
 
-<table>
-    <thead>
-        <th>ID</th>
-        <th>Purchase Date</th>
-        <th>Completed Date</th>
-        <th>Tutor</th>
-        <th>Subject</th>
-    </thead>
-
-    <tbody>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tbody>
-
-</table>
