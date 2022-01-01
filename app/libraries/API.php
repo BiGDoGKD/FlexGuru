@@ -42,7 +42,6 @@ class API
             //If an error occured, throw an Exception.
             throw new Exception(curl_error($curl));
         }
-        print_r($curl);
         // EXECUTE:
         $result = curl_exec($curl);
         if (!$result) {
@@ -71,7 +70,9 @@ class API
             if (isset($_COOKIE['ref'])) {
                 unset($_COOKIE['ref']);
                 setcookie('ref', $response['refreshToken'], 0, '/', null, null, true);
-                session_start();
+                if (session_status() != 2) {
+                    session_start();
+                }
                 if (isset($_SESSION['STUACCESS'])) {
                     $_SESSION['STUACCESS'] = $response['token'];
                 } else if (isset($_SESSION['TUTACCESS'])) {
