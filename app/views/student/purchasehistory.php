@@ -74,6 +74,7 @@ include APPROOT . '/views/student/includes/header.php';
                 <th>Area</th>
                 <th>Description</th>
                 <th>Price</th>
+                
             </tr>
         </thead>
         <tbody class="">
