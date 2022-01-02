@@ -71,6 +71,7 @@ include APPROOT . '/views/student/includes/header.php';
                 <th>Description</th>
                 <th>Tutor</th>
                 <th>Budget</th>
+                <th>Details</th>
             </tr>
         </thead>
         <tbody class="">
@@ -87,6 +88,7 @@ include APPROOT . '/views/student/includes/header.php';
                     <td>Lorem ipsum dolor sit amet consectetur</td>
                     <td>Kumara Witharana</td>
                     <td>1500</td>
+                    <td><button style="padding: 5px 10px; border:none; background-color:var(--primary); border-radius:8px; color:#fff;">View</button></td>
                 </tr>
 
             <?php
