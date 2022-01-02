@@ -93,6 +93,9 @@
                                 ?>">
                         <li>Complaints</li>
                     </a>
+                    <a href="<?php echo URLROOT ?>/student/purchasehistory">
+                        <li>Purchase History</li>
+                    </a>
                     <a href="<?php echo URLROOT ?>/login/logout">
                         <li>Logout</li>
                     </a>

@@ -200,7 +200,19 @@ class Student extends Controller
   {
     $this->view('student/pages/responses');
   }
+  public function tutordetailspopup()
+  {
+    $this->view('student/pages/tutordetailspopup');
+  }
+  public function purchasehistory()
+  {
+    $this->view('student/purchasehistory');
+  }
 
+  public function gigreview()
+  {
+    $this->view('student/gigreview');
+  }
 
   public function complaint()
   {
