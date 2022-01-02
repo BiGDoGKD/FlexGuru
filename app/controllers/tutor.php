@@ -50,6 +50,11 @@ class Tutor extends Controller
         $this->view('tutor/notifications');
     }
 
+    public function gigreview()
+    {
+        $this->view('tutor/gigreview');
+    }
+
     public function security()
     {
         $this->val = $this->model("Validate");
