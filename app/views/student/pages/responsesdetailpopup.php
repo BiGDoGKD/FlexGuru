@@ -96,8 +96,6 @@ include APPROOT . '/views/student/includes/header.php';
                 <td class="desc"> </td>
                 <td class="value" width="100%"> <button style="padding:15px 40px; background-color:var(--primary); border-radius:8px; color:#fff; font-weight:600; border:none;">Accept </button></td>
 
-
-
             </tr>
         </table>
 
