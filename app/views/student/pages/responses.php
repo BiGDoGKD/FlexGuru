@@ -71,12 +71,13 @@ include APPROOT . '/views/student/includes/header.php';
                 <th>Description</th>
                 <th>Tutor</th>
                 <th>Budget</th>
+                <th>Details</th>
             </tr>
         </thead>
         <tbody class="">
             <?php
 
-            for ($i = 0; $i < 12; $i++) {
+            for ($i = 0; $i < 6; $i++) {
 
             ?>
 
@@ -84,9 +85,10 @@ include APPROOT . '/views/student/includes/header.php';
                     <td><?php echo $i ?></td>
                     <td>Lorem ipsum dolor sit.</td>
                     <td>22-10-2021</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, accusantium!</td>
-                    <td></td>
+                    <td>Lorem ipsum dolor sit amet consectetur</td>
+                    <td>Kumara Witharana</td>
                     <td>1500</td>
+                    <td><button style="padding: 5px 10px; border:none; background-color:var(--primary); border-radius:8px; color:#fff;">View</button></td>
                 </tr>
 
             <?php
