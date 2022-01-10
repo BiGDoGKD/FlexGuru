@@ -18,54 +18,72 @@ include APPROOT . '/views/includes/data.php';
 include APPROOT . '/views/includes/header.php';
 ?>
 <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/public/pages/about/style.css' ?>">
-<div class="fg-page">
-  <div class="cover">
-    <div class="overlay">
-      <h1 class="surface">About us</h1>
-      <p class="surface body-1">Lorem ipsum dolor sit amet.</p>
-    </div>
-  </div>
-  <div class="content">
-    <p class="h3">Our Vision</p>
-    <p class="body-1 gray">
-      Flexible and Easily accessible education for everyone.
-    </p>
-  </div>
-  <div class="content">
-    <p class="h3">Who we are</p>
-    <p class="body-1 gray">
-      We are a complete resource for current or prospective students,
-      Professionals, and Tutors. We give flexibility to the students and
-      professionals to request or choose and learn the exact content they
-      wish to learn. Without wasting valuable time by following a complete
-      course or reading an entire book, we offer ranking for the students
-      and tutors to improve their rating to get the best education while
-      enjoying benefits from Flexguru. Customized learning requests are
-      one of the uniqueness of our platform. Every student will be able to
-      request the tutor while mentioning his needs and preferences in
-      order to succeed easily.
-    </p>
-  </div>
-  <div class="content">
-    <p class="h3">How it all started</p>
-    <p class="body-1 gray">
-      We found that there is an issue in the common E-education system
-      after the pandemic strikes and students moving towards online
-      learning.
-    </p>
-    <p class="body-1 gray">
-      "Without a problem, there is no innovation" in that perspective the
-      problem we figured out is, students and professionals get doubts in
-      specific parts of the subject in the learning process but there are
-      no perfect solutions to overcome it. According to our country, every
-      student does not get enough resources while learning and clearing
-      doubts. so we group of undergraduate students came up with this idea
-      to help students and professionals to give an easily accessible and
-      flexible education as our vision suggests with a personalized
-      learning dashboard.
-    </p>
-  </div>
+<style>
+        .container{
+display: flex;
+height: 100vh;
+width: 100%;
+        }
+        .left{
+flex-basis: 50%;
+background-image: url('/public/img/public/about/ab.jpg');
+background-position: center;
+background-size: cover;
+        }
+        .right{
+            flex-basis: 50%;
+        }
+        .body-1{
+            text-align: justify;
+            margin: 5% 5%;
+            font-family: "Roboto";
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.6px;
+            line-height: 25.7px;
+        }
+        .h1{
+            margin: 5% 5%;
+            text-align: center;
+            font-size: 95px;
+            font-weight: 300;
+            letter-spacing: -1.5px;
+            line-height: 135.7px;
+            color: #8086ff;
+        }
+     
+    </style>
+<title>About us</title>
+</head>
+<body>
+   <div class="container">
+<div class="left">
+
+
+
+
 </div>
+
+<div class="right">
+
+    <h1 class="h1">About Us</h1>
+  <p class="body-1">
+    We FlexGuru Team always motivated in giving quality world class education to every Student who is willing to learn any Knowledge or skill without any barriers.
+    Result of that strong motivation is our FlexGuru platform. After analyzing each and every E-learning platforms in the market we found some key issues for students.
+    So we managed to design all in one learning platform after cutting the regular issues of this path.
+    Special service request is the next level innovation we brought to this platform to give everyone the flexibility to learn only what they actually needed without wasting even a second of time.
+    We make sure every time that we empower learners to study at their own pace outside the classroom.
+  </p>
+
+
+</div>
+
+
+
+
+   </div> 
+</body>
+</html>
 
 <?php
 include APPROOT . '/views/includes/footer.php';
