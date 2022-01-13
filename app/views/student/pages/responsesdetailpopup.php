@@ -61,7 +61,7 @@ include APPROOT . '/views/student/includes/header.php';
 
             </tr>
             <tr>
-
+ 
                 <td class="desc">Qualifications </td>
                 <td class="value" width="100% " style="">Bsc.Industrial Statistics 2nd Upper UOC</td>
 
