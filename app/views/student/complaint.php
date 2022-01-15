@@ -162,11 +162,10 @@ include APPROOT . '/views/student/includes/header.php';
         <select name="type">
 
           <option value="">--Select Type--</option>
-          <option value="Technical related issues">Technical related issues</option>
-          <option value="Service related issues">Service related issues</option>
-          <option value="Transaction related issues">Transaction related issues</option>
-          <option value="Quality related issues">Quality related issues</option>
-          <option value="Other issues">Other issues</option>
+          <option value="Technical related issues">Tutor Related Complaints</option>
+          <option value="Service related issues">Platform related complaints</option>
+          <option value="Service related issues">Other</option>
+        
 
         </select>
 

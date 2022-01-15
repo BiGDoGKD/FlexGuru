@@ -14,7 +14,17 @@ include APPROOT . '/views/student/includes/header.php';
             align-items: center;
         }
 
-
+       #myInput{
+        background-image: url("http://localhost/public/img/students/search.png");
+        background-position: 6px 8px;
+        background-repeat: no-repeat;
+        width: 44%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+        background-size: 28px;
+                }
 
         .purchase_history {
             border-collapse: collapse;
@@ -62,8 +72,16 @@ include APPROOT . '/views/student/includes/header.php';
             color: var(--primary);
         }
     </style>
+
     <h4 style="margin: 30px 0;">Purchase History</h4>
-    <table class="purchase_history">
+
+           <div class="filter">
+          
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Tutor Responses" title="Type in a name">
+    </div>
+
+
+    <table class="purchase_history" id="myTable">
         <thead center>
             <tr>
                 <th>Session ID</th>
@@ -78,16 +96,12 @@ include APPROOT . '/views/student/includes/header.php';
             </tr>
         </thead>
         <tbody class="">
-            <?php
-
-            for ($i = 0; $i < 12; $i++) {
-
-            ?>
+       
 
                 <tr>
-                    <td><?php echo $i ?></td>
-                    <td>10-10-2021</td>
                     <td>Mr.Kumarasiri Withana</td>
+                  
+                    <td>10-10-2021</td>
                     <td>Mathematics</td>
                     <td>Calculus</td>
                     <td>Grade 12 Lesson Calculus</td>
@@ -96,11 +110,97 @@ include APPROOT . '/views/student/includes/header.php';
                     <td>Completed <!-- get the status of the gig from database --><?php ?></td>
                 </tr>
 
-            <?php
-            } ?>
+
+                <tr>
+                    <td>Mr.Hemasiri Perera</td>
+                 
+                    <td>10-10-2021</td>
+                    <td>Mathematics</td>
+                    <td>Calculus</td>
+                    <td>Grade 12 Lesson Calculus</td>
+                    <td>1500</td>
+
+                    <td>Completed <!-- get the status of the gig from database --><?php ?></td>
+                </tr>
+
+
+                <tr>
+                    <td>Mr.Kasun Somasiri</td>
+                    
+                    <td>10-10-2021</td>
+                    <td>Mathematics</td>
+                    <td>Calculus</td>
+                    <td>Grade 12 Lesson Calculus</td>
+                    <td>1500</td>
+
+                    <td>Completed <!-- get the status of the gig from database --><?php ?></td>
+                </tr>
+
+
+                <tr>
+                    <td>Mr.Hashan Dias</td>
+                   
+                    <td>10-10-2021</td>
+                    <td>Mathematics</td>
+                    <td>Calculus</td>
+                    <td>Grade 12 Lesson Calculus</td>
+                    <td>1500</td>
+
+                    <td>Completed <!-- get the status of the gig from database --><?php ?></td>
+                </tr>
+
+
+                <tr>
+                    <td>Mr.Niroshan De Silva</td>
+                   
+                    <td>10-10-2021</td>
+                    <td>Mathematics</td>
+                    <td>Calculus</td> 
+                    <td>Grade 12 Lesson Calculus</td>
+                    <td>1500</td>
+
+                    <td>Completed <!-- get the status of the gig from database --><?php ?></td>
+                </tr>
+
+
+                <tr>
+                    <td>Mr.Kumarasiri Withana</td>
+                  
+                    <td>10-10-2021</td>
+                    <td>Mathematics</td>
+                    <td>Calculus</td>
+                    <td>Grade 12 Lesson Calculus</td>
+                    <td>1500</td>
+
+                    <td>Completed <!-- get the status of the gig from database --><?php ?></td>
+                </tr>
+
+          
         </tbody>
         </tr>
     </table>
+    <script>
+
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
 </div>
 <?php
 include APPROOT . '/views/includes/footer.php';
