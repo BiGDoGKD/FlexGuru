@@ -192,9 +192,9 @@ class Student extends Controller
 
   public function requests()
   {
-    $this->ssr = $this->model("SSR");
-    $resultArray = $this->ssr->getRequests();
-    $this->view('student/pages/requests', $resultArray);
+    // $this->ssr = $this->model("SSR");
+    // $resultArray = $this->ssr->getRequests();
+    $this->view('student/pages/requests');
   }
   public function responses()
   {
