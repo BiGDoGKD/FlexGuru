@@ -10,8 +10,6 @@ class API
 
     public function call($method, $url, $data)
     {
-        // print_r($method."".$url."".$data);
-
         $curl = curl_init();
         switch ($method) {
             case "POST":
@@ -36,6 +34,61 @@ class API
         ));
         curl_setopt($curl, CURLOPT_USERPWD, $this->username . ":" . $this->password);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        //Check for errors.
+        if (curl_errno($curl)) {
+            //If an error occured, throw an Exception.
+            throw new Exception(curl_error($curl));
+        }
+        // EXECUTE:
+        $result = curl_exec($curl);
+        if (!$result) {
+            die("Connection Failures");
+        }
+
+        curl_close($curl);
+        return $result;
+    }
+
+
+    public function usercall($method, $url, $data)
+    {
+        $curl = curl_init();
+        switch ($method) {
+            case "POST":
+                curl_setopt($curl, CURLOPT_POST, 1);
+                if ($data)
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                break;
+            case "PUT":
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+                if ($data)
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                break;
+            default:
+                if ($data)
+                    $url = sprintf("%s?%s", $url, http_build_query($data));
+        }
+
+        if (isset($_SESSION['STUACCESS'])) {
+            $authorization = "Authorization: Bearer " . $_SESSION['STUACCESS'];
+        } elseif (isset($_SESSION['TUTACCESS'])) {
+            $authorization = "Authorization: Bearer " . $_SESSION['TUTACCESS'];
+        } elseif (isset($_SESSION['AFFACCESS'])) {
+            $authorization = "Authorization: Bearer " . $_SESSION['AFFACCESS'];
+        } else {
+            die(header('location:' . URLROOT . '/login'));
+        }
+
+        // OPTIONS:
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+            "Content-Type: application/json",
+            "Accept: application/json",
+            $authorization
+        ));
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
 
         //Check for errors.
         if (curl_errno($curl)) {

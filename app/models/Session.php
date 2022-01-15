@@ -85,6 +85,10 @@ class Session
             session_destroy();
             $this->api->call('POST', APIURL . 'authentication/logout', json_encode($data));
             die(header('location:' . URLROOT . '/login'));
+        } else {
+            session_start();
+            session_destroy();
+            die(header('location:' . URLROOT . '/login'));
         }
     }
 }

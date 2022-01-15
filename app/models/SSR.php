@@ -13,38 +13,17 @@
 class SSR
 {
     private $db;
+    private $api;
 
     public function __construct()
     {
         $this->db = new Database;
+        $this->api = new API;
     }
 
 
     public function request($data)
     {
-        $this->db->query('INSERT INTO `api`.`ssrmessage` (`title`, `description`, `subject`, `category`, `days`, `budget`,`date`) VALUES (:title, :description, :subject, :category, :days, :budget,:date)');
-
-        //Bind values
-        $this->db->bind(':title', $data['title']);
-        $this->db->bind(':description', $data['description']);
-        $this->db->bind(':subject', $data['subject']);
-        $this->db->bind(':category', $data['category']);
-        $this->db->bind(':days', $data['days']);
-        $this->db->bind(':budget', $data['budget']);
-        $this->db->bind(':date', date("Y-m-d"));
-
-        //Execute function
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public function getRequests()
-    {
-        $this->db->query("SELECT * FROM ssrmessage");
-        $result = $this->db->resultSet();
-        return $result;
+        $this->api->usercall('POST', APIURL . 'student/addssr', json_encode($data));
     }
 }
