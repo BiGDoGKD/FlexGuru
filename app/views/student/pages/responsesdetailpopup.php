@@ -61,7 +61,7 @@ include APPROOT . '/views/student/includes/header.php';
 
             </tr>
             <tr>
-
+ 
                 <td class="desc">Qualifications </td>
                 <td class="value" width="100% " style="">Bsc.Industrial Statistics 2nd Upper UOC</td>
 
@@ -95,8 +95,6 @@ include APPROOT . '/views/student/includes/header.php';
 
                 <td class="desc"> </td>
                 <td class="value" width="100%"> <button style="padding:15px 40px; background-color:var(--primary); border-radius:8px; color:#fff; font-weight:600; border:none;">Accept </button></td>
-
-
 
             </tr>
         </table>
