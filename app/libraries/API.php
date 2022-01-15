@@ -52,6 +52,12 @@ class API
         return $result;
     }
 
+    public function usercall($method,$url,$data){
+
+
+
+    }
+
     public function checktoken($token)
     {
         $url = 'https://api.flexguru.tk/authentication/checktoken';
