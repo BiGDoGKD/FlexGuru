@@ -15,6 +15,7 @@
 class Login extends Controller
 {
     private $loginModel;
+    private $session;
 
     public function __construct()
     {
@@ -55,15 +56,15 @@ class Login extends Controller
                 'passwordError' => ''
             ];
 
-            $session = $this->model('Session');
-            $data['passwordError'] = $session->create($data);
+            $this->session = $this->model('Session');
+            $data['passwordError'] = $this->session->create($data);
         }
         $this->view('registration/login', $data);
     }
 
     public function logout()
     {
-        $session = $this->model("Session");
-        $session->destroy();
+        $this->session = $this->model("Session");
+        $this->session->destroy();
     }
 }

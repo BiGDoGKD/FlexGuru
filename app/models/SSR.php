@@ -13,26 +13,17 @@
 class SSR
 {
     private $db;
+    private $api;
 
     public function __construct()
     {
         $this->db = new Database;
         $this->api = new API;
-
     }
 
 
     public function request($data)
     {
-        $resp = $this->api->call("POST", APIURL . 'student/addssr', json_encode($data));
-        print_r($resp);
-
-    }
-
-    public function getRequests()
-    {
-        $this->db->query("SELECT * FROM ssrmessage");
-        $result = $this->db->resultSet();
-        return $result;
+        $this->api->call("POST", APIURL . 'student/addssr', json_encode($data));
     }
 }
