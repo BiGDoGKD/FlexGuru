@@ -84,7 +84,4 @@ class Settings
             return false;
         }
     }
-
-
-
     }
