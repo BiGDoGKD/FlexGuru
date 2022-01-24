@@ -4,20 +4,20 @@ class Tutor extends Controller
 {
     public function __construct()
     {
-        // session_start();
-        // if (isset($_SESSION['TUTACCESS'])) {
-        //     if ($_SESSION['TUTACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
-        //         //do nothing
-        //     } else {
-        //         die(header('location:' . URLROOT . '/login'));
-        //     }
-        // } elseif (isset($_SESSION['TUTACCESS'])) {
-        //     die(header('location:' . URLROOT . '/tutor'));
-        // } elseif (isset($_SESSION['AFFACCESS'])) {
-        //     die(header('location:' . URLROOT . '/affiliate'));
-        // } else {
-        //     die(header('location:' . URLROOT . '/login'));
-        // }
+        session_start();
+        if (isset($_SESSION['TUTACCESS'])) {
+            if ($_SESSION['TUTACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+                //do nothing
+            } else {
+                die(header('location:' . URLROOT . '/login'));
+            }
+        } elseif (isset($_SESSION['TUTACCESS'])) {
+            die(header('location:' . URLROOT . '/tutor'));
+        } elseif (isset($_SESSION['AFFACCESS'])) {
+            die(header('location:' . URLROOT . '/affiliate'));
+        } else {
+            die(header('location:' . URLROOT . '/login'));
+        }
         
     }
 
@@ -180,6 +180,29 @@ class Tutor extends Controller
         $this->view('tutor/viewssrreceived');
     }
 
+    public function creategig()
+    {
+        $this->view('tutor/creategig');
+    }
+
+
+    public function sessions()
+    {
+        $this->view('tutor/sessions');
+    }
+
+    public function customoffers()
+    {
+        $this->view('tutor/customoffers');
+    }
+    public function pendingjobs()
+    {
+        $this->view('tutor/pendingjobs');
+    }
+    public function completedjobs()
+    {
+        $this->view('tutor/completedjobs');
+    }
 
 }
 

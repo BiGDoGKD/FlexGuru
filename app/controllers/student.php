@@ -49,7 +49,7 @@ class Student extends Controller
       'category' => '',
       'days' => '',
       'budget' => '',
-      'date' => ''
+      'date' => date("Y-m-d")
     ];
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -62,7 +62,7 @@ class Student extends Controller
         'category' => $_POST['category'],
         'days' => $_POST['days'],
         'budget' => $_POST['budget'],
-        'date' => ''
+        'date' => date("Y-m-d")
       ];
 
       if ($this->ssr->request($data)) {
@@ -218,17 +218,17 @@ public function requests()
   {
     $this->view('student/pages/responses');
   }
-  public function tutorresponses()
+  public function indetailcustomoffer()
   {
-    $this->view('student/pages/tutorresponses');
+    $this->view('student/pages/indetailcustomoffer');
   }
   public function purchasehistory()
   {
     $this->view('student/purchasehistory');
   }
-  public function responsesdetailpopup()
+  public function gettutorcustomorder()
   {
-    $this->view('student/pages/responsesdetailpopup');
+    $this->view('student/pages/gettutorcustomorder');
   }
   public function gigreview()
   {
@@ -264,5 +264,22 @@ public function requests()
 
     $this->view('student/complaint', $data);
   }
+  public function ssrtutorresponses()
+  {
+    $ssr = $this->model("SSR");
+    $objectresponse = $ssr->getResponses();
+  
+    // $this->ssr = $this->model("SSR");
+    // $resultArray = $this->ssr->getRequests();
+    $data = $objectresponse->response->result;
+    
+    $this->view('student/ssrtutorresponses',$data);
+  }
+  public function stsessions()
+  {
+    $this->view('student/stsessions');
+  }
+
+
 }
 //

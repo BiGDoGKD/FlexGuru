@@ -1,4 +1,4 @@
-here we show the individual student requests
+Basic structure needed in this page
 
 <table>
     <tr>

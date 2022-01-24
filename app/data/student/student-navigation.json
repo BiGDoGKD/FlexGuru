@@ -8,7 +8,7 @@
         "menu": "Messages"
     },
     {
-        "url": "student/sessions",
+        "url": "student/stsessions",
         "menu": "Sessions"
     },
     {

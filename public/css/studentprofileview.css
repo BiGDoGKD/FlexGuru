@@ -285,19 +285,26 @@ margin-left:130px;
     justify-content: space-around;
     margin-top:1vh;
 }
-.activesessions{
+.active_button{
 width: 30vw;
 height: 70px;
-left: 300px;
+border:1px solid transparent;
+display: grid;
+background-color: var(--primary);
+padding-top:20px;
+font-size:30px;
+color:#fff;
+margin-left: 26px;
+ /* left: 300px;
 top: 107px;
 font-size:30px;
 margin:0 auto;
 margin-top:20px;
 
-border: 1px solid #ACACAC;
-display: grid;
-justify-content: space-between;
-grid-template-columns: 12fr 12fr;
+border: 1px solid #ACACAC; */
+
+ 
+/* grid-template-columns: 12fr 12fr;  */
 }
 .requestsessions{
 
@@ -314,9 +321,6 @@ grid-template-columns: 12fr 12fr;
 
 }
 
-.activesessions span{
-    margin:20px 0px 0px 20px ;
-}
 
 
 .content{

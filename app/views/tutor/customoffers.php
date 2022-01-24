@@ -1,6 +1,7 @@
 <?php
 include APPROOT . '/views/includes/data.php';
-include APPROOT . '/views/student/includes/header.php';
+include APPROOT . '/views/tutor/includes/header.php';
+include APPROOT . '/views/tutor/includes/sessiontabs.php';
 ?>
 
 
@@ -92,7 +93,10 @@ font-weight: bold;
 color: var(--primary);
 } */
 </style>
-<h4 style="margin: 30px 0;">Special Service Requests</h4>
+
+<br><br>
+
+<h3>Custom Offers</h3>
 
 
 <table border="1" class="requesttable">
@@ -121,7 +125,7 @@ color: var(--primary);
             <td><?php echo $message->days; ?></td>
             <td><?php echo $message->budget; ?></td>
             <td><?php echo $message->date; ?></td>
-            <td> <button class="viewcustomorder" onclick="location.href='<?php echo URLROOT . '/student/ssrtutorresponses' ?>'">See responses</button></td>
+            <td> <button class="viewcustomorder" onclick="location.href='<?php echo URLROOT . '/student/gettutorcustomorder' ?>'">View Tutor Custom Order</button></td>
 
         </tr>
     <?php

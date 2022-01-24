@@ -37,4 +37,15 @@ class SSR
         $data =  $this->api->usercall("GET", APIURL . 'student/getSpecialRequests', []);
         return json_decode($data);
     }
+
+
+    public function getResponses()
+    {
+
+
+
+        $data =  $this->api->usercall("GET", APIURL . 'student/getSpecialRequests ', []);
+     
+        return json_decode($data);
+    }
 }

@@ -18,6 +18,25 @@ include APPROOT . '/views/tutor/includes/header.php';
     <link rel="stylesheet" href="<?php echo URLROOT . '/public/css/studentprofileview.css' ?>">
 </head>
 
+<style>
+    .gigcreate span {
+        margin: 20px 0px 0px 20px;
+    }
+
+    .gigcreate button {
+
+        width: 11vw;
+        height: 40px;
+        background: #7879F1;
+        color: #fff;
+        justify-content: center;
+        margin: 18px 0px 0px 20px;
+        border-radius: 24px;
+        border: 1px transparent solid;
+
+    }
+</style>
+
 <body>
     <!-- <header>
 
@@ -101,6 +120,10 @@ include APPROOT . '/views/tutor/includes/header.php';
                     <option default>Active Sessions(0)</option>
                 </select>
 
+
+
+                <span>Create a new Gig </span>
+                <button onclick="location.href='<?php echo URLROOT . '/tutor/creategig' ?>'">Create </button>
 
             </div>
             <div class="approval" id="content0">
