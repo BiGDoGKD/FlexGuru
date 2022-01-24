@@ -48,7 +48,8 @@ class Student extends Controller
       'subject' => '',
       'category' => '',
       'days' => '',
-      'budget' => ''
+      'budget' => '',
+      'date' => ''
     ];
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -60,7 +61,8 @@ class Student extends Controller
         'subject' => $_POST['subject'],
         'category' => $_POST['category'],
         'days' => $_POST['days'],
-        'budget' => $_POST['budget']
+        'budget' => $_POST['budget'],
+        'date' => ''
       ];
 
       if ($this->ssr->request($data)) {
@@ -190,19 +192,35 @@ class Student extends Controller
 
   //requests
 
-  public function requests()
+
+
+
+
+public function requests()
   {
+
+    $ssr = $this->model("SSR");
+    $objectrequest = $ssr->getRequests();
     // $this->ssr = $this->model("SSR");
     // $resultArray = $this->ssr->getRequests();
-    $this->view('student/pages/requests');
-  }
+    $data = $objectrequest->response->result;
+    $this->view('student/pages/requests',$data);
+          }
+
+
+
+
+
+
+
+
   public function responses()
   {
     $this->view('student/pages/responses');
   }
-  public function tutordetailspopup()
+  public function tutorresponses()
   {
-    $this->view('student/pages/tutordetailspopup');
+    $this->view('student/pages/tutorresponses');
   }
   public function purchasehistory()
   {

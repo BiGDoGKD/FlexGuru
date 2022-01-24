@@ -26,4 +26,15 @@ class SSR
     {
         $this->api->usercall("POST", APIURL . 'student/addssr', json_encode($data));
     }
+
+
+
+    public function getRequests()
+    {      
+            
+            
+    
+        $data =  $this->api->usercall("GET", APIURL . 'student/getSpecialRequests', []);
+        return json_decode($data);
+    }
 }
