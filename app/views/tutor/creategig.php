@@ -8,7 +8,9 @@ include APPROOT . '/views/student/includes/header.php';
         <!-- check the path of the form action -->
         <!-- --------------------------------------- -->
         <!-- --------------------------------------- -->
+
         <form action="<?php echo URLROOT . '/tutor/creategig' ?>" method="POST">
+
             <div class="ssr-block">
                 <h4>Publish a Gig</h4>
             </div>
@@ -48,7 +50,9 @@ include APPROOT . '/views/student/includes/header.php';
         </form>
     </div>
     <div class="container-image">
+
         <img src="<?php echo URLROOT . '/public/img/ssr/cover.svg' ?>" alt="Create gig related vectore image">
+
     </div>
 </div>
 
@@ -56,4 +60,6 @@ include APPROOT . '/views/student/includes/header.php';
 
 <?php
 include APPROOT . '/views/includes/footer.php';
+
 ?>
+

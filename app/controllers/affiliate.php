@@ -12,7 +12,7 @@ class affiliate extends Controller
         //   'city' => ''
         // ];
         // $data['city'] = $this->Student->showinProfile($data);
-        $this->view('affiliate /affiliateprofileview');
+        $this->view('affiliate/affiliateprofileview');
     }
 
     public function billinginformation()

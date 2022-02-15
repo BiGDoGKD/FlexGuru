@@ -170,6 +170,40 @@ class Tutor extends Controller
     }
 
 
+    public function ssrtutorreceived()
+    {
+        $this->view('tutor/ssrtutorreceived');
+    }
+
+    public function viewssrreceived()
+    {
+        $this->view('tutor/viewssrreceived');
+    }
+
+    public function creategig()
+    {
+        $this->view('tutor/creategig');
+    }
+
+
+    public function sessions()
+    {
+        $this->view('tutor/sessions');
+    }
+
+    public function customoffers()
+    {
+        $this->view('tutor/customoffers');
+    }
+    public function pendingjobs()
+    {
+        $this->view('tutor/pendingjobs');
+    }
+    public function completedjobs()
+    {
+        $this->view('tutor/completedjobs');
+    }
+
 }
 
 

@@ -50,14 +50,15 @@ include APPROOT . '/views/student/includes/header.php';
                 <p class="subtitle-2">What is your budget for the service?</p>
                 <input type="text" name="budget" id="budget" required>
             </div>
-            <div class="ssr-block">
-                <button type="submit" class="btn bg-primary on-primary">Submit Request</button>
-            </div>
-        </form>
+            <input type="date"  name="date" id="date">
+             <div class="ssr-block">
+            <button type="submit" class="btn bg-primary on-primary">Submit Request</button>
     </div>
-    <div class="container-image">
-        <img src="<?php echo URLROOT . '/public/img/ssr/cover.svg' ?>" alt="">
-    </div>
+    </form>
+</div>
+<div class="container-image">
+    <img src="<?php echo URLROOT . '/public/img/ssr/cover.svg' ?>" alt="">
+</div>
 </div>
 
 

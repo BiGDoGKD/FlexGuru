@@ -92,7 +92,7 @@ font-weight: bold;
 color: var(--primary);
 } */
 </style>
-<h4 style="margin: 30px 0;">Special Service Requests</h4>
+<h4 style="margin: 30px 0;">Custom Offers</h4>
 
 
 <table border="1" class="requesttable">
@@ -104,12 +104,13 @@ color: var(--primary);
         <th>Deadline</th>
         <th>Budget</th>
         <th>Request Date</th>
-        <th>Responses</th>
+        <th>Accept/Decline</th>
 
 
     </thead>
 
     <?php
+    
     foreach ($data as $item) {
         $message = $item->message;
     ?>
@@ -121,7 +122,7 @@ color: var(--primary);
             <td><?php echo $message->days; ?></td>
             <td><?php echo $message->budget; ?></td>
             <td><?php echo $message->date; ?></td>
-            <td> <button class="viewcustomorder" onclick="location.href='<?php echo URLROOT . '/student/ssrtutorresponses' ?>'">See responses</button></td>
+            <td> <button class="viewcustomorder" onclick="location.href='<?php echo URLROOT . '/student/indetailcustomoffer' ?>'">More</button></td>
 
         </tr>
     <?php
