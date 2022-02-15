@@ -71,10 +71,12 @@ include APPROOT . '/views/student/includes/header.php';
     </div>
 
     <div class="right">
-        <button class="active_button" onclick="location.href='<?php echo URLROOT . '/student/stsessions' ?>'">
-            <center> Active Sessions </center>
-
-        </button>
+        <div class="activesessions">
+            <p style="font-size:15px; margin-top:24px; padding-left:20px;">Active Sessions-0 </p>
+            <select name="" id="activesessionselect" style="font-size: 14px; padding-left:20px">
+                <option default>Active Sessions(0)</option>
+            </select>
+        </div>
         <div class="requestsessions">
 
             <span>Request Sessions </span>
