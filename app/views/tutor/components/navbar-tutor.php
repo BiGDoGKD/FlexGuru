@@ -24,7 +24,7 @@
     <ul class="nav-info">
 
         <?php
-        foreach ($tu_navigation as $value) {
+        foreach ($st_navigation as $value) {
         ?>
             <li><a class="gray subtitle-2" href="<?php echo URLROOT ?>/<?php echo $value["url"] ?>"><?php echo $value["menu"] ?></a></li>
         <?php
