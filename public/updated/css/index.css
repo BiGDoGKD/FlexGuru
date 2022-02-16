@@ -15,6 +15,11 @@
   color: #808080;
 }
 
+.form-control .form-feedback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
 .form-control input {
   border-radius: 0;
   color: #808080;
@@ -1692,231 +1697,231 @@ img {
 }
 
 .text-error {
-  color: #d32752;
+  color: #eb4770;
 }
 
 .text-hover-error:hover {
-  color: #d32752;
+  color: #eb4770;
 }
 
 .bg-error {
-  background-color: #d32752;
+  background-color: #eb4770;
 }
 
 .text-error-light-1 {
-  color: #d73d63;
+  color: #ed597e;
 }
 
 .text-hover-error-light-1:hover {
-  color: #d73d63;
+  color: #ed597e;
 }
 
 .bg-error-light-1 {
-  background-color: #d73d63;
+  background-color: #ed597e;
 }
 
 .text-error-light-2 {
-  color: #dc5275;
+  color: #ef6c8d;
 }
 
 .text-hover-error-light-2:hover {
-  color: #dc5275;
+  color: #ef6c8d;
 }
 
 .bg-error-light-2 {
-  background-color: #dc5275;
+  background-color: #ef6c8d;
 }
 
 .text-error-light-3 {
-  color: #e06886;
+  color: #f17e9b;
 }
 
 .text-hover-error-light-3:hover {
-  color: #e06886;
+  color: #f17e9b;
 }
 
 .bg-error-light-3 {
-  background-color: #e06886;
+  background-color: #f17e9b;
 }
 
 .text-error-light-4 {
-  color: #e57d97;
+  color: #f391a9;
 }
 
 .text-hover-error-light-4:hover {
-  color: #e57d97;
+  color: #f391a9;
 }
 
 .bg-error-light-4 {
-  background-color: #e57d97;
+  background-color: #f391a9;
 }
 
 .text-error-light-5 {
-  color: #e993a9;
+  color: #f5a3b8;
 }
 
 .text-hover-error-light-5:hover {
-  color: #e993a9;
+  color: #f5a3b8;
 }
 
 .bg-error-light-5 {
-  background-color: #e993a9;
+  background-color: #f5a3b8;
 }
 
 .text-error-light-6 {
-  color: #eda9ba;
+  color: #f7b5c6;
 }
 
 .text-hover-error-light-6:hover {
-  color: #eda9ba;
+  color: #f7b5c6;
 }
 
 .bg-error-light-6 {
-  background-color: #eda9ba;
+  background-color: #f7b5c6;
 }
 
 .text-error-light-7 {
-  color: #f2becb;
+  color: #f9c8d4;
 }
 
 .text-hover-error-light-7:hover {
-  color: #f2becb;
+  color: #f9c8d4;
 }
 
 .bg-error-light-7 {
-  background-color: #f2becb;
+  background-color: #f9c8d4;
 }
 
 .text-error-light-8 {
-  color: #f6d4dc;
+  color: #fbdae2;
 }
 
 .text-hover-error-light-8:hover {
-  color: #f6d4dc;
+  color: #fbdae2;
 }
 
 .bg-error-light-8 {
-  background-color: #f6d4dc;
+  background-color: #fbdae2;
 }
 
 .text-error-light-9 {
-  color: #fbe9ee;
+  color: #fdedf1;
 }
 
 .text-hover-error-light-9:hover {
-  color: #fbe9ee;
+  color: #fdedf1;
 }
 
 .bg-error-light-9 {
-  background-color: #fbe9ee;
+  background-color: #fdedf1;
 }
 
 .text-error-dark-1 {
-  color: #be234a;
+  color: #d44065;
 }
 
 .text-hover-error-dark-1:hover {
-  color: #be234a;
+  color: #d44065;
 }
 
 .bg-error-dark-1 {
-  background-color: #be234a;
+  background-color: #d44065;
 }
 
 .text-error-dark-2 {
-  color: #a91f42;
+  color: #bc395a;
 }
 
 .text-hover-error-dark-2:hover {
-  color: #a91f42;
+  color: #bc395a;
 }
 
 .bg-error-dark-2 {
-  background-color: #a91f42;
+  background-color: #bc395a;
 }
 
 .text-error-dark-3 {
-  color: #941b39;
+  color: #a5324e;
 }
 
 .text-hover-error-dark-3:hover {
-  color: #941b39;
+  color: #a5324e;
 }
 
 .bg-error-dark-3 {
-  background-color: #941b39;
+  background-color: #a5324e;
 }
 
 .text-error-dark-4 {
-  color: #7f1731;
+  color: #8d2b43;
 }
 
 .text-hover-error-dark-4:hover {
-  color: #7f1731;
+  color: #8d2b43;
 }
 
 .bg-error-dark-4 {
-  background-color: #7f1731;
+  background-color: #8d2b43;
 }
 
 .text-error-dark-5 {
-  color: #6a1429;
+  color: #762438;
 }
 
 .text-hover-error-dark-5:hover {
-  color: #6a1429;
+  color: #762438;
 }
 
 .bg-error-dark-5 {
-  background-color: #6a1429;
+  background-color: #762438;
 }
 
 .text-error-dark-6 {
-  color: #541021;
+  color: #5e1c2d;
 }
 
 .text-hover-error-dark-6:hover {
-  color: #541021;
+  color: #5e1c2d;
 }
 
 .bg-error-dark-6 {
-  background-color: #541021;
+  background-color: #5e1c2d;
 }
 
 .text-error-dark-7 {
-  color: #3f0c19;
+  color: #471522;
 }
 
 .text-hover-error-dark-7:hover {
-  color: #3f0c19;
+  color: #471522;
 }
 
 .bg-error-dark-7 {
-  background-color: #3f0c19;
+  background-color: #471522;
 }
 
 .text-error-dark-8 {
-  color: #2a0810;
+  color: #2f0e16;
 }
 
 .text-hover-error-dark-8:hover {
-  color: #2a0810;
+  color: #2f0e16;
 }
 
 .bg-error-dark-8 {
-  background-color: #2a0810;
+  background-color: #2f0e16;
 }
 
 .text-error-dark-9 {
-  color: #150408;
+  color: #18070b;
 }
 
 .text-hover-error-dark-9:hover {
-  color: #150408;
+  color: #18070b;
 }
 
 .bg-error-dark-9 {
-  background-color: #150408;
+  background-color: #18070b;
 }
 
 .text-info {

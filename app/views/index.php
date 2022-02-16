@@ -26,7 +26,7 @@
                         sunt. Hic delectus dicta ut suscipit illum adipisci veniam illo
                         vero!
                     </p>
-                    <button class="bg-primary br-xs mt-2">Visit Marketplace</button>
+                    <button onclick="location.href='<?php echo URLROOT ?>/marketplace'" class="bg-primary br-xs mt-2">Visit Marketplace</button>
                 </div>
                 <div class="col-6-lg col-12-xs display-f justify-lg-content-end justify-xs-content-center">
                     <img src=<?php echo URLROOT . '/public/updated/img/hero.svg' ?> alt="test" />
@@ -60,42 +60,42 @@
         </div>
         <div class="site-roles container mt-5 mb-5">
             <div class="row text-center">
-                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                <div onclick="location.href='<?php echo URLROOT . '/info/tutor' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
                     <div class="role display-f justify-content-center align-items-center br-sm bg-cyan">
                         <img src=<?php echo URLROOT . "/public/updated/img/roles/tutor.svg" ?> alt="Tutor" style="width: 42%" />
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Tutor</h3>
-                    <p>
+                    <p class="text-gray">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
                         aliquam!
                     </p>
                 </div>
-                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                <div onclick="location.href='<?php echo URLROOT . '/info/student' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
                     <div class="role display-f justify-content-center align-items-center br-sm bg-lightnavy">
                         <img src=<?php echo URLROOT . '/public/updated/img/roles/student.svg' ?> alt="Student" />
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Student</h3>
-                    <p>
+                    <p class="text-gray">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
                         aliquam!
                     </p>
                 </div>
-                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                <div onclick="location.href='<?php echo URLROOT . '/info/affiliates' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
                     <div class="role display-f justify-content-center align-items-center br-sm bg-lightred">
                         <img src=<?php echo URLROOT . '/public/updated/img/roles/affiliate.svg' ?> alt="Affiliate" />
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Affiliate</h3>
-                    <p>
+                    <p class="text-gray">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
                         aliquam!
                     </p>
                 </div>
-                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                <div onclick="location.href='<?php echo URLROOT . '/info/help' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
                     <div class="role display-f justify-content-center align-items-center br-sm bg-lightyellow">
                         <img src=<?php echo URLROOT . '/public/updated/img/roles/support.svg' ?> alt="Support" />
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Support</h3>
-                    <p>
+                    <p class="text-gray">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
                         aliquam!
                     </p>

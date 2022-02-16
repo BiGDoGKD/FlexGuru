@@ -21,7 +21,7 @@ class Marketplace extends Controller
 
     public function index()
     {
-        $this->view('marketplace/index');
+        $this->view('marketplace/marketplace');
     }
 
     public function service()
