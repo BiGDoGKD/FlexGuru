@@ -1,270 +1,111 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-/** 
- * PROJECT NAME : FLEXGURU
- * PROJECT DESCRIPTION: Flexguru is a tutor freelancing platform where students can find the best tutors to fullfill their requirements in a much more flexible manner and provide a platform for enthusiastic tutors to distribute knowledge in whatever the area  they are good at. 
- * @package flexguru
- * AUTHORS: Kesara Karannagoda, Avishka Hettiarachchi, Kavindhu Galagedara, Razeen Nizar
- * CO-AUTHORS: 
- * LAST UPDATE BY: Kesara Karannagoda
- * LAST UPDATE DATA : Sep, 01, 2021
- * FILE TYPE: View
- * PARENT FOLDER: /views
- */
-?>
-<?php
-include APPROOT . '/views/includes/data.php';
-include APPROOT . '/views/includes/header.php';
-?>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexguru</title>
+    <?php include APPROOT . '/views/includes/header.php'; ?>
+</head>
 
-<div class="fg-cover">
-    <div>
-        <h2 class="dark" style="width: 500px;"><?php echo $main["landing-title"] ?></h2>
-        <p class="body-2 gray">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.</p>
-        <div class="search-bar">
-            <input class="subtitle-2" type="text" name="" id="" placeholder="Search...">
-            <i class="fas fa-search gray"></i>
-            <button class="btn btn-text bg-primary on-primary">learn</button>
-        </div>
-    </div>
-    <div class="cover-image">
-        <div class="top-tutors">
-            <div class="title-bar"><i class="fas fa-certificate" style="color:#FFD064;"></i><span class="subtitle-1 bold">Top Rated Tutors</span></div>
-            <div class="activity-bar">
-                <div class="filled-bar"></div>
-            </div>
-            <div class="detail-bar"><span class="subtitle-2 gray">95% successful sessions</span></div>
-        </div>
-        <div class="circle">
-        </div>
-    </div>
-</div>
-<div class="fg-welcome">
-    <div class="bg-welcome bg-rose"></div>
-    <div class="button-tab overline bg-light-blue">future of smart learning</div>
-    <div class="globe"><img src="<?php echo URLROOT . '/public/img/visitor/home/globe.svg' ?>" width="210" height="210" alt=""></div>
-    <div class="welcome-title">
-        <h2 style="font-weight: 500;" class="text-center">Welcome to <span class="transparent" style="-webkit-text-stroke: 1px var(--dark);"></br>flexguru</span></h2>
-    </div>
-    <div class="welcome-description w-50">
-        <p class="text-center body-1 gray">Flexguru is a tutor freelancing platform where students can find the best tutors to fullfill their requirements in a much more flexible manner and provide a platform for enthusiastic tutors to distribute knowledge in whatever the area they are good at. </p>
-    </div>
-</div>
-<div class="fg-actors">
-    <div class="bg-welcome bg-on-primary">
-    </div>
-    <div class="actor-bar">
-        <?php
-        foreach ($actors as $value) {
-        ?>
-            <!-- // echo $value["title"]; -->
-
-
-            <div class="actor-card">
-                <div class="actor-tile" style="border-radius:16px; background: <?php echo $value["background"] ?>; height:100px; width:100px;">
-                    <img height="80px" src="<?php echo URLROOT . '/public/img/visitor/home/' . $value["picture"] . '.svg' ?>" alt="<?php echo $value["picture"] ?>">
+<body>
+    <?php
+    include APPROOT . '/views/includes/navbar.php';
+    ?>
+    <div class="home-page">
+        <div class="hero-section container">
+            <div class="row mt-2 flex-xs-col-reverse flex-lg-row">
+                <div class="col-6-lg col-12-xs display-f flex-col justify-lg-content-center">
+                    <h1 class="mt-xs-2 mt-xl-0">
+                        Unleash your <br />smart learning<br />
+                        opportunity
+                    </h1>
+                    <p class="text-gray">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,
+                        sunt. Hic delectus dicta ut suscipit illum adipisci veniam illo
+                        vero!
+                    </p>
+                    <button class="bg-primary br-xs mt-2">Visit Marketplace</button>
                 </div>
-                <h6><?php echo $value["title"] ?></h6>
-                <p class="body-2 text-center gray">
-                    <?php echo $value["description"] ?>
-                </p>
+                <div class="col-6-lg col-12-xs display-f justify-lg-content-end justify-xs-content-center">
+                    <img src=<?php echo URLROOT . '/public/updated/img/hero.svg' ?> alt="test" />
+                </div>
             </div>
-
-        <?php
-        }
-        ?>
+        </div>
+        <div class="welcome-section container">
+            <div class="row flex-col">
+                <div class="col-12 display-f justify-content-center mt-xs-0 mt-lg-3">
+                    <div class="title-box mt-xs-5">future of smart learning</div>
+                </div>
+                <div class="col-12">
+                    <img class="mt-3 mb-1" src=<?php echo URLROOT . '/public/updated/img/world.svg' ?> alt="world" />
+                </div>
+                <div class="col-12">
+                    <h1 class="mt-lg-3 mt-xs-2">Welcomet to Flexguru</h1>
+                </div>
+                <div class="col-12 mt-2 mb-3">
+                    <p class="text-gray">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                        nobis, totam minus illum deleniti sint, expedita hic quo
+                        excepturi, exercitationem molestiae libero dignissimos! Saepe,
+                        dolor consectetur autem quibusdam recusandae veritatis quaerat.
+                        Reiciendis nostrum eligendi praesentium error ipsam nihil
+                        dignissimos velit ex perferendis, facilis, sequi consectetur
+                        libero accusamus cupiditate possimus ad aperiam dolorem modi
+                        dolore maxime! Vel quas ipsam incidunt ab?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="site-roles container mt-5 mb-5">
+            <div class="row text-center">
+                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                    <div class="role display-f justify-content-center align-items-center br-sm bg-cyan">
+                        <img src=<?php echo URLROOT . "/public/updated/img/roles/tutor.svg" ?> alt="Tutor" style="width: 42%" />
+                    </div>
+                    <h3 class="mt-2 mb-1">Flexguru Tutor</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+                        aliquam!
+                    </p>
+                </div>
+                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                    <div class="role display-f justify-content-center align-items-center br-sm bg-lightnavy">
+                        <img src=<?php echo URLROOT . '/public/updated/img/roles/student.svg' ?> alt="Student" />
+                    </div>
+                    <h3 class="mt-2 mb-1">Flexguru Student</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+                        aliquam!
+                    </p>
+                </div>
+                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                    <div class="role display-f justify-content-center align-items-center br-sm bg-lightred">
+                        <img src=<?php echo URLROOT . '/public/updated/img/roles/affiliate.svg' ?> alt="Affiliate" />
+                    </div>
+                    <h3 class="mt-2 mb-1">Flexguru Affiliate</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+                        aliquam!
+                    </p>
+                </div>
+                <div class="text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
+                    <div class="role display-f justify-content-center align-items-center br-sm bg-lightyellow">
+                        <img src=<?php echo URLROOT . '/public/updated/img/roles/support.svg' ?> alt="Support" />
+                    </div>
+                    <h3 class="mt-2 mb-1">Flexguru Support</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+                        aliquam!
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<style>
-    .fg-actors {
-        height: 460px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 50px 0 80px 0;
-    }
+    <?php
+    include APPROOT . '/views/includes/footer.php';
+    ?>
+</body>
 
-    .actor-bar {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .actor-bar .actor-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        width: 200px;
-        min-height: 270px;
-
-    }
-
-    .actor-bar .actor-card .actor-tile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 0 20px 0;
-    }
-
-    .actor-bar .actor-card p {
-        margin: 10px 0;
-    }
-</style>
-</div>
-<?php
-include APPROOT . '/views/includes/footer.php';
-?>
-<style>
-    /* cover css  */
-    .fg-cover {
-        width: 100%;
-        height: 460px;
-        margin: 50px 0 80px 0;
-        display: flex;
-        /* align-items: center; */
-        justify-content: space-between;
-    }
-
-    .fg-cover .cover-image {
-        position: relative;
-        width: 37%;
-        padding: 20px;
-    }
-
-    @keyframes slideInFromLeft {
-        0% {
-            transform: translate(-50%, -800%);
-        }
-
-        100% {
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    .fg-cover .cover-image .top-tutors {
-        animation: 1s ease-out 0s 1 slideInFromLeft;
-        position: absolute;
-        width: 225px;
-        height: 108px;
-        left: 0;
-        top: 55%;
-        transform: translate(-50%, -50%);
-        background: #FFFFFF;
-        box-shadow: 0px 0px 12.6px rgba(0, 0, 0, 0.25);
-        border-radius: 18px 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .fg-cover .cover-image .top-tutors .title-bar {
-        width: 82%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .fg-cover .cover-image .top-tutors .activity-bar {
-        width: 80%;
-        background: var(--gray);
-        border-radius: 8px;
-        height: 8px;
-    }
-
-    .fg-cover .cover-image .top-tutors .activity-bar .filled-bar {
-        width: 95%;
-        background: var(--primary);
-        border-radius: 8px;
-        height: 100%;
-    }
-
-    .fg-cover .cover-image .top-tutors .detail-bar {}
-
-    .fg-cover .cover-image .circle {
-        height: 370px;
-        width: 370px;
-        background: url(<?php echo URLROOT . '/public/img/visitor/home/cover.webp' ?>);
-        background-position: center;
-        background-size: cover;
-        border-radius: 50%;
-    }
-
-    .fg-cover .body-2 {
-        width: 500px;
-        margin: 25px 0 0 0;
-    }
-
-    .search-bar {
-        position: relative;
-        width: 520px;
-        margin: 60px 0;
-        padding: 0;
-    }
-
-    .search-bar i {
-        position: absolute;
-        font-size: 20px;
-        left: 20px;
-        top: 11px;
-    }
-
-    .search-bar button {
-        border-radius: 0px 24px 24px 0px;
-        width: 115px;
-        height: 40px;
-        margin: 0 0 1.6px -4px;
-        border: 0;
-        outline: 0;
-    }
-
-    .search-bar input[type="text"] {
-        height: 40px;
-        width: 400px;
-        border-radius: 24px 0 0 24px;
-        margin: 0;
-        padding: 0 50px;
-        border: 0.5px #acacac solid;
-        outline: 0;
-
-    }
-
-    /* welcome section css  */
-    .fg-welcome {
-        position: relative;
-        width: 100%;
-        padding: 60px 0;
-        margin: 50px 0 80px 0;
-        display: flex;
-        /* align-items: center; */
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .fg-welcome .bg-welcome {
-        position: absolute;
-        width: 100vw;
-        height: 100%;
-        z-index: -99999;
-    }
-
-    .fg-welcome .button-tab {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        padding: 0 60px;
-        border-radius: 24px;
-    }
-
-    .fg-welcome .globe {
-        margin: 40px 0;
-    }
-
-    .fg-welcome .welcome-title {
-        margin: 0 0 35px 0;
-    }
-</style>
+</html>
