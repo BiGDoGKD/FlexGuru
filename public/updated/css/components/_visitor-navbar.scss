@@ -1,0 +1,33 @@
+.visitor-navbar {
+
+    h2 {
+        color: $primary;
+        cursor: pointer;
+    }
+
+    &__menu {
+        align-items: center;
+
+        ul {
+            gap: 1rem;
+            color: $gray;
+
+            li {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__authentication {
+        justify-content: end;
+
+        button {
+            background: $primary;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            color: $white;
+            font-weight: 600;
+        }
+    }
+}

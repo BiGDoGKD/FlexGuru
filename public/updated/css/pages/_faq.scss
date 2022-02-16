@@ -1,0 +1,47 @@
+@include xs {
+    .faq {
+
+
+        .question {
+            margin: 0 0 1rem 0;
+
+
+            .question-title {
+                font-size: 1.4rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid $gray;
+            }
+
+            .question-content {
+                font-size: 1rem;
+                color: $gray;
+                line-height: 1.5;
+                margin-bottom: 2.5rem;
+            }
+        }
+
+    }
+}
+
+@include lg {
+    .faq {
+
+
+        .question {
+            margin: 0 0 1rem 0;
+
+
+            .question-title {
+                font-size: 1.8rem;
+
+            }
+
+            .question-content {
+                font-size: 1rem;
+
+            }
+        }
+
+    }
+}

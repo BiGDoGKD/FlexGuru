@@ -1,0 +1,90 @@
+.service-gig {
+    cursor: pointer;
+    width: 230px;
+    border-radius: 4px;
+
+    &__header {
+        height: 120px;
+        border-radius: 4px 4px 0 0;
+    }
+
+    &__body {
+
+        border: 1px solid #cfcfcf;
+        border-radius: 0 0 4px 4px;
+
+        &__tutor-details {
+            display: flex;
+            padding: 0.5rem 0.75rem;
+            align-items: center;
+
+
+            &__tutor-profile-picture {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+            }
+
+            &__tutor-name {
+                display: flex;
+                flex-direction: column;
+                padding-left: 0.5rem;
+
+                .name {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $black;
+                }
+
+                .level {
+                    font-size: 12px;
+                    color: $gray;
+                }
+            }
+        }
+
+        &__gig-description {
+            font-size: 15px;
+            font-weight: 500;
+            padding: 0 0.75rem;
+        }
+
+        &__gig-details {
+            display: flex;
+            padding: 0.5rem 0.75rem;
+
+            &__star-ratings {
+                font-size: 15px;
+                color: $orange;
+            }
+
+            &__services-given {
+                font-size: 15px;
+                color: $gray;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 0.75rem;
+        border-top: 1px solid $gray;
+
+        &__badge {
+            color: $primary;
+        }
+
+        &__price {
+            .price-value {
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            font-size: 15px;
+            text-align: end;
+            color: $gray;
+        }
+    }
+}

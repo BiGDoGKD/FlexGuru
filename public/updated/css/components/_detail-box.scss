@@ -1,0 +1,30 @@
+@include xs {
+    .detail-box {
+        h1 {
+            font-size: 2rem;
+
+
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        padding-top: 2rem;
+    }
+}
+
+@include xl {
+    .detail-box {
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        padding-top: 2rem;
+    }
+}

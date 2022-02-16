@@ -1,0 +1,44 @@
+.flexguru-team {
+    .profile-card {
+        margin: 2rem 0;
+
+        .profile-card-header {
+            .profile-card-header-image {
+                .profile-card-header-image-img {
+                    width: 175px;
+                    height: 175px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .profile-card-body {
+            .profile-card-body-name {
+                font-size: 1rem;
+                font-weight: 500;
+                margin-top: 0.3rem;
+                margin-bottom: 0.3rem;
+                text-transform: uppercase;
+            }
+
+            .profile-card-body-position {
+                font-size: 0.75rem;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            .profile-card-body-description {
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .social-media-bar {
+                .social-media-bar-item {
+                    margin: 0 0.5rem;
+                }
+            }
+        }
+
+
+    }
+}

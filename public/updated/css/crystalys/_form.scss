@@ -1,0 +1,91 @@
+.form-control {
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin: 0.75rem 0;
+
+        label {
+            margin-bottom: 0.2rem;
+            color: $gray;
+        }
+    }
+
+    input {
+        border-radius: 0;
+        color: $gray;
+        border-color: #e5e5e5;
+        border-width: 1px;
+        border-style: solid;
+        padding: 10px;
+        outline: 0;
+        font-size: 14px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 0.2rem rgba(25, 125, 255, 0.25);
+        }
+    }
+
+    button {
+        cursor: pointer;
+        background-color: $primary;
+        border-radius: 0;
+        border-color: $primary;
+        border-width: 2px;
+        border-style: solid;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $primary-hover;
+            border-color: $primary-hover;
+            color: $white;
+        }
+    }
+
+    select {
+        border-radius: 0;
+        color: $gray;
+        border-color: #e5e5e5;
+        border-width: 1px;
+        border-style: solid;
+        padding: 10px;
+        outline: 0;
+        font-size: 14px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 0.2rem rgba(25, 125, 255, 0.25);
+        }
+    }
+
+
+    textarea {
+        border-radius: 0;
+        color: $gray;
+        border-color: #e5e5e5;
+        border-width: 1px;
+        border-style: solid;
+        padding: 10px;
+        outline: 0;
+        font-size: 14px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 0.2rem rgba(25, 125, 255, 0.25);
+        }
+    }
+
+    input[type="checkbox"] {
+        margin-right: 0.5rem;
+    }
+}
