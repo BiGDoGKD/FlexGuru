@@ -1,102 +1,52 @@
-<?php
-
-/** 
- * PROJECT NAME : FLEXGURU
- * PROJECT DESCRIPTION: Flexguru is a tutor freelancing platform where students can find the best tutors to fullfill their requirements in a much more flexible manner and provide a platform for enthusiastic tutors to distribute knowledge in whatever the area  they are good at. 
- * @package flexguru
- * AUTHORS: Kesara Karannagoda, Avishka Hettiarachchi, Kavindhu Galagedara, Razeen Nizar
- * CO-AUTHORS: 
- * LAST UPDATE BY: Kesara Karannagoda
- * LAST UPDATE DATA : Sep, 17, 2021
- * FILE TYPE: View
- * PARENT FOLDER: includes
- */
-?>
-<!-- ALL JAVASCRIPT FILES GOES HERE  -->
-<script defer src="<?php echo URLROOT . '/public/js/main.js' ?>"></script>
-<script defer src="<?php echo URLROOT . '/public/js/login.js' ?>"></script>
-<script defer src="<?php echo URLROOT . '/public/js/navbar-visitor.js' ?>"></script>
-<script defer src="<?php echo URLROOT . '/public/js/sidenav-visitor.js' ?>"></script>
-<script defer src="<?php echo URLROOT . '/public/js/smooth-scroll.js' ?>"></script>
-</div>
-
-<link rel="stylesheet" href="<?php echo URLROOT . '/public/css/public/footer/style.css' ?>">
-
-<?php
-$footer_string = file_get_contents(APPROOT . '/views/includes/data/footer.json');
-$footer = json_decode($footer_string, true);
-?>
-<div class="fg-footer gray">
-    <div class="fg-info">
-        <p class="primary h5"><?php echo $footer['title'] ?></p>
-        <p class="subtitle-1"><?php echo $footer['info-address'] ?></p>
-        <p class="subtitle-1"><?php echo $footer['local-address'] ?></p>
-        <p class="subtitle-2 privacy-policy bold"><?php echo $footer['policy'] ?></p>
-    </div>
-
-    <div class="fg-resources menu">
-        <p class="h6">Resources</p>
-        <ul>
-            <?php
-            foreach ($footer['footer-menu'][0]['menu'] as $item) {
-            ?>
-                <li><a href="<?php echo URLROOT.'/'.$item['url'] ?>"><?php echo $item['item'] ?></a></li>
-            <?php
-            }
-            ?>
-        </ul>
-    </div>
-
-    <div class="fg-support menu">
-        <p class="h6">Support</p>
-        <ul>
-            <?php
-            foreach ($footer['footer-menu'][1]['menu'] as $item) {
-            ?>
-                <li><a href="<?php echo URLROOT.'/'.$item['url'] ?>"><?php echo $item['item'] ?></a></li>
-            <?php
-            }
-            ?>
-        </ul>
-    </div>
-
-    <div class="fg-company menu">
-        <p class="h6">Company</p>
-        <ul>
-            <?php
-            foreach ($footer['footer-menu'][2]['menu'] as $item) {
-            ?>
-                <li><a href="<?php echo URLROOT.'/'.$item['url'] ?>"><?php echo $item['item'] ?></a></li>
-            <?php
-            }
-            ?>
-        </ul>
-    </div>
-
-    <div class="fg-social menu">
-        <p class="h6">Follow Us</p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" rel="noopener" target="_blank">
-                <i class="fab fa-facebook gray">
-                    <p class="body-1" style="font-size: 15px;">Facebook</p>
-                </i>
-            </a>
-            <a href="https://www.twitter.com" rel="noopener" target="_blank">
-                <i class="fab fa-twitter gray">
-                    <p class="body-1" style="font-size: 15px;">Twitter</p>
-                </i></a>
-            <a href="https://www.instagram.com" rel="noopener" target="_blank">
-                <i class="fab fa-instagram gray">
-                    <p class="body-1" style="font-size: 15px;">Instagram</p>
-                </i></a>
-            <a href="https://www.linkedin.com" rel="noopener" target="_blank">
-                <i class="fab fa-linkedin gray">
-                    <p class="body-1" style="font-size: 15px;">Linkedin</p>
-                </i></a>
+<footer class="flexguru-footer container fluid bg-lightred pt-5 pb-5">
+    <div class="container">
+        <div class="row text-xs-center text-lg-start">
+            <div class="col-12-xs col-6-md col-4-lg mt-xs-2 mt-lg-0 text-lg-start text-xs-center">
+                <h1 class="text-primary">FlexGuru</h1>
+                <p class="text-gray mt-1">
+                    info@flexguru.lk<br />
+                    Colombo, Sri Lanka
+                </p>
+                <p class="text-bold font-md mt-1" style="font-weight: 600">
+                    <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+            <div class="col-12-xs col-6-md col-2-lg mt-xs-2 mt-lg-0">
+                <h3>Resources</h3>
+                <ul class="text-gray">
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/affiliates' ?>">Affiliate Program</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/special_request' ?>">Service Request</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/n' ?>">NewsFeed</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/faq' ?>">FaQ</a></li>
+                </ul>
+            </div>
+            <div class="col-12-xs col-6-md col-2-lg mt-xs-2 mt-lg-0">
+                <h3>Support</h3>
+                <ul class="text-gray">
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/works' ?>">How it works</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/tutor' ?>">Become a Tutor</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/student' ?>">Become a Student</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/help' ?>">Get Help</a></li>
+                </ul>
+            </div>
+            <div class="col-12-xs col-6-md col-2-lg mt-xs-2 mt-lg-0">
+                <h3>Company</h3>
+                <ul class="text-gray">
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/team' ?>">Our Team</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/contact' ?>">Contact Us</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/about' ?>">About Us</a></li>
+                    <li class="mt-1"><a href="<?php echo URLROOT . '/info/terms' ?>">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-12-xs col-6-md col-2-lg mt-xs-2 mt-lg-0">
+                <h3>Follow Us</h3>
+                <ul class="text-gray">
+                    <li class="mt-1"><a href="#">Facebook</a></li>
+                    <li class="mt-1"><a href="#">Twitter</a></li>
+                    <li class="mt-1"><a href="#">Instagram</a></li>
+                    <li class="mt-1"><a href="#">Linkedin</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-
-</div>
-</body>
-
-</html>
+</footer>

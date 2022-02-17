@@ -1,0 +1,34 @@
+@include xs {
+    .registration-roles {
+        .filter-primary {
+            filter: invert(52%) sepia(5%) saturate(6793%) hue-rotate(202deg) brightness(98%) contrast(93%);
+        }
+
+        &__role-card {
+            cursor: pointer;
+
+            img {
+                width: 60px;
+            }
+
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+    }
+}
+
+@include lg {
+    .registration-roles {
+        .filter-primary {
+            filter: invert(52%) sepia(5%) saturate(6793%) hue-rotate(202deg) brightness(98%) contrast(93%);
+        }
+
+        &__role-card {
+            img {
+                width: 100px;
+            }
+
+            width: fit-content;
+        }
+    }
+}
