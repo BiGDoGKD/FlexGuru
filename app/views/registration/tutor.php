@@ -68,7 +68,7 @@
 				</div>
 				<div class="form-group col-12-xs col-6-lg pr-lg-2 pl-lg-2">
 					<label for="gender">Gender</label>
-					<select name="gender" name="gender" id="gender" value="<?php echo $data['gender'] ?>" required>
+					<select name="gender" id="gender" value="<?php echo $data['gender'] ?>" required>
 						<option value="" disabled selected>Select Gender</option>
 						<option value="male">Male</option>
 						<option value="female">Female</option>
