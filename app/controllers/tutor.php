@@ -168,7 +168,6 @@ class Tutor extends Controller
         $this->view('tutor/settings', $data);
     }
 
-
     public function ssrtutorreceived()
     {
         $this->view('tutor/ssrtutorreceived');
@@ -205,4 +204,3 @@ class Tutor extends Controller
 }
 
 
-//

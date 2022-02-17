@@ -48,8 +48,7 @@ class Student extends Controller
       'subject' => '',
       'category' => '',
       'days' => '',
-      'budget' => '',
-      'date' => date("Y-m-d")
+      'budget' => ''
     ];
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -61,8 +60,7 @@ class Student extends Controller
         'subject' => $_POST['subject'],
         'category' => $_POST['category'],
         'days' => $_POST['days'],
-        'budget' => $_POST['budget'],
-        'date' => date("Y-m-d")
+        'budget' => $_POST['budget']
       ];
 
       if ($this->ssr->request($data)) {
@@ -192,43 +190,27 @@ class Student extends Controller
 
   //requests
 
-
-
-
-
-public function requests()
+  public function requests()
   {
-
-    $ssr = $this->model("SSR");
-    $objectrequest = $ssr->getRequests();
     // $this->ssr = $this->model("SSR");
     // $resultArray = $this->ssr->getRequests();
-    $data = $objectrequest->response->result;
-    $this->view('student/pages/requests',$data);
-          }
-
-
-
-
-
-
-
-
+    $this->view('student/pages/requests');
+  }
   public function responses()
   {
     $this->view('student/pages/responses');
   }
-  public function indetailcustomoffer()
+  public function tutordetailspopup()
   {
-    $this->view('student/pages/indetailcustomoffer');
+    $this->view('student/pages/tutordetailspopup');
   }
   public function purchasehistory()
   {
     $this->view('student/purchasehistory');
   }
-  public function gettutorcustomorder()
+  public function responsesdetailpopup()
   {
-    $this->view('student/pages/gettutorcustomorder');
+    $this->view('student/pages/responsesdetailpopup');
   }
   public function gigreview()
   {
@@ -264,22 +246,5 @@ public function requests()
 
     $this->view('student/complaint', $data);
   }
-  public function ssrtutorresponses()
-  {
-    $ssr = $this->model("SSR");
-    $objectresponse = $ssr->getResponses();
-  
-    // $this->ssr = $this->model("SSR");
-    // $resultArray = $this->ssr->getRequests();
-    $data = $objectresponse->response->result;
-    
-    $this->view('student/ssrtutorresponses',$data);
-  }
-  public function stsessions()
-  {
-    $this->view('student/stsessions');
-  }
-
-
 }
 //
