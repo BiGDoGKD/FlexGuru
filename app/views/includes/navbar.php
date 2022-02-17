@@ -8,6 +8,7 @@
                 <li><a href="<?php echo URLROOT ?>/marketplace">Services</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/help">Help</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/about">About</a></li>
+                <li><a href="<?php echo URLROOT ?>/info/contact">Contact</a></li>
             </ul>
         </div>
         <div class="col-4-md"></div>
