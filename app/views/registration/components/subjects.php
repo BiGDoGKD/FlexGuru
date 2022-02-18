@@ -2,8 +2,6 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
-<link rel="stylesheet" href="<?php echo URLROOT . '/public/css/visitor/registration/tokens.css' ?>">
-
 
 <script>
     var subjectsArray = [
