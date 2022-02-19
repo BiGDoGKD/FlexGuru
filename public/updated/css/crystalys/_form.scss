@@ -51,7 +51,9 @@
         &:hover {
             background-color: $primary-hover;
             border-color: $primary-hover;
-            color: $white;
+            color: $gray;
+            -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
         }
     }
 
