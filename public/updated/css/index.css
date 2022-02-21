@@ -7449,6 +7449,96 @@ img {
   transition: 0.3s ease;
 }
 
+.profile-card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-card .profile-card-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-card .profile-card-header .profile-card-header-image .profile-card-header-image-img {
+  display: inline-block;
+  background: #4a4bec;
+  height: 10rem;
+  width: 10rem;
+  vertical-align: middle;
+  margin-right: 1rem;
+  margin: 1rem auto;
+  border-radius: 50%;
+}
+
+.profile-card .profile-card-header__profile-name {
+  font-size: 1.2rem;
+  color: #7879f1;
+  font-weight: 500;
+  margin: 0.5rem auto;
+}
+
+.profile-card .profile-card-body {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.profile-card .profile-card-body .profile-card-address {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1.5rem;
+  margin: 1rem 0;
+}
+
+.profile-card .profile-card-body .profile-card-address .label {
+  color: #808080;
+}
+
+.profile-card .profile-card-body .profile-card-address .city {
+  font-weight: 600;
+}
+
+.profile-card .profile-card-body .profile-card-duration {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.profile-card .profile-card-body .profile-card-duration .label {
+  color: #808080;
+}
+
+.profile-card .profile-card-body .profile-card-duration .date {
+  font-weight: 600;
+}
+
 @media (min-width: 0) {
   .home-page .hero-section {
     text-align: center;

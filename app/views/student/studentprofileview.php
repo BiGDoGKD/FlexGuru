@@ -13,112 +13,97 @@
     <?php
     include APPROOT . '/views/includes/user-navbar.php';
     ?>
-    <div class="container">
 
-        <div class="left">
-
-            <div class="userbox">
-                <div class="img">
-                    <img src="<?php echo URLROOT . '/public/img/studentprofileview/user.png' ?>" id="userimg" alt="">
-                </div>
-                <center><span id="name"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></span>
-                    <div class="star_rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star unchecked"></span>
-                        <span class="fa fa-star unchecked"></span>
-
-                    </div>
-
-                    <span><b> N/A </b> (n/a) </span>
-
-                    <div class="details">
-                        <div id="from" class="cityandmembership" style="margin-top:15px; margin-bottom: 20px;">
-                            <img src="<?php echo URLROOT . '/public/img/studentprofileview/map.png' ?>" class="detailimg" id="from" alt="">
-                            <p style=""><?php echo $_SESSION['userdata']['city'] ?></p>
-
+    <div class="user-dashboard container">
+        <div class="row">
+            <div class="col-12-xs col-4-lg">
+                <div class="profile-card">
+                    <div class="profile-card-header">
+                        <div class="profile-card-header-image">
+                            <img class="profile-card-header-image-img" src="https://avatarfiles.alphacoders.com/699/69905.png" alt="Kesara Karannagoda" />
                         </div>
-                        <div id="membersince" class="cityandmembership">
-                            <img src="<?php echo URLROOT . '/public/img/studentprofileview/usersmall.png' ?>" class="detailimg" id="usersince" alt="">
-                            <p>Month,Year</p>
+                        <div class="profile-card-header__profile-name">
+                            <span class="first-name"><?php echo $_SESSION['userdata']['firstname'] ?></span>
+                            <span class="last-name"><?php echo $_SESSION['userdata']['lastname'] ?></span>
                         </div>
-
+                        <div class="profile-card-header__profile-ratings">
+                            <div class="star-bar">
+                                <div class="star-bar__star-container">
+                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
+                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
+                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
+                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
+                                    <i class="fa fa-solid fa-star fa-lg text-gray" style="position: relative"><i style="
+													position: absolute;
+													top: 50%;
+													left: 50%;
+													transform: translate(-50%, -50%);
+													z-index: 1;
+												" class="fa fa-star-half text-orange"></i></i>
+                                </div>
+                            </div>
+                            <div class="rating-count text-gray">
+                                <span class="base-value font-lg text-black">4.5</span>
+                                <span class="feedback-count">(
+                                    <span class="feedback-count__count">12</span>
+                                    <span class="feedback-count__text">feedbacks</span>
+                                    )
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </center>
-            </div>
-
-            <div class="socialmedia">
-                <span>Link Your Social Networks</span>
-                <div class="setofsocialmedia">
-                    <div id="facebook"><img src="<?php echo URLROOT . '/public/img/studentprofileview/fb.png' ?>" alt="" class="iconsm"></div>
-
-                    <div id="twitter"><img src="<?php echo URLROOT . '/public/img/studentprofileview/twitter.png' ?>" alt="" class="iconsm"></div>
-
-                    <div id="youtube"><img src="<?php echo URLROOT . '/public/img/studentprofileview/youtube.png' ?>" alt="" class="iconsm"></div>
-
-                    <div id="Linkedin"><img src="<?php echo URLROOT . '/public/img/studentprofileview/linkedin.png' ?>" alt="" class="iconsm"></div>
-                </div>
-                <div class="setofsocialmediaplus">
-                    <div><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt="" class="iconsmadd" onclick="myFunction()"></div>
-                    <div><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt="" class="iconsmadd"></div>
-                    <div><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt="" class="iconsmadd"></div>
-                    <div><img src="<?php echo URLROOT . '/public/img/studentprofileview/add.png' ?>" alt="" class="iconsmadd"></div>
-
-                </div>
-
-                <!-- values of the social media links -->
-
-                <div id="socialmediahidden facebook"></div>
-                <div id="socialmediahidden twitter"></div>
-                <div id="socialmediahidden youtube"></div>
-                <div id="socialmediahidden linkedin"></div>
-            </div>
-
-        </div>
-
-        <div class="right">
-            <div class="activesessions">
-                <p style="font-size:15px; margin-top:24px; padding-left:20px;">Active Sessions-0 </p>
-                <select name="" id="activesessionselect" style="font-size: 14px; padding-left:20px">
-                    <option default>Active Sessions(0)</option>
-                </select>
-            </div>
-            <div class="requestsessions">
-
-                <span>Request Sessions </span>
-                <button onclick="location.href='<?php echo URLROOT . '/student/specialrequest' ?>'">POST</button>
-
-            </div>
-
-            <div class="content" id="content1">
-
-                <p id="firstheading"><b>FlexGuru helps you to improve</br></b> </p>
-
-                <div id="contentpara1">
-                    <div class="text">
-                        <span>
-                            <b> How to be succesfull in Flexguru in simple steps</b>
-                        </span>
-                        <p>The key to your success on Flexguru is the brand you build for yourself through
-                            your Flexguru reputation. We gathered some tips and resources to help you
-                            become a leading tutor on Flexguru.</p>
+                    <div class="profile-card-body">
+                        <div class="profile-card-address">
+                            <p class="label">
+                                <i class="fa fa-solid fa-location-arrow fa-lg text-gray"></i>
+                                From
+                            </p>
+                            <p class="city"><?php echo $_SESSION['userdata']['city'] ?></p>
+                        </div>
+                        <div class="profile-card-duration">
+                            <span class="label">
+                                <i class="fa fa-solid fa-user fa-lg text-gray"></i> Member
+                                since</span>
+                            <span class="date"><?php
+                                                echo date('M, Y', strtotime(date($_SESSION['userdata']['startdate'])));
+                                                ?></span>
+                        </div>
                     </div>
-                    <div class="study_img_div">
-                        <img src="<?php echo URLROOT . '/public/img/studentprofileview/study.svg' ?>" id="study_img" alt="">
-
-                    </div>
-
-
+                    <div class="profile-card-footer"></div>
                 </div>
-
             </div>
-            <div class="content" id="content2">
-                <span><b>Take these steps to become a popular tutor on Flexguru</b></span>
+            <div class="col-12-xs mt-xs-3 mt-lg-0 col-8-lg">
+                <?php
+                print_r($_SESSION);
+                ?>
             </div>
-
+            <div class="col-12-xs">
+                <div class="social-media-bar display-f text-gray font-lg justify-content-center">
+                    <div class="social-media-bar-item">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="social-media-bar-item">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="social-media-bar-item">
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="social-media-bar-item">
+                        <a href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
     <?php
     include APPROOT . '/views/includes/footer.php';
     ?>
