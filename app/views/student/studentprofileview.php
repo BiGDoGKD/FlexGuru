@@ -20,7 +20,7 @@
                 <div class="profile-card">
                     <div class="profile-card-header">
                         <div class="profile-card-header-image">
-                            <img class="profile-card-header-image-img" src="https://avatarfiles.alphacoders.com/699/69905.png" alt="Kesara Karannagoda" />
+                            <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/img/studentprofileview/user.png' ?>" id="userimg" alt="Kesara Karannagoda" />
                         </div>
                         <div class="profile-card-header__profile-name">
                             <span class="first-name"><?php echo $_SESSION['userdata']['firstname'] ?></span>
