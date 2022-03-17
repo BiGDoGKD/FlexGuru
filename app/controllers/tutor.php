@@ -178,7 +178,7 @@ class Tutor extends Controller
         $this->view('tutor/viewssrreceived');
     }
 
-    public function creategig()
+    public function publish()
     {
         $this->view('tutor/creategig');
     }
@@ -202,5 +202,3 @@ class Tutor extends Controller
         $this->view('tutor/completedjobs');
     }
 }
-
-
