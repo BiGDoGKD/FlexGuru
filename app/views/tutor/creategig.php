@@ -21,14 +21,12 @@
                         Create Gig
                     </h1>
                 </div>
+
                 <div class="gig-form col-12-xs col-8-lg">
-                    <form action="#" style="width: 100%;" class="form-control row">
-
-
-
+                    <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row">
                         <div class="form-group col-12-xs">
                             <label for="firstname">Gig Title <span class="text-error">*</span> </label>
-                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter the service title..." value="" required />
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter the service title..." value="" required />
                             <p class="form-control form-feedback text-error">
 
                             </p>
@@ -42,14 +40,14 @@
                         </div>
                         <div class="form-group col-12-xs">
                             <label for="firstname">Price <span class="text-error">*</span></label>
-                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Price.." value="" required />
+                            <input type="text" class="form-control" name="price" id="price" placeholder="Price.." value="" required />
                             <p class="form-control form-feedback text-error">
 
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
-                            <label for="ciry">Revisions <span class="text-error">*</span></label>
-                            <select name="city" id="city" value="<?php echo $data['city'] ?>" required>
+                            <label for="revisions">Revisions <span class="text-error">*</span></label>
+                            <select name="revisions" id="revisions" required>
                                 <option class="select-option" value="" disabled selected>Select No of Revisions.</option>
                                 <option class="select-option" value="0">0</option>
                                 <option class="select-option" value="1">1</option>
@@ -64,8 +62,8 @@
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
-                            <label for="ciry">Service within <span class="text-error">*</span></label>
-                            <select name="city" id="city" value="<?php echo $data['city'] ?>" required>
+                            <label for="duration">Service within <span class="text-error">*</span></label>
+                            <select name="duration" id="duration" value="<?php echo $data['duration'] ?>" required>
                                 <option class="select-option" value="" disabled selected>Select the delivery time.</option>
                                 <option class="select-option" value="1">1 days</option>
                                 <option class="select-option" value="2">2 days</option>
@@ -86,8 +84,8 @@
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
-                            <label for="ciry">Subject <span class="text-error">*</span></label>
-                            <select name="city" id="city" value="<?php echo $data['city'] ?>" required>
+                            <label for="subject">Subject <span class="text-error">*</span></label>
+                            <select name="subject" id="subject" value="<?php echo $data['subject'] ?>" required>
                                 <option class="select-option" value="" disabled selected>Select the subject.</option>
                                 <option class="select-option" value="math">Math</option>
                                 <option class="select-option" value="english">English</option>
@@ -99,15 +97,15 @@
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
-                            <label for="firstname">Lesson <span class="text-error">*</span></label>
-                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter the lesson." value="" required />
+                            <label for="lesson">Lesson <span class="text-error">*</span></label>
+                            <input type="text" class="form-control" name="lesson" id="lesson" placeholder="Enter the lesson." value="" required />
                             <p class="form-control form-feedback text-error">
 
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
-                            <label for="firstname">Gig Display Image <span class="text-error">*</span></label>
-                            <input type="file" class="form-control" name="firstname" id="firstname" placeholder="First Name" value="" required />
+                            <label for="image">Gig Display Image <span class="text-error">*</span></label>
+                            <input type="file" class="form-control" name="image" id="image" placeholder="First Name" value="" required />
                             <p class="form-control form-feedback text-error">
 
                             </p>
