@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #e6e6e6;
+    padding-bottom: 2rem;
 
     .profile-card-header {
         width: 100%;
@@ -27,7 +29,11 @@
             font-size: 1.2rem;
             color: $primary;
             font-weight: 500;
-            margin: 0.5rem auto;
+            margin: 0.5rem auto 0 auto;
+        }
+
+        &__profile-handle {
+            margin-bottom: 0.5rem;
         }
     }
 
@@ -67,5 +73,7 @@
         }
     }
 
-    .profile-card-footer {}
+    .profile-card-footer {
+        margin-top: 1.5rem;
+    }
 }

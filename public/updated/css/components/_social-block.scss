@@ -1,0 +1,24 @@
+.social-block {
+    border: 1px solid #e6e6e6;
+    padding: 1rem 2rem 2rem 2rem;
+
+    .social-media-bar {
+        &-item {
+            .fa-twitter {
+                color: #00aced;
+            }
+
+            .fa-facebook-f {
+                color: #3b5998;
+            }
+
+            .fa-linkedin {
+                color: #007bb6;
+            }
+
+            .fa-instagram {
+                color: #ff4765;
+            }
+        }
+    }
+}
