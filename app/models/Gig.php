@@ -18,6 +18,7 @@ class Gig
     public function __construct()
     {
         $this->db = new Database;
+        $this->api = new API;
     }
 
     /* Test (database and table needs to exist before this works)
@@ -32,7 +33,25 @@ class Gig
 
     public function create($gigdata)
     {
-        $get_data = $this->api->usercall('POST', APIURL . 'gig/create', json_encode($gigdata));
-        print_r($get_data);
+        if ($response = $this->api->usercall('POST', APIURL . 'gig/create', json_encode($gigdata))) {
+            $status = json_decode($response)->response->status;
+            $msg = json_decode($response)->response->result->success;
+            $_SESSION['toastmsg'] = $msg;
+
+            if ($status == 200) {
+                include APPROOT . "/views/includes/successtoast.php";
+            } else {
+                include APPROOT . "/views/includes/errortoast.php";
+            }
+        }
+    }
+
+    public function getAllGigs()
+    {
+        if ($response = $this->api->call('GET', APIURL . 'visitor/services', null)) {
+            $responseArray = (array)json_decode($response);
+            $result = (array)$responseArray["response"];
+            return $result;
+        }
     }
 }
