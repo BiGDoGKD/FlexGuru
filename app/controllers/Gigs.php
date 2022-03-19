@@ -24,6 +24,11 @@ class Gigs extends Controller
     {
     }
 
+    public function mygigs()
+    {
+        $this->view('tutor/mygigs');
+    }
+
     public function publish()
     {
         $data = $this->data;
