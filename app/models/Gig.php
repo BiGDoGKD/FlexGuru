@@ -58,7 +58,9 @@ class Gig
 
     public function getGigsByTutor($data)
     {
+
         if ($response = $this->api->call('POST', APIURL . 'visitor/servicesbytutor', json_encode($data))) {
+
             $responseArray = (array)json_decode($response);
             $result = (array)$responseArray["response"];
             return $result;
