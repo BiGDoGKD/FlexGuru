@@ -21,8 +21,7 @@
 			<div class="col-12-xs">
 				<h1 class="font-lg-xxl font-xs-xl mb-1">Select user type</h1>
 				<p class="text-gray">
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-					tempore.
+				Please select the your role in order to proceed with the registration.
 				</p>
 			</div>
 		</div>
@@ -63,8 +62,7 @@
 				<p class="text-gray pr-lg-2 pl-lg-2">
 					Accepting
 					<a href='<?php echo URLROOT ?>/info/terms' class="text-primary">terms and conditions</a> is
-					mandatory for registration. Lorem, ipsum dolor sit amet consectetur
-					adipisicing elit. Itaque, cum! Lorem ipsum dolor sit amet.
+					mandatory for registration. Please read our agreement page, before proceeding, you will be responsible for your own usage. 
 				</p>
 			</div>
 		</div>
