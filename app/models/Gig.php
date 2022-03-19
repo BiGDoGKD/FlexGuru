@@ -54,4 +54,13 @@ class Gig
             return $result;
         }
     }
+
+    public function getGigsByTutor($data)
+    {
+        if ($response = $this->api->call('POST', APIURL . 'visitor/servicesbytutor', $data)) {
+            $responseArray = (array)json_decode($response);
+            $result = (array)$responseArray["response"];
+            return $result;
+        }
+    }
 }
