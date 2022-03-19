@@ -26,8 +26,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>About us</h1>
 						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Eveniet, distinctio.
+						Flexible and Easily accessible education for everyone
 						</p>
 					</div>
 				</div>
@@ -40,8 +39,7 @@
 		<div class="row detail-box">
 			<h1>Our Vision</h1>
 			<p class="text-gray">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-				voluptate aperiam nostrum, illum id aliquid!
+				Bridge the knowledge gap within students by creating a platform where students and tutors can get connected and organize sessions as per their need.
 			</p>
 		</div>
 		<!-- End of Detail Box -->

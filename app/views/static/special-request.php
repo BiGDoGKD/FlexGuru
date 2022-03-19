@@ -24,10 +24,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
-						<h1>What's Special?</h1>
+						<h1>What's Special Requests?</h1>
 						<p class="text-gray">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Eveniet, distinctio.
+							Students can request custom tutor sessions through FlexGuru.
 						</p>
 					</div>
 				</div>
@@ -42,12 +41,9 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<h1>Title</h1>
+				<!-- <h1>Title</h1> -->
 				<p class="text-gray">
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-					Exercitationem error rerum ipsa molestias temporibus dolor itaque
-					laboriosam! Molestias fuga enim sed, facere facilis quam cum ab ex,
-					aperiam nisi explicabo?
+				As a key functionality within our system, we offer our students the privilege to make custom requests other than purchasing already published service gigs. 
 				</p>
 			</div>
 		</div>
@@ -58,12 +54,9 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<h1>Title</h1>
+				<!-- <h1>Title</h1> -->
 				<p class="text-gray">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-					at nesciunt necessitatibus veniam magnam soluta sapiente, laboriosam
-					id unde est sint nobis et quo distinctio odio quisquam harum,
-					asperiores ut!
+				Students can make special requests specifying the subject context in need of help with, budget and deadline for service. 
 				</p>
 			</div>
 		</div>
@@ -74,12 +67,9 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<h1>Title</h1>
+				<!-- <h1>Title</h1> -->
 				<p class="text-gray">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-					Perferendis maxime architecto voluptatum hic laborum consequatur
-					adipisci enim saepe illum repudiandae deleniti, doloribus inventore
-					cumque animi facere ullam id incidunt alias.
+				After submitting a request, it will be displayed for the tutors, and they may respond. And there after you’ll be able to discuss the sessions. 
 				</p>
 			</div>
 		</div>
