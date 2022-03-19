@@ -26,7 +26,12 @@ class Gigs extends Controller
 
     public function mygigs()
     {
-        $this->view('tutor/mygigs');
+        $this->gig = $this->model('Gig');
+        $data = [
+            'tuid' => $_SESSION['roledata']['tuid'],
+        ];
+        $result = $this->gig->getGigsByTutor($data);
+        $this->view('tutor/mygigs', $result['result']);
     }
 
     public function publish()
