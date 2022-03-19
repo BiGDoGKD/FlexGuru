@@ -35,6 +35,7 @@ class Gig
     {
         if ($response = $this->api->usercall('POST', APIURL . 'gig/create', json_encode($gigdata))) {
             $status = json_decode($response)->response->status;
+
             $msg = json_decode($response)->response->result->message;
             $_SESSION['toastmsg'] = $msg;
 

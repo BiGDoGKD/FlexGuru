@@ -7403,6 +7403,18 @@ img {
   font-size: 15px;
   font-weight: 500;
   padding: 0 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+}
+
+.service-gig__body__gig-description p {
+  height: 20px;
+  margin-right: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .service-gig__body__gig-details {
