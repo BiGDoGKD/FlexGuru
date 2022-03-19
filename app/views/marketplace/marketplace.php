@@ -129,570 +129,77 @@
 	<!-- Marketplace Section  -->
 	<div class="marketplace container">
 		<div class="row">
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
+			<?php
+			foreach ($data as $gig) {
+				$service = (array)$gig;
+			?>
+				<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
+					<a href="#">
+						<div class="service-gig">
+							<div class="service-gig__header" style="
 									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
 									background-size: cover;
 									background-position: center;
 								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
+
+							</div>
+							<div class="service-gig__body">
+								<div class="service-gig__body__tutor-details">
+									<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
+											background-image: url(<?php echo URLROOT . "/public/uploads/users/" . $service['photourl'] ?>);
 											background-size: cover;
 											background-position: center;
 										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
+									<div class="service-gig__body__tutor-details__tutor-name">
+										<span class="name"><?php echo $service['firstname'] . " " . $service['lastname'] ?></span>
+										<span class="level"><?php
+															if ($service['rating'] == '0') {
+																echo 'New Tutor';
+															} else {
+																echo 'Level ' . $service['rating'] . ' Tutor';
+															} ?>&nbsp;
 
-										<i class="fa fa-check-circle text-primary"></i></span>
+											<?php
+											if ($service['verified'] == '1') {
+												echo '<i class="fa fa-check-circle text-success"></i>';
+											} ?></span>
+									</div>
 								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
+								<div class="service-gig__body__gig-description">
+									<p><?php echo $service['title'] ?></p>
 								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
+								<div class="service-gig__body__gig-details">
+									<div class="service-gig__body__gig-details__star-ratings">
+										<i class="fa fa-star"></i>&nbsp;<?php
+																		if ($service['rating'] == '0') {
+																			echo 'n/a';
+																		} else {
+																			echo $service['rating'];
+																		} ?>
+									</div>
+									<div class="service-gig__body__gig-details__services-given">
+										<?php
+										if ($service['jobs'] == '0') {
+											echo '(<i>new service</i>)';
+										} else {
+											echo '(' . $service['jobs'] . ')';
+										} ?>
+									</div>
 								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
+								<div class="service-gig__footer">
+									<div class="service-gig__footer__badge">
+										<i class="fa fa-badge"></i>
+									</div>
+									<div class="service-gig__footer__price">
+										LKR&nbsp;<span class="price-value"><?php echo $service['price'] ?></span>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-				<a href="#">
-					<div class="service-gig">
-						<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-							Header
-						</div>
-						<div class="service-gig__body">
-							<div class="service-gig__body__tutor-details">
-								<div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-								<div class="service-gig__body__tutor-details__tutor-name">
-									<span class="name">Kesara Karannagoda</span>
-									<span class="level">Level 2 Tutor&nbsp;
-
-										<i class="fa fa-check-circle text-primary"></i></span>
-								</div>
-							</div>
-							<div class="service-gig__body__gig-description">
-								<p>I can teach you mathematics and science.</p>
-							</div>
-							<div class="service-gig__body__gig-details">
-								<div class="service-gig__body__gig-details__star-ratings">
-									<i class="fa fa-star"></i>&nbsp;4.6
-								</div>
-								<div class="service-gig__body__gig-details__services-given">
-									(249)
-								</div>
-							</div>
-							<div class="service-gig__footer">
-								<div class="service-gig__footer__badge">
-									<i class="fa fa-badge"></i>
-								</div>
-								<div class="service-gig__footer__price">
-									LKR&nbsp;<span class="price-value">1500</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
+					</a>
+				</div>
+			<?php 	}
+			?>
 		</div>
 		<div class="row">
 			<div class="col-12-xs display-f pt-3 pb-5 justify-content-center">

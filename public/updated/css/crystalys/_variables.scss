@@ -1,6 +1,6 @@
 // theme colors
 $primary: #7879f1;
-$primary-hover:#f3f4f6;
+$primary-hover: #f3f4f6;
 $secondary: #1ac886;
 $error: #eb4770;
 $info: #f6c31c;
@@ -13,29 +13,32 @@ $purple: #9900ff;
 $gray: #808080;
 $black: black;
 $white: white;
-$cyan:#DBFFFF;
-$lightnavy:#D6E1FF;
-$lightred:#FFF1E8;
-$lightyellow:#FFFBD4;
+$cyan: #dbffff;
+$lightnavy: #d6e1ff;
+$lightred: #fff1e8;
+$lightyellow: #fffbd4;
+$success: #06a736;
 
 // color palette
-$colors: ("primary": $primary,
-  "secondary": $secondary,
-  "error": $error,
-  "info": $info,
-  "blue": #1919e6,
-  "red": #e61919,
-  "yellow": #e6e619,
-  "green": #19e635,
-  "orange": #ffa600,
-  "purple": #9900ff,
-  "gray": #808080,
-  "black": black,
-  "white": white,
-  "cyan":#DBFFFF,
-  "lightnavy":#D6E1FF,
-  "lightred":#FFF1E8,
-  "lightyellow":#FFFBD4,
+$colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'error': $error,
+  'info': $info,
+  'blue': #1919e6,
+  'red': #e61919,
+  'yellow': #e6e619,
+  'green': #19e635,
+  'orange': #ffa600,
+  'purple': #9900ff,
+  'gray': #808080,
+  'black': black,
+  'white': white,
+  'cyan': #dbffff,
+  'lightnavy': #d6e1ff,
+  'lightred': #fff1e8,
+  'lightyellow': #fffbd4,
+  'success': $success,
 );
 
 // spacing

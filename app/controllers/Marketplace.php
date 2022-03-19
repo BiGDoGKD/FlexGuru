@@ -21,7 +21,9 @@ class Marketplace extends Controller
 
     public function index()
     {
-        $this->view('marketplace/marketplace');
+        $services = $this->model('Gig');
+        $data = $services->getAllGigs();
+        $this->view('marketplace/marketplace', $data["result"]);
     }
 
     public function service()

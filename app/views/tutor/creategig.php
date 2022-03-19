@@ -84,6 +84,18 @@
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
+                            <label for="medium">Medium <span class="text-error">*</span></label>
+                            <select name="medium" id="medium" value="<?php echo $data['medium'] ?>" required>
+                                <option class="select-option" value="" disabled selected>Select the medium.</option>
+                                <option class="select-option" value="english">English</option>
+                                <option class="select-option" value="sinhala">Sinhala</option>
+                                <option class="select-option" value="tamil">Tamil</option>
+                                <option class="select-option" value="other">Other</option>
+                            </select>
+                            <p class="form-control form-feedback text-error">
+                            </p>
+                        </div>
+                        <div class="form-group col-12-xs">
                             <label for="subject">Subject <span class="text-error">*</span></label>
                             <select name="subject" id="subject" value="<?php echo $data['subject'] ?>" required>
                                 <option class="select-option" value="" disabled selected>Select the subject.</option>
@@ -111,9 +123,7 @@
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
-                            <button type="submit" id="submit" name="submit" value="submit" class="form-control">
-                                Create Gig
-                            </button>
+                            <input type="submit" onclick="this.form.submit();this.disabled=true;this.value='Sending, please wait...';" id="submit" name="submit" value="submit" class="form-control" />
                         </div>
                     </form>
                 </div>

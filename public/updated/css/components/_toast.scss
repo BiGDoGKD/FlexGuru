@@ -1,0 +1,73 @@
+@include xs {
+  .toastHolder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+    .toastContainer {
+      margin: auto;
+      margin-top: 10px;
+      margin-right: 10px;
+      max-width: 300px;
+      height: auto;
+      padding: 5px;
+      position: relative;
+      padding-left: 20px;
+      float: right;
+      color: white;
+      background-color: $white;
+      box-shadow: $base-box-shadow;
+      border-radius: 5px;
+      #close {
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        right: 1;
+      }
+      #closebtn {
+        float: right;
+        background-color: rgba(255, 255, 255, 0);
+        border-style: none;
+        color: white;
+        cursor: pointer;
+      }
+
+      #close :hover {
+        transition: 0.5s;
+        color: black;
+      }
+    }
+    .toastContainer:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      border-bottom: 5px solid #85ff75;
+      animation: border_anim 2s linear forwards;
+    }
+
+    @keyframes border_anim {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+    }
+    .toastFadeOut {
+      opacity: 0;
+      transition: 1s;
+      transform: scale(0.5);
+    }
+  }
+}
+
+@include md {
+  .toastHolder {
+    .toastContainer {
+      max-width: 600px;
+    }
+  }
+}
