@@ -20,6 +20,11 @@ class Tutor extends Controller
         // }
     }
 
+    public function table()
+    {
+        $this->view('tutor/table');
+    }
+
     public function index()
     {
         $this->view('tutor/tutorprofileview');

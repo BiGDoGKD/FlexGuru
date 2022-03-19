@@ -6934,6 +6934,251 @@ img {
   }
 }
 
+@media (min-width: 0) {
+  .table-home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .table-home .table-container {
+    overflow-x: auto;
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  .table-home .table-container .table-box {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 100%;
+  }
+  .table-home .table-container .table-box .table-self {
+    overflow: hidden;
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 0rem;
+  }
+  .table-home table {
+    min-width: 100%;
+  }
+  .table-home table thead {
+    background-color: #f9fafb;
+  }
+  .table-home table thead tr th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #374151;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .table-home table thead tr .links {
+    position: relative;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .table-home table tbody tr.stripe {
+    background-color: #f9fafb;
+  }
+  .table-home table tbody tr {
+    background-color: #ffffff;
+    border-bottom-width: 1px;
+  }
+  .table-home table tbody tr:hover {
+    background-color: #f3f4f6;
+  }
+  .table-home table tbody tr .main {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #111827;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .table-home table tbody tr td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    white-space: nowrap;
+  }
+  .table-home table tbody tr .links {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .table-home table tbody tr .links a.info {
+    color: #2563eb;
+  }
+  .table-home table tbody tr .links a.info:hover {
+    text-decoration: underline;
+  }
+  .table-home table tbody tr .links a.error {
+    color: #f5222d;
+  }
+  .table-home table tbody tr .links a.error:hover {
+    text-decoration: underline;
+  }
+  .table-home table tbody tr .links .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    whitespace: nowrap;
+    borderwidth: 0;
+  }
+  .table-home table .text-info {
+    color: #2563eb;
+  }
+  .table-home table .text-error {
+    color: #f5222d;
+  }
+  .table-home table .text-warning {
+    color: #faad14;
+  }
+  .table-home table .text-success {
+    color: #52c41a;
+  }
+}
+
+@media (min-width: 960px) {
+  .table-home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .table-home .table-container {
+    overflow-x: auto;
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  .table-home .table-container .table-box {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 100%;
+  }
+  .table-home .table-container .table-box .table-self {
+    overflow: hidden;
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 0rem;
+  }
+  .table-home table {
+    min-width: 100%;
+  }
+  .table-home table thead {
+    background-color: #f9fafb;
+  }
+  .table-home table thead tr th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #374151;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .table-home table thead tr .links {
+    position: relative;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .table-home table tbody tr {
+    background-color: #ffffff;
+    border-bottom-width: 1px;
+  }
+  .table-home table tbody tr .main {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #111827;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .table-home table tbody tr td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    white-space: nowrap;
+  }
+  .table-home table tbody tr .links {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .table-home table tbody tr .links a.info {
+    color: #2563eb;
+  }
+  .table-home table tbody tr .links a.info:hover {
+    text-decoration: underline;
+  }
+  .table-home table tbody tr .links a.error {
+    color: #f5222d;
+  }
+  .table-home table tbody tr .links a.error:hover {
+    text-decoration: underline;
+  }
+  .table-home table .text-info {
+    color: #2563eb;
+  }
+  .table-home table .text-error {
+    color: #f5222d;
+  }
+  .table-home table .text-warning {
+    color: #faad14;
+  }
+  .table-home table .text-success {
+    color: #52c41a;
+  }
+}
+
 .visitor-navbar h2 {
   color: #7879f1;
   cursor: pointer;

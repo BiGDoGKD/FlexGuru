@@ -112,7 +112,7 @@ include APPROOT . '/views/student/includes/header.php';
       cursor: pointer;
       height: 46.5px;
     }
-    }
+
 
     form.example button:hover {
       background: #0b7dda;
@@ -201,7 +201,7 @@ include APPROOT . '/views/student/includes/header.php';
     }
 
     .ctdwn {
-        height:100px;
+      height: 100px;
     }
   </style>
 </head>
