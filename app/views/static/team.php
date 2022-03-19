@@ -21,8 +21,7 @@
 					Meet the FlexGuru Team
 				</h1>
 				<p class="text-gray font-lg-lg font-xs-md mb-xs-1 mb-lg-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-					distinctio.
+				Here’s our creative enthusiastic individuals who’s behind this entire project.
 				</p>
 			</div>
 		</div>
@@ -41,8 +40,7 @@
 							Marketing Manager
 						</div>
 						<div class="profile-card-body-description text-gray mt-1 pr-xs-2 pl-xs-2 pr-lg-1 pl-lg-1">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Reprehenderit, explicabo?
+						Linkedin - https://www.linkedin.com/in/razeen-nizar-5838721a9
 						</div>
 						<div class="social-media-bar display-f text-gray font-lg justify-content-center">
 							<div class="social-media-bar-item">
@@ -83,8 +81,7 @@
 							Full Stack Developer
 						</div>
 						<div class="profile-card-body-description text-gray mt-1 pr-xs-2 pl-xs-2 pr-lg-1 pl-lg-1">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Reprehenderit, explicabo?
+						Linkedin - https://www.linkedin.com/in/kesaralive
 						</div>
 						<div class="social-media-bar display-f text-gray font-lg justify-content-center">
 							<div class="social-media-bar-item">
@@ -124,8 +121,7 @@
 							Front End Developer
 						</div>
 						<div class="profile-card-body-description text-gray mt-1 pr-xs-2 pl-xs-2 pr-lg-1 pl-lg-1">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Reprehenderit, explicabo?
+						Linkedin - https://www.linkedin.com/in/avishka-hettiarachchi
 						</div>
 						<div class="social-media-bar display-f text-gray font-lg justify-content-center">
 							<div class="social-media-bar-item">
@@ -165,8 +161,7 @@
 							Content Specialist
 						</div>
 						<div class="profile-card-body-description text-gray mt-1 pr-xs-2 pl-xs-2 pr-lg-1 pl-lg-1">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Reprehenderit, explicabo?
+						https://www.linkedin.com/in/kavindhu-galagedara-7045511a5
 						</div>
 						<div class="social-media-bar display-f text-gray font-lg justify-content-center">
 							<div class="social-media-bar-item">
@@ -199,35 +194,13 @@
 				<h1 class="font-lg-xxl font-xs-xl mb-lg-2 mt-lg-5 mb-xs-1 mt-xs-3">
 					Special Credits
 				</h1>
-				<h2 class="mb-1 mt-2">Sub Category</h2>
+				<h2 class="mb-1 mt-2">Guidance</h2>
 				<p class="text-gray pl-lg-5 pr-lg-5">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facere
-					praesentium quos fugiat earum vitae repellat ex saepe temporibus
-					ratione at dolor magni quod blanditiis, sequi eos quibusdam
-					dignissimos veritatis? Similique, modi debitis? Et alias nemo nisi
-					facere ipsa voluptatibus ab illum error molestias! Eum pariatur
-					quidem repellendus distinctio. Similique atque cum velit repellat!
-					Molestiae sint, cumque, aliquam ratione eligendi ipsum commodi
-					cupiditate ipsam soluta repudiandae quaerat sed officiis facilis ut
-					placeat. Magnam voluptate reprehenderit et! Ad cum nostrum repellat
-					sit. Laborum mollitia ad nemo suscipit dolores laboriosam nihil
-					quisquam similique sint adipisci, placeat modi debitis omnis
-					dignissimos ratione! Corporis?
+				We won’t able to complete the project without being supervised by Mr. Kenneth Thilakarathna and Mrs. Piyumi Senevirathne,  and also we must show our gratitude to Mr. Charith Sampath Gunawardhana who mentored us along our ReidCon Journey to the same project FlexGuru. 
 				</p>
-				<h2 class="mb-1 mt-2">Sub Category</h2>
+				<h2 class="mb-1 mt-2">Digital Sources</h2>
 				<p class="text-gray pl-lg-5 pr-lg-5">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facere
-					praesentium quos fugiat earum vitae repellat ex saepe temporibus
-					ratione at dolor magni quod blanditiis, sequi eos quibusdam
-					dignissimos veritatis? Similique, modi debitis? Et alias nemo nisi
-					facere ipsa voluptatibus ab illum error molestias! Eum pariatur
-					quidem repellendus distinctio. Similique atque cum velit repellat!
-					Molestiae sint, cumque, aliquam ratione eligendi ipsum commodi
-					cupiditate ipsam soluta repudiandae quaerat sed officiis facilis ut
-					placeat. Magnam voluptate reprehenderit et! Ad cum nostrum repellat
-					sit. Laborum mollitia ad nemo suscipit dolores laboriosam nihil
-					quisquam similique sint adipisci, placeat modi debitis omnis
-					dignissimos ratione! Corporis?
+				And also with the help of these sources we were able to make FlexGuru more creative and functional. - fontawesome.com, undraw.co
 				</p>
 				<h3 class="mt-3" style="font-style: italic">Thank You!</h3>
 			</div>

@@ -26,8 +26,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>Become a Tutor</h1>
 						<p class="text-gray">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Eveniet, distinctio.
+						Join us as a tutor and share your knowledge.
 						</p>
 					</div>
 				</div>
