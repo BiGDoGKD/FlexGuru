@@ -35,6 +35,7 @@ class Gig
     {
         if ($response = $this->api->usercall('POST', APIURL . 'gig/create', json_encode($gigdata))) {
             $status = json_decode($response)->response->status;
+
             $msg = json_decode($response)->response->result->message;
             $_SESSION['toastmsg'] = $msg;
 
@@ -57,7 +58,9 @@ class Gig
 
     public function getGigsByTutor($data)
     {
-        if ($response = $this->api->call('POST', APIURL . 'visitor/servicesbytutor', $data)) {
+
+        if ($response = $this->api->call('POST', APIURL . 'visitor/servicesbytutor', json_encode($data))) {
+
             $responseArray = (array)json_decode($response);
             $result = (array)$responseArray["response"];
             return $result;

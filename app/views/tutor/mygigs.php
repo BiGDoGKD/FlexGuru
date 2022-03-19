@@ -14,6 +14,7 @@
     include APPROOT . '/views/includes/tutor-navbar.php';
     ?>
     <main>
+
         <div class="container">
             <div class="row pt-3">
                 <h1>
@@ -53,70 +54,55 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <!-- Product 1 -->
-                                                <tr>
-                                                    <td class="main">
-                                                        1
-                                                    </td>
-                                                    <td>
-                                                        Guitar Lessons for Beginners
-                                                    </td>
-                                                    <td>
-                                                        LKR 2000
-                                                    </td>
-                                                    <td class="text-warning">
-                                                        Pending
-                                                    </td>
-                                                    <td class="links">
-                                                        <a href="#" class="info">Edit</a>
-                                                    </td>
-                                                    <td class="links">
-                                                        <a href="#" class="error">Delete</a>
-                                                    </td>
-                                                </tr>
-                                                <!-- Product 1 -->
-                                                <tr>
-                                                    <td class="main">
-                                                        2
-                                                    </td>
-                                                    <td>
-                                                        Pre Engineering
-                                                    </td>
-                                                    <td>
-                                                        LKR 6000
-                                                    </td>
-                                                    <td class="text-success">
-                                                        Approved
-                                                    </td>
-                                                    <td class="links">
-                                                        <a href="#" class="info">Edit</a>
-                                                    </td>
-                                                    <td class="links">
-                                                        <a href="#" class="error">Delete</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="main">
-                                                        3
-                                                    </td>
-                                                    <td>
-                                                        C Programming for Beginners
-                                                    </td>
-                                                    <td>
-                                                        LKR 5000
-                                                    </td>
-                                                    <td class="text-error">
-                                                        Declined
-                                                    </td>
-                                                    <td class="links">
-                                                        <a href="#" class="info">Edit</a>
-                                                    </td>
-                                                    <td class="links">
-                                                        <a href="#" class="error">Delete</a>
-                                                    </td>
-                                                </tr>
 
 
+                                                <?php
+                                                $i = 1;
+                                                foreach ($data as $gig) {
+                                                    $service = (array)$gig;
+                                                ?>
+                                                    <!-- Product <?php echo $i; ?> -->
+                                                    <tr <?php if ($i % 2 == 0) {
+                                                            echo `class='stripe'`;
+                                                        } ?>>
+                                                        <td class="main">
+                                                            <?php echo $i; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $service['title']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo 'LKR ' . $service['price']; ?>
+                                                        </td>
+                                                        <?php if ($service['status'] == 'pending') { ?>
+                                                            <td class="text-warning">
+                                                                Pending
+                                                            </td>
+                                                        <?php } elseif ($service['status'] == 'approved') {
+                                                        ?>
+                                                            <td class="text-success">
+                                                                Approved
+                                                            </td>
+                                                        <?php
+                                                        } elseif (
+                                                            $service['status'] == 'rejected'
+                                                        ) {
+                                                        ?>
+                                                            <td class="text-danger">
+                                                                Rejected
+                                                            </td>
+                                                        <?php } ?>
+
+                                                        <td class="links">
+                                                            <a href="#" class="info">Edit</a>
+                                                        </td>
+                                                        <td class="links">
+                                                            <a href="#" class="error">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    $i++;
+                                                } ?>
                                             </tbody>
                                         </table>
                                     </div>
