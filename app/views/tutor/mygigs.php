@@ -15,7 +15,7 @@
     ?>
     <main>
 
-        <div class="container">
+        <div class="container base-container">
             <div class="row pt-3">
                 <h1>
                     My Gigs
@@ -25,7 +25,7 @@
                     <head>
                         <?php include APPROOT . '/views/includes/header.php'; ?>
                     </head>
-                    <div class="container" style="min-height:600px;">
+                    <div class="container">
                         <div class="table-home pt-3 pb-5">
                             <div class="table-container">
                                 <div class="table-box">

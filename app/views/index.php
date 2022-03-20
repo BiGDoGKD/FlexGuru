@@ -11,7 +11,20 @@
 
 <body>
     <?php
-    include APPROOT . '/views/includes/navbar.php';
+    session_start();
+    if (isset($_SESSION['type'])) {
+        if ($_SESSION['type'] == 'student') {
+            include APPROOT . '/views/includes/student-navbar.php';
+        } else if ($_SESSION['type'] == 'tutor') {
+            include APPROOT . '/views/includes/tutor-navbar.php';
+        } else if ($_SESSION['type'] == 'affiliate') {
+            include APPROOT . '/views/includes/affiliate-navbar.php';
+        } else {
+            include APPROOT . '/views/includes/navbar.php';
+        }
+    } else {
+        include APPROOT . '/views/includes/navbar.php';
+    }
     ?>
     <div class="home-page">
         <div class="hero-section container pt-lg-3 pt-xs-2 pb-lg-2 pb-xs-1">
@@ -23,7 +36,7 @@
                     </h1>
                     <p class="text-gray">
 
-                    Flexible and Easily accessible education for everyone.
+                        Flexible and Easily accessible education for everyone.
 
                     </p>
                     <button onclick="location.href='<?php echo URLROOT ?>/marketplace'" class="bg-primary br-xs mt-2">Visit Marketplace</button>
@@ -47,8 +60,8 @@
                 <div class="col-12 mt-2 mb-3">
                     <p class="text-gray">
 
-                       FlexGuru get back innovation to education industry while proving all new features 
-                       in a next level optimisation targetting our valuable assets...Students.
+                        FlexGuru get back innovation to education industry while proving all new features
+                        in a next level optimisation targetting our valuable assets...Students.
 
                     </p>
                 </div>
@@ -62,7 +75,7 @@
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Tutor</h3>
                     <p class="text-gray">
-                       Earner while providng services to the community.
+                        Earner while providng services to the community.
 
                     </p>
                 </div>

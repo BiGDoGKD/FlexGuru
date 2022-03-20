@@ -259,6 +259,10 @@ img {
           box-sizing: border-box;
 }
 
+.base-container {
+  min-height: 600px;
+}
+
 .fluid {
   max-width: none;
 }
