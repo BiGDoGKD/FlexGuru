@@ -26,8 +26,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>Become a Student</h1>
 						<p class="text-gray">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Eveniet, distinctio.
+							The best step in your life to unleash your true potential
 						</p>
 					</div>
 				</div>
