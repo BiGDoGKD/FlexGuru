@@ -7,6 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Our Team</title>
 	<?php include APPROOT . '/views/includes/header.php'; ?>
+	<style>
+		.profile-card {
+			border: 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -197,19 +202,19 @@
 				<h2 class="mb-1 mt-2">Supervisor of the project</h2>
 				<p class="text-gray pl-lg-5 pr-lg-5">
 					We want to convey our special gratitudes to supervisor of our project flexguru
-					 Mr.Kenneth thilakarathne sir.Who motivated and guoded us from the initial
-					 stages to get this far in this project.As a security expert he guided 
-					 us to full fill all the non functional requrements easily whil make
-					  suring all the sequrity standers were met.
+					Mr.Kenneth thilakarathne sir.Who motivated and guoded us from the initial
+					stages to get this far in this project.As a security expert he guided
+					us to full fill all the non functional requrements easily whil make
+					suring all the sequrity standers were met.
 				</p>
 				<h2 class="mb-1 mt-2">Co-Supervisor of the project</h2>
 				<p class="text-gray pl-lg-5 pr-lg-5">
-				Next we want to convey our special gratitudes to Co supervisor and mentor of our project flexguru
-					 Mrs.Piyumi senvirathne madam.Who motivated and guoded us from the initial
-					 stages to get this far in this project by completely monitoring us
-					  in each and every steps of us.She is the person who guided to get 
-					  into this idea when we are trying to get into this e learning idustry 
-					  by providing her teaching experiences as motivations.
+					Next we want to convey our special gratitudes to Co supervisor and mentor of our project flexguru
+					Mrs.Piyumi senvirathne madam.Who motivated and guoded us from the initial
+					stages to get this far in this project by completely monitoring us
+					in each and every steps of us.She is the person who guided to get
+					into this idea when we are trying to get into this e learning idustry
+					by providing her teaching experiences as motivations.
 				</p>
 				<h3 class="mt-3" style="font-style: italic">Thank You!</h3>
 			</div>

@@ -27,9 +27,9 @@
 						<h1>About us</h1>
 						<p>
 
-						We are team of four undergraduate students of University of colombo School of Computing who are currently
-						 reading BSc in Information Systems degree program.We are strated creating this platform after
-						  considering the struggles faced by studnets in the COVID 19 pandamic.
+							We are team of four undergraduate students of University of colombo School of Computing who are currently
+							reading BSc in Information Systems degree program.We are strated creating this platform after
+							considering the struggles faced by studnets in the COVID 19 pandamic.
 
 						</p>
 					</div>
@@ -40,11 +40,11 @@
 	<!-- End of Hero Section -->
 	<div class="container mt-xs-0 mt-lg-3 mb-5">
 		<!-- Detail Box  -->
-		<div class="row detail-box">
+		<div class="row flex-col detail-box">
 			<h1>Our Vision</h1>
 			<p class="text-gray">
 
-			Flexible and Easily accessible education for everyone
+				Flexible and Easily accessible education for everyone
 
 			</p>
 		</div>
