@@ -24,7 +24,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
-						<h1>What's Special?</h1>
+						<h1>What's Special Requests?</h1>
 						<p class="text-gray">
 						As a key functionality within our system, we offer our students
 						 the privilege to make custom requests other than purchasing already 

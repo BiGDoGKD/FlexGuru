@@ -45,20 +45,8 @@ class Register
             'subscription' => 1
         ];
 
+
         $this->api->call("POST", APIURL . 'registration/register', json_encode($user));
-
-
-        if ($data['role'] === 'tu') {
-            $this->api->call("POST", APIURL . 'registration/tutor', json_encode(array('username' => $user['username'])));
-            return true;
-        } elseif ($data['role'] === 'af') {
-            $this->api->call("POST", APIURL . 'registration/affiliate', json_encode(array('username' => $user['username'])));
-            return true;
-        } elseif ($data['role'] === 'st') {
-            $this->api->call("POST", APIURL . 'registration/student', json_encode(array('username' => $user['username'])));
-            return true;
-        } else {
-            return false;
-        }
+        return true;
     }
 }

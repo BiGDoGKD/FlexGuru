@@ -1,0 +1,68 @@
+@include xs {
+    .tutor-dashboard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        &__active-sessions {
+            border: 1px solid #ededed;
+            padding: 1.5rem 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+
+            button {
+                margin-top: 1rem;
+                outline: none;
+                border: 0;
+                width: 80%;
+            }
+        }
+
+        &__create-gig {
+            border: 1px solid #ededed;
+            padding: 1.5rem 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+
+            button {
+                margin-top: 1rem;
+                outline: none;
+                border: 0;
+                width: 80%;
+            }
+        }
+
+        &__approval-status {
+            border: 1px solid $error;
+            padding: 1rem 1rem;
+        }
+
+        &__gig-details {}
+    }
+
+
+}
+
+@include lg {
+
+    .tutor-dashboard {
+        align-items: stretch;
+
+        &__active-sessions {
+            flex-direction: row;
+            padding: 1.5rem 1rem;
+
+            button {
+                margin-top: 0rem;
+                width: auto;
+            }
+        }
+    }
+}

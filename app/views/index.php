@@ -22,7 +22,9 @@
                         opportunity
                     </h1>
                     <p class="text-gray">
+
                     Flexible and Easily accessible education for everyone.
+
                     </p>
                     <button onclick="location.href='<?php echo URLROOT ?>/marketplace'" class="bg-primary br-xs mt-2">Visit Marketplace</button>
                 </div>
@@ -44,8 +46,10 @@
                 </div>
                 <div class="col-12 mt-2 mb-3">
                     <p class="text-gray">
+
                        FlexGuru get back innovation to education industry while proving all new features 
                        in a next level optimisation targetting our valuable assets...Students.
+
                     </p>
                 </div>
             </div>
@@ -59,6 +63,7 @@
                     <h3 class="mt-2 mb-1">Flexguru Tutor</h3>
                     <p class="text-gray">
                        Earner while providng services to the community.
+
                     </p>
                 </div>
                 <div onclick="location.href='<?php echo URLROOT . '/info/student' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
@@ -67,7 +72,9 @@
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Student</h3>
                     <p class="text-gray">
+
                         Effective learner without wasting extra money or Time
+
                     </p>
                 </div>
                 <div onclick="location.href='<?php echo URLROOT . '/info/affiliates' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
@@ -77,6 +84,7 @@
                     <h3 class="mt-2 mb-1">Flexguru Affiliate</h3>
                     <p class="text-gray">
                         Passive income generatoe while marketing good.
+
                     </p>
                 </div>
                 <div onclick="location.href='<?php echo URLROOT . '/info/help' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
@@ -85,8 +93,10 @@
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Support</h3>
                     <p class="text-gray">
+
                         We are here any time for you.
                         To solve all your problems.
+
                     </p>
                 </div>
             </div>

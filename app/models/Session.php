@@ -57,6 +57,7 @@ class Session
                     //Set session variables
                     $_SESSION['type'] = 'tutor';
                     $_SESSION['userdata'] = $res['data'][0];
+                    $_SESSION['roledata'] = $res['roleData'][0];
                     $_SESSION['TUTACCESS'] = $res['token'];
                     header('location:' . URLROOT . '/tutor');
                     break;

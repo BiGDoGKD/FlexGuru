@@ -21,7 +21,9 @@
 			<div class="col-12-xs">
 				<h1 class="font-lg-xxl font-xs-xl mb-1">Select user type</h1>
 				<p class="text-gray">
+
 					A simple step ...choose the exact user type which suites you to move to next page.
+
 				</p>
 			</div>
 		</div>
@@ -62,8 +64,10 @@
 				<p class="text-gray pr-lg-2 pl-lg-2">
 					Accepting
 					<a href='<?php echo URLROOT ?>/info/terms' class="text-primary">terms and conditions</a> is
+
 					mandatory for registration.you can proceed after reading and accepting all terms and 
 					conditions of our platform Flexguru.
+
 				</p>
 			</div>
 		</div>

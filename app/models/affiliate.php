@@ -10,7 +10,7 @@
  * LAST UPDATE DATA : Sep, 01, 2021
  * FILE TYPE: Model File
  */
-class affiliate
+class Affiliate
 {
     private $db;
 
