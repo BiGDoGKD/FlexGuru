@@ -22,9 +22,7 @@
                         opportunity
                     </h1>
                     <p class="text-gray">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,
-                        sunt. Hic delectus dicta ut suscipit illum adipisci veniam illo
-                        vero!
+                    Flexible and Easily accessible education for everyone.
                     </p>
                     <button onclick="location.href='<?php echo URLROOT ?>/marketplace'" class="bg-primary br-xs mt-2">Visit Marketplace</button>
                 </div>
@@ -42,18 +40,12 @@
                     <img class="mt-3 mb-1" src=<?php echo URLROOT . '/public/updated/img/world.svg' ?> alt="world" />
                 </div>
                 <div class="col-12">
-                    <h1 class="mt-lg-3 mt-xs-2">Welcomet to Flexguru</h1>
+                    <h1 class="mt-lg-3 mt-xs-2">Welcome to Flexguru</h1>
                 </div>
                 <div class="col-12 mt-2 mb-3">
                     <p class="text-gray">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-                        nobis, totam minus illum deleniti sint, expedita hic quo
-                        excepturi, exercitationem molestiae libero dignissimos! Saepe,
-                        dolor consectetur autem quibusdam recusandae veritatis quaerat.
-                        Reiciendis nostrum eligendi praesentium error ipsam nihil
-                        dignissimos velit ex perferendis, facilis, sequi consectetur
-                        libero accusamus cupiditate possimus ad aperiam dolorem modi
-                        dolore maxime! Vel quas ipsam incidunt ab?
+                       FlexGuru get back innovation to education industry while proving all new features 
+                       in a next level optimisation targetting our valuable assets...Students.
                     </p>
                 </div>
             </div>
@@ -66,8 +58,7 @@
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Tutor</h3>
                     <p class="text-gray">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
-                        aliquam!
+                       Earner while providng services to the community.
                     </p>
                 </div>
                 <div onclick="location.href='<?php echo URLROOT . '/info/student' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
@@ -76,8 +67,7 @@
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Student</h3>
                     <p class="text-gray">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
-                        aliquam!
+                        Effective learner without wasting extra money or Time
                     </p>
                 </div>
                 <div onclick="location.href='<?php echo URLROOT . '/info/affiliates' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
@@ -86,8 +76,7 @@
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Affiliate</h3>
                     <p class="text-gray">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
-                        aliquam!
+                        Passive income generatoe while marketing good.
                     </p>
                 </div>
                 <div onclick="location.href='<?php echo URLROOT . '/info/help' ?>'" class="pointer text-center col-12-sm col-3-lg display-f flex-col p-2 align-items-center justify-content-center">
@@ -96,8 +85,8 @@
                     </div>
                     <h3 class="mt-2 mb-1">Flexguru Support</h3>
                     <p class="text-gray">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
-                        aliquam!
+                        We are here any time for you.
+                        To solve all your problems.
                     </p>
                 </div>
             </div>

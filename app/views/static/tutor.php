@@ -26,9 +26,8 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>Become a Tutor</h1>
 						<p class="text-gray">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Eveniet, distinctio.
-						</p>
+							Happy and Satisfactionary earning while providing 
+							service to students whole over the island
 					</div>
 				</div>
 			</div>

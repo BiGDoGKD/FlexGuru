@@ -94,18 +94,10 @@ in the market we found some key issues for students.so we managed to design all 
 				<div class="question">
 					<h3 class="question-title">How do I get started with FlexGuru?</h3>
 					<p class="question-content">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-						id, ipsum quos inventore animi officia magni eius accusantium
-						saepe ipsa ea ab, quia repudiandae error modi distinctio
-						perspiciatis mollitia nemo ullam doloremque quam! Dolorum tempore
-						officiis nobis sunt exercitationem, eos ipsam voluptatum quam,
-						magni culpa, odio soluta? Dolor debitis mollitia placeat enim
-						maiores reprehenderit eveniet saepe quidem, autem repellendus sunt
-						amet illo obcaecati temporibus aliquid distinctio libero, neque
-						natus nihil. Ut, nostrum. Repudiandae accusantium soluta, eveniet
-						enim explicabo architecto ipsa quaerat, alias recusandae in
-						pariatur eius non sint. Pariatur quasi perspiciatis natus iste
-						blanditiis molestias ratione magni quod! Unde, quibusdam?
+						Dont think too much.Its a simple task as eating an apple.
+						just go to our home page and clik register option and then
+						 you will get some questions about youself to provide the best service for you
+						 .after filling all of those data you are in ...happy learning and teaching.
 					</p>
 				</div>
 				<div class="question">
