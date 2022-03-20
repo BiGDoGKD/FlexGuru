@@ -30,8 +30,24 @@ class Gigs extends Controller
         $data = [
             'tuid' => $_SESSION['roledata']['tuid'],
         ];
-        $result = $this->gig->getGigsByTutor($data);
-        $this->view('tutor/mygigs', $result['result']);
+        if ($result = $this->gig->getGigsByTutor($data)) {
+            $this->view('tutor/mygigs', $result['result']);
+        } else {
+            $this->view('tutor/mygigs');
+        }
+    }
+
+    public function delete($gigid)
+    {
+        $this->gig = $this->model('Gig');
+        $data = [
+            'gigid' => $gigid,
+            'tuid' => $_SESSION['roledata']['tuid'],
+        ];
+        $result = $this->gig->deleteGig($data);
+        if ($result) {
+            header('Location: ' . URLROOT . '/tutor/mygigs');
+        }
     }
 
     public function publish()

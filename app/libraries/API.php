@@ -43,7 +43,8 @@ class API
         // EXECUTE:
         $result = curl_exec($curl);
         if (!$result) {
-            die("Connection Failures");
+            header("Location:http://localhost/errors/500");
+            die();
         }
 
         curl_close($curl);

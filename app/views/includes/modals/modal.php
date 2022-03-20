@@ -1,6 +1,3 @@
-<head>
-    <?php include APPROOT . '/views/includes/header.php'; ?>
-</head>
 <!-- Main modal -->
 <div id="defaultModal" aria-hidden="true">
     <div class="modal-container">
@@ -11,7 +8,7 @@
                 <h3>
                     Terms of Service
                 </h3>
-                <button type="button" data-modal-toggle="defaultModal">
+                <button type="button">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -24,8 +21,8 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button data-modal-toggle="defaultModal" type="button" class="success">I accept</button>
-                <button data-modal-toggle="defaultModal" type="button" class="cancel">Decline</button>
+                <button type="button" class="success">Accept</button>
+                <button type="button" class="cancel">Decline</button>
             </div>
         </div>
     </div>
