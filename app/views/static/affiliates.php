@@ -39,12 +39,10 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<h1>Title</h1>
+				<h1>Why FlexGuru for an Affiliate</h1>
 				<p class="text-gray">
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-					Exercitationem error rerum ipsa molestias temporibus dolor itaque
-					laboriosam! Molestias fuga enim sed, facere facilis quam cum ab ex,
-					aperiam nisi explicabo?
+				Our platform  provides opportunities for affiliate marketers to earn an extra passive 
+				income by promoting the site on their blog sites or social media platforms.
 				</p>
 			</div>
 		</div>
@@ -55,12 +53,10 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<h1>Title</h1>
+				<h1>How to get in</h1>
 				<p class="text-gray">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-					at nesciunt necessitatibus veniam magnam soluta sapiente, laboriosam
-					id unde est sint nobis et quo distinctio odio quisquam harum,
-					asperiores ut!
+				Registering as an affiliate marketer in flexguru is a very easy process. 
+				Just fill the registration form and verify the mail to get access to the website. 
 				</p>
 			</div>
 		</div>
@@ -71,12 +67,10 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<h1>Title</h1>
+				<h1>How the affiliate process works</h1>
 				<p class="text-gray">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-					Perferendis maxime architecto voluptatum hic laborum consequatur
-					adipisci enim saepe illum repudiandae deleniti, doloribus inventore
-					cumque animi facere ullam id incidunt alias.
+				You can get an automatically generated unique link for you to share. 
+				Your traffic is calculated using that link. And you will get a 5% commission for your service.
 				</p>
 			</div>
 		</div>
