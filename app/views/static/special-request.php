@@ -11,7 +11,20 @@
 
 <body>
 	<?php
-	include APPROOT . '/views/includes/navbar.php';
+	session_start();
+	if (isset($_SESSION['type'])) {
+		if ($_SESSION['type'] == 'student') {
+			include APPROOT . '/views/includes/student-navbar.php';
+		} else if ($_SESSION['type'] == 'tutor') {
+			include APPROOT . '/views/includes/tutor-navbar.php';
+		} else if ($_SESSION['type'] == 'affiliate') {
+			include APPROOT . '/views/includes/affiliate-navbar.php';
+		} else {
+			include APPROOT . '/views/includes/navbar.php';
+		}
+	} else {
+		include APPROOT . '/views/includes/navbar.php';
+	}
 	?>
 	<!-- Hero Section  -->
 
@@ -26,9 +39,9 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>What's Special Requests?</h1>
 						<p class="text-gray">
-						As a key functionality within our system, we offer our students
-						 the privilege to make custom requests other than purchasing already 
-						 published service gigs. 
+							As a key functionality within our system, we offer our students
+							the privilege to make custom requests other than purchasing already
+							published service gigs.
 						</p>
 					</div>
 				</div>
@@ -46,8 +59,8 @@
 				<h1>How to make special service request</h1>
 				<p class="text-gray">
 					We will give a complete guide to make a special service request when you are into that process but
-					 for now when you chose a lesson of interest from a suitable tutor.
-					 you can negotiate with him for the best
+					for now when you chose a lesson of interest from a suitable tutor.
+					you can negotiate with him for the best
 				</p>
 			</div>
 		</div>
@@ -61,9 +74,9 @@
 				<h1>What can I customize from special service request</h1>
 				<p class="text-gray">
 					This is the question we got from many of the students often
-					we are giving you the flexibiity to custmize the exact lesson you want to 
+					we are giving you the flexibiity to custmize the exact lesson you want to
 					learn and duration ans specifically the money need to spend for the
-					 lesson also can be customisable
+					lesson also can be customisable
 				</p>
 			</div>
 		</div>
@@ -76,9 +89,9 @@
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
 				<h1>Unique feature</h1>
 				<p class="text-gray">
-				This is the first time in srilankan market we are implementing special service request 
-				in a e learning platform so this eases the learning process of a student.Meanwhile we are targeting the students 
-				who are intersted to learn but struggling with financial difficulties by using this additional feature
+					This is the first time in srilankan market we are implementing special service request
+					in a e learning platform so this eases the learning process of a student.Meanwhile we are targeting the students
+					who are intersted to learn but struggling with financial difficulties by using this additional feature
 				</p>
 			</div>
 		</div>

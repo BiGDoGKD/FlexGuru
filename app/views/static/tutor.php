@@ -11,7 +11,20 @@
 
 <body>
 	<?php
-	include APPROOT . '/views/includes/navbar.php';
+	session_start();
+	if (isset($_SESSION['type'])) {
+		if ($_SESSION['type'] == 'student') {
+			include APPROOT . '/views/includes/student-navbar.php';
+		} else if ($_SESSION['type'] == 'tutor') {
+			include APPROOT . '/views/includes/tutor-navbar.php';
+		} else if ($_SESSION['type'] == 'affiliate') {
+			include APPROOT . '/views/includes/affiliate-navbar.php';
+		} else {
+			include APPROOT . '/views/includes/navbar.php';
+		}
+	} else {
+		include APPROOT . '/views/includes/navbar.php';
+	}
 	?>
 	<!-- Hero Section  -->
 
@@ -26,7 +39,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>Become a Tutor</h1>
 						<p class="text-gray">
-							Happy and Satisfactionary earning while providing 
+							Happy and Satisfactionary earning while providing
 							service to students whole over the island
 					</div>
 				</div>

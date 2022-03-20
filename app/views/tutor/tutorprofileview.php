@@ -14,7 +14,7 @@
     include APPROOT . '/views/includes/tutor-navbar.php';
     ?>
 
-    <div class="user-dashboard container mt-2 mb-2">
+    <div class="user-dashboard container base-container mt-3 mb-3">
         <div class="row">
             <div class="col-12-xs col-4-lg">
                 <div class="profile-card br-xs">

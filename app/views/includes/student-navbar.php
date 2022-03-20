@@ -1,13 +1,13 @@
 <nav class="profile-navbar container">
     <div class="row pt-2 pb-2 justify-content-between align-items-center">
         <div class="col-3-md col-6-xs">
-            <h2 onclick="location.href='<?php echo URLROOT . '/tutor' ?>'">FlexGuru</h2>
+            <h2 onclick="location.href='<?php echo URLROOT . '/student' ?>'">FlexGuru</h2>
         </div>
         <div class="profile-navbar__menu col-6-md col-4-lg justify-content-around display-md-f display-xs-n">
             <ul class="display-f align-items-center justify-content-around" style="width: 100%">
-                <li> <a href="<?php echo URLROOT ?>/tutor/messages">Messages</a></li>
-                <li> <a href="<?php echo URLROOT ?>/tutor/classes">Classes</a></li>
-                <li> <a href="<?php echo URLROOT ?>/tutor/requests">Requests</a></li>
+                <li> <a href="<?php echo URLROOT ?>/student/messages">Messages</a></li>
+                <li> <a href="<?php echo URLROOT ?>/student/classes">Classes</a></li>
+                <li> <a href="<?php echo URLROOT ?>/student/requests">Requests</a></li>
                 <li> <a href="<?php echo URLROOT ?>/marketplace">Marketplace</a></li>
             </ul>
         </div>
@@ -23,22 +23,22 @@
 
                     <ul class="profile-dropdown-list shadow-md">
                         <li>
-                            <a href="<?php echo URLROOT ?>/tutor">Account</a>
+                            <a href="<?php echo URLROOT ?>/student"><i class="mdi mdi-account"></i>Account</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/tutor/settings">Settings</a>
+                            <a href="<?php echo URLROOT ?>/student/settings"><i class="mdi mdi-settings"></i>Settings</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/tutor/earnings">Earnings</a>
+                            <a href="<?php echo URLROOT ?>/student/purchasehistory"><i class="mdi mdi-logout"></i>Purchase History</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/tutor/complaint">Complaints</a>
+                            <a href="<?php echo URLROOT ?>/student/complaint"><i class="mdi mdi-logout"></i>Complaints</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/tutor/help">Help</a>
+                            <a href="<?php echo URLROOT ?>/student/help"><i class="mdi mdi-logout"></i>Help</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/login/logout">Logout</a>
+                            <a href="<?php echo URLROOT ?>/login/logout"><i class="mdi mdi-logout"></i>Logout</a>
                         </li>
                     </ul>
                 </label>
@@ -51,17 +51,17 @@
     <div id="mobile-nav" class="mobile-nav display-md-n close row">
         <div class="col-12-xs">
             <ul class="display-f flex-col align-items-center justify-content-around">
-                <li><a href="<?php echo URLROOT ?>/tutor">Account</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor">Dashboard</a></li>
-                <li><a href="<?php echo URLROOT ?>/marketplace">Marketplace</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor/messages">Messages</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor/classes">Classes</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor/requests">Requests</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor/earnings">Earnings</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor/complaint">Complaints</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor/help">Help</a></li>
-                <li><a href="<?php echo URLROOT ?>/tutor/settings">Settings</a></li>
-                <li><a href="<?php echo URLROOT ?>/login/logout">Logout</a></li>
+                <li class="active">Account</li>
+                <li>Dashboard</li>
+                <li>Marketplace</li>
+                <li>Messages</li>
+                <li>Classes</li>
+                <li>Requests</li>
+                <li>Purchase History</li>
+                <li>Complaints</li>
+                <li>Help</li>
+                <li>Settings</li>
+                <li>Logout</li>
             </ul>
         </div>
     </div>

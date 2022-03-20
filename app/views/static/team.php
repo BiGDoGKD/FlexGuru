@@ -16,9 +16,21 @@
 
 <body>
 	<?php
-	include APPROOT . '/views/includes/navbar.php';
+	session_start();
+	if (isset($_SESSION['type'])) {
+		if ($_SESSION['type'] == 'student') {
+			include APPROOT . '/views/includes/student-navbar.php';
+		} else if ($_SESSION['type'] == 'tutor') {
+			include APPROOT . '/views/includes/tutor-navbar.php';
+		} else if ($_SESSION['type'] == 'affiliate') {
+			include APPROOT . '/views/includes/affiliate-navbar.php';
+		} else {
+			include APPROOT . '/views/includes/navbar.php';
+		}
+	} else {
+		include APPROOT . '/views/includes/navbar.php';
+	}
 	?>
-
 	<div class="container flexguru-team mt-5 mb-5">
 		<div class="row">
 			<div class="col-12-xs text-center">

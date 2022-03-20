@@ -11,7 +11,20 @@
 
 <body>
 	<?php
-	include APPROOT . '/views/includes/navbar.php';
+	session_start();
+	if (isset($_SESSION['type'])) {
+		if ($_SESSION['type'] == 'student') {
+			include APPROOT . '/views/includes/student-navbar.php';
+		} else if ($_SESSION['type'] == 'tutor') {
+			include APPROOT . '/views/includes/tutor-navbar.php';
+		} else if ($_SESSION['type'] == 'affiliate') {
+			include APPROOT . '/views/includes/affiliate-navbar.php';
+		} else {
+			include APPROOT . '/views/includes/navbar.php';
+		}
+	} else {
+		include APPROOT . '/views/includes/navbar.php';
+	}
 	?>
 	<!-- Hero Section  -->
 
@@ -26,7 +39,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>How it Works</h1>
 						<p class="text-gray">
-							Dont think too much...we designed flexguru in a less complex manner 
+							Dont think too much...we designed flexguru in a less complex manner
 							which is easily understandable by each and everyone of you.
 						</p>
 					</div>
@@ -45,14 +58,14 @@
 				<h1>Students</h1>
 				<p class="text-gray">
 					Students are our primary resource in this process they are people
-					 who will get direct benifit from this unique platform 
-					 after registering as a student students will be able to see
-					  the market place and able to choose a perfect tutor for them
-					   which aligns with their subject need and they can directly
-					    learn or they can make a special service request to customise
-						 the lesson he is going to learn.Inorder to process students 
-						 have to make a payments but in our platform we built in a 
-						 payment gateway to ease that process as well.
+					who will get direct benifit from this unique platform
+					after registering as a student students will be able to see
+					the market place and able to choose a perfect tutor for them
+					which aligns with their subject need and they can directly
+					learn or they can make a special service request to customise
+					the lesson he is going to learn.Inorder to process students
+					have to make a payments but in our platform we built in a
+					payment gateway to ease that process as well.
 				</p>
 			</div>
 		</div>
@@ -65,16 +78,16 @@
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
 				<h1>Tutors</h1>
 				<p class="text-gray">
-					Without our Tutors this flexguru is impossible so we give 
-					high priority to our tutors to get maximum use from this 
+					Without our Tutors this flexguru is impossible so we give
+					high priority to our tutors to get maximum use from this
 					plaform while providing service to the student community.
-					after registering to our platform tutors can post service 
-					gigs from their dashboard so this gigs will be posted from 
+					after registering to our platform tutors can post service
+					gigs from their dashboard so this gigs will be posted from
 					their specialized ares .students will see the gig with relevent
-					 details and send a request it might be a direct request or special 
-					 service request so according to the request tutor can make his next moves.
-					 All the payments will be deposited to the tutors account within a short 
-					 period of time after the completion of the cource.
+					details and send a request it might be a direct request or special
+					service request so according to the request tutor can make his next moves.
+					All the payments will be deposited to the tutors account within a short
+					period of time after the completion of the cource.
 				</p>
 			</div>
 		</div>
@@ -88,13 +101,13 @@
 				<h1>Affiliate Marketer</h1>
 				<p class="text-gray">
 					Marketing is core functionality of any platform
-					 so to take FlexGuru to next level we are also 
-					 using marketing processes but not traditional 
-					 adverticements.We are using students , Tutors 
-					 and influencers as our marketers and they will 
-					 share the unique links to their contacts .
-					 If they managed to get traffic to the platform they will recieve 
-					 a 5-20% commision on the payments.How cool is that.
+					so to take FlexGuru to next level we are also
+					using marketing processes but not traditional
+					adverticements.We are using students , Tutors
+					and influencers as our marketers and they will
+					share the unique links to their contacts .
+					If they managed to get traffic to the platform they will recieve
+					a 5-20% commision on the payments.How cool is that.
 				</p>
 			</div>
 		</div>

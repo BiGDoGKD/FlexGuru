@@ -9,6 +9,10 @@ $grid-columns: 12;
   box-sizing: border-box;
 }
 
+.base-container {
+  min-height: 600px;
+}
+
 .fluid {
   max-width: none;
 }
@@ -24,7 +28,7 @@ $grid-columns: 12;
     .col-#{$i}-xs {
       box-sizing: border-box;
       flex-grow: 0;
-      width: 100%*$i/12;
+      width: 100% * $i/12;
     }
   }
 }
@@ -34,7 +38,7 @@ $grid-columns: 12;
     .col-#{$i}-sm {
       box-sizing: border-box;
       flex-grow: 0;
-      width: 100%*$i/12;
+      width: 100% * $i/12;
     }
   }
 }
@@ -44,7 +48,7 @@ $grid-columns: 12;
     .col-#{$i}-md {
       box-sizing: border-box;
       flex-grow: 0;
-      width: 100%*$i/12;
+      width: 100% * $i/12;
     }
   }
 }
@@ -54,7 +58,7 @@ $grid-columns: 12;
     .col-#{$i}-lg {
       box-sizing: border-box;
       flex-grow: 0;
-      width: 100%*$i/12;
+      width: 100% * $i/12;
     }
   }
 }
@@ -64,7 +68,7 @@ $grid-columns: 12;
     .col-#{$i}-xl {
       box-sizing: border-box;
       flex-grow: 0;
-      width: 100%*$i/12;
+      width: 100% * $i/12;
     }
   }
 }
@@ -207,7 +211,6 @@ $grid-columns: 12;
   .align-sm-items-end {
     align-items: flex-end;
   }
-
 }
 
 @include md {

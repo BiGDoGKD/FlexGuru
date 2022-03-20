@@ -53,10 +53,10 @@ class Registration extends Controller
                     die(header('location:' . URLROOT . '/student'));
                     break;
                 case 'tutor';
-                    die(header('location' . URLROOT . '/student'));
+                    die(header('location:' . URLROOT . '/tutor'));
                     break;
                 case 'affiliate':
-                    die(header('location' . URLROOT . '/affiliatemarketer'));
+                    die(header('location:' . URLROOT . '/affiliatemarketer'));
                     break;
             }
         }

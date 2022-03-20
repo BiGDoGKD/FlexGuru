@@ -11,7 +11,20 @@
 
 <body>
 	<?php
-	include APPROOT . '/views/includes/navbar.php';
+	session_start();
+	if (isset($_SESSION['type'])) {
+		if ($_SESSION['type'] == 'student') {
+			include APPROOT . '/views/includes/student-navbar.php';
+		} else if ($_SESSION['type'] == 'tutor') {
+			include APPROOT . '/views/includes/tutor-navbar.php';
+		} else if ($_SESSION['type'] == 'affiliate') {
+			include APPROOT . '/views/includes/affiliate-navbar.php';
+		} else {
+			include APPROOT . '/views/includes/navbar.php';
+		}
+	} else {
+		include APPROOT . '/views/includes/navbar.php';
+	}
 	?>
 	<!-- Hero Section  -->
 
@@ -42,8 +55,8 @@
 
 				<h1>Why FlexGuru for an Affiliate</h1>
 				<p class="text-gray">
-				Our platform  provides opportunities for affiliate marketers to earn an extra passive 
-				income by promoting the site on their blog sites or social media platforms.
+					Our platform provides opportunities for affiliate marketers to earn an extra passive
+					income by promoting the site on their blog sites or social media platforms.
 
 				</p>
 			</div>
@@ -58,8 +71,8 @@
 
 				<h1>How to get in</h1>
 				<p class="text-gray">
-				Registering as an affiliate marketer in flexguru is a very easy process. 
-				Just fill the registration form and verify the mail to get access to the website. 
+					Registering as an affiliate marketer in flexguru is a very easy process.
+					Just fill the registration form and verify the mail to get access to the website.
 
 				</p>
 			</div>
@@ -74,8 +87,8 @@
 
 				<h1>How the affiliate process works</h1>
 				<p class="text-gray">
-				You can get an automatically generated unique link for you to share. 
-				Your traffic is calculated using that link. And you will get a 5% commission for your service.
+					You can get an automatically generated unique link for you to share.
+					Your traffic is calculated using that link. And you will get a 5% commission for your service.
 
 				</p>
 			</div>
