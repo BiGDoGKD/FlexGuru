@@ -26,7 +26,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>Get in touch</h1>
 						<p>
-						Having any problem? Contact us, we’re more than happy to help you.
+							Give us a ring cut any time - 0112222227/38
 						</p>
 					</div>
 				</div>
@@ -91,7 +91,8 @@
 			<div class="col-12-xs col-6-lg pl-lg-4 text-xs-center mt-xs-3 mt-lg-4 text-lg-start">
 				<h1>How Can We Help?</h1>
 				<p class="mb-2 mt-2 text-gray">
-				You can reach us via our hotline, email or fax number.</p>
+					Dont hesitate to ask us any of your doubts regarding our process or services
+					feel free to contact us from the below options .</p>
 				<ul class="text-gray mb-3">
 					<li class="mt-1"> <i class="far fa-map text-primary mr-1"></i> Colombo, Sri Lanka</li>
 					<li class="mt-1"> <i class="far fa-phone text-primary mr-1"></i>(+94)-77-881-3384</li>

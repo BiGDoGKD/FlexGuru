@@ -26,8 +26,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>Freaquently Asked Questions</h1>
 						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Eveniet, distinctio.
+							These are the questions which we get from our uers often...if you have something uniques feel free to ask
 						</p>
 					</div>
 				</div>
@@ -40,8 +39,7 @@
 			<div class="col-12-xs text-center">
 				<h1 class="font-lg-xxl font-xs-xl">Questions? Look Here</h1>
 				<p class="text-gray">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-					eligendi.
+					Hope these questions and answers cleared your problems.
 				</p>
 			</div>
 		</div>
@@ -50,12 +48,15 @@
 				<div class="question">
 					<h3 class="question-title">What is FlexGuru?</h3>
 					<p class="question-content">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam
-						repudiandae alias deleniti architecto veritatis rem adipisci neque
-						velit, corporis obcaecati et illo molestiae dolore eum unde
-						voluptate hic ullam porro accusantium. Fugiat, delectus facilis
-						tenetur eum nobis doloribus odit maxime at, officia molestiae
-						voluptates dolor eos dolorem, quos id saepe!
+						
+We FlexGuru Team is always motivated in giving quality world class education 
+to every Student who is willing to learn any Knowledge or skill without any barriers.
+Result of that strong motivation is our FlexGuru platform. After analyzing each and every E-learning platform 
+in the market we found some key issues for students.so we managed to design all in one learning platform after cutting
+ the regular issues of this path. Special service request is the next level innovation we brought to this platform to give
+  everyone the flexibility to learn only what they actually need without wasting even a second of time.We make sure every time 
+  that we empower learners to study at their own pace outside the classroom
+
 					</p>
 				</div>
 				<div class="question">
@@ -64,10 +65,8 @@
 						educational website?
 					</h3>
 					<p class="question-content">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
-						rem nobis sed aliquid id, labore similique a officia. Obcaecati
-						earum odit maxime rem quas ex. Perspiciatis quo voluptatibus modi.
-						Nesciunt.
+					Regular educational platform do offer pre-constructed courses or course materials where students have to 
+					enroll in those courses, in order to learn.
 					</p>
 				</div>
 				<div class="question">
@@ -75,9 +74,8 @@
 						Why should I use FlexGuru instead of a regular website?
 					</h3>
 					<p class="question-content">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Perspiciatis molestiae impedit maxime quibusdam mollitia, veniam
-						earum odio porro et quasi!
+					FlexGuru offers the flexibility in finding the right tutor for
+					 the what students exactly need to learn.  
 					</p>
 				</div>
 				<div class="question">
@@ -85,36 +83,47 @@
 						What are the benefits of using FlexGuru?
 					</h3>
 					<p class="question-content">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						Molestiae, fuga. Ad consequuntur facilis error laborum!
+					Students are able to make custom requests, where they can specify the exact area of a particular subject
+					which they find it difficult to understand.<br>
+					Tutors will be able to publish their own service gigs and respond to the student special requests at the same time.<br>
+					If any person is willing to promote our platform and earn, they can signup with our
+					 affiliate program and join us as an Affiliate Marketer.<br>
+
 					</p>
 				</div>
 				<div class="question">
 					<h3 class="question-title">How do I get started with FlexGuru?</h3>
 					<p class="question-content">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-						id, ipsum quos inventore animi officia magni eius accusantium
-						saepe ipsa ea ab, quia repudiandae error modi distinctio
-						perspiciatis mollitia nemo ullam doloremque quam! Dolorum tempore
-						officiis nobis sunt exercitationem, eos ipsam voluptatum quam,
-						magni culpa, odio soluta? Dolor debitis mollitia placeat enim
-						maiores reprehenderit eveniet saepe quidem, autem repellendus sunt
-						amet illo obcaecati temporibus aliquid distinctio libero, neque
-						natus nihil. Ut, nostrum. Repudiandae accusantium soluta, eveniet
-						enim explicabo architecto ipsa quaerat, alias recusandae in
-						pariatur eius non sint. Pariatur quasi perspiciatis natus iste
-						blanditiis molestias ratione magni quod! Unde, quibusdam?
+						Dont think too much.Its a simple task as eating an apple.
+						just go to our home page and clik register option and then
+						 you will get some questions about youself to provide the best service for you
+						 .after filling all of those data you are in ...happy learning and teaching.
 					</p>
 				</div>
 				<div class="question">
 					<h3 class="question-title">How to become a member of FlexGuru?</h3>
 					<p class="question-content">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta aut
-						blanditiis dolores nesciunt natus eius accusamus, repellat in enim
-						et distinctio corporis voluptatem? Sed pariatur modi ipsum aliquid
-						consectetur perferendis eligendi. Quos accusantium cumque vitae,
-						nobis accusamus distinctio placeat tenetur, nam deleniti
-						repudiandae harum magnam labore totam laborum eius doloremque.
+					Anybody who wants to learn through our platform can join Flexguru as a student. 
+					All you have to do is click the “SIGN UP” button in the upper corner on the right. 
+					Then you can select “Student” and click “CONTINUE”. There you will be asked to enter registration details. 
+					You will have to enter first name, last name, an username, an email, a password, your gender, the city you live in and your phone number. 
+					After you enter your details, they will be followed by a validation phase. And if your details are validated, an email containing an Activation Code 
+					will be sent to your email account. Then you will be directed to an interface where you have to enter that activation code.
+					 If the activation code you entered matches the code we sent you, you’ll be registered successfully,
+					  otherwise you will have to click “Resend activation code”. Thereafter you will be able to do the following things.<br><br>
+					  Make special Requests.<br><br>
+					  As a key functionality within our system, we offer our students the privilege to make custom requests other than purchasing already published service gigs. 
+					  Students can make special requests specifying the subject context in need of help with, budget and deadline for service. 
+					  After submitting a request, it will be displayed for the tutors, and they may respond. And there after you’ll be able to discuss the sessions. 
+					  <br><br>
+					  Visit the Marketplace and buy tutor service gigs.<br><br>
+					  Students will be able to visit the marketplace, where you will be directed by clicking the “Market Place” in the navigation bar.
+					   There you will be able to see the service gigs published by the tutors, with the details such as budget, covering subject areas,
+					    tutor rating etc. You can simply purchase those services by clicking the purchase button in the gig.
+						 And you can complete the purchase by adding payment method details and submitting it. Thereafter you’ll be sent an email of confirmation of the purchase. 
+						 And you’ll be ready for the session.
+
+
 					</p>
 				</div>
 				<div class="question">
@@ -122,11 +131,23 @@
 						What kind of services are offered by FlexGuru?
 					</h3>
 					<p class="question-content">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-						iste, et fugiat voluptatum harum delectus ad eius? Dignissimos
-						exercitationem fugiat magni molestias veniam rem. Voluptatibus
-						perspiciatis officiis, aspernatur saepe alias ratione ipsa vitae
-						enim quibusdam veritatis facilis, eveniet quod sed!
+					FlexGuru is a platform which helps you to find best and flexible tutors
+					 in the education industry as per your need.Student can use special service 
+					 requests to find flexible lesson plans , chat option for easy communication
+					  and inbuilt payment options for easy payments without visiting banks.
+
+					</p>
+				</div>
+				<div class="question">
+					<h3 class="question-title">
+					How to become a member of FlexGuru?
+					</h3>
+					<p class="question-content">
+					It's a simple task you just want to sign up to our platform inorder to become a member of flexGuru .
+					 But by ticking the newsletter option while registering will help us to
+					  communicate with our flexguru family often.
+
+
 					</p>
 				</div>
 			</div>

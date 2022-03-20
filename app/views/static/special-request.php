@@ -26,7 +26,9 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>What's Special Requests?</h1>
 						<p class="text-gray">
-							Students can request custom tutor sessions through FlexGuru.
+						As a key functionality within our system, we offer our students
+						 the privilege to make custom requests other than purchasing already 
+						 published service gigs. 
 						</p>
 					</div>
 				</div>
@@ -41,9 +43,11 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<!-- <h1>Title</h1> -->
+				<h1>How to make special service request</h1>
 				<p class="text-gray">
-				As a key functionality within our system, we offer our students the privilege to make custom requests other than purchasing already published service gigs. 
+					We will give a complete guide to make a special service request when you are into that process but
+					 for now when you chose a lesson of interest from a suitable tutor.
+					 you can negotiate with him for the best
 				</p>
 			</div>
 		</div>
@@ -54,9 +58,12 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<!-- <h1>Title</h1> -->
+				<h1>What can I customize from special service request</h1>
 				<p class="text-gray">
-				Students can make special requests specifying the subject context in need of help with, budget and deadline for service. 
+					This is the question we got from many of the students often
+					we are giving you the flexibiity to custmize the exact lesson you want to 
+					learn and duration ans specifically the money need to spend for the
+					 lesson also can be customisable
 				</p>
 			</div>
 		</div>
@@ -67,9 +74,11 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<!-- <h1>Title</h1> -->
+				<h1>Unique feature</h1>
 				<p class="text-gray">
-				After submitting a request, it will be displayed for the tutors, and they may respond. And there after you’ll be able to discuss the sessions. 
+				This is the first time in srilankan market we are implementing special service request 
+				in a e learning platform so this eases the learning process of a student.Meanwhile we are targeting the students 
+				who are intersted to learn but struggling with financial difficulties by using this additional feature
 				</p>
 			</div>
 		</div>

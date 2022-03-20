@@ -39,9 +39,12 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<!-- <h1>Title</h1> -->
+
+				<h1>Why FlexGuru for an Affiliate</h1>
 				<p class="text-gray">
-				Our platform  provides opportunities for affiliate marketers to earn an extra passive income by promoting the site on their blog sites or social media platforms. 
+				Our platform  provides opportunities for affiliate marketers to earn an extra passive 
+				income by promoting the site on their blog sites or social media platforms.
+
 				</p>
 			</div>
 		</div>
@@ -52,9 +55,12 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<!-- <h1>Title</h1> -->
+
+				<h1>How to get in</h1>
 				<p class="text-gray">
-				Registering as an affiliate marketer in flexguru is a very easy process. Just fill the registration form and verify the mail to get access to the website. 
+				Registering as an affiliate marketer in flexguru is a very easy process. 
+				Just fill the registration form and verify the mail to get access to the website. 
+
 				</p>
 			</div>
 		</div>
@@ -65,9 +71,12 @@
 				<img src=<?php echo URLROOT . "/updated/img/register.svg" ?> alt="Register" />
 			</div>
 			<div class="col-6-lg col-12-xs p-lg-4 mt-xs-2 mt-lg-0">
-				<!-- <h1>Title</h1> -->
+
+				<h1>How the affiliate process works</h1>
 				<p class="text-gray">
-				You can get an automatically generated unique link for you to share. Your traffic is calculated using that link. And you will get a 5% commission for your service.
+				You can get an automatically generated unique link for you to share. 
+				Your traffic is calculated using that link. And you will get a 5% commission for your service.
+
 				</p>
 			</div>
 		</div>

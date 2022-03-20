@@ -26,7 +26,7 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>Become a Student</h1>
 						<p class="text-gray">
-						Join FlexGuru as a student there are well-qualified tutors to teach you.
+							The best step in your life to unleash your true potential
 						</p>
 					</div>
 				</div>

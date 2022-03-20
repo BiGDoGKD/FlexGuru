@@ -63,10 +63,10 @@ include APPROOT . '/views/marketplace/includes/header.php';
                     }
                 </style>
                 <div class="about-service dark">
-                    <h6>About the Service</h6>
+                    <h6>Japanese teaching methods use to give a clear understanding about modern agriculture</h6>
                     <h5>Hello Student!</h5>
                     <p class="description-title body-1 bold dark">
-                        Lorem Ipsum Qwers Lasusl?
+                        From Tissue culture to modern rooftop gardening
                     </p>
                     <p class="description body-1 gray">
                         You are responsible for operations, service, or customer support and face challenges trying to communicate complex procedures to a global market effectively. Traditional methods don’t work and are laborious, costly and error prone.
@@ -121,7 +121,10 @@ include APPROOT . '/views/marketplace/includes/header.php';
                     <hr>
                     <div class="tutor-bio">
                         <p class="body-2 gray">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                           I am a selftaught java developer in WSO2 ,
+                            now working part time as a teacher to teach students 
+                            about coding and related technologies to improve technical
+                             skills of local students.
                         </p>
                     </div>
                 </div>

@@ -26,7 +26,11 @@
 					<div class="col-12-xs display-f flex-col text-white text-center align-items-center">
 						<h1>About us</h1>
 						<p>
-						Flexible and Easily accessible education for everyone
+
+						We are team of four undergraduate students of University of colombo School of Computing who are currently
+						 reading BSc in Information Systems degree program.We are strated creating this platform after
+						  considering the struggles faced by studnets in the COVID 19 pandamic.
+
 						</p>
 					</div>
 				</div>
@@ -39,7 +43,9 @@
 		<div class="row detail-box">
 			<h1>Our Vision</h1>
 			<p class="text-gray">
-				Bridge the knowledge gap within students by creating a platform where students and tutors can get connected and organize sessions as per their need.
+
+			Flexible and Easily accessible education for everyone
+
 			</p>
 		</div>
 		<!-- End of Detail Box -->
