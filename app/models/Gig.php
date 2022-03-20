@@ -47,6 +47,16 @@ class Gig
         }
     }
 
+    public function deleteGig($gigdata)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'gig/delete', json_encode($gigdata))) {
+            $status = json_decode($response)->response->status;
+            $msg = json_decode($response)->response->result->message;
+            $_SESSION['toastmsg'] = $msg;
+            return $status;
+        }
+    }
+
     public function getAllGigs()
     {
         if ($response = $this->api->call('GET', APIURL . 'visitor/services', null)) {
@@ -58,9 +68,7 @@ class Gig
 
     public function getGigsByTutor($data)
     {
-
         if ($response = $this->api->call('POST', APIURL . 'visitor/servicesbytutor', json_encode($data))) {
-
             $responseArray = (array)json_decode($response);
             $result = (array)$responseArray["response"];
             return $result;

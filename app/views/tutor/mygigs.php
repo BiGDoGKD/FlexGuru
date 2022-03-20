@@ -97,8 +97,9 @@
                                                             <a href="#" class="info">Edit</a>
                                                         </td>
                                                         <td class="links">
-                                                            <a href="#" class="error">Delete</a>
+                                                            <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Delete</a>
                                                         </td>
+
                                                     </tr>
                                                 <?php
                                                     $i++;
@@ -114,7 +115,9 @@
             </div>
         </div>
     </main>
-
+    <?php
+    include APPROOT . '/views/includes/modals/modal-delete-gig.php';
+    ?>
     <?php
     include APPROOT . '/views/includes/footer.php';
     ?>
