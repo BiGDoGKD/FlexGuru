@@ -7456,6 +7456,14 @@ img {
   color: #7879f1;
 }
 
+.service-gig__footer__badge__medium {
+  font-size: 12px;
+  background-color: #d6e1ff;
+  color: #808080;
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+}
+
 .service-gig__footer__price {
   font-size: 15px;
   text-align: end;

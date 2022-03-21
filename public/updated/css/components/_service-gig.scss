@@ -80,6 +80,13 @@
 
     &__badge {
       color: $primary;
+      &__medium {
+        font-size: 12px;
+        background-color: $lightnavy;
+        color: $gray;
+        padding: 0.1rem 0.5rem;
+        border-radius: 5px;
+      }
     }
 
     &__price {
