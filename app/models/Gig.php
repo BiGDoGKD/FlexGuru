@@ -55,7 +55,7 @@ class Gig
     public function deleteGig($gigdata)
     {
         if ($response = $this->api->usercall('POST', APIURL . 'gig/delete', json_encode($gigdata))) {
-            $status = json_decode($response)->response->status;
+            $status = json_decode($response)->response->status;  
             $msg = json_decode($response)->response->result->message;
             $_SESSION['toastmsg'] = $msg;
             return $status;
@@ -77,6 +77,7 @@ class Gig
             $responseArray = (array)json_decode($response);
             $result = (array)$responseArray["response"];
             return $result;
+
         }
     }
 }

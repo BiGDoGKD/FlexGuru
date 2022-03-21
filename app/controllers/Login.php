@@ -33,7 +33,7 @@ class Login extends Controller
                     die(header('location:' . URLROOT . '/tutor'));
                     break;
                 case 'affiliate':
-                    die(header('location:' . URLROOT . '/affiliatemarketer'));
+                    die(header('location:' . URLROOT . '/affiliate'));
                     break;
             }
         }

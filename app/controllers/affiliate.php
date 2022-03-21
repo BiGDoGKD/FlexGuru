@@ -8,11 +8,8 @@ class affiliate extends Controller
 
     public function index()
     {
-        // $data = [
-        //   'city' => ''
-        // ];
-        // $data['city'] = $this->Student->showinProfile($data);
-        $this->view('affiliate /affiliateprofileview');
+       
+        $this->view('affiliate/affiliateprofileview');
     }
 
     public function billinginformation()
@@ -117,7 +114,6 @@ class affiliate extends Controller
                 'phonenoError' => ''
 
             ];
-
 
 
             $data["firstnameError"] = $this->val->name($data['firstname']);
