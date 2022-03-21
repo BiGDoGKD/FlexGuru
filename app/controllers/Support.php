@@ -25,7 +25,7 @@ class Support extends Controller
                     header('location' . URLROOT . '/student');
                     break;
                 case 'affiliate':
-                    header('location' . URLROOT . '/affiliatemarketer');
+                    header('location' . URLROOT . '/affiliate');
                     break;
             }
         }

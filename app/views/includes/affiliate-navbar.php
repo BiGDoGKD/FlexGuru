@@ -5,10 +5,10 @@
         </div>
         <div class="profile-navbar__menu col-6-md col-4-lg justify-content-around display-md-f display-xs-n">
             <ul class="display-f align-items-center justify-content-around" style="width: 100%">
-                <li>Messages</li>
-                <li>Classes</li>
-                <li>Requests</li>
-                <li>Marketplace</li>
+                <li><a href="<?php echo URLROOT ?>/affiliate/messages">Messages</a></li>
+                <li><a href="<?php echo URLROOT ?>/affiliate/Terms">Terms and Conditions</a></li>
+                <li><a href="<?php echo URLROOT ?>/affiliate/help ">Help</a></li>
+                <li> <a href="<?php echo URLROOT ?>/marketplace">MarketPlace</a></li>
             </ul>
         </div>
 
@@ -18,24 +18,24 @@
                     <!-- <input type="checkbox" id="profile2" /> -->
                     <div class="row align-items-center profile-dropdown-button">
                         <img src="https://scontent.fcmb2-2.fna.fbcdn.net/v/t1.6435-1/p160x160/134691956_747241662587034_6827673938859173117_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=7206a8&_nc_ohc=jYwp15wcc5AAX_auwr5&_nc_ht=scontent.fcmb2-2.fna&oh=00_AT9hGxK4tlB6OaSlERWeea83Bo9WYu3B7TNL-LxTsFYk-g&oe=6237D1BE" />
-                        <span class="display-xs-n display-xl-i"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></span>
+                        <span class="display-xs-n display-xl-i"><?php /*echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] */ ?></span>
                     </div>
 
                     <ul class="profile-dropdown-list shadow-md">
                         <li>
-                            <a href="<?php echo URLROOT ?>/student"><i class="mdi mdi-account"></i>Account</a>
+                            <a href="<?php echo URLROOT ?>/affiliate"><i class="mdi mdi-account"></i>Account</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/student/settings"><i class="mdi mdi-settings"></i>Settings</a>
+                            <a href="<?php echo URLROOT ?>/affiliate/settings"><i class="mdi mdi-settings"></i>Settings</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/student/purchasehistory"><i class="mdi mdi-logout"></i>Purchase History</a>
+                            <a href="<?php echo URLROOT ?>/affiliate/purchasehistory"><i class="mdi mdi-logout"></i>Purchase History</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/student/complaint"><i class="mdi mdi-logout"></i>Complaints</a>
+                            <a href="<?php echo URLROOT ?>/affiliate/complaint"><i class="mdi mdi-logout"></i>Complaints</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/student/help"><i class="mdi mdi-logout"></i>Help</a>
+                            <a href="<?php echo URLROOT ?>/affiliate/help"><i class="mdi mdi-logout"></i>Help</a>
                         </li>
                         <li>
                             <a href="<?php echo URLROOT ?>/login/logout"><i class="mdi mdi-logout"></i>Logout</a>

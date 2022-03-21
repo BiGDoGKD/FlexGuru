@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /** 
  * PROJECT NAME : FLEXGURU
@@ -6,7 +6,8 @@
  * @package flexguru
  * AUTHORS: Kesara Karannagoda
  * CO-AUTHORS: 
- * LAST UPDATE BY: Kesara Karannagoda
+ * LAST UPDATE BY: Kesara Karannagoda 
+ * +-
  * LAST UPDATE DATA : Oct, 12, 2021
  * FILE TYPE: Model File
  */
@@ -68,7 +69,7 @@ class Session
                     $_SESSION['type'] = 'affiliate';
                     $_SESSION['userdata'] = $res['data'][0];
                     $_SESSION['AFFACCESS'] = $res['token'];
-                    header('location:' . URLROOT . '/affiliatemarketer');
+                    header('location:' . URLROOT . '/affiliate');
                     break;
                 default:
                     header('location:' . URLROOT . '/forbidden');
@@ -93,3 +94,4 @@ class Session
         }
     }
 }
+ 
