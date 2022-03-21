@@ -46,6 +46,9 @@
                                                         Status
                                                     </th>
                                                     <th scope="col" class="links">
+                                                        <span class="sr-only">View</span>
+                                                    </th>
+                                                    <th scope="col" class="links">
                                                         <span class="sr-only">Edit</span>
                                                     </th>
                                                     <th scope="col" class="links">
@@ -108,12 +111,14 @@
                                                             <?php } ?>
 
                                                             <td class="links">
-                                                                <a href="#" class="info">Edit</a>
+                                                                <a href="<?php echo '/marketplace/service/' . $service['gigid'] ?>" class="info">View</a>
+                                                            </td>
+                                                            <td class="links">
+                                                                <a href="<?php echo '/gigs/settings/' . $service['gigid'] ?>" class="info">Edit</a>
                                                             </td>
                                                             <td class="links">
                                                                 <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Delete</a>
                                                             </td>
-
                                                         </tr>
                                                 <?php
                                                         $i++;

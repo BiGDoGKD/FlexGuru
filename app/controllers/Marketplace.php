@@ -24,23 +24,20 @@ class Marketplace extends Controller
     public function index($affiliatelink = array())
     {
 
-        if(!empty($affiliatelink)){
-            setcookie('affiliatelink',$affiliatelink,time()+86400,'/',null,null,true);
-            if(!isset($_COOKIE['affiliatelink'])){
-                echo "Cookie named  '". 'Affiliatelink' ."' is not set!";
-
-            }
-            else{
-                echo "Cookie '". 'Affiliatelink' ."' is set!<br>";  
+        if (!empty($affiliatelink)) {
+            setcookie('affiliatelink', $affiliatelink, time() + 86400, '/', null, null, true);
+            if (!isset($_COOKIE['affiliatelink'])) {
+                echo "Cookie named  '" . 'Affiliatelink' . "' is not set!";
+            } else {
+                echo "Cookie '" . 'Affiliatelink' . "' is set!<br>";
                 echo "Value is: " . $_COOKIE['affiliatelink'];
             }
-            
         }
         $services = $this->model('Gig');
         $data = $services->getAllGigs();
         $this->view('marketplace/marketplace', $data["result"]);
     }
-  
+
     public function service()
     {
         $this->view('marketplace/pages/service');
