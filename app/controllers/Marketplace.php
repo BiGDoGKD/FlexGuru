@@ -14,13 +14,17 @@
 
 class Marketplace extends Controller
 {
+
     public function __construct()
     {
         session_start();
     }
 
-    public function index()
+    public function index($options = array())
     {
+        if (!empty($options)) {
+            print_r($options);
+        }
         $services = $this->model('Gig');
         $data = $services->getAllGigs();
         $this->view('marketplace/marketplace', $data["result"]);
