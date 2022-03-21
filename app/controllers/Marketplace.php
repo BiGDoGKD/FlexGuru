@@ -14,10 +14,12 @@
 
 class Marketplace extends Controller
 {
+
     public function __construct()
     {
         session_start();
     }
+
 
     public function index($affiliatelink = array())
     {
@@ -38,7 +40,7 @@ class Marketplace extends Controller
         $data = $services->getAllGigs();
         $this->view('marketplace/marketplace', $data["result"]);
     }
-
+  
     public function service()
     {
         $this->view('marketplace/pages/service');
