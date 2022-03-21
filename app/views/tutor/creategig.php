@@ -23,10 +23,10 @@
                 </div>
 
                 <div class="gig-form col-12-xs col-8-lg">
-                    <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row">
+                    <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row" enctype="multipart/form-data">
                         <div class="form-group col-12-xs">
                             <label for="firstname">Gig Title <span class="text-error">*</span> </label>
-                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter the service title..." value="" required />
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter the Subject Area... (ex:- Pure Maths)" value="" required />
                             <p class="form-control form-feedback text-error">
 
                             </p>
@@ -59,6 +59,7 @@
 
                             </select>
                             <p class="form-control form-feedback text-error">
+
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
@@ -81,16 +82,29 @@
                                 <option class="select-option" value="14">14 days</option>
                             </select>
                             <p class="form-control form-feedback text-error">
+
+                            </p>
+                        </div>
+                        <div class="form-group col-12-xs">
+                            <label for="method">Delivery Method <span class="text-error">*</span></label>
+                            <select name="method" id="method" value="<?php echo $data['method'] ?>" required>
+                                <option class="select-option" value="" disabled selected>Select the delivery method.</option>
+                                <option class="select-option" value="zoom">Zoom</option>
+                                <option class="select-option" value="teams">Microsoft Teams</option>
+                                <option class="select-option" value="google">Google Meet</option>
+                                <option class="select-option" value="other">Other</option>
+                            </select>
+                            <p class="form-control form-feedback text-error">
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
                             <label for="medium">Medium <span class="text-error">*</span></label>
                             <select name="medium" id="medium" value="<?php echo $data['medium'] ?>" required>
                                 <option class="select-option" value="" disabled selected>Select the medium.</option>
-                                <option class="select-option" value="english">English</option>
-                                <option class="select-option" value="sinhala">Sinhala</option>
-                                <option class="select-option" value="tamil">Tamil</option>
-                                <option class="select-option" value="other">Other</option>
+                                <option class="select-option" value="English">English</option>
+                                <option class="select-option" value="Sinhala">Sinhala</option>
+                                <option class="select-option" value="Tamil">Tamil</option>
+                                <option class="select-option" value="Other">Other</option>
                             </select>
                             <p class="form-control form-feedback text-error">
                             </p>
@@ -99,11 +113,12 @@
                             <label for="subject">Subject <span class="text-error">*</span></label>
                             <select name="subject" id="subject" value="<?php echo $data['subject'] ?>" required>
                                 <option class="select-option" value="" disabled selected>Select the subject.</option>
-                                <option class="select-option" value="math">Math</option>
-                                <option class="select-option" value="english">English</option>
-                                <option class="select-option" value="science">Science</option>
-                                <option class="select-option" value="history">History</option>
-                                <option class="select-option" value="geography">Geography</option>
+                                <option class="select-option" value="Math">Math</option>
+                                <option class="select-option" value="English">English</option>
+                                <option class="select-option" value="Science">Science</option>
+                                <option class="select-option" value="History">History</option>
+                                <option class="select-option" value="Geography">Geography</option>
+                                <option class="select-option" value="Other">Other</option>
                             </select>
                             <p class="form-control form-feedback text-error">
                             </p>
@@ -117,9 +132,9 @@
                         </div>
                         <div class="form-group col-12-xs">
                             <label for="image">Gig Display Image <span class="text-error">*</span></label>
-                            <input type="file" class="form-control" name="image" id="image" placeholder="First Name" value="" required />
+                            <input type="file" class="form-control" name="file" id="file" placeholder="First Name" value="" required />
                             <p class="form-control form-feedback text-error">
-
+                                <?php echo $data['imageError'] ?>
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
