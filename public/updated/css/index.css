@@ -250,6 +250,30 @@ img {
   text-align: right;
 }
 
+.btn {
+  cursor: pointer;
+  background-color: #7879f1;
+  border-radius: 0;
+  border-color: #7879f1;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #fff;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.005);
+          transform: scale(1.005);
+  -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
 .container {
   width: 100%;
   max-width: 1200px;

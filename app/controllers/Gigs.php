@@ -34,12 +34,10 @@ class Gigs extends Controller
             'tuid' => $_SESSION['roledata']['tuid'],
         ];
         $result = $this->gig->getGigsByTutor($data);
-        print_r($result);
-        print_r(isset($result["result"]->message));
-        if (true) {
+        if (!isset($result['result']->message)) {
             $this->view('tutor/mygigs', $result['result']);
         } else {
-            $this->view('tutor/mygigs');
+            $this->view('tutor/mygigs', false);
         }
     }
 

@@ -35,13 +35,18 @@ class Gig
     {
         if ($response = $this->api->usercall('POST', APIURL . 'gig/create', json_encode($gigdata))) {
             $status = json_decode($response)->response->status;
+            print_r($response);
 
-            $msg = json_decode($response)->response->result->message;
-            $_SESSION['toastmsg'] = $msg;
 
             if ($status == 200) {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
                 include APPROOT . "/views/includes/successtoast.php";
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
             } else {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
                 include APPROOT . "/views/includes/errortoast.php";
             }
         }
