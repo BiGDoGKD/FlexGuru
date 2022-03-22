@@ -32,7 +32,17 @@ class Tutor extends Controller
         } else if ($optional == 500) {
             include APPROOT . "/views/includes/errortoast.php";
         }
-        $this->view('tutor/tutorprofileview');
+
+        $this->gig = $this->model('Gig');
+        $data = [
+            'tuid' => $_SESSION['roledata']['tuid'],
+        ];
+        $result = $this->gig->getGigsByTutor($data);
+        if (!isset($result['result']->message)) {
+            $this->view('tutor/tutorprofileview', $result['result']);
+        } else {
+            $this->view('tutor/tutorprofileview');
+        }
     }
 
     public function billinginformation()

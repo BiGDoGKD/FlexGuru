@@ -1,16 +1,16 @@
 .service-gig {
   cursor: pointer;
   border-radius: 4px;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
 
   &__header {
     height: 120px;
+    border-bottom: 1px solid #cfcfcf;
     border-radius: 4px 4px 0 0;
   }
 
   &__body {
-    border: 1px solid #cfcfcf;
-    border-radius: 0 0 4px 4px;
-
     &__tutor-details {
       display: flex;
       padding: 0.5rem 0.75rem;
