@@ -20,57 +20,17 @@ class Settings
         $this->db = new Database;
     }
 
-    /* Test (database and table needs to exist before this works)
-        public function getUsers() {
-            $this->db->query("SELECT * FROM users");
-
-            $result = $this->db->resultSet();
-
-            return $result;
-        }
-        */
-
-        // when considering the update model we can see that if the query is not only id also consider the user type
-
-    public function update($data)
-    {
-        // $data["password"] = hash("sha256", $data["password"]);
-
-
-
-        $this->db->query("UPDATE `api`.`user` SET firstname=:firstname , lastname=:lastname, phoneno = :phoneno , city=:city where username = :username");
-
-        //Bind values
-
-        $this->db->bind(':firstname', $data['firstname']);
-        $this->db->bind(':lastname', $data['lastname']);
-        $this->db->bind(':phoneno', $data['phoneno']);
-        $this->db->bind(':city', $data['city']);
-        $this->db->bind(':username', $_SESSION['userdata']['username']);
-
-
-
-        //Execute function
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // password reset related database functionality
-
-    public function resetpassword($data){
-        $this->db->query("UPDATE `api`.`user` SET password=:password where username = :username");
-        $this->db->bind(':password', $data['password']);
-        $this->db->bind(':username', $_SESSION['userdata']['username']);
-        //Execute function
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // public function resetpassword($data){
+    //     $this->db->query("UPDATE `api`.`user` SET password=:password where username = :username");
+    //     $this->db->bind(':password', $data['newPassword']);
+    //     $this->db->bind(':username', $_SESSION['userdata']['username']);
+    //     //Execute function
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
     public function passwordexist($password)
     {
@@ -84,4 +44,51 @@ class Settings
             return false;
         }
     }
+
+    // public function resetgeneraldetails($generaldetails){
+    //     $this->db->query("UPDATE `api`.`user` SET  phoneno = :phoneno , email=:email where username = :username");
+       
+    //     $this->db->bind(':phoneno', $generaldetails['phoneno']);
+    //     $this->db->bind(':city', $generaldetails['email']);
+
+    //     //Execute function
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+
+    public function resetpassword($data){ 
+            if ($response = $this->api->call('POST', APIURL . 'tutor/passwordchange', json_encode($data))) {
+                $responseArray = (array)json_decode($response);
+                $result = (array)$responseArray["response"];
+                return $result;
+            }
+        }
+        
+
+
+    public function resetgeneraldetails($generaldetails){
+            if ($response = $this->api->call('POST', APIURL . 'tutor/generaldetailschange', json_encode($generaldetails))) {
+                $responseArray = (array)json_decode($response);
+                $result = (array)$responseArray["response"];
+                return $result;
+            }
+        }
+    
+      public function accountdelete($userid){
+            if ($response = $this->api->call('POST', APIURL . 'tutor/accountdelete', json_encode($userid))) {
+                $responseArray = (array)json_decode($response);
+                $result = (array)$responseArray["response"];
+                return $result;
+            }
+        }
+    
+
+
+
+
+
     }

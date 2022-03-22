@@ -4,6 +4,22 @@ class affiliate extends Controller
 {
     public function __construct()
     {
+        $api = new API;
+        $session = $this->model("Session");
+        session_start();
+        if (isset($_SESSION['AFFACCESS'])) {
+            if ($api->checktoken($_COOKIE['ref'])) {
+                //do nothing
+                $session->destroy();
+                die(header('location:' . URLROOT . '/login'));
+            }
+        } elseif (isset($_SESSION['TUTACCESS'])) {
+            die(header('location:' . URLROOT . '/tutor'));
+        } elseif (isset($_SESSION['STUACCESS'])) {
+            die(header('location:' . URLROOT . '/student'));
+        } else {
+            die(header('location:' . URLROOT . '/login'));
+        }
     }
 
     public function index()
@@ -133,5 +149,11 @@ class affiliate extends Controller
         }
         $this->view('affiliate/settings', $data);
     }
+
+    public function messages(){
+        $this->view('affiliate/messages');
+    }
+
+    
 }
 //
