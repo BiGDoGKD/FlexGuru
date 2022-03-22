@@ -9018,4 +9018,163 @@ img {
     width: auto;
   }
 }
+
+.service-page .tutor-detail-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.service-page .tutor-detail-bar .mini-profile-picture-holder {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.service-page .tutor-detail-bar .tutor-name {
+  font-size: 14px;
+  margin-right: 0.3rem;
+  font-weight: 500;
+  color: black;
+}
+
+.service-page .tutor-detail-bar .stars {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.service-page .tutor-detail-bar .ratings {
+  margin-left: 5px;
+  font-weight: 500;
+}
+
+.service-page .service-cover-container {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  width: 100%;
+  height: 420px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.service-page .tutor-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+}
+
+.service-page .tutor-details__header .profile-picture-holder {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.service-page .tutor-details__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.service-page .tutor-details__body .tutor-ratings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.service-page .tutor-details__body .tutor-ratings .ratings {
+  margin-left: 0.25rem;
+}
+
+.service-page .tutor-details__body .tutor-contact button {
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: 1px solid #808080;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.service-page .tutor-details__body .tutor-contact button:hover {
+  -webkit-transform: scale(1.002);
+          transform: scale(1.002);
+}
+
+.service-page .tutor-bio-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  padding: 2rem 1rem;
+  margin: 3rem 0 0 0;
+}
+
+.service-page .tutor-bio-box__header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: 600;
+}
+
+.service-page .service-details-box {
+  padding: 1rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+}
+
+.service-page .service-details-box__body ul li {
+  margin: 0.35rem 0;
+}
+
+.service-page .service-details-box__body ul li .fa-check {
+  margin-right: 0.5rem;
+}
+
+.service-page .service-details-box__body button {
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.service-page .service-details-box__body button:hover {
+  -webkit-transform: scale(1.002);
+          transform: scale(1.002);
+}
+
+.service-page .service-details-box__body .continue-purchase {
+  margin-top: 2rem;
+  background: #7879f1;
+  color: white;
+  border: 1px solid #7879f1;
+}
+
+.service-page .service-details-box__body .contact-tutor {
+  color: #808080;
+  margin-top: 0.5rem;
+  background: white;
+  border: 1px solid #808080;
+}
 /*# sourceMappingURL=index.css.map */

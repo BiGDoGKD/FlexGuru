@@ -38,8 +38,23 @@ class Marketplace extends Controller
         $this->view('marketplace/marketplace', $data["result"]);
     }
 
-    public function service()
+    public function service($optional = array())
     {
+        if (!empty($optional)) {
+            $service = $this->model('Gig');
+            $array = [
+                'gigid' => $optional,
+            ];
+            $data = $service->getGigDetails($array);
+
+            if (isset($data['result']->message)) {
+                die(header('location:' . URLROOT . '/marketplace'));
+            } else {
+                $this->view('marketplace/pages/service', (array)$data["result"][0]);
+            }
+        } else {
+            die(header('location:' . URLROOT . '/marketplace'));
+        }
         $this->view('marketplace/pages/service');
     }
 
