@@ -76,4 +76,13 @@ class Gig
             return $result;
         }
     }
+
+    public function getGigDetails($data)
+    {
+        if ($response = $this->api->call('POST', APIURL . 'visitor/servicebygig', json_encode($data))) {
+            $responseArray = (array)json_decode($response);
+            $result = (array)$responseArray["response"];
+            return $result;
+        }
+    }
 }
