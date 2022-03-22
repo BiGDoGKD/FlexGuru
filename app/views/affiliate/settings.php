@@ -18,14 +18,13 @@
     include APPROOT . '/views/includes/tutor-navbar.php';
     ?>
 
-
-    <div class="user-dashboard container base-container mt-3 mb-3">
+    <div class="user-dashboard container  mt-3 mb-3">
 
         <div class="gig-form col-12-xs col-8-lg">
             <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row">
                 <div class="form-group col-12-xs">
-                    <label for="firstname">First Name<span class="text-error">*</span> </label>
-                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter the FirstName..." value="" required />
+                    <label for="currentpassword">Current Password<span class="text-error">*</span> </label>
+                    <input type="password" class="form-control" name="currentpassword" id="currentpassword" placeholder="Enter the current password..." value="" required />
                     <p class="form-control form-feedback text-error">
 
                     </p>
@@ -34,12 +33,25 @@
 
 
                 <div class="form-group col-12-xs">
-                    <label for="Lastname">Last Name<span class="text-error">*</span> </label>
-                    <input type="text" class="form-control" name="title" id="title" placeholder="Enter the Last Name..." value="" required />
+                    <label for="newpassword">New Password<span class="text-error">*</span> </label>
+                    <input type="password" class="form-control" name="newpassword" id="newpassword" placeholder="Enter the new password..." value="" required />
                     <p class="form-control form-feedback text-error">
 
                     </p>
                 </div>
+                <div class="col-4-xs display-f ">
+                    <button onclick="location.href='http://localhost/info/help'" class="marketplace__help-btn">Change Password </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="user-dashboard container  mt-3 mb-3">
+
+        <div class="gig-form col-12-xs col-8-lg">
+            <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row">
 
                 <div class="form-group col-12-xs">
                     <label for="email">Email<span class="text-error">*</span> </label>
@@ -59,60 +71,60 @@
                     </p>
                 </div>
 
+                <div class="col-4-xs display-f ">
+                    <button onclick="location.href='http://localhost/info/help'" class="marketplace__help-btn">Submit changes </button>
+                </div>
 
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="accountdeletion">
-            <div class="subtitle" id="act_del">
-                <p class="text-gray">Account Deletion </p>
-            </div>
-            <div class="deletiondetails" style="width: 100%;">
-
-
-
-
-
-            </div>
-
-
-
-
-
+            </form>
 
         </div>
+    </div>
 
-        <div class="deletereason">
-            <div class="subtitle">
-                <p class="text-gray">I am deleting my account because (optional)
-                </p>
+
+
+    <div class="user-dashboard container  mt-3 mb-3">
+
+        <div class="gig-form col-12-xs col-8-lg">
+
+
+            <div class="accountdeletion">
+                <div class="subtitle" id="act_del">
+                    <p class="text-gray">Account Deletion </p>
+                </div>
+                <div class="deletiondetails" style="width: 100%;">
+
+
+
+
+
+                </div>
+
+
+
+
+
+
             </div>
-            <textarea style="font-family: poppins; resize:none;" class="text-gray" id="deletereason" name="deletereason" rows="4" cols="117">
+
+            <div class="deletereason">
+                <div class="subtitle">
+                    <p class="text-gray">I am deleting my account because (optional)
+                    </p>
+                </div>
+                <textarea style="font-family: poppins; resize:none;" class="text-gray" id="deletereason" name="deletereason" rows="4" cols="117">
 </textarea>
 
 
+            </div>
+
+
+
+            <div class="col-4-xs display-f ">
+                <button onclick="location.href='http://localhost/info/help'" class="marketplace__help-btn">Delete My Account </button>
+            </div>
+
+
         </div>
-
-
-
-        <div class="col-4-xs display-f ">
-            <button onclick="location.href='http://localhost/info/help'" class="marketplace__help-btn">Delete My Account </button>
-        </div>
-
-
-    </div>
 
     </div>
 
