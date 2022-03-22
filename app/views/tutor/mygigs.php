@@ -46,6 +46,9 @@
                                                         Status
                                                     </th>
                                                     <th scope="col" class="links">
+                                                        <span class="sr-only">View</span>
+                                                    </th>
+                                                    <th scope="col" class="links">
                                                         <span class="sr-only">Edit</span>
                                                     </th>
                                                     <th scope="col" class="links">
@@ -57,52 +60,69 @@
 
 
                                                 <?php
-                                                $i = 1;
-                                                foreach ($data as $gig) {
-                                                    $service = (array)$gig;
+                                                if (!$data) {
                                                 ?>
-                                                    <!-- Product <?php echo $i; ?> -->
-                                                    <tr <?php if ($i % 2 == 0) {
-                                                            echo `class='stripe'`;
-                                                        } ?>>
-                                                        <td class="main">
-                                                            <?php echo $i; ?>
+                                                    <tr>
+                                                        <td colspan="6" class="text-center">
+                                                            You have no services listed yet.
                                                         </td>
-                                                        <td>
-                                                            <?php echo $service['title']; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo 'LKR ' . $service['price']; ?>
-                                                        </td>
-                                                        <?php if ($service['status'] == 'pending') { ?>
-                                                            <td class="text-warning">
-                                                                Pending
-                                                            </td>
-                                                        <?php } elseif ($service['status'] == 'approved') {
-                                                        ?>
-                                                            <td class="text-success">
-                                                                Approved
-                                                            </td>
-                                                        <?php
-                                                        } elseif (
-                                                            $service['status'] == 'rejected'
-                                                        ) {
-                                                        ?>
-                                                            <td class="text-danger">
-                                                                Rejected
-                                                            </td>
-                                                        <?php } ?>
-
-                                                        <td class="links">
-                                                            <a href="#" class="info">Edit</a>
-                                                        </td>
-                                                        <td class="links">
-                                                            <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Delete</a>
-                                                        </td>
-
                                                     </tr>
+                                                    <tr>
+                                                        <td colspan="6" class="text-center">
+                                                            <button onclick="location.href='<?php echo URLROOT . '/gigs/publish' ?>'" class="btn">Create a new service</button>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                } else {
+                                                    $i = 1;
+                                                    foreach ($data as $gig) {
+                                                        $service = (array)$gig;
+                                                    ?>
+                                                        <!-- Product <?php echo $i; ?> -->
+                                                        <tr <?php if ($i % 2 == 0) {
+                                                                echo `class='stripe'`;
+                                                            } ?>>
+                                                            <td class="main">
+                                                                <?php echo $i; ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php echo $service['title']; ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php echo 'LKR ' . $service['price']; ?>
+                                                            </td>
+                                                            <?php if ($service['status'] == 'pending') { ?>
+                                                                <td class="text-warning">
+                                                                    Pending
+                                                                </td>
+                                                            <?php } elseif ($service['status'] == 'approved') {
+                                                            ?>
+                                                                <td class="text-success">
+                                                                    Approved
+                                                                </td>
+                                                            <?php
+                                                            } elseif (
+                                                                $service['status'] == 'rejected'
+                                                            ) {
+                                                            ?>
+                                                                <td class="text-danger">
+                                                                    Rejected
+                                                                </td>
+                                                            <?php } ?>
+
+                                                            <td class="links">
+                                                                <a href="<?php echo '/marketplace/service/' . $service['gigid'] ?>" class="info">View</a>
+                                                            </td>
+                                                            <td class="links">
+                                                                <a href="<?php echo '/gigs/settings/' . $service['gigid'] ?>" class="info">Edit</a>
+                                                            </td>
+                                                            <td class="links">
+                                                                <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Delete</a>
+                                                            </td>
+                                                        </tr>
                                                 <?php
-                                                    $i++;
+                                                        $i++;
+                                                    }
                                                 } ?>
                                             </tbody>
                                         </table>

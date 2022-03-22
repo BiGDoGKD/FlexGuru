@@ -146,10 +146,10 @@
 				$service = (array)$gig;
 			?>
 				<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-					<a href="#">
+					<a href="<?php echo URLROOT . '/marketplace/service/' . $service['gigid'] ?>">
 						<div class="service-gig">
 							<div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
+									background-image: url(<?php echo URLROOT . '/public/uploads/services/' . $service['image'] ?>);
 									background-size: cover;
 									background-position: center;
 								">
@@ -200,7 +200,9 @@
 								</div>
 								<div class="service-gig__footer">
 									<div class="service-gig__footer__badge">
-										<i class="fa fa-badge"></i>
+										<div class="service-gig__footer__badge__medium">
+											<?php echo $service['medium'] ?>
+										</div>
 									</div>
 									<div class="service-gig__footer__price">
 										LKR&nbsp;<span class="price-value"><?php echo $service['price'] ?></span>

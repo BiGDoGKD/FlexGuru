@@ -14,33 +14,47 @@
 
 class Marketplace extends Controller
 {
+
     public function __construct()
     {
         session_start();
     }
 
+
     public function index($affiliatelink = array())
     {
 
-        if(!empty($affiliatelink)){
-            setcookie('affiliatelink',$affiliatelink,time()+86400,'/',null,null,true);
-            if(!isset($_COOKIE['affiliatelink'])){
-                echo "Cookie named  '". 'Affiliatelink' ."' is not set!";
-
-            }
-            else{
-                echo "Cookie '". 'Affiliatelink' ."' is set!<br>";  
+        if (!empty($affiliatelink)) {
+            setcookie('affiliatelink', $affiliatelink, time() + 86400, '/', null, null, true);
+            if (!isset($_COOKIE['affiliatelink'])) {
+                echo "Cookie named  '" . 'Affiliatelink' . "' is not set!";
+            } else {
+                echo "Cookie '" . 'Affiliatelink' . "' is set!<br>";
                 echo "Value is: " . $_COOKIE['affiliatelink'];
             }
-            
         }
         $services = $this->model('Gig');
         $data = $services->getAllGigs();
         $this->view('marketplace/marketplace', $data["result"]);
     }
 
-    public function service()
+    public function service($optional = array())
     {
+        if (!empty($optional)) {
+            $service = $this->model('Gig');
+            $array = [
+                'gigid' => $optional,
+            ];
+            $data = $service->getGigDetails($array);
+
+            if (isset($data['result']->message)) {
+                die(header('location:' . URLROOT . '/marketplace'));
+            } else {
+                $this->view('marketplace/pages/service', (array)$data["result"][0]);
+            }
+        } else {
+            die(header('location:' . URLROOT . '/marketplace'));
+        }
         $this->view('marketplace/pages/service');
     }
 

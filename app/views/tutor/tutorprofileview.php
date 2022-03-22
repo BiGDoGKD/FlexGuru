@@ -13,15 +13,20 @@
     <?php
     include APPROOT . '/views/includes/tutor-navbar.php';
     ?>
-
     <div class="user-dashboard container base-container mt-3 mb-3">
         <div class="row">
             <div class="col-12-xs col-4-lg">
                 <div class="profile-card br-xs">
                     <div class="profile-card-header">
                         <div class="profile-card-header-image">
-                            <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/img/studentprofileview/user.png' ?>" id="userimg" alt="Kesara Karannagoda" />
+                            <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" id="userimg" alt="Kesara Karannagoda" />
+                            <div class="profile-card-header-image__upload" onclick="openModal()">
+                                <i class="fa fa-camera"></i>
+
+                            </div>
+                            <?php include APPROOT . '/views/includes/modals/modal-profile-picture.php'; ?>
                         </div>
+
                         <div class="profile-card-header__profile-name">
                             <span class="first-name"><?php echo $_SESSION['userdata']['firstname'] ?></span>
                             <span class="last-name"><?php echo $_SESSION['userdata']['lastname'] ?></span>
@@ -127,146 +132,106 @@
                 } ?>
 
                 <div class="tutor-dashboard__gig-details row">
+                    <!-- starts  -->
+                    <?php
+                    if (!$data) {
+                    ?>
+                        <div class="container row br-xs basic-border pt-2 pb-3 pr-2 pl-2">
+                            <div class="col-7-lg col-12-xs">
+                                <h2 class="text-black font-lg mt-2 mb-1">FlexGuru helps you to improve</h2>
+                                <span class="mb-1">
+                                    <b class="text-gray"> How to be succesfull in Flexguru in simple steps</b>
+                                </span>
+                                <p class="font-md text-gray">The key to your success on Flexguru is the brand you build for yourself through
+                                    your Flexguru reputation. We gathered some tips and resources to help you
+                                    become a leading tutor on Flexguru. <a class="text-primary" href="#"><u>learn more...</u></a> </p>
+                            </div>
+                            <div class="col-5-lg col-12-xs pl-2 pr-2 pt-1">
+                                <img src="<?php echo URLROOT . '/public/img/studentprofileview/study.svg' ?>" id="study_img" alt="">
 
-                    <div class="service-gig-container col-4-lg col-6-md col-12-xs p-1">
-                        <div class="service-gig">
-                            <div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
+                            </div>
+                        </div>
+
+                        <?php
+                    } else {
+                        $i = 1;
+                        foreach ($data as $gig) {
+                            $service = (array)$gig;
+                        ?>
+
+                            <div class="service-gig-container col-4-lg col-6-md col-12-xs p-1" onclick="location.href='<?php echo URLROOT . '/marketplace/service/' . $service['gigid'] ?>'">
+                                <div class="service-gig">
+                                    <div class="service-gig__header" style="
+									background-image: url(<?php echo URLROOT . '/public/uploads/services/' . $service['image'] ?>);
 									background-size: cover;
 									background-position: center;
 								">
-                                Header
-                            </div>
-                            <div class="service-gig__body">
-                                <div class="service-gig__body__tutor-details">
-                                    <div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
+
+                                    </div>
+                                    <div class="service-gig__body">
+                                        <div class="service-gig__body__tutor-details">
+                                            <div class="service-gig__body__tutor-details__tutor-profile-picture" style="
+											background-image: url(<?php echo URLROOT . "/public/uploads/users/" . $service['photourl'] ?>);
 											background-size: cover;
 											background-position: center;
 										"></div>
-                                    <div class="service-gig__body__tutor-details__tutor-name">
-                                        <span class="name">Kesara Karannagoda</span>
-                                        <span class="level">Level 2 Tutor&nbsp;
+                                            <div class="service-gig__body__tutor-details__tutor-name">
+                                                <span class="name"><?php echo $service['firstname'] . " " . $service['lastname'] ?></span>
+                                                <span class="level"><?php
+                                                                    if ($service['rating'] == '0') {
+                                                                        echo 'New Tutor';
+                                                                    } else {
+                                                                        echo 'Level ' . $service['rating'] . ' Tutor';
+                                                                    } ?>&nbsp;
 
-                                            <i class="fa fa-check-circle text-primary"></i></span>
-                                    </div>
-                                </div>
-                                <div class="service-gig__body__gig-description">
-                                    <p>I can teach you mathematics and science.</p>
-                                </div>
-                                <div class="service-gig__body__gig-details">
-                                    <div class="service-gig__body__gig-details__star-ratings">
-                                        <i class="fa fa-star"></i>&nbsp;4.6
-                                    </div>
-                                    <div class="service-gig__body__gig-details__services-given">
-                                        (249)
-                                    </div>
-                                </div>
-                                <div class="service-gig__footer">
-                                    <div class="service-gig__footer__badge">
-                                        <i class="fa fa-badge"></i>
-                                    </div>
-                                    <div class="service-gig__footer__price">
-                                        LKR&nbsp;<span class="price-value">1500</span>
+                                                    <?php
+                                                    if ($service['verified'] == '1') {
+                                                        echo '<i class="fa fa-check-circle text-success"></i>';
+                                                    } ?></span>
+                                            </div>
+                                        </div>
+                                        <div class="service-gig__body__gig-description">
+                                            <p><?php echo $service['title'] ?></p>
+                                        </div>
+                                        <div class="service-gig__body__gig-details">
+                                            <div class="service-gig__body__gig-details__star-ratings">
+                                                <i class="fa fa-star"></i>&nbsp;<?php
+                                                                                if ($service['rating'] == '0') {
+                                                                                    echo 'n/a';
+                                                                                } else {
+                                                                                    echo $service['rating'];
+                                                                                } ?>
+                                            </div>
+                                            <div class="service-gig__body__gig-details__services-given">
+                                                <?php
+                                                if ($service['jobs'] == '0') {
+                                                    echo '(<i>new service</i>)';
+                                                } else {
+                                                    echo '(' . $service['jobs'] . ')';
+                                                } ?>
+                                            </div>
+                                        </div>
+                                        <div class="service-gig__footer">
+                                            <div class="service-gig__footer__badge">
+                                                <div class="service-gig__footer__badge__medium">
+                                                    <?php echo $service['medium'] ?>
+                                                </div>
+                                            </div>
+                                            <div class="service-gig__footer__price">
+                                                LKR&nbsp;<span class="price-value"><?php echo $service['price'] ?></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="service-gig-container col-4-lg col-6-md col-12-xs p-1">
-                        <div class="service-gig">
-                            <div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-                                Header
-                            </div>
-                            <div class="service-gig__body">
-                                <div class="service-gig__body__tutor-details">
-                                    <div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-                                    <div class="service-gig__body__tutor-details__tutor-name">
-                                        <span class="name">Kesara Karannagoda</span>
-                                        <span class="level">Level 2 Tutor&nbsp;
 
-                                            <i class="fa fa-check-circle text-primary"></i></span>
-                                    </div>
-                                </div>
-                                <div class="service-gig__body__gig-description">
-                                    <p>I can teach you mathematics and science.</p>
-                                </div>
-                                <div class="service-gig__body__gig-details">
-                                    <div class="service-gig__body__gig-details__star-ratings">
-                                        <i class="fa fa-star"></i>&nbsp;4.6
-                                    </div>
-                                    <div class="service-gig__body__gig-details__services-given">
-                                        (249)
-                                    </div>
-                                </div>
-                                <div class="service-gig__footer">
-                                    <div class="service-gig__footer__badge">
-                                        <i class="fa fa-badge"></i>
-                                    </div>
-                                    <div class="service-gig__footer__price">
-                                        LKR&nbsp;<span class="price-value">1500</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-gig-container col-4-lg col-6-md col-12-xs p-1">
-                        <div class="service-gig">
-                            <div class="service-gig__header" style="
-									background-image: url(https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_960_720.jpg);
-									background-size: cover;
-									background-position: center;
-								">
-                                Header
-                            </div>
-                            <div class="service-gig__body">
-                                <div class="service-gig__body__tutor-details">
-                                    <div class="service-gig__body__tutor-details__tutor-profile-picture" style="
-											background-image: url(https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF);
-											background-size: cover;
-											background-position: center;
-										"></div>
-                                    <div class="service-gig__body__tutor-details__tutor-name">
-                                        <span class="name">Kesara Karannagoda</span>
-                                        <span class="level">Level 2 Tutor&nbsp;
-
-                                            <i class="fa fa-check-circle text-primary"></i></span>
-                                    </div>
-                                </div>
-                                <div class="service-gig__body__gig-description">
-                                    <p>I can teach you mathematics and science.</p>
-                                </div>
-                                <div class="service-gig__body__gig-details">
-                                    <div class="service-gig__body__gig-details__star-ratings">
-                                        <i class="fa fa-star"></i>&nbsp;4.6
-                                    </div>
-                                    <div class="service-gig__body__gig-details__services-given">
-                                        (249)
-                                    </div>
-                                </div>
-                                <div class="service-gig__footer">
-                                    <div class="service-gig__footer__badge">
-                                        <i class="fa fa-badge"></i>
-                                    </div>
-                                    <div class="service-gig__footer__price">
-                                        LKR&nbsp;<span class="price-value">1500</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                            $i++;
+                        }
+                    } ?>
+                    <!-- ends  -->
                 </div>
-                <?php
-                // print_r($_SESSION);
-                ?>
+
             </div>
 
         </div>

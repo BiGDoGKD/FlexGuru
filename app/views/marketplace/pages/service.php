@@ -1,182 +1,197 @@
-<?php
-include APPROOT . '/views/includes/data.php';
-include APPROOT . '/views/marketplace/includes/header.php';
-?>
-<link rel="stylesheet" href="<?php echo URLROOT . '/public/css/marketplace/service.css' ?>">
-<div class="service">
-    <div class="subject-line">
-        <ul class="subtitle-2">
-            <li>Mathematics</li>
-            <li>Science</li>
-            <li>Technology</li>
-            <li>Web Development</li>
-            <li>Machine Learning</li>
-            <li>UI/UX Designing</li>
-            <li>History</li>
-        </ul>
-    </div>
-    <div class="tree-details">
-        <p class="subtitle-2 primary" style="margin-top: 20px;">Mathematics > Calculas</p>
-    </div>
-    <div class="service-details">
-        <div class="pane-1">
-            <div class="gig">
-                <div class="title-box">
-                    <h4>I will teach you operating systems in ICT</h4>
-                </div>
-                <div class="review-line">
-                    <div class="picture"></div>
-                    <style>
-                        .pane-1 .gig .review-line .picture {
-                            background: url(<?php echo URLROOT . '/public/img/students/pexels.webp' ?>);
-                            background-position: center;
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            margin-right: 20px;
-                        }
-                    </style>
-                    <p class="subtitle-2">Dianne Russel |</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="subtitle-2">4.5 <span class="gray">(1)</span></p>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace</title>
+    <?php include APPROOT . '/views/includes/header.php'; ?>
+</head>
+
+<body>
+    <?php
+    if (isset($_SESSION['type'])) {
+        if ($_SESSION['type'] == 'student') {
+            include APPROOT . '/views/includes/student-navbar.php';
+        } else if ($_SESSION['type'] == 'tutor') {
+            include APPROOT . '/views/includes/tutor-navbar.php';
+        } else if ($_SESSION['type'] == 'affiliate') {
+            include APPROOT . '/views/includes/affiliate-navbar.php';
+        } else {
+            include APPROOT . '/views/includes/navbar.php';
+        }
+    } else {
+        include APPROOT . '/views/includes/navbar.php';
+    }
+    ?>
+    <main>
+        <!-- Filter Bar  -->
+
+        <div class="container marketplace__filter-bar display-xs-n display-lg-b">
+            <div class="row">
+                <div class="subject col-12-xs col-2-xl col-6-md display-f justify-content-center">
+                    Mathematics
                 </div>
-                <div class="service-cover"></div>
-                <style>
-                    .pane-1 .gig .service-cover {
-                        background: url(<?php echo URLROOT . '/public/img/students/pexels.webp' ?>);
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        width: 680px;
-                        height: 420px;
-                        border-radius: 10px;
-                        margin: 20px 0;
-                    }
-                </style>
-                <div class="about-service dark">
-                    <h6>Japanese teaching methods use to give a clear understanding about modern agriculture</h6>
-                    <h5>Hello Student!</h5>
-                    <p class="description-title body-1 bold dark">
-                        From Tissue culture to modern rooftop gardening
-                    </p>
-                    <p class="description body-1 gray">
-                        You are responsible for operations, service, or customer support and face challenges trying to communicate complex procedures to a global market effectively. Traditional methods don’t work and are laborious, costly and error prone.
-                        You are responsible for operations, service, or customer support and face challenges trying to communicate complex procedures to a global market effectively. Traditional methods don’t work and are laborious, costly and error prone.
-                        You are responsible for operations, service, or customer support and face challenges trying to communicate complex procedures to a global market effectively. Traditional methods don’t work and are laborious, costly and error prone.
-                    </p>
+                <div class="subject col-12-xs col-2-xl col-6-md display-f justify-content-center">
+                    Science
+                </div>
+                <div class="subject col-12-xs col-2-xl col-6-md display-f justify-content-center">
+                    Technology
+                </div>
+                <div class="subject col-12-xs col-2-xl col-6-md display-f justify-content-center">
+                    Web Development
+                </div>
+                <div class="subject col-12-xs col-2-xl col-6-md display-f justify-content-center">
+                    Machine Learning
+                </div>
+                <div class="subject col-12-xs col-2-xl col-6-md display-f justify-content-center">
+                    UX/UI Designing
                 </div>
             </div>
-            <div class="tutor">
-                <div class="tutor-card">
-                    <h6 class="title">About The Tutor</h6>
-                    <div class="card">
-                        <div class="picture"></div>
-                        <style>
-                            .pane-1 .tutor .tutor-card .card .picture {
-                                background: url(<?php echo URLROOT . '/public/img/students/pexels.webp' ?>);
-                                background-position: center;
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                                width: 100px;
-                                height: 100px;
-                                border-radius: 50%;
-                                margin-right: 20px;
-                            }
-                        </style>
-                        <div class="details">
-                            <div class="name subtitle-2">Dianne Russel</div>
-                            <div class="occupation body-1 gray">Engineer, NASTECH</div>
-                            <div class="stars subtitle-2 gray">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <p class="rate subtitle-2">4.5 <span class="gray">(1)</span></p>
+        </div>
+        <!-- End of Filter Bar  -->
+
+        <div class="container service-page base-container mt-xs-1 mt-md-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-primary pointer" style="text-transform: capitalize;"><?php echo $data['subject'] ?> > Lesson</p>
+                </div>
+                <div class="row mt-2 mb-1">
+                    <div class="col-8-lg col-12-xs col-7-md pr-lg-2 mb-lg-3">
+                        <h1 class="mb-2"><?php echo $data['title'] ?></h1>
+                        <div class="tutor-detail-bar">
+                            <div class="mini-profile-picture-holder" style="background: url(<?php echo URLROOT . "/public/uploads/users/" . $data['photourl'] ?>);">
+                            </div>
+                            <p class="tutor-name">
+                                <?php echo $data['firstname'] . ' ' . $data['lastname'] ?>
+                            </p><?php
+                                if ($data['verified'] == '1') {
+                                    echo '<i class="fa fa-check-circle text-success"></i>';
+                                } ?>
+                            <span>&nbsp; | </span>
+                            <div class="stars">
+                                <i class="fas text-orange fa-star"></i>
+                                <i class="fas text-orange fa-star"></i>
+                                <i class="fas text-orange fa-star"></i>
+                                <i class="fas text-orange fa-star"></i>
+                                <i class="fas text-gray fa-star"></i>
+                            </div>
+                            <p class="ratings text-orange"><?php if ($data['rating'] == 0) {
+                                                                echo 'n/a';
+                                                            } else {
+                                                                echo $data['rating'];
+                                                            } ?> <span class="text-gray">(<?php echo $data['jobs'] ?>)</span></p>
+                        </div>
+                        <div class="service-cover-container" style="background: url(<?php echo URLROOT . '/public/uploads/services/' . $data['image'] ?>);"></div>
+                        <h2 class="mb-2 mt-3">About this service</h2>
+                        <div class="text-gray">
+                            <?php echo $data['description'] ?>
+                        </div>
+
+                        <!-- tutor-details-block  -->
+                        <h3 class="mt-3">About the Tutor</h3>
+                        <div class="tutor-details mt-2">
+                            <div class="tutor-details__header">
+                                <div class="profile-picture-holder" style="background: url(<?php echo URLROOT . "/public/uploads/users/" . $data['photourl'] ?>);">
+                                </div>
+                            </div>
+                            <div class="tutor-details__body">
+                                <p class="tutor-name font-md text-primary pointer"> <?php echo $data['firstname'] . ' ' . $data['lastname'] ?>&nbsp;<?php
+                                                                                                                                                    if ($data['verified'] == '1') {
+                                                                                                                                                        echo '<i class="fa fa-check-circle text-success"></i>';
+                                                                                                                                                    } ?></p>
+                                <p class="tutor-position font-sm text-gray"><?php echo $data['occupation'] . ', ' . $data['workplace'] ?></p>
+                                <div class="tutor-ratings">
+                                    <div class="stars">
+                                        <i class="fas text-orange fa-star"></i>
+                                        <i class="fas text-orange fa-star"></i>
+                                        <i class="fas text-orange fa-star"></i>
+                                        <i class="fas text-orange fa-star"></i>
+                                        <i class="fas text-gray fa-star"></i>
+                                    </div>
+                                    <p class="ratings text-orange"><?php if ($data['rating'] == 0) {
+                                                                        echo 'n/a';
+                                                                    } else {
+                                                                        echo $data['rating'];
+                                                                    } ?> <span class="text-gray">(<?php echo $data['jobs'] ?>)</span></p>
+                                </div>
+                                <div class="tutor-contact mt-1">
+                                    <button class="bg-white text-gray">Contact Me</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutor-bio-box">
+                            <div class="tutor-bio-box__header row mb-md-2">
+                                <div class="tutor-bio-box__header__location col-6-md col-12-xs">
+                                    <p class="text-gray">From</p>
+                                    <p class="text-black">Colombo</p>
+                                </div>
+                                <div class="tutor-bio-box__header__member-since col-6-md col-12-xs mt-xs-1 mt-md-0">
+                                    <p class="text-gray">Member Since</p>
+                                    <p class="text-black">Apr, 2019</p>
+                                </div>
+                            </div>
+                            <div class="tutor-bio-box__body mt-1">
+                                <p class="tutor-bio text-gray"><?php echo $data['bio'] ?></p>
                             </div>
                         </div>
                     </div>
-                    <button>Contact Me</button>
-                </div>
-                <div class="tutor-details">
-                    <div class="tutor-info">
-                        <div class="from">
-                            <p class="gray">From</p>
-                            <p class="detail">Colombo</p>
-                        </div>
-                        <div class="member-since">
-                            <p class="gray">Member since</p>
-                            <p class="detail">Apr 2019</p>
+
+                    <div class="col-4-lg col-12-xs col-5-md pl-lg-1 mt-md-3">
+                        <div class="service-details-box">
+                            <h2 class="mb-1 mt-1">Service Details</h2>
+                            <p class="text-gray mb-1">
+                                This service include the following facilities:
+                            </p>
+                            <div class="service-details-box__body display-f flex-col">
+                                <ul>
+                                    <li>
+                                        <p class="text-gray"><i class="fas text-primary fa-check"></i><?php echo $data['revisions'] ?> Revision Attempts.</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-gray"><i class="fas text-primary fa-check"></i>Delivery within <?php echo $data['duration'] ?> days.</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-gray"><i class="fas text-primary fa-check"></i><?php echo $data['medium'] ?> Medium</p>
+                                    </li>
+                                    <li>
+                                        <p class="text-gray"><i class="fas text-primary fa-check"></i><?php echo $data['subject'] ?></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-gray"><i class="fas text-primary fa-check"></i>Class conducted on <?php echo $data['method'] ?>.</p>
+                                    </li>
+                                </ul>
+                                <img class="mt-2" src="
+                                <?php
+                                if ($data['method'] == 'zoom') {
+                                    echo URLROOT . '/public/updated/img/services/zoom.webp';
+                                } else if ($data['method'] == 'teams') {
+                                    echo URLROOT . '/public/updated/img/services/teams.svg';
+                                } else if ($data['method'] == 'google') {
+                                    echo URLROOT . '/public/updated/img/services/meet.webp';
+                                } else {
+                                    echo URLROOT . '/public/updated/img/services/tutor.svg';
+                                }
+                                ?>" width="50" alt="method">
+                                <?php if ($data['method'] == 'other') {
+                                ?>
+                                    <h3 class="text-gray mt-2">Please contact the tutor about the class method.</h3>
+                                <?php
+                                } ?>
+                                <button class="continue-purchase">Continue (LKR <?php echo $data['price'] ?>)</button>
+                                <button class="contact-tutor">Contact Tutor</button>
+                            </div>
                         </div>
                     </div>
-                    <hr>
-                    <div class="tutor-bio">
-                        <p class="body-2 gray">
-                           I am a selftaught java developer in WSO2 ,
-                            now working part time as a teacher to teach students 
-                            about coding and related technologies to improve technical
-                             skills of local students.
-                        </p>
-                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="pane-2">
-            <?php include APPROOT . '/views/marketplace/components/price-box.php' ?>
-        </div>
-    </div>
-</div>
-<style>
-    .service {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        margin-bottom: 50px;
-    }
 
-    .subject-line {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-        border: 0;
-        border-top: 1px solid #acacac;
-        border-bottom: 1px solid #acacac;
-        margin: 30px 0 10px 0;
-    }
+    </main>
 
-    .subject-line ul {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        list-style: none;
-        justify-content: space-around;
-    }
 
-    .subject-line ul li {
-        cursor: pointer;
-        color: var(--gray);
-        transition: 0.3s ease;
-    }
+    <?php
+    include APPROOT . '/views/includes/footer.php';
+    ?>
+</body>
 
-    .subject-line ul li:hover {
-        color: var(--primary);
-    }
-</style>
-
-<!-- footer  -->
-<?php
-include APPROOT . '/views/includes/footer.php';
-?>
+</html>

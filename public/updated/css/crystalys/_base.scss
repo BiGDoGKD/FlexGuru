@@ -84,7 +84,6 @@ img {
   align-items: flex-end;
 }
 
-
 .text-center {
   text-align: center;
 }
@@ -103,4 +102,30 @@ img {
 
 .text-right {
   text-align: right;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: $primary;
+  border-radius: 0;
+  border-color: $primary;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #fff;
+  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
+
+  &:hover {
+    transform: scale(1.005);
+    -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.basic-border {
+  border: 1px solid #e6e6e6;
 }

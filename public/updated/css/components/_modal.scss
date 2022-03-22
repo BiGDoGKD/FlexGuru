@@ -67,6 +67,14 @@
       }
       .modal-body {
         padding: 1.5rem;
+
+        .image-display {
+          display: block;
+          width: 60%;
+          margin: 10px auto;
+          border-radius: 50%;
+        }
+
         p {
           color: $gray;
           font-size: 1rem;

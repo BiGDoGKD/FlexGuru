@@ -35,13 +35,15 @@ class Gig
     {
         if ($response = $this->api->usercall('POST', APIURL . 'gig/create', json_encode($gigdata))) {
             $status = json_decode($response)->response->status;
-
-            $msg = json_decode($response)->response->result->message;
-            $_SESSION['toastmsg'] = $msg;
-
             if ($status == 200) {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
                 include APPROOT . "/views/includes/successtoast.php";
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
             } else {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
                 include APPROOT . "/views/includes/errortoast.php";
             }
         }
@@ -50,7 +52,7 @@ class Gig
     public function deleteGig($gigdata)
     {
         if ($response = $this->api->usercall('POST', APIURL . 'gig/delete', json_encode($gigdata))) {
-            $status = json_decode($response)->response->status;  
+            $status = json_decode($response)->response->status;
             $msg = json_decode($response)->response->result->message;
             $_SESSION['toastmsg'] = $msg;
             return $status;
@@ -72,7 +74,15 @@ class Gig
             $responseArray = (array)json_decode($response);
             $result = (array)$responseArray["response"];
             return $result;
+        }
+    }
 
+    public function getGigDetails($data)
+    {
+        if ($response = $this->api->call('POST', APIURL . 'visitor/servicebygig', json_encode($data))) {
+            $responseArray = (array)json_decode($response);
+            $result = (array)$responseArray["response"];
+            return $result;
         }
     }
 }

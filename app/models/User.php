@@ -16,23 +16,24 @@ class User
 
     public function __construct()
     {
-        $this->db = new Database;
+        $this->api = new API;
     }
 
-    /* Test (database and table needs to exist before this works)
-        public function getUsers() {
-            $this->db->query("SELECT * FROM users");
-
-            $result = $this->db->resultSet();
-
-            return $result;
-        }
-        */
-
-    public function getUsers()
+    public function tutorDP($data)
     {
-        $this->db->query("SELECT * FROM user");
-        $result = $this->db->resultSet();
-        return $result;
+        if ($response = $this->api->usercall('POST', APIURL . 'tutor/updatedp', json_encode($data))) {
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
+                return $status;
+            } elseif ($status == 302) {
+                return $status;
+            } else {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
+                return $status;
+            }
+        }
     }
 }

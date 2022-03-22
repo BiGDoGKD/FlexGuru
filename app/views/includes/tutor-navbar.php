@@ -17,7 +17,7 @@
                 <label for="profile2" class="profile-dropdown align-items-center">
                     <!-- <input type="checkbox" id="profile2" /> -->
                     <div class="row align-items-center profile-dropdown-button">
-                        <img src="https://scontent.fcmb2-2.fna.fbcdn.net/v/t1.6435-1/p160x160/134691956_747241662587034_6827673938859173117_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=7206a8&_nc_ohc=jYwp15wcc5AAX_auwr5&_nc_ht=scontent.fcmb2-2.fna&oh=00_AT9hGxK4tlB6OaSlERWeea83Bo9WYu3B7TNL-LxTsFYk-g&oe=6237D1BE" />
+                        <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" />
                         <span class="display-xs-n display-xl-i"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></span>
                     </div>
 
