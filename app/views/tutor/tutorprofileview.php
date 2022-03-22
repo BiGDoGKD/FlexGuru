@@ -13,15 +13,20 @@
     <?php
     include APPROOT . '/views/includes/tutor-navbar.php';
     ?>
-
     <div class="user-dashboard container base-container mt-3 mb-3">
         <div class="row">
             <div class="col-12-xs col-4-lg">
                 <div class="profile-card br-xs">
                     <div class="profile-card-header">
                         <div class="profile-card-header-image">
-                            <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/img/studentprofileview/user.png' ?>" id="userimg" alt="Kesara Karannagoda" />
+                            <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" id="userimg" alt="Kesara Karannagoda" />
+                            <div class="profile-card-header-image__upload" onclick="openModal()">
+                                <i class="fa fa-camera"></i>
+
+                            </div>
+                            <?php include APPROOT . '/views/includes/modals/modal-profile-picture.php'; ?>
                         </div>
+
                         <div class="profile-card-header__profile-name">
                             <span class="first-name"><?php echo $_SESSION['userdata']['firstname'] ?></span>
                             <span class="last-name"><?php echo $_SESSION['userdata']['lastname'] ?></span>

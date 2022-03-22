@@ -146,7 +146,7 @@
 				$service = (array)$gig;
 			?>
 				<div class="col-12-xs col-6-md col-4-lg col-3-xl display-f justify-content-center align-items-center p-1">
-					<a href="#">
+					<a href="<?php echo URLROOT . '/marketplace/service/' . $service['gigid'] ?>">
 						<div class="service-gig">
 							<div class="service-gig__header" style="
 									background-image: url(<?php echo URLROOT . '/public/uploads/services/' . $service['image'] ?>);

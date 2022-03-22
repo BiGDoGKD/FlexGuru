@@ -11,7 +11,6 @@
 
 <body>
     <?php
-    session_start();
     if (isset($_SESSION['type'])) {
         if ($_SESSION['type'] == 'student') {
             include APPROOT . '/views/includes/student-navbar.php';

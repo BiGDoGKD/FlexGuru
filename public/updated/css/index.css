@@ -8023,6 +8023,10 @@ img {
           align-items: center;
 }
 
+.profile-card .profile-card-header .profile-card-header-image {
+  position: relative;
+}
+
 .profile-card .profile-card-header .profile-card-header-image .profile-card-header-image-img {
   display: inline-block;
   background: #4a4bec;
@@ -8032,6 +8036,39 @@ img {
   margin-right: 1rem;
   margin: 1rem auto;
   border-radius: 50%;
+}
+
+.profile-card .profile-card-header .profile-card-header-image__upload {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  top: 50%;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  color: #808080;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  cursor: pointer;
+}
+
+.profile-card .profile-card-header .profile-card-header-image__upload:hover {
+  opacity: 1;
+}
+
+.profile-card .profile-card-header .profile-card-header-image__upload .fa-camera {
+  -webkit-transform: scale(2);
+          transform: scale(2);
 }
 
 .profile-card .profile-card-header__profile-name {
@@ -8281,6 +8318,12 @@ img {
   }
   #defaultModal .modal-container .modal-body {
     padding: 1.5rem;
+  }
+  #defaultModal .modal-container .modal-body .image-display {
+    display: block;
+    width: 60%;
+    margin: 10px auto;
+    border-radius: 50%;
   }
   #defaultModal .modal-container .modal-body p {
     color: #808080;

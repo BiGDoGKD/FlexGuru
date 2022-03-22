@@ -40,6 +40,8 @@
         location.href = 'delete/' + giglink;
     }
 
+
+
     const closeModal = () => {
         modal.classList.add('hide-modal');
         modal.classList.remove('show-modal');
