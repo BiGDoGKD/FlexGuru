@@ -179,6 +179,7 @@ class Tutor extends Controller
 
                 if ($this->settingsModel->update($data)) {
                     //Ridirect to the main
+                
                     header('location:' . URLROOT . '/tutor/tutorprofileview');
                 } else {
                     die('Something went wrong.');
