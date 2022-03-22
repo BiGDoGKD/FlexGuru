@@ -1,184 +1,104 @@
-<?php
-include APPROOT . '/views/includes/data.php';
-include APPROOT . '/views/student/includes/header.php';
+<!DOCTYPE html>
+<html lang="en">
 
-?>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaints</title>
+  <?php include APPROOT . '/views/includes/header.php'; ?>
+</head>
 
-<style>
-  header {
-    width: 100vw;
-    height: 10vh;
-    background-color: blueviolet;
+<body>
 
-  }
+  <?php
+  include APPROOT . '/views/includes/student-navbar.php';
+  ?>
+  <div class="user-dashboard container  mt-1 mb-1">
+    <h1>Complaints</h1>
+    <div class="row">
 
-  .input {
-    font-weight: 500;
-    width: 350px;
-    font-size: 14px;
-    color: #495055;
-    padding: 13px 25px;
-    border-radius: 24px;
-    border: 2px solid #d9d9d9;
-    outline: none;
-  }
+      <div class="col-12-xs col-7-lg">
 
-  footer {
-    width: 100vw;
-    height: 10vh;
-    background-color: blueviolet;
-    position: absolute;
-    bottom: 0;
+        <div class=" user-dashboard container mt-1 mb-3">
 
-  }
+          <div class="gig-form col-12-xs col-8-lg">
+            <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row">
 
-  .container {
-    display: flex;
-    height: 600px;
-    width: 80vw;
-    margin: 0 auto;
-    transform: translate(0, 4%)
-  }
+              <div class="form-group col-12-xs">
+                <label for="complaintdate">Complaint Date<span class="text-error">*</span> </label>
+                <input type="date" class="form-control" name="complaintdate" id="complaint" placeholder="DD-MM-YYYY" value="" required />
+                <p class="form-control form-feedback text-error">
 
-  .form {
-    position: absolute;
-    top: 0;
-    left: 40%;
-
-    height: 60%;
-    width: 70%;
-
-  }
-
-  .field {
-    height: 20%;
-
-  }
-
-  .field span {
-    position: absolute;
-    left: 50px;
-    margin: 20px;
-    padding: 10px;
-
-  }
-
-  input[type=text],
-  select {
-    position: absolute;
-    right: 100px;
-    margin: 20px;
-    overflow-y: auto;
-    width: 60%;
-    padding: 10px;
-    border: 2px solid #d9d9d9;
-    border-radius: 24px;
-    box-sizing: border-box;
-    resize: vertical;
-    font-weight: 500;
-
-  }
-
-  .button {
-    position: absolute;
-    right: 100px;
-    background-color: #7879F1;
-    color: white;
-    top: 466px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    padding: 8px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    margin: 10px;
-
-
-  }
-
-  .image {
-
-    position: absolute;
-    width: 250px;
-    height: 300px;
-    left: 50px;
-    top: 230px;
-  }
-
-  @media only screen and (max-width: 1000px) {
-    .field span {
-      margin: 0;
-    }
-
-    input[type=text],
-    select {
-      left: 20px;
-      margin: 35px;
-    }
-
-    .button {
-      right: 30%;
-    }
-  }
-
-  #userimg {
-    width: 440px;
-    position: relative;
-    top: -121px;
-    left: 166px;
-  }
-
-  #complaint {
-    position: absolute;
-    left: 232px;
-    top: 245px;
-  }
-</style>
+                </p>
+              </div>
 
 
 
+              <div class="form-group col-12-xs">
+                <label for="contactno">Contact Number<span class="text-error">*</span> </label>
+                <input type="text" class="form-control" name="contactno" id="contactno" placeholder="+94 777 xxx xxxx" value="" required />
+                <p class="form-control form-feedback text-error">
+
+                </p>
+              </div>
+
+              <div class="form-group col-12-xs">
+                <label for="email">Email<span class="text-error">*</span> </label>
+                <input type="text" class="form-control" name="email" id="email" placeholder="abc@gmail.com" value="" required />
+                <p class="form-control form-feedback text-error">
+
+                </p>
+              </div>
 
 
 
-<div class="image">
+              <div class="form-group col-12-xs">
+                <label for="phoneno">Complaint Type <span class="text-error">*</span> </label>
+                <select class="form-control" name="complainttype" id="complainttype" value="" required />
 
-  <img src="<?php echo URLROOT . '/public/img/svg/complaint.svg' ?>" id="userimg" alt="">
+                <option value="technical">Technical</option>
+                <option value="transcations">Transaction related</option>
+                <option value="other">Other</option>
 
-</div>
+                </select>
+                <p class="form-control form-feedback text-error">
 
-<div class="container">
+                </p>
+              </div>
 
-  <div class="form">
+              <div class="form-group col-12-xs">
+                <label for="compaint">Complaint<span class="text-error">*</span> </label>
 
-    <form action="<?php echo URLROOT; ?>/student/complaint" method="POST">
+                <textarea style="font-family: poppins; resize:none;" class="text-gray" id="complaint" name="complaint" rows="4" cols="117"></textarea>
+                <p class="form-control form-feedback text-error">
 
-      <div class="field"><span>Username</span><input class="input" type="text" name="username" id="username" placeholder="username"></div>
-      <div class="field"><span>Email</span><input type="text" name="email" id="email" placeholder="email"></div>
-      <div class="field"><span>Complaint type</span>
+                </p>
+              </div>
 
-        <select name="type">
 
-          <option value="">--Select Type--</option>
-          <option value="Technical related issues">Tutor Related Complaints</option>
-          <option value="Service related issues">Platform related complaints</option>
-          <option value="Service related issues">Other</option>
-        
+              <div class="col-8-m display">
+                <button class="marketplace__help-btn">Submit Complaint </button>
+              </div>
 
-        </select>
+            </form>
+
+          </div>
+        </div>
+
 
       </div>
 
-      <div class="field"><span>Complaint</span>
-
-        <textarea cols="50" rows="10" name="complaint" id="complaint"></textarea>
-
+      <div class="col-12-xs col-5-lg p-3">
+        <img src="<?php echo URLROOT; ?>/img/public/complaint.png " alt="">
       </div>
-      <button type="submit" name="submit" class="button">Submit</button>
-    </form>
+
+
+    </div>
+
   </div>
-</div>
-
-<?php include APPROOT . '/views/includes/footer.php'; ?>
+  </div>
+  <?php
+  include APPROOT . '/views/includes/footer.php';
+  ?>
+</body>

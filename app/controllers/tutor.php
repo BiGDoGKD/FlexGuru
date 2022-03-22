@@ -275,4 +275,9 @@ class Tutor extends Controller
     {
         $this->view('tutor/completedjobs');
     }
+
+    public function complaint()
+    {
+        $this->view('tutor/complaint');
+    } 
 }
