@@ -280,4 +280,8 @@ class Tutor extends Controller
     {
         $this->view('tutor/complaint');
     } 
+
+    public function earnings(){
+        $this->view('tutor/earnings');
+    }
 }
