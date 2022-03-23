@@ -23,12 +23,12 @@
                             <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/img/studentprofileview/user.png' ?>" id="userimg" alt="Kesara Karannagoda" />
                         </div>
                         <div class="profile-card-header__profile-name">
-                            <span class="first-name"><?php /* echo $_SESSION['userdata']['firstname'] */ ?></span>
-                            <span class="last-name"><?php /* echo $_SESSION['userdata']['lastname'] */ ?></span>
+                            <span class="first-name"><?php  echo $_SESSION['userdata']['firstname']  ?></span>
+                            <span class="last-name"><?php  echo $_SESSION['userdata']['lastname']  ?></span>
                         </div>
                         <div class="profile-card-header__profile-handle">
                             <span class="username text-gray font-md">
-                                <?php /* echo '@' . $_SESSION['userdata']['username'] */ ?>
+                                <?php  echo '@' . $_SESSION['userdata']['username']  ?>
                             </span>
                         </div>
                         <div class="profile-card-header__profile-ratings">
@@ -63,15 +63,15 @@
                                 <i class="fa fa-solid fa-location-arrow fa-lg text-gray"></i>
                                 From
                             </p>
-                            <p class="city"><?php /* echo $_SESSION['userdata']['city'] */ ?></p>
+                            <p class="city"><?php  echo $_SESSION['userdata']['city']  ?></p>
                         </div>
                         <div class="profile-card-duration">
                             <span class="label">
                                 <i class="fa fa-solid fa-user fa-lg text-gray"></i> Member
                                 since</span>
-                            <span class="date"><?php /*
+                            <span class="date"><?php 
                                                 echo date('M, Y', strtotime(date($_SESSION['userdata']['startdate'])));
-                                                */  ?></span>
+                                                  ?></span>
                         </div>
                     </div>
                     <div class="profile-card-footer">
@@ -113,11 +113,11 @@
                     </div>
                     <div>
                         <h2 style="padding: 80px;
-}">Referral Code : wrfsf235234234wrwe</h2>
+}">Referral Code :  ?></h2>
                     </div>
                 </div>
                 <div class="tutor-dashboard__active-sessions col-12-xs">
-                    <span class="session-count"><b>Hey <?php /* $_SESSION['username'] */ ?> Welcome to the Affiliate Marketing Program of FlexGuru.</b><br><br>Exclusive deals and a library of banners and other resources are available to help you promote your link.
+                    <span class="session-count"><b>Hey <?php echo $_SESSION['userdata']['username'] . " !"  ?> Welcome to the Affiliate Marketing Program of FlexGuru.</b><br><br>Exclusive deals and a library of banners and other resources are available to help you promote your link.
                         You can earn money by referring new users. With 1:1 help, you can track your progress on a live dashboard and optimize your revenue.
                     </span>
 

@@ -74,120 +74,38 @@ class Tutor extends Controller
         $this->view('tutor/gigreview');
     }
 
-    public function security()
-    {
-        $this->val = $this->model("Validate");
+
+
+    public function settings(){
         $this->settingsModel = $this->model("Settings");
-
-
-        $data = [
-            'getPassword' => '',
-            'password' => '',
-            'confpassword' => '',
-            'getPasswordError' => '',
-            'passwordError' => '',
-            'confpasswordError' => ''
-        ];
-
-
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $data = [
-                'getPassword' => trim($_POST['current']),
-                'password' => trim($_POST['new']),
-                'confpassword' => trim($_POST['confirm']),
-
-                'getPasswordError' => '',
-                'passwordError' => '',
-                'confpasswordError' => ''
-
-            ];
-
-            $data['getPassword'] = hash('sha256', $data['getPassword']);
-            $data['password'] = hash('sha256', $data['password']);
-            $data['confpassword'] = hash('sha256', $data['confpassword']);
-            // --------------------------------------
-            // add the current password error message
-            // --------------------------------------
-            if ($this->settingsModel->passwordexist($data['getPassword'])) {
-                $data['getPasswordError'] = 'The password entered is incorrect';
-            } else {
-                $data['getPasswordError'] = '';
-            }
-
-
-            $data["passwordError"] = $this->val->password($data['password'], $data['confpassword']);
-            if ($data['password'] == $data['confpassword']) {
-                $data['confpasswordError'] = '';
-            } else {
-                $data['confpasswordError'] = 'Passwords do not match';
-            }
-
-
-            if (empty($data["getPasswordError"] && $data['passwordError'] && $data['confpasswordError'])) {
-                if ($this->settingsModel->resetpassword($data)) {
-                    //Ridirect to the main
-                    header('location:' . URLROOT . '/tutor/tutorprofileview');
-                } else {
-                    die('Something went wrong.');
+        $this->val = $this->model("Validate");
+        if(isset($_POST['button_password'])){
+                $data = [
+                    'password' => $_POST['password'],
+                    'newpassword' => $_POST['newpassword'],
+                    'confirmpassword' => $_POST['confirmpassword']
+                ];       
+                if($data['newpassword']==$data['confirmpassword']){
+                        $passwordchange = [
+                            'password' => $data['password'],
+                            'newpassword' => $data['newpassword'],                  
+                        ];
+                        $passwordchange['password'] = hash('sha256', $passwordchange['password']);
+                        $passwordchange['newpassword'] = hash('sha256', $passwordchange['newpassword']);
+                        $response = $this->settingsModel->passwordchange($passwordchange);
+                        if($response['result']->message=="Password Changed Successfully"){          
+                            header('location:'.URLROOT.'/tutor/tutorprofileview');                   
                 }
-            }
+                else{
+                    $this->view('tutor/settings',['error'=>'Password does not match']);
+                }
         }
-        $this->view('tutor/security', $data);
+    }
+        $this->view('tutor/settings');
     }
 
 
-
-    public function settings()
-    {
-        $this->val = $this->model("Validate");
-        $this->settingsModel = $this->model("Settings");
-
-
-        $data = [
-            'firstname' => '',
-            'lastname' => '',
-            'phoneno' => '',
-            'city' => '',
-            'firstnameError' => '',
-            'lastnameError' => '',
-            'phonenoError' => ''
-
-        ];
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            $data = [
-                'firstname' => trim($_POST['firstname']),
-                'lastname' => trim($_POST['lastname']),
-                'phoneno' => trim($_POST['phoneno']),
-                'city' => trim($_POST['city']),
-                'firstnameError' => '',
-                'lastnameError' => '',
-                'phonenoError' => ''
-
-            ];
-
-
-
-            $data["firstnameError"] = $this->val->name($data['firstname']);
-            $data["lastnameError"] = $this->val->name($data['lastname']);
-            $data["phonenoError"] = $this->val->mobile($data['phoneno']);
-
-
-            if (empty($data["firstnameError"] && $data['lastnameError'] && $data['phonenoError'])) {
-
-                if ($this->settingsModel->update($data)) {
-                    //Ridirect to the main
-
-                    header('location:' . URLROOT . '/tutor/tutorprofileview');
-                } else {
-                    die('Something went wrong.');
-                }
-            }
-        }
-        $this->view('tutor/settings', $data);
-    }
+     
 
     public function ssrtutorreceived()
     {
@@ -304,4 +222,8 @@ class Tutor extends Controller
     {
         $this->view('tutor/complaint');
     } 
+
+    public function earnings(){
+        $this->view('tutor/earnings');
+    }
 }
