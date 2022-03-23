@@ -24,7 +24,7 @@
             <form action="<?php echo URLROOT; ?>/tutor/settings" method="POST" style="width: 100%;" class="form-control row">
                 <div class="form-group col-12-xs">
                     <label for="currentpassword">Current Password<span class="text-error">*</span> </label>
-                    <input type="password" class="form-control" name="currentPassword" id="currentpassword" placeholder="Enter the current password..." value="" required />
+                    <input type="password" class="form-control" name="currentpassword" id="currentpassword" placeholder="Enter the current password..." value="" required />
                     <p class="form-control form-feedback text-error">
 
                     </p>
@@ -34,11 +34,20 @@
 
                 <div class="form-group col-12-xs">
                     <label for="newpassword">New Password<span class="text-error">*</span> </label>
-                    <input type="password" class="form-control" name="newPassword" id="newpassword" placeholder="Enter the new password..." value="" required />
+                    <input type="password" class="form-control" name="newpassword" id="newpassword" placeholder="Enter the new password..." value="" required />
                     <p class="form-control form-feedback text-error">
 
                     </p>
                 </div>
+
+                <div class="form-group col-12-xs">
+                    <label for="confirmpassword">Confirm Password<span class="text-error">*</span> </label>
+                    <input type="password" class="form-control" name="confirmpassword" id="confirmpassword"  value="" required />
+                    <p class="form-control form-feedback text-error">
+
+                    </p>
+                </div>
+
                 <div class="col-4-xs display-f ">
 
                     <input type="submit" name="button_password" value="Change Password">
@@ -102,19 +111,19 @@
                         </div>
                         <textarea style="font-family: poppins; resize:none;" class="text-gray" id="deletereason" name="deletereason" rows="4" cols="117">
 </textarea>
-            </div>
+                    </div>
                     <div class="col-4-xs display-f ">
                         <input type="submit" name="button_deleteaccount" value="Delete Account">
                     </div>
                 </div>
-                </form>
+            </form>
         </div>
 
     </div>
 
-        <?php
-        include APPROOT . '/views/includes/footer.php';
-        ?>
+    <?php
+    include APPROOT . '/views/includes/footer.php';
+    ?>
 </body>
 
 </html>

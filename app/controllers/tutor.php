@@ -77,92 +77,37 @@ class Tutor extends Controller
 
 
     public function settings(){
-
         $this->settingsModel = $this->model("Settings");
         $this->val = $this->model("Validate");
-        $username = ($_SESSION['userdata']['userid']);
-
-    if(isset($_POST['button_deleteaccount'])){
-            if($this->settingsModel->accountdelete($username)){
-                header('location:' . URLROOT . '/tutor/tutorprofileview');
-            }
-            else{
-                print_r("Deletion unsuccessful!");
-                die('Something went wrong.');
-            }     
-        }
-    if(isset($_POST['button_password'])){
-            
-            $data = [
-                'currentPassword' => '',
-                'newPassword' => '',
-                'currentpasswordError' => '',
-                'newPasswordError' => '',
-            ];     
+        if(isset($_POST['button_password'])){
                 $data = [
-                    'currentPassword' => trim($_POST['currentPassword']),
-                    'newPassword' => trim($_POST['newPassword']),
-                    'newPasswordError' => '',
-                    'currentpasswordError' => ''
-                ];
-
-                $data['currentPassword'] = hash('sha256', $data['currentPassword']);
-                $data['newPassword'] = hash('sha256', $data['newPassword']);
-
-                // --------------------------------------
-                // add the current password error message
-                // --------------------------------------
-                if (!$this->settingsModel->passwordexist($data['currentPassword'])) {
-                    $data['currentPasswordError'] = 'The password entered is incorrect';
-                } else {
-                    $data['currentPasswordError'] = '';
+                    'password' => $_POST['password'],
+                    'newpassword' => $_POST['newpassword'],
+                    'confirmpassword' => $_POST['confirmpassword']
+                ];       
+                if($data['newpassword']==$data['confirmpassword']){
+                        $passwordchange = [
+                            'password' => $data['password'],
+                            'newpassword' => $data['newpassword'],                  
+                        ];
+                        $passwordchange['password'] = hash('sha256', $passwordchange['password']);
+                        $passwordchange['newpassword'] = hash('sha256', $passwordchange['newpassword']);
+                        $response = $this->settingsModel->passwordchange($passwordchange);
+                        if($response['result']->message=="Password Changed Successfully"){          
+                            header('location:'.URLROOT.'/tutor/tutorprofileview');                   
                 }
-
-                if (empty($data["currentPasswordError"] && empty($data['newPasswordError']))) {
-                if ($this->settingsModel->resetpassword($data)) {
-                    //Ridirect to the main
-                    header('location:' . URLROOT . '/tutor/tutorprofileview');
-                } else {
-                    die('Something went wrong.');
+                else{
+                    $this->view('tutor/settings',['error'=>'Password does not match']);
                 }
-            }
-    }
-    if(isset($_POST['button_general'])){
-        $generaldetails = [
-            'email' => '',
-            'phoneno' => '',
-            'emailError' => '',
-            'phonenoError' => ''
-        ];
-            $generaldetails = [
-                'email' => trim($_POST['email']),
-                'phoneno' => trim($_POST['phoneno']),
-                'emailError' => '',
-                'phonenoError' => ''
-            ];
-            if ($this->val->isValidEmail($generaldetails['email'])) {
-                $generaldetails['emailError'] = '';
-            } else {
-                $generaldetails['emailError'] = 'Please enter a valid email';
-            }
-            if ($this->val->isValidPhoneNo($generaldetails['phoneno'])) {
-                $generaldetails['phonenoError'] = '';
-            } else {
-                $generaldetails['phonenoError'] = 'Please enter a valid phone number';
-            }
-            if (empty($generaldetails['emailError']) && empty($generaldetails['phonenoError'])) {
-                if ($this->settingsModel->resetgeneraldetails($generaldetails)) {
-                    //Ridirect to the main
-                    header('location:' . URLROOT . '/tutor/tutorprofileview');
-                } else {
-                    die('Something went wrong.');
-                }
-            }
         }
-
-       
+    }
         $this->view('tutor/settings');
     }
+
+
+       
+    
+    
 
 
     public function ssrtutorreceived()
