@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group col-12-xs">
                             <label for="firstname">Gig Description <span class="text-error">*</span></label>
-                            <textarea class="form-control" style="resize: none;" placeholder="Enter the description..." maxlength="500" minlength="255" name="description" id="description" cols="30" rows="10"></textarea>
+                            <textarea class="form-control" style="resize: none;" placeholder="Enter the description..." maxlength="2000" minlength="255" name="description" id="description" cols="30" rows="10"></textarea>
                             <p class="form-control form-feedback text-error">
 
                             </p>

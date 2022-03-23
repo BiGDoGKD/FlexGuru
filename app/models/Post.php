@@ -1,12 +1,15 @@
 <?php
-class Post {
+class Post
+{
     private $db;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = new Database;
     }
 
-    public function findAllPosts() {
+    public function findAllPosts()
+    {
         $this->db->query('SELECT * FROM posts ORDER BY created_at ASC');
 
         $results = $this->db->resultSet();
@@ -14,7 +17,8 @@ class Post {
         return $results;
     }
 
-    public function addPost($data) {
+    public function addPost($data)
+    {
         $this->db->query('INSERT INTO posts (user_id, title, body,created_at) VALUES (:user_id, :title, :body, :date)');
 
         $this->db->bind(':user_id', $data['user_id']);
@@ -29,7 +33,8 @@ class Post {
         }
     }
 
-    public function findPostById($id) {
+    public function findPostById($id)
+    {
         $this->db->query('SELECT * FROM posts WHERE id = :id');
 
         $this->db->bind(':id', $id);
@@ -39,7 +44,8 @@ class Post {
         return $row;
     }
 
-    public function updatePost($data) {
+    public function updatePost($data)
+    {
         $this->db->query('UPDATE posts SET title = :title, body = :body WHERE id = :id');
 
         $this->db->bind(':id', $data['id']);
@@ -53,7 +59,8 @@ class Post {
         }
     }
 
-    public function deletePost($id) {
+    public function deletePost($id)
+    {
         $this->db->query('DELETE FROM posts WHERE id = :id');
 
         $this->db->bind(':id', $id);
@@ -64,4 +71,10 @@ class Post {
             return false;
         }
     }
-}    
+
+    public function test()
+    {
+        $this->api = new API;
+        return $this->api->call('POST', APIURL . 'visitor/services', null);
+    }
+}

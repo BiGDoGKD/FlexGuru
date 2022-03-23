@@ -111,7 +111,7 @@ class API
 
     public function checktoken($token)
     {
-        $url = 'https://api.flexguru.tk/authentication/checktoken';
+        $url = 'http://localhost/api.flexguru.tk/authentication/checktoken';
 
         $method = 'POST';
 

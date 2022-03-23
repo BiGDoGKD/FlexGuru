@@ -19,7 +19,7 @@ define('DB_NAME', 'api'); //Add your DB Name
 
 
 //API params
-define('APIURL', 'https://api.flexguru.tk/');
+define('APIURL', 'http://localhost/api.flexguru.tk/');
 define('APIUSER', 'kesara');
 define('APIPASS', '12345');
 define('APITOKEN', 'asd');
@@ -28,7 +28,7 @@ define('APITOKEN', 'asd');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //URLROOT (Dynamic links)
-define('URLROOT', 'http://localhost');
+define('URLROOT', 'http://localhost/flexguru');
 
 //Sitename
 define('SITENAME', 'FlexGuru');
