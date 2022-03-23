@@ -29,7 +29,7 @@
 	<!-- Hero Section  -->
 
 	<div class="detail-hero-section container fluid bg-cyan pl-0 pr-0" style="
-				background-image: url(https://cdn.pixabay.com/photo/2020/01/22/09/38/meeting-4784909_960_720.jpg);
+				background-image: url(<?php echo URLROOT . '/public/updated/img/static/affiliate-program.webp' ?>);
 				background-size: cover;
 				background-position: center;
 			">

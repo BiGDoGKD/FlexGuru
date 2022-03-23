@@ -29,7 +29,7 @@
 	<!-- Hero Section  -->
 
 	<div class="detail-hero-section container fluid bg-cyan pl-0 pr-0" style="
-				background-image: url(https://cdn.pixabay.com/photo/2018/06/27/07/45/student-3500990_960_720.jpg);
+				background-image: url(<?php echo URLROOT . '/public/updated/img/static/become-a-student.webp' ?>);
 				background-size: cover;
 				background-position: center;
 			">

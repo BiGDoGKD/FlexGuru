@@ -29,7 +29,7 @@
 	<!-- Hero Section  -->
 
 	<div class="detail-hero-section container fluid bg-cyan pl-0 pr-0" style="
-				background-image: url(https://cdn.pixabay.com/photo/2020/11/08/11/22/man-5723449_960_720.jpg);
+				background-image: url(<?php echo URLROOT . '/public/updated/img/static/frequently-asked-questions.webp' ?>);
 				background-size: cover;
 				background-position: center;
 			">

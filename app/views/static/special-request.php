@@ -29,7 +29,7 @@
 	<!-- Hero Section  -->
 
 	<div class="detail-hero-section container fluid bg-cyan pl-0 pr-0" style="
-				background-image: url(https://cdn.pixabay.com/photo/2016/08/15/08/40/apple-1594742_960_720.jpg);
+				background-image: url(<?php echo URLROOT . '/public/updated/img/static/special-request.webp' ?>);
 				background-size: cover;
 				background-position: center;
 			">
