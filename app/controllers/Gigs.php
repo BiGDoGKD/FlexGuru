@@ -21,6 +21,19 @@ class Gigs extends Controller
     public function __construct()
     {
         session_start();
+        if (isset($_SESSION['TUTACCESS'])) {
+            if ($_SESSION['TUTACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+                //do nothing
+            } else {
+                die(header('location:' . URLROOT . '/login'));
+            }
+        } elseif (isset($_SESSION['STUACCESS'])) {
+            die(header('location:' . URLROOT . '/student'));
+        } elseif (isset($_SESSION['AFFACCESS'])) {
+            die(header('location:' . URLROOT . '/affiliate'));
+        } else {
+            die(header('location:' . URLROOT . '/login'));
+        }
     }
 
     public function index()

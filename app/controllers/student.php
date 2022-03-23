@@ -22,7 +22,6 @@ class Student extends Controller
     }
   }
 
-
   public function index()
   {
     $this->view('student/studentprofileview');
@@ -39,6 +38,13 @@ class Student extends Controller
   }
 
   // special service request 
+
+
+  public function class($class = array())
+  {
+    $this->view('student/class');
+  }
+
 
   public function specialrequest()
   {
