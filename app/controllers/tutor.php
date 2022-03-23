@@ -4,11 +4,13 @@ class Tutor extends Controller
 {
     public function __construct()
     {
+        $api = new API;
+        $session = $this->model("Session");
         session_start();
         if (isset($_SESSION['TUTACCESS'])) {
-            if ($_SESSION['TUTACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+            if ($api->checktoken($_COOKIE['ref'])) {
                 //do nothing
-            } else {
+                $session->destroy();
                 die(header('location:' . URLROOT . '/login'));
             }
         } elseif (isset($_SESSION['STUACCESS'])) {
@@ -76,36 +78,36 @@ class Tutor extends Controller
 
 
 
-    public function settings(){
+    public function settings()
+    {
         $this->settingsModel = $this->model("Settings");
         $this->val = $this->model("Validate");
-        if(isset($_POST['button_password'])){
-                $data = [
-                    'password' => $_POST['password'],
-                    'newpassword' => $_POST['newpassword'],
-                    'confirmpassword' => $_POST['confirmpassword']
-                ];       
-                if($data['newpassword']==$data['confirmpassword']){
-                        $passwordchange = [
-                            'password' => $data['password'],
-                            'newpassword' => $data['newpassword'],                  
-                        ];
-                        $passwordchange['password'] = hash('sha256', $passwordchange['password']);
-                        $passwordchange['newpassword'] = hash('sha256', $passwordchange['newpassword']);
-                        $response = $this->settingsModel->passwordchange($passwordchange);
-                        if($response['result']->message=="Password Changed Successfully"){          
-                            header('location:'.URLROOT.'/tutor/tutorprofileview');                   
+        if (isset($_POST['button_password'])) {
+            $data = [
+                'password' => $_POST['password'],
+                'newpassword' => $_POST['newpassword'],
+                'confirmpassword' => $_POST['confirmpassword']
+            ];
+            if ($data['newpassword'] == $data['confirmpassword']) {
+                $passwordchange = [
+                    'password' => $data['password'],
+                    'newpassword' => $data['newpassword'],
+                ];
+                $passwordchange['password'] = hash('sha256', $passwordchange['password']);
+                $passwordchange['newpassword'] = hash('sha256', $passwordchange['newpassword']);
+                $response = $this->settingsModel->passwordchange($passwordchange);
+                if ($response['result']->message == "Password Changed Successfully") {
+                    header('location:' . URLROOT . '/tutor/tutorprofileview');
+                } else {
+                    $this->view('tutor/settings', ['error' => 'Password does not match']);
                 }
-                else{
-                    $this->view('tutor/settings',['error'=>'Password does not match']);
-                }
+            }
         }
-    }
         $this->view('tutor/settings');
     }
 
 
-     
+
 
     public function ssrtutorreceived()
     {
@@ -221,9 +223,10 @@ class Tutor extends Controller
     public function complaint()
     {
         $this->view('tutor/complaint');
-    } 
+    }
 
-    public function earnings(){
+    public function earnings()
+    {
         $this->view('tutor/earnings');
     }
 }
