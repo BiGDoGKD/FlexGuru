@@ -5,7 +5,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flexguru</title>
+    <!-- Primary Meta Tags -->
+    <title>FlexGuru</title>
+    <meta name="title" content="FlexGuru">
+    <meta name="description" content="Flexible and Easily accessible education for everyone.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo URLROOT ?>">
+    <meta property="og:title" content="FlexGuru">
+    <meta property="og:description" content="Flexible and Easily accessible education for everyone.">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/955145545347891241/955150427756826674/FlexGuru.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<?php echo URLROOT ?>">
+    <meta property="twitter:title" content="FlexGuru">
+    <meta property="twitter:description" content="Flexible and Easily accessible education for everyone.">
+    <meta property="twitter:image" content="https://cdn.discordapp.com/attachments/955145545347891241/955150427756826674/FlexGuru.jpg">
+
     <?php include APPROOT . '/views/includes/header.php'; ?>
 </head>
 
