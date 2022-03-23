@@ -179,8 +179,24 @@
                                     <h3 class="text-gray mt-2">Please contact the tutor about the class method.</h3>
                                 <?php
                                 } ?>
-                                <button class="continue-purchase">Continue (LKR <?php echo $data['price'] ?>)</button>
-                                <button class="contact-tutor">Contact Tutor</button>
+                                <form action="<?php echo URLROOT . '/service/checkout' ?>" method="POST">
+                                    <input type="hidden" name="gigid" value="<?php echo $data['gigid'] ?>" readonly>
+                                    <input type="hidden" name="tuid" value="<?php echo $data['tuid'] ?>" readonly>
+                                    <input type="hidden" name="title" value="<?php echo $data['title'] ?>" readonly>
+                                    <input type="hidden" name="price" value="<?php echo $data['price'] ?>" readonly>
+                                    <input type="hidden" name="photourl" value="<?php echo $data['photourl'] ?>" readonly>
+                                    <input type="hidden" name="image" value="<?php echo $data['image'] ?>" readonly>
+                                    <input type="hidden" name="medium" value="<?php echo $data['medium'] ?>" readonly>
+                                    <input type="hidden" name="rating" value="<?php echo $data['rating'] ?>" readonly>
+                                    <input type="hidden" name="jobs" value="<?php echo $data['jobs'] ?>" readonly>
+                                    <input type="hidden" name="level" value="<?php echo $data['level'] ?>" readonly>
+                                    <input type="hidden" name="firstname" value="<?php echo $data['firstname'] ?>" readonly>
+                                    <input type="hidden" name="lastname" value="<?php echo $data['lastname'] ?>" readonly>
+                                    <input type="hidden" name="verified" value="<?php echo $data['verified'] ?>" readonly>
+                                    <button class="continue-purchase" style="width: 100%;" type="submit">Continue (LKR <?php echo $data['price'] ?>)</button>
+                                </form>
+
+                                <button class="contact-tutor" onclick="location.href='<?php echo URLROOT . '/student' ?>'">Contact Tutor</button>
                             </div>
                         </div>
                     </div>
