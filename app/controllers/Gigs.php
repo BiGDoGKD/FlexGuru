@@ -20,11 +20,13 @@ class Gigs extends Controller
 
     public function __construct()
     {
+        $api = new API;
+        $session = $this->model("Session");
         session_start();
         if (isset($_SESSION['TUTACCESS'])) {
-            if ($_SESSION['TUTACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {
+            if ($api->checktoken($_COOKIE['ref'])) {
                 //do nothing
-            } else {
+                $session->destroy();
                 die(header('location:' . URLROOT . '/login'));
             }
         } elseif (isset($_SESSION['STUACCESS'])) {
