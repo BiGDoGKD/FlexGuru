@@ -42,7 +42,38 @@ class Student extends Controller
 
   public function class($class = array())
   {
-    $this->view('student/class');
+
+    if (!empty($class)) {
+      $order = $this->model('Order');
+      $array = [
+        'classid' => $class,
+      ];
+      $data = $order->getClass($array);
+      if (!$data) {
+        die(header('location:' . URLROOT . '/student'));
+      } else {
+        $order = (array)$data["result"];
+        $this->view('student/class', $order);
+      }
+    } else {
+      die(header('location:' . URLROOT . '/student'));
+    }
+  }
+
+  public function order()
+  {
+    $orderid = $_GET['order_id'];
+    $orderarray = (array)json_decode($_COOKIE['order_data']);
+    if ($orderarray['orderid'] === $orderid) {
+      $orderid = $this->model('Order')->create($orderarray);
+      if (isset($orderid)) {
+        die(header('location:' . URLROOT . '/student/class/' . $orderid));
+      } else {
+        $this->index();
+      }
+    } else {
+      die(header('location:' . URLROOT . '/student'));
+    }
   }
 
 

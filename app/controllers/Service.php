@@ -39,6 +39,7 @@ class Service extends Controller
                 'rating' => $_POST['rating'],
                 'jobs' => $_POST['jobs'],
                 'level' => $_POST['level'],
+                'duration' => $_POST['duration'],
                 'firstname' => $_POST['firstname'],
                 'lastname' => $_POST['lastname'],
                 'verified' => $_POST['verified'],
@@ -47,7 +48,11 @@ class Service extends Controller
                 'email' => $_SESSION['userdata']['email'],
                 'phone' => $_SESSION['userdata']['phoneno'],
                 'city' => $_SESSION['userdata']['city'],
+                'orderid' => uniqid($_POST['gigid'], true)
             ];
+
+            setcookie('order_data', json_encode($data), time() + 1800, '/', null, null, true);
+
             $this->view('marketplace/pages/checkout', $data);
         }
     }

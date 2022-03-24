@@ -14,11 +14,10 @@
     include APPROOT . '/views/includes/tutor-navbar.php';
     ?>
     <main>
-
         <div class="container base-container">
             <div class="row pt-3">
                 <h1>
-                    My Gigs
+                    My Class List
                 </h1>
                 <div class="col-12-xs">
 
@@ -34,25 +33,26 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">
-                                                        Gig ID
+                                                        Class ID
                                                     </th>
                                                     <th scope="col">
-                                                        Title
+                                                        Student
+                                                    </th>
+
+                                                    <th scope="col">
+                                                        Type
                                                     </th>
                                                     <th scope="col">
-                                                        Price
+                                                        Deadline
                                                     </th>
                                                     <th scope="col">
                                                         Status
                                                     </th>
+                                                    <th scope="col">
+                                                        Expected Income
+                                                    </th>
                                                     <th scope="col" class="links">
                                                         <span class="sr-only">View</span>
-                                                    </th>
-                                                    <th scope="col" class="links">
-                                                        <span class="sr-only">Edit</span>
-                                                    </th>
-                                                    <th scope="col" class="links">
-                                                        <span class="sr-only">Delete</span>
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -63,61 +63,64 @@
                                                 if (!$data) {
                                                 ?>
                                                     <tr>
-                                                        <td colspan="6" class="text-center">
-                                                            You have no services listed yet.
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="6" class="text-center">
-                                                            <button onclick="location.href='<?php echo URLROOT . '/gigs/publish' ?>'" class="btn">Create a new service</button>
+                                                        <td colspan="7" class="text-center">
+                                                            You have no classes yet.
                                                         </td>
                                                     </tr>
                                                     <?php
                                                 } else {
                                                     $i = 1;
                                                     foreach ($data as $gig) {
-                                                        $service = (array)$gig;
+                                                        $class = (array)$gig;
                                                     ?>
                                                         <!-- Product <?php echo $i; ?> -->
                                                         <tr <?php if ($i % 2 == 0) {
                                                                 echo `class='stripe'`;
                                                             } ?>>
-                                                            <td class="main">
-                                                                <?php echo $i; ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo $service['title']; ?>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo 'LKR ' . $service['price']; ?>
-                                                            </td>
-                                                            <?php if ($service['status'] == 'pending') { ?>
-                                                                <td class="text-warning">
-                                                                    Pending
-                                                                </td>
-                                                            <?php } elseif ($service['status'] == 'approved') {
-                                                            ?>
-                                                                <td class="text-success">
-                                                                    Approved
-                                                                </td>
-                                                            <?php
-                                                            } elseif (
-                                                                $service['status'] == 'rejected'
-                                                            ) {
-                                                            ?>
-                                                                <td class="text-danger">
-                                                                    Rejected
-                                                                </td>
-                                                            <?php } ?>
 
-                                                            <td class="links">
-                                                                <a href="<?php echo URLROOT . '/marketplace/service/' . $service['gigid'] ?>" class="info">View</a>
+                                                            <!-- class id  -->
+                                                            <td class="main">
+                                                                <?php echo $class['classid']; ?>
                                                             </td>
-                                                            <td class="links">
-                                                                <a href="<?php echo '/gigs/settings/' . $service['gigid'] ?>" class="info">Edit</a>
+
+                                                            <!-- student username  -->
+                                                            <td class="links" style="text-align: center;">
+                                                                <a href="#" class="info"> <?php echo $class['studentusername']; ?></a>
                                                             </td>
+
+                                                            <!-- type  -->
+                                                            <td style="text-transform: uppercase;">
+                                                                <?php echo $class['type']; ?>
+                                                            </td>
+
+                                                            <!-- deadline  -->
+                                                            <td>
+                                                                <?php echo $class['deadline']; ?>
+                                                            </td>
+
+                                                            <!-- status  -->
+                                                            <?php
+                                                            if ($class['status'] == 'pending') {
+                                                                echo '<td class="text-warning">' . $class['status'] . '</td>';
+                                                            } else if ($class['status'] == 'cancelled') {
+                                                                echo '<td class="text-error">' . $class['status'] . '</td>';
+                                                            } else if ($class['status'] == 'completed') {
+                                                                echo '<td class="text-success">' . $class['status'] . '</td>';
+                                                            } else if ($class['status'] == 'expired') {
+                                                                echo '<td class="text-error">' . $class['status'] . '</td>';
+                                                            } else if ($class['status'] == 'in-progress') {
+                                                                echo '<td class="text-info">' . $class['status'] . '</td>';
+                                                            }
+                                                            ?>
+
+                                                            <!-- expected income  -->
+                                                            <td>
+                                                                <?php echo 'LKR ' . $class['fee'] * 90 / 100; ?>
+                                                            </td>
+
+                                                            <!-- view  -->
                                                             <td class="links">
-                                                                <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Deactivate</a>
+                                                                <a href="<?php echo URLROOT . '/tutor/class/' . $class['classid'] ?>" class="info">View</a>
                                                             </td>
                                                         </tr>
                                                 <?php

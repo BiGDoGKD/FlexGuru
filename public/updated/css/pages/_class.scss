@@ -158,6 +158,22 @@
         }
       }
     }
+
+    .class-status {
+      padding: 1.5rem 2rem;
+      border: 5px solid;
+      border-radius: 5px;
+      .status-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 3rem;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 }
 

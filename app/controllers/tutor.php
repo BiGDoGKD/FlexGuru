@@ -22,6 +22,16 @@ class Tutor extends Controller
         }
     }
 
+    public function classes()
+    {
+        $result = $this->model("Order")->tutorClasses($_SESSION['roledata']['tuid']);
+        if (!isset($result['result']->message)) {
+            $this->view('tutor/classlist', $result['result']);
+        } else {
+            $this->view('tutor/classlist', false);
+        }
+    }
+
     public function table()
     {
         $this->view('tutor/table');

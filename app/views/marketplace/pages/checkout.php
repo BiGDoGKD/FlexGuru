@@ -60,10 +60,10 @@
                     </div>
                     <form class="form-control" method="post" action="https://sandbox.payhere.lk/pay/checkout">
                         <input type="hidden" name="merchant_id" value="1219991">
-                        <input type="hidden" name="return_url" value="http://localhost/student/class">
-                        <input type="hidden" name="cancel_url" value="http://localhost/service/cancel">
+                        <input type="hidden" name="return_url" value="<?php echo URLROOT; ?>/student/order">
+                        <input type="hidden" name="cancel_url" value="<?php echo URLROOT; ?>/service/cancel">
                         <input type="hidden" name="notify_url" value="https://api.flexguru.tk/service/notify/">
-                        <input type="hidden" name="order_id" value="<?php echo $data['gigid'] . 'order123' ?>" readonly>
+                        <input type="hidden" name="order_id" value="<?php echo $data['orderid'] ?>" readonly>
                         <input type="hidden" name="items" value="<?php echo $data['title'] ?>" readonly><br>
                         <input type="hidden" name="currency" value="LKR" readonly>
                         <input type="hidden" name="amount" value="<?php echo $data['price'] ?>" readonly>

@@ -188,6 +188,7 @@
                                     <input type="hidden" name="image" value="<?php echo $data['image'] ?>" readonly>
                                     <input type="hidden" name="medium" value="<?php echo $data['medium'] ?>" readonly>
                                     <input type="hidden" name="rating" value="<?php echo $data['rating'] ?>" readonly>
+                                    <input type="hidden" name="duration" value="<?php echo $data['duration'] ?>" readonly>
                                     <input type="hidden" name="jobs" value="<?php echo $data['jobs'] ?>" readonly>
                                     <input type="hidden" name="level" value="<?php echo $data['level'] ?>" readonly>
                                     <input type="hidden" name="firstname" value="<?php echo $data['firstname'] ?>" readonly>

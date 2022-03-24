@@ -279,6 +279,22 @@ img {
   border: 1px solid #e6e6e6;
 }
 
+.border-info {
+  border-color: #f6c31c !important;
+}
+
+.border-error {
+  border-color: #eb4770 !important;
+}
+
+.border-success {
+  border-color: #06a736 !important;
+}
+
+.border-primary {
+  border-color: #7879f1 !important;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -9352,6 +9368,27 @@ img {
     color: #fff;
     font-size: 19px;
     cursor: pointer;
+  }
+  .class .class-status {
+    padding: 1.5rem 2rem;
+    border: 5px solid;
+    border-radius: 5px;
+  }
+  .class .class-status .status-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .class .class-status .status-text p {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 
