@@ -55,9 +55,9 @@ class Order
         }
     }
 
-    public function tutorClasses($tutor)
+    public function tutorGetClass($data)
     {
-        if ($response = $this->api->usercall('POST', APIURL . 'tutor/tutorclasses', json_encode($tutor))) {
+        if ($response = $this->api->usercall('POST', APIURL . 'tutor/class', json_encode($data))) {
             $responseArray = (array)json_decode($response);
             $status = json_decode($response)->response->status;
             if ($status == 200) {
@@ -74,9 +74,41 @@ class Order
         }
     }
 
+    public function tutorClasses($tutor)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'tutor/tutorclasses', json_encode($tutor))) {
+            $responseArray = (array)json_decode($response);
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                $result = (array)$responseArray["response"];
+                return $result;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
+        }
+    }
+
     public function studentClasses($student)
     {
         if ($response = $this->api->usercall('POST', APIURL . 'order/studentclasses', json_encode($student))) {
+            $responseArray = (array)json_decode($response);
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                $result = (array)$responseArray["response"];
+                return $result;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function acceptClass($classid)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'tutor/acceptclass', json_encode($classid))) {
             $responseArray = (array)json_decode($response);
             $status = json_decode($response)->response->status;
             if ($status == 200) {
@@ -91,5 +123,10 @@ class Order
                 return false;
             }
         }
+    }
+
+    public function studentFeedback($data)
+    {
+        return true;
     }
 }

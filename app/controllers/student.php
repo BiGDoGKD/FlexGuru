@@ -22,6 +22,61 @@ class Student extends Controller
     }
   }
 
+
+  // get all classes of a student
+
+  public function classes()
+  {
+    $result = $this->model("Order")->studentClasses($_SESSION['roledata']['stid']);
+    if ($result) {
+      $this->view('student/classlist', $result['result']);
+    } else {
+      $this->view('student/classlist', false);
+    }
+  }
+
+  public function feedback($classid = array())
+  {
+    if (empty($classid)) {
+      die(header('location:' . URLROOT . '/student/classes'));
+    } else {
+
+
+      if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        print_r('came');
+        //form process
+        //Sanatize post data
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $data = [
+          'classid' => $classid,
+          'turating' => trim($_POST['turating']),
+          'tureview' => trim($_POST['tureview'])
+        ];
+        $order = $this->model("Order");
+        $result = $order->studentFeedback($data);
+        if ($result) {
+          $_SESSION['toastmsg'] = "Feedback submitted successfully";
+          include APPROOT . "/views/includes/successtoast.php";
+          // die(header('location:' . URLROOT . '/student/class/' . $classid));
+        } else {
+          $_SESSION['toastmsg'] = "Feedback submission failed";
+          include APPROOT . "/views/includes/errortoast.php";
+          // die(header('location:' . URLROOT . '/student/class/' . $classid));
+        }
+      } else {
+?>
+        <script>
+          history.go(-1)
+        </script>
+<?php
+      }
+    }
+  }
+
+
+
+
+
   public function index()
   {
     $this->view('student/studentprofileview');

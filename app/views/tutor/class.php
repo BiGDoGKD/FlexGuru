@@ -13,7 +13,6 @@
     <?php
     include APPROOT . '/views/includes/student-navbar.php';
     ?>
-    <?php print_r($data) ?>
     <main class="class">
         <div class="base-container container mt-2">
             <div class="row">
@@ -98,124 +97,49 @@
                     </div>
 
                     <section class="class-status mt-1 mb-1 <?php
-
-                                                            if (!$data['class']->reviewphase) {
-                                                                if ($data['class']->status == 'pending') {
-                                                                    echo 'border-info';
-                                                                } else if ($data['class']->status == 'cancelled') {
-                                                                    echo 'border-error';
-                                                                } else if ($data['class']->status == 'completed') {
-                                                                    echo 'border-success';
-                                                                } else if ($data['class']->status == 'expired') {
-                                                                    echo 'border-error';
-                                                                } else if ($data['class']->status == 'in-progress') {
-                                                                    echo 'border-primary';
-                                                                }
-                                                            } else {
+                                                            if ($data['class']->status == 'pending') {
                                                                 echo 'border-info';
+                                                            } else if ($data['class']->status == 'cancelled') {
+                                                                echo 'border-error';
+                                                            } else if ($data['class']->status == 'completed') {
+                                                                echo 'border-success';
+                                                            } else if ($data['class']->status == 'expired') {
+                                                                echo 'border-error';
+                                                            } else if ($data['class']->status == 'in-progress') {
+                                                                echo 'border-primary';
                                                             }
                                                             ?>">
                         <div class="status-text">
                             <p class="<?php
-                                        if (!$data['class']->reviewphase) {
-                                            if ($data['class']->status == 'pending') {
-                                                echo 'text-info';
-                                            } else if ($data['class']->status == 'cancelled') {
-                                                echo 'text-error';
-                                            } else if ($data['class']->status == 'completed') {
-                                                echo 'text-success';
-                                            } else if ($data['class']->status == 'expired') {
-                                                echo 'text-error';
-                                            } else if ($data['class']->status == 'in-progress') {
-                                                echo 'text-primary';
-                                            }
-                                        } else {
+                                        if ($data['class']->status == 'pending') {
                                             echo 'text-info';
+                                        } else if ($data['class']->status == 'cancelled') {
+                                            echo 'text-error';
+                                        } else if ($data['class']->status == 'completed') {
+                                            echo 'text-success';
+                                        } else if ($data['class']->status == 'expired') {
+                                            echo 'text-error';
+                                        } else if ($data['class']->status == 'in-progress') {
+                                            echo 'text-primary';
                                         }
                                         ?>">
-                                <?php if (!$data['class']->reviewphase) {
-                                    echo $data['class']->status;
-                                } else {
-                                    echo 'IN REVIEW PHASE';
-                                } ?>
+                                <?php echo $data['class']->status ?>
                             </p>
                         </div>
                     </section>
 
-
-                    <section class="review-section mt-3 mb-3">
-                        <div class="review-section__header">
-                            <h1 class="text-black font-xl">Add a Review</h1>
-                        </div>
-                        <div class="review-section__body">
-                            <div class="review-section__body__rating">
-                                <div class="stars font-xs-lg font-md-xl">
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
-                                </div>
-                            </div>
-                            <div class="review-section__body__review">
-                                <form class="form-control" id="feedbackForm">
-                                    <div class="form-group col-12-xs">
-                                        <input class="form-control star-count" type="hidden" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                                                                        echo 'turating';
-                                                                                                    } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                                                                        echo 'sturating';
-                                                                                                    } ?>" value="" required>
-                                        <p class="form-control form-feedback text-error">
-
-                                        </p>
-                                    </div>
-
-                                    <div class="form-group col-12-xs">
-                                        <label for="firstname">Feedback <span class="text-error">*</span></label>
-                                        <textarea class="form-control" style="resize: none;" placeholder="Write your feedback here..." maxlength="2000" minlength="10" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                                                                                                                                                    echo 'tureview';
-                                                                                                                                                                                } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                                                                                                                                                    echo 'streview';
-                                                                                                                                                                                } ?>" id="<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                                                                                                                                                                echo 'tureview';
-                                                                                                                                                                                            } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                                                                                                                                                                echo 'streview';
-                                                                                                                                                                                            } ?>" cols="30" rows="10" required></textarea>
-                                        <p class="form-control form-feedback text-error">
-
-                                        </p>
-                                    </div>
-                                    <div class="form-group col-12-xs">
-                                        <button onclick="SubForm()" id="submit" name="submit" class="form-control">Submit Your Feeback</button>
-                                    </div>
-                                </form>
-                                <script>
-                                    function SubForm() {
-                                        console.log('working');
-                                        $.ajax({
-                                            url: `<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                        echo URLROOT . '/student/feedback/' . $data['class']->classid;
-                                                    } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                        echo URLROOT . '/tutor/feedback/' . $data['class']->classid;
-                                                    } ?>`,
-                                            type: 'post',
-                                            data: $('#feedbackForm').serialize(),
-                                            success: function() {
-                                                alert("worked");
-                                            }
-                                        });
-                                    }
-                                </script>
-                            </div>
-                            <button class="revision bg-error btn border-error col-12-xs" onclick="modalAskRevision(<?php echo $data['class']->classid ?>)">Ask for revision</button>
-                            <!-- include ask-revision modal  -->
+                    <section class="class-action-buttons mt-1 mb-1">
+                        <div class="action-buttons">
                             <?php
-                            include APPROOT . '/views/includes/modals/modal-ask-revision.php';
+                            if ($data['class']->status == 'pending') {
+                                echo '<a href="' . URLROOT . '/tutor/acceptclass/' . $data['class']->classid . '" class="btn bg-success border-success mb-1 display-f justify-content-center row">ACCEPT</a>';
+                                echo '<a href="' . URLROOT . '/tutor/cancel/' . $data['class']->classid . '" class="btn bg-error border-error display-f justify-content-center row">CANCEL</a>';
+                            } else if ($data['class']->status == 'in-progress') {
+                                echo '<a href="' . URLROOT . '/tutor/askforreview/' . $data['class']->classid . '" class="btn display-f justify-content-center row">ASK FOR REVIEW</a>';
+                            }
                             ?>
                         </div>
-
                     </section>
-
 
                     <?php
                     if ($data['class']->status == 'pending') {
@@ -363,9 +287,9 @@
                     ?>
                         <section class="chat-area">
                             <header>
-                                <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="profile picture">
+                                <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['student']->photourl ?>" alt="profile picture">
                                 <div class="details">
-                                    <span class="text-black name">Kesara Karannagoda</span>
+                                    <span class="text-black name"><?php echo $data['student']->firstname . ' ' . $data['student']->lastname ?></span>
                                     <p class="text-gray font-sm"><i class="fas text-success fa-circle"></i>&nbsp;Active Now </p>
                                 </div>
                             </header>
@@ -376,7 +300,7 @@
                                     </div>
                                 </div>
                                 <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
+                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['student']->photourl ?>" alt="">
                                     <div class="details">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
                                     </div>
@@ -387,7 +311,7 @@
                                     </div>
                                 </div>
                                 <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
+                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['student']->photourl ?>" alt="">
                                     <div class="details">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
                                     </div>
@@ -398,7 +322,7 @@
                                     </div>
                                 </div>
                                 <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
+                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['student']->photourl ?>" alt="">
                                     <div class="details">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
                                     </div>
@@ -409,7 +333,7 @@
                                     </div>
                                 </div>
                                 <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
+                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['student']->photourl ?>" alt="">
                                     <div class="details">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
                                     </div>
@@ -420,7 +344,7 @@
                                     </div>
                                 </div>
                                 <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
+                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['student']->photourl ?>" alt="">
                                     <div class="details">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
                                     </div>
@@ -446,12 +370,10 @@
     ?>
 
     <!-- all scripts goes here  -->
-    <script type="module" src="<?php echo URLROOT . '/public/updated/js/app.js' ?>"></script>
-
     <script>
         const countdown = () => {
             const countDate = <?php echo strtotime($data['class']->deadline) * 1000 ?>;
-
+            console.log(countDate);
             const now = new Date().getTime();
             const gap = countDate - now;
 
