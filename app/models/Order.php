@@ -127,6 +127,54 @@ class Order
 
     public function studentFeedback($data)
     {
-        return true;
+        $response = $this->api->usercall('POST', APIURL . 'order/studentfeedback', json_encode($data));
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    public function tutorFeedback($data)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'tutor/tutorfeedback', json_encode($data));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    public function askRevision($data)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'order/askrevision', json_encode($data));
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    public function askforreview($data)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'tutor/askforreview', json_encode($data));
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
     }
 }

@@ -1,7 +1,7 @@
 <div class="toastHolder">
     <div id="toastContainer" class="toastContainer">
         <p class="text-success ">
-            <i class="fa fa-check-circle"></i><?php echo $_SESSION["toastmsg"] ?>
+            <i class="fa fa-check-circle mr-1"></i><?php echo $_SESSION["toastmsg"][1] ?>
         </p>
     </div>
 </div>

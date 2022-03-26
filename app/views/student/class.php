@@ -13,7 +13,6 @@
     <?php
     include APPROOT . '/views/includes/student-navbar.php';
     ?>
-    <?php print_r($data) ?>
     <main class="class">
         <div class="base-container container mt-2">
             <div class="row">
@@ -97,9 +96,12 @@
                         </div>
                     </div>
 
+                    <!-- Class Status  -->
                     <section class="class-status mt-1 mb-1 <?php
 
-                                                            if (!$data['class']->reviewphase) {
+                                                            if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                                echo 'border-info';
+                                                            } else {
                                                                 if ($data['class']->status == 'pending') {
                                                                     echo 'border-info';
                                                                 } else if ($data['class']->status == 'cancelled') {
@@ -111,13 +113,16 @@
                                                                 } else if ($data['class']->status == 'in-progress') {
                                                                     echo 'border-primary';
                                                                 }
-                                                            } else {
-                                                                echo 'border-info';
                                                             }
                                                             ?>">
+
                         <div class="status-text">
+
                             <p class="<?php
-                                        if (!$data['class']->reviewphase) {
+
+                                        if ($data['class']->reviewphase && !$data['class']->turating) {
+                                            echo 'text-info';
+                                        } else {
                                             if ($data['class']->status == 'pending') {
                                                 echo 'text-info';
                                             } else if ($data['class']->status == 'cancelled') {
@@ -129,92 +134,87 @@
                                             } else if ($data['class']->status == 'in-progress') {
                                                 echo 'text-primary';
                                             }
-                                        } else {
-                                            echo 'text-info';
                                         }
                                         ?>">
-                                <?php if (!$data['class']->reviewphase) {
-                                    echo $data['class']->status;
-                                } else {
+                                <?php if ($data['class']->reviewphase && !$data['class']->turating) {
                                     echo 'IN REVIEW PHASE';
+                                } else {
+                                    echo $data['class']->status;
                                 } ?>
                             </p>
                         </div>
                     </section>
 
+                    <!-- Class Status Ends  -->
 
-                    <section class="review-section mt-3 mb-3">
-                        <div class="review-section__header">
-                            <h1 class="text-black font-xl">Add a Review</h1>
-                        </div>
-                        <div class="review-section__body">
-                            <div class="review-section__body__rating">
-                                <div class="stars font-xs-lg font-md-xl">
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
-                                    <a><i class="fas fa-star"></i></a>
+
+                    <?php if ($data['class']->reviewphase && !$data['class']->turating) { ?>
+                        <!-- Review Section Starts  -->
+                        <section class="review-section mt-3 mb-3">
+                            <div class="review-section__header">
+                                <h1 class="text-black font-xl">Add a Review</h1>
+                            </div>
+                            <div class="review-section__body">
+                                <div class="review-section__body__rating">
+                                    <div class="stars font-xs-lg font-md-xl">
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                    </div>
                                 </div>
+                                <div class="review-section__body__review">
+                                    <form class="form-control" method="POST" action="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                            echo URLROOT . '/student/feedback/' . $data['class']->classid;
+                                                                                        } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                            echo URLROOT . '/tutor/feedback/' . $data['class']->classid;
+                                                                                        } ?>" id="feedbackForm">
+                                        <div class="form-group col-12-xs">
+                                            <input class="form-control star-count" type="hidden" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                                            echo 'turating';
+                                                                                                        } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                                            echo 'sturating';
+                                                                                                        } ?>" value="" required>
+                                            <p class="form-control form-feedback text-error">
+
+                                            </p>
+                                        </div>
+
+                                        <div class="form-group col-12-xs">
+                                            <label for="firstname">Feedback <span class="text-error">*</span></label>
+                                            <textarea class="form-control" style="resize: none;" placeholder="Write your feedback here..." maxlength="2000" minlength="10" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                                                                                                                        echo 'tureview';
+                                                                                                                                                                                    } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                                                                                                                        echo 'streview';
+                                                                                                                                                                                    } ?>" id="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                                                                                                                                    echo 'tureview';
+                                                                                                                                                                                                } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                                                                                                                                    echo 'streview';
+                                                                                                                                                                                                } ?>" cols="30" rows="10" required></textarea>
+                                            <p class="form-control form-feedback text-error">
+
+                                            </p>
+                                        </div>
+                                        <div class="form-group col-12-xs">
+                                            <button type="submit" id="submit" name="submit" class="form-control">Submit Your Feeback</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <button class="revision bg-error btn border-error col-12-xs" onclick="modalAskRevision(<?php echo $data['class']->classid; ?>)">Ask for revision</button>
+                                <!-- include ask-revision modal  -->
+                                <?php
+                                include APPROOT . '/views/includes/modals/modal-ask-revision.php';
+                                ?>
                             </div>
-                            <div class="review-section__body__review">
-                                <form class="form-control" id="feedbackForm">
-                                    <div class="form-group col-12-xs">
-                                        <input class="form-control star-count" type="hidden" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                                                                        echo 'turating';
-                                                                                                    } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                                                                        echo 'sturating';
-                                                                                                    } ?>" value="" required>
-                                        <p class="form-control form-feedback text-error">
 
-                                        </p>
-                                    </div>
+                        </section>
+                        <!-- Review Sections Ends  -->
+                    <?php
+                    }
+                    ?>
 
-                                    <div class="form-group col-12-xs">
-                                        <label for="firstname">Feedback <span class="text-error">*</span></label>
-                                        <textarea class="form-control" style="resize: none;" placeholder="Write your feedback here..." maxlength="2000" minlength="10" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                                                                                                                                                    echo 'tureview';
-                                                                                                                                                                                } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                                                                                                                                                    echo 'streview';
-                                                                                                                                                                                } ?>" id="<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                                                                                                                                                                echo 'tureview';
-                                                                                                                                                                                            } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                                                                                                                                                                echo 'streview';
-                                                                                                                                                                                            } ?>" cols="30" rows="10" required></textarea>
-                                        <p class="form-control form-feedback text-error">
-
-                                        </p>
-                                    </div>
-                                    <div class="form-group col-12-xs">
-                                        <button onclick="SubForm()" id="submit" name="submit" class="form-control">Submit Your Feeback</button>
-                                    </div>
-                                </form>
-                                <script>
-                                    function SubForm() {
-                                        console.log('working');
-                                        $.ajax({
-                                            url: `<?php if ($_SESSION['userdata']['role'] == 'st') {
-                                                        echo URLROOT . '/student/feedback/' . $data['class']->classid;
-                                                    } else if ($_SESSION['userdata']['role'] == 'tu') {
-                                                        echo URLROOT . '/tutor/feedback/' . $data['class']->classid;
-                                                    } ?>`,
-                                            type: 'post',
-                                            data: $('#feedbackForm').serialize(),
-                                            success: function() {
-                                                alert("worked");
-                                            }
-                                        });
-                                    }
-                                </script>
-                            </div>
-                            <button class="revision bg-error btn border-error col-12-xs" onclick="modalAskRevision(<?php echo $data['class']->classid ?>)">Ask for revision</button>
-                            <!-- include ask-revision modal  -->
-                            <?php
-                            include APPROOT . '/views/includes/modals/modal-ask-revision.php';
-                            ?>
-                        </div>
-
-                    </section>
 
 
                     <?php
@@ -257,26 +257,41 @@
                         } else if ($data['class']->status == 'expired') {
                             ?><?php
                             } else if ($data['class']->status == 'in-progress') {
-                                ?> <section class="class-duration">
+                                ?>
+                        <section class="class-duration">
                             <div class="countdown-timer">
 
                                 <div class="countdown">
-                                    <div class="container-day">
+                                    <div class="container-day <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                                    echo 'text-error';
+                                                                } ?>">
                                         <h3 class="day">Time</h3>
                                         <h3>Day</h3>
                                     </div>
-                                    <h3 class="day">:</h3>
-                                    <div class="container-hour">
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-hour <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                                    echo 'text-error';
+                                                                } ?>">
                                         <h3 class="hour">Time</h3>
                                         <h3>Hour</h3>
                                     </div>
-                                    <h3 class="day">:</h3>
-                                    <div class="container-minute">
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-minute <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                                        echo 'text-error';
+                                                                    } ?>">
                                         <h3 class="minute">Time</h3>
                                         <h3>Minute</h3>
                                     </div>
-                                    <h3 class="day">:</h3>
-                                    <div class="container-second">
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-second <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                                                        echo 'text-error';
+                                                                    } ?>">
                                         <h3 class="second">Time</h3>
                                         <h3>Second</h3>
                                     </div>
@@ -450,7 +465,11 @@
 
     <script>
         const countdown = () => {
-            const countDate = <?php echo strtotime($data['class']->deadline) * 1000 ?>;
+            const countDate = <?php if ($data['class']->reviewphase && !$data['class']->turating) {
+                                    echo strtotime($data['class']->reviewdeadline) * 1000;
+                                } else {
+                                    echo strtotime($data['class']->deadline) * 1000;
+                                } ?>;
 
             const now = new Date().getTime();
             const gap = countDate - now;

@@ -7251,7 +7251,7 @@ img {
 }
 
 .visitor-navbar__menu ul li:hover {
-  background: #fafafa;
+  background: #e6e6e6;
 }
 
 .visitor-navbar__authentication {
@@ -7940,7 +7940,7 @@ img {
 }
 
 .profile-navbar__menu ul li:hover {
-  background: #fafafa;
+  background: #e6e6e6;
 }
 
 .profile-navbar__authentication {
@@ -8213,6 +8213,41 @@ img {
     transition: 0.5s;
     color: black;
   }
+  .toastHolder .toastContainer-error {
+    margin: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    max-width: 300px;
+    height: auto;
+    padding: 5px;
+    position: relative;
+    padding-left: 20px;
+    float: right;
+    color: white;
+    background-color: white;
+    -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .toastHolder .toastContainer-error #close {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    right: 1;
+  }
+  .toastHolder .toastContainer-error #closebtn {
+    float: right;
+    background-color: rgba(255, 255, 255, 0);
+    border-style: none;
+    color: white;
+    cursor: pointer;
+  }
+  .toastHolder .toastContainer-error #close :hover {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    color: black;
+  }
   .toastHolder .toastContainer:before {
     content: '';
     position: absolute;
@@ -8220,6 +8255,16 @@ img {
     bottom: 0;
     width: 0;
     border-bottom: 5px solid #85ff75;
+    -webkit-animation: border_anim 2s linear forwards;
+            animation: border_anim 2s linear forwards;
+  }
+  .toastHolder .toastContainer-error:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    border-bottom: 5px solid #eb4770;
     -webkit-animation: border_anim 2s linear forwards;
             animation: border_anim 2s linear forwards;
   }

@@ -1,13 +1,13 @@
 <div class="toastHolder">
-    <div id="toastContainer" class="toastContainer">
+    <div id="toastContainer" class="toastContainer-error">
         <p class="text-error ">
-            <i class="fas fa-exclamation-circle"><?php echo $_SESSION["toastmsg"] ?>
+            <i class="fa fa-exclamation-circle mr-1"></i><?php echo $_SESSION["toastmsg"][1] ?>
         </p>
     </div>
 </div>
 
 <script>
-    var toastContainer = document.querySelector(".toastContainer");
+    var toastContainer = document.querySelector(".toastContainer-error");
     var toastContainerClose = document.querySelector(".closebtn");
     const fadeOutToast = () => {
         setTimeout(() => {

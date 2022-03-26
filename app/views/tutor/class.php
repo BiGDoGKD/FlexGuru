@@ -96,37 +96,122 @@
                         </div>
                     </div>
 
+                    <!-- Class Status  -->
                     <section class="class-status mt-1 mb-1 <?php
-                                                            if ($data['class']->status == 'pending') {
+
+                                                            if ($data['class']->reviewphase && !$data['class']->sturating) {
                                                                 echo 'border-info';
-                                                            } else if ($data['class']->status == 'cancelled') {
-                                                                echo 'border-error';
-                                                            } else if ($data['class']->status == 'completed') {
-                                                                echo 'border-success';
-                                                            } else if ($data['class']->status == 'expired') {
-                                                                echo 'border-error';
-                                                            } else if ($data['class']->status == 'in-progress') {
-                                                                echo 'border-primary';
+                                                            } else {
+                                                                if ($data['class']->status == 'pending') {
+                                                                    echo 'border-info';
+                                                                } else if ($data['class']->status == 'cancelled') {
+                                                                    echo 'border-error';
+                                                                } else if ($data['class']->status == 'completed') {
+                                                                    echo 'border-success';
+                                                                } else if ($data['class']->status == 'expired') {
+                                                                    echo 'border-error';
+                                                                } else if ($data['class']->status == 'in-progress') {
+                                                                    echo 'border-primary';
+                                                                }
                                                             }
+
                                                             ?>">
                         <div class="status-text">
+
                             <p class="<?php
-                                        if ($data['class']->status == 'pending') {
+
+                                        if ($data['class']->reviewphase && !$data['class']->sturating) {
                                             echo 'text-info';
-                                        } else if ($data['class']->status == 'cancelled') {
-                                            echo 'text-error';
-                                        } else if ($data['class']->status == 'completed') {
-                                            echo 'text-success';
-                                        } else if ($data['class']->status == 'expired') {
-                                            echo 'text-error';
-                                        } else if ($data['class']->status == 'in-progress') {
-                                            echo 'text-primary';
+                                        } else {
+                                            if ($data['class']->status == 'pending') {
+                                                echo 'text-info';
+                                            } else if ($data['class']->status == 'cancelled') {
+                                                echo 'text-error';
+                                            } else if ($data['class']->status == 'completed') {
+                                                echo 'text-success';
+                                            } else if ($data['class']->status == 'expired') {
+                                                echo 'text-error';
+                                            } else if ($data['class']->status == 'in-progress') {
+                                                echo 'text-primary';
+                                            }
                                         }
+
                                         ?>">
-                                <?php echo $data['class']->status ?>
+                                <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                    echo 'IN REVIEW PHASE';
+                                } else {
+                                    echo $data['class']->status;
+                                } ?>
                             </p>
                         </div>
                     </section>
+
+
+
+                    <?php if ($data['class']->reviewphase && !$data['class']->sturating && $data['class']->turating) { ?>
+                        <!-- Review Section Starts  -->
+                        <section class="review-section mt-3 mb-3">
+                            <div class="review-section__header">
+                                <h1 class="text-black font-xl">Add a Review</h1>
+                            </div>
+                            <div class="review-section__body">
+                                <div class="review-section__body__rating">
+                                    <div class="stars font-xs-lg font-md-xl">
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                        <a><i class="fas fa-star"></i></a>
+                                    </div>
+                                </div>
+                                <div class="review-section__body__review">
+                                    <form class="form-control" method="POST" action="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                            echo URLROOT . '/student/feedback/' . $data['class']->classid;
+                                                                                        } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                            echo URLROOT . '/tutor/feedback/' . $data['class']->classid;
+                                                                                        } ?>" id="feedbackForm">
+                                        <div class="form-group col-12-xs">
+                                            <input class="form-control star-count" type="hidden" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                                            echo 'turating';
+                                                                                                        } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                                            echo 'sturating';
+                                                                                                        } ?>" value="" required>
+                                            <p class="form-control form-feedback text-error">
+
+                                            </p>
+                                        </div>
+
+                                        <div class="form-group col-12-xs">
+                                            <label for="firstname">Feedback <span class="text-error">*</span></label>
+                                            <textarea class="form-control" style="resize: none;" placeholder="Write your feedback here..." maxlength="2000" minlength="10" name="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                                                                                                                        echo 'tureview';
+                                                                                                                                                                                    } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                                                                                                                        echo 'streview';
+                                                                                                                                                                                    } ?>" id="<?php if ($_SESSION['userdata']['role'] == 'st') {
+                                                                                                                                                                                                    echo 'tureview';
+                                                                                                                                                                                                } else if ($_SESSION['userdata']['role'] == 'tu') {
+                                                                                                                                                                                                    echo 'streview';
+                                                                                                                                                                                                } ?>" cols="30" rows="10" required></textarea>
+                                            <p class="form-control form-feedback text-error">
+
+                                            </p>
+                                        </div>
+                                        <div class="form-group col-12-xs">
+                                            <button type="submit" id="submit" name="submit" class="form-control">Submit Your Feeback</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </section>
+                        <!-- Review Sections Ends  -->
+                    <?php
+                    }
+                    ?>
+
+
+                    <!-- Action Buttons  -->
 
                     <section class="class-action-buttons mt-1 mb-1">
                         <div class="action-buttons">
@@ -134,12 +219,15 @@
                             if ($data['class']->status == 'pending') {
                                 echo '<a href="' . URLROOT . '/tutor/acceptclass/' . $data['class']->classid . '" class="btn bg-success border-success mb-1 display-f justify-content-center row">ACCEPT</a>';
                                 echo '<a href="' . URLROOT . '/tutor/cancel/' . $data['class']->classid . '" class="btn bg-error border-error display-f justify-content-center row">CANCEL</a>';
-                            } else if ($data['class']->status == 'in-progress') {
+                            } else if ($data['class']->status == 'in-progress' && !$data['class']->reviewphase) {
                                 echo '<a href="' . URLROOT . '/tutor/askforreview/' . $data['class']->classid . '" class="btn display-f justify-content-center row">ASK FOR REVIEW</a>';
                             }
                             ?>
                         </div>
                     </section>
+                    <!-- Action Button Ends  -->
+
+                    <!-- Countdown Timer  -->
 
                     <?php
                     if ($data['class']->status == 'pending') {
@@ -175,13 +263,59 @@
 
                     } else if ($data['class']->status == 'cancelled') {
                     ?>
-                        <?php
-                    } else if ($data['class']->status == 'completed') {
-                        ?><?php
-                        } else if ($data['class']->status == 'expired') {
-                            ?><?php
-                            } else if ($data['class']->status == 'in-progress') {
-                                ?> <section class="class-duration">
+                    <?php
+                    } else if ($data['class']->status == 'completed' && !$data['class']->sturating) {
+                    ?>
+                        <section class="class-duration">
+                            <div class="countdown-timer">
+
+                                <div class="countdown">
+                                    <div class="container-day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                    echo 'text-error';
+                                                                } ?>">
+                                        <h3 class="day">Time</h3>
+                                        <h3>Day</h3>
+                                    </div>
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-hour <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                    echo 'text-error';
+                                                                } ?>">
+                                        <h3 class="hour">Time</h3>
+                                        <h3>Hour</h3>
+                                    </div>
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-minute <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                        echo 'text-error';
+                                                                    } ?>">
+                                        <h3 class="minute">Time</h3>
+                                        <h3>Minute</h3>
+                                    </div>
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-second <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                        echo 'text-error';
+                                                                    } ?>">
+                                        <h3 class="second">Time</h3>
+                                        <h3>Second</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    <?php
+                    } else if ($data['class']->status == 'expired') {
+                    ?>
+
+                        <!-- IF IT IN_PROGRESS AND NOT REVIEWPHASE THEN SHOW THE TIMER GRAY AND DEADLINE  -->
+                    <?php
+                    } else if ($data['class']->status == 'in-progress' && !$data['class']->reviewphase) {
+                    ?>
+                        <section class="class-duration">
                             <div class="countdown-timer">
 
                                 <div class="countdown">
@@ -207,10 +341,56 @@
                                 </div>
                             </div>
 
-                        </section><?php
-                                }
-                                    ?>
+                        </section>
 
+                        <!-- IF IT IN_PROGRESS AND REVIEWPHASE THEN SHOW THE TIMER RED AND REVIEW DEADLINE  -->
+                    <?php
+                    } else if ($data['class']->status == 'in-progress' && $data['class']->reviewphase) {
+                    ?>
+                        <section class="class-duration">
+                            <div class="countdown-timer">
+
+                                <div class="countdown">
+                                    <div class="container-day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                    echo 'text-error';
+                                                                } ?>">
+                                        <h3 class="day">Time</h3>
+                                        <h3>Day</h3>
+                                    </div>
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-hour <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                    echo 'text-error';
+                                                                } ?>">
+                                        <h3 class="hour">Time</h3>
+                                        <h3>Hour</h3>
+                                    </div>
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-minute <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                        echo 'text-error';
+                                                                    } ?>">
+                                        <h3 class="minute">Time</h3>
+                                        <h3>Minute</h3>
+                                    </div>
+                                    <h3 class="day <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                        echo 'text-error';
+                                                    } ?>">:</h3>
+                                    <div class="container-second <?php if ($data['class']->reviewphase && !$data['class']->sturating) {
+                                                                        echo 'text-error';
+                                                                    } ?>">
+                                        <h3 class="second">Time</h3>
+                                        <h3>Second</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    <?php
+                    }
+                    ?>
 
                     <?php if ($_SESSION['userdata']['role'] == 'st') { ?>
                         <section class="chat-area">
@@ -370,9 +550,16 @@
     ?>
 
     <!-- all scripts goes here  -->
+    <script type="module" src="<?php echo URLROOT . '/public/updated/js/app.js' ?>"></script>
     <script>
         const countdown = () => {
-            const countDate = <?php echo strtotime($data['class']->deadline) * 1000 ?>;
+            const countDate = <?php if ($data['class']->reviewphase && !$data['class']->sturating && $data['class']->turating) {
+                                    echo strtotime($data['class']->reviewdeadline) * 1000;
+                                } else if ($data['class']->status == 'in-progress' && !$data['class']->reviewphase) {
+                                    echo strtotime($data['class']->deadline) * 1000;
+                                } else if ($data['class']->status == 'in-progress' && $data['class']->reviewphase) {
+                                    echo strtotime($data['class']->reviewdeadline) * 1000;
+                                } ?>;
             console.log(countDate);
             const now = new Date().getTime();
             const gap = countDate - now;

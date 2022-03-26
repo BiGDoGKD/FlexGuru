@@ -27,22 +27,50 @@ class Tutor extends Controller
 
     // get a particular class by class id 
 
+    // public function class($class = array())
+    // {
+    //     if (!empty($class)) {
+    //         $order = $this->model('Order');
+    //         $array = [
+    //             'classid' => $class,
+    //         ];
+    //         $data = $order->tutorGetClass($array);
+    //         if (!$data) {
+    //             die(header('location:' . URLROOT . '/tutor'));
+    //         } else {
+    //             $order = (array)$data["result"];
+    //             $this->view('tutor/class', $order);
+    //         }
+    //     } else {
+    //         die(header('location:' . URLROOT . '/tutor'));
+    //     }
+    // }
+
+
     public function class($class = array())
     {
+        if (isset($_SESSION['toastmsg'])) {
+            if ($_SESSION['toastmsg'][0]) {
+                include APPROOT . "/views/includes/successtoast.php";
+            } else {
+                include APPROOT . "/views/includes/errortoast.php";
+            }
+            unset($_SESSION['toastmsg']);
+        }
         if (!empty($class)) {
             $order = $this->model('Order');
             $array = [
                 'classid' => $class,
             ];
-            $data = $order->tutorGetClass($array);
+            $data = $order->tutorgetClass($array);
             if (!$data) {
-                die(header('location:' . URLROOT . '/tutor'));
+                die(header('location:' . URLROOT . '/student'));
             } else {
                 $order = (array)$data["result"];
                 $this->view('tutor/class', $order);
             }
         } else {
-            die(header('location:' . URLROOT . '/tutor'));
+            die(header('location:' . URLROOT . '/student'));
         }
     }
 
@@ -198,6 +226,61 @@ class Tutor extends Controller
             header('location:' . URLROOT . '/tutor/class/' . $id);
         } else {
             include APPROOT . "/views/includes/errortoast.php";
+        }
+    }
+
+    //ask for review
+    public function askforreview($classid = array())
+    {
+        if (empty($classid)) {
+            die(header('location:' . URLROOT . '/tutor/classes'));
+        } else {
+            $data = [
+                'classid' => $classid,
+                'tutid' => $_SESSION['roledata']['tuid']
+            ];
+            $order = $this->model("Order");
+            $result = $order->askforreview($data);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, "Review request submitted successfully"];
+                die(header('location:' . URLROOT . '/tutor/class/' . $classid));
+            } else {
+                $_SESSION['toastmsg'] = [false, "Review request submission failed"];
+                die(header('location:' . URLROOT . '/tutor/class/' . $classid));
+            }
+        }
+    }
+
+    public function feedback($classid = array())
+    {
+        if (empty($classid)) {
+            die(header('location:' . URLROOT . '/tutor/classes'));
+        } else {
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                //form process
+                //Sanatize post data
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                $data = [
+                    'classid' => $classid,
+                    'sturating' => trim($_POST['sturating']),
+                    'streview' => trim($_POST['streview'])
+                ];
+                $order = $this->model("Order");
+                $result = $order->tutorFeedback($data);
+                if ($result) {
+                    $_SESSION['toastmsg'] = [true, "Feedback submitted successfully"];
+                    die(header('location:' . URLROOT . '/tutor/class/' . $classid));
+                } else {
+                    $_SESSION['toastmsg'] = [false, "Feedback submission failed"];
+                    die(header('location:' . URLROOT . '/tutor/class/' . $classid));
+                }
+            } else {
+?>
+                <script>
+                    history.go(-1)
+                </script>
+<?php
+            }
         }
     }
 

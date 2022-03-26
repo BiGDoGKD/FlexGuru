@@ -40,10 +40,7 @@ class Student extends Controller
     if (empty($classid)) {
       die(header('location:' . URLROOT . '/student/classes'));
     } else {
-
-
       if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        print_r('came');
         //form process
         //Sanatize post data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -55,13 +52,11 @@ class Student extends Controller
         $order = $this->model("Order");
         $result = $order->studentFeedback($data);
         if ($result) {
-          $_SESSION['toastmsg'] = "Feedback submitted successfully";
-          include APPROOT . "/views/includes/successtoast.php";
-          // die(header('location:' . URLROOT . '/student/class/' . $classid));
+          $_SESSION['toastmsg'] = [true, "Feedback submitted successfully"];
+          die(header('location:' . URLROOT . '/student/class/' . $classid));
         } else {
-          $_SESSION['toastmsg'] = "Feedback submission failed";
-          include APPROOT . "/views/includes/errortoast.php";
-          // die(header('location:' . URLROOT . '/student/class/' . $classid));
+          $_SESSION['toastmsg'] = [false, "Feedback submission failed"];
+          die(header('location:' . URLROOT . '/student/class/' . $classid));
         }
       } else {
 ?>
@@ -69,6 +64,27 @@ class Student extends Controller
           history.go(-1)
         </script>
 <?php
+      }
+    }
+  }
+
+  public function revision($classid = array())
+  {
+    if (empty($classid)) {
+      die(header('location:' . URLROOT . '/student/classes'));
+    } else {
+      $data = [
+        'classid' => $classid,
+        'stid' => $_SESSION['roledata']['stid']
+      ];
+      $order = $this->model("Order");
+      $result = $order->askRevision($data);
+      if ($result) {
+        $_SESSION['toastmsg'] = [true, "Revision request submitted successfully"];
+        die(header('location:' . URLROOT . '/student/class/' . $classid));
+      } else {
+        $_SESSION['toastmsg'] = [false, "Revision request submission failed"];
+        die(header('location:' . URLROOT . '/student/class/' . $classid));
       }
     }
   }
@@ -97,7 +113,14 @@ class Student extends Controller
 
   public function class($class = array())
   {
-
+    if (isset($_SESSION['toastmsg'])) {
+      if ($_SESSION['toastmsg'][0]) {
+        include APPROOT . "/views/includes/successtoast.php";
+      } else {
+        include APPROOT . "/views/includes/errortoast.php";
+      }
+      unset($_SESSION['toastmsg']);
+    }
     if (!empty($class)) {
       $order = $this->model('Order');
       $array = [
