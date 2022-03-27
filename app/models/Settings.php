@@ -63,6 +63,147 @@ class Settings
         }
     }
 
+    public function changeemailaffiliate($dataemail)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Affiliate/emailchange', json_encode($dataemail));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    public function changecontactnumberaffiliate($datacontactnumber)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Affiliate/contactnumberchange', json_encode($datacontactnumber));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+
+    public function deleteaccountaffiliate($deleteaccount)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Affiliate/deleteaccount', json_encode($deleteaccount));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+
+
+
+
+    public function changeemailtutor($dataemail)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Tutor/emailchange', json_encode($dataemail));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    public function changecontactnumbertutor($datacontactnumber)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Tutor/contactnumberchange', json_encode($datacontactnumber));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+
+    public function deleteaccounttutor($deleteaccount)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Tutor/deleteaccount', json_encode($deleteaccount));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+
+
+
+
+    public function changeemailstudent($dataemail)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Student/emailchange', json_encode($dataemail));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    public function changecontactnumberstudent($datacontactnumber)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Student/contactnumberchange', json_encode($datacontactnumber));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+
+    public function deleteaccountstudent($deleteaccount)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Student/deleteaccount', json_encode($deleteaccount));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+
+
+
+
 }
 
     

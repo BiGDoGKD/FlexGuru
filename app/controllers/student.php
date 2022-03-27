@@ -237,6 +237,58 @@ class Student extends Controller
     }
 
 
+    // Change the EMAIL and CONTACT DETAILS
+    $dataemail = [
+      'email' => ''
+
+    ];
+    if (isset($_POST['button_email'])) {
+      $dataemail = [
+        'email' => $_POST['email'],
+      ];
+      $result = $this->settingsModel->changeemailstudent($dataemail);
+      if ($result) {
+        $_SESSION['toastmsg'] = [true, " Email Changed Successfully  !"];
+        die(header('location:' . URLROOT . '/student/settings'));
+      } else {
+        $_SESSION['toastmsg'] = [false, " Email change unsuccessful !"];
+        die(header('location:' . URLROOT . '/student/settings'));
+      }
+    }
+    $datacontactnumber = [
+      'contactnumber' => ''
+    ];
+    if (isset($_POST['button_contact'])) {
+      $datacontactnumber = [
+        'contactnumber' => $_POST['contactnumber']
+      ];
+      $result = $this->settingsModel->changecontactnumberstudent($datacontactnumber);
+      if ($result) {
+        $_SESSION['toastmsg'] = [true, " Contact Number change successful !"];
+        die(header('location:' . URLROOT . '/student/settings'));
+      } else {
+        $_SESSION['toastmsg'] = [false, " Contact Number change unsuccessful !"];
+        die(header('location:' . URLROOT . '/student/settings'));
+      }
+    }
+    $deleteaccount = [
+      'deletereason' => ''
+    ];
+    if (isset($_POST['button_deleteaccount'])) {
+      $deleteaccount = [
+        'deletereason' => $_POST['deletereason']
+      ];
+      $result = $this->settingsModel->deleteaccountstudent($deleteaccount);
+      if ($result) {
+        $_SESSION['toastmsg'] = [true, " Delete Request Submitted!"];
+        die(header('location:' . URLROOT . '/student/settings'));
+      } else {
+        $_SESSION['toastmsg'] = [false, " Delete Request Unsuccessful !"];
+
+        die(header('location:' . URLROOT . '/student/settings'));
+      }
+    }
+
     $this->view('student/settings');
   }
 

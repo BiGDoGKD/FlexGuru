@@ -44,6 +44,22 @@ class affiliate extends Controller
     {
         $this->settingsModel = $this->model("Settings");
         $this->val = $this->model("Validate");
+
+
+        if (isset($_SESSION['toastmsg'])) {
+            if ($_SESSION['toastmsg'][0]) {
+                include APPROOT . "/views/includes/successtoast.php";
+            } else {
+                include APPROOT . "/views/includes/errortoast.php";
+            }
+            unset($_SESSION['toastmsg']);
+        }
+
+
+
+
+
+
         $data = [
             'password' => '',
             'newpassword' => '',
@@ -53,15 +69,11 @@ class affiliate extends Controller
             'password' => '',
             'newpassword' => ''
         ];
-        if (isset($_SESSION['toastmsg'])) {
-            if ($_SESSION['toastmsg'][0]) {
-                include APPROOT . "/views/includes/successtoast.php";
-            } else {
-                include APPROOT . "/views/includes/errortoast.php";
-            }
-            unset($_SESSION['toastmsg']);
-        }
+
         if (isset($_POST['button_password'])) {
+
+
+
             $data = [
                 'password' => $_POST['password'],
                 'newpassword' => $_POST['newpassword'],
@@ -89,7 +101,57 @@ class affiliate extends Controller
             }
         }
 
-
+        // Change the EMAIL and CONTACT DETAILS
+        $dataemail = [
+            'email' => ''
+            
+        ];
+        if (isset($_POST['button_email'])) {
+            $dataemail = [
+                'email' => $_POST['email'],
+            ];
+             $result = $this->settingsModel->changeemailaffiliate($dataemail);
+                if ($result) {
+                    $_SESSION['toastmsg'] = [true, " Email Changed Successfully  !"];
+                    die(header('location:' . URLROOT . '/affiliate/settings'));
+                } else {
+                    $_SESSION['toastmsg'] = [false, " Email change unsuccessful !"];
+                    die(header('location:' . URLROOT . '/affiliate/settings'));
+                }
+            }
+        $datacontactnumber = [
+            'contactnumber' => ''
+        ];
+        if (isset($_POST['button_contact'])) {
+            $datacontactnumber = [
+                'contactnumber' => $_POST['contactnumber']
+            ];
+            $result = $this->settingsModel->changecontactnumberaffiliate($datacontactnumber);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Contact Number change successful !"];
+                die(header('location:' . URLROOT . '/affiliate/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Contact Number change unsuccessful !"];
+                die(header('location:' . URLROOT . '/affiliate/settings'));
+            }
+        }
+        $deleteaccount = [
+            'deletereason' => ''
+        ];
+        if (isset($_POST['button_deleteaccount'])) {
+            $deleteaccount = [
+                'deletereason' => $_POST['deletereason']
+            ];     
+            $result = $this->settingsModel->deleteaccountaffiliate($deleteaccount);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Delete Request Submitted!"];
+                die(header('location:' . URLROOT . '/affiliate/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Delete Request Unsuccessful !"];
+              
+                die(header('location:' . URLROOT . '/affiliate/settings'));
+            }
+        }
         $this->view('affiliate/settings');
     }
 

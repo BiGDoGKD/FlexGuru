@@ -237,6 +237,70 @@ class Tutor extends Controller
                 die(header('location:' . URLROOT . '/tutor/settings'));
             }    
         }
+
+        // Change the EMAIL and CONTACT DETAILS
+        $dataemail = [
+            'email' => ''
+
+        ];
+        if (isset($_POST['button_email'])) {
+            $dataemail = [
+                'email' => $_POST['email'],
+            ];
+            $result = $this->settingsModel->changeemailtutor($dataemail);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Email Changed Successfully  !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Email change unsuccessful !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            }
+        }
+        $datacontactnumber = [
+            'contactnumber' => ''
+        ];
+        if (isset($_POST['button_contact'])) {
+            $datacontactnumber = [
+                'contactnumber' => $_POST['contactnumber']
+            ];
+            $result = $this->settingsModel->changecontactnumbertutor($datacontactnumber);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Contact Number change successful !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Contact Number change unsuccessful !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            }
+        }
+        $deleteaccount = [
+            'deletereason' => ''
+        ];
+        if (isset($_POST['button_deleteaccount'])) {
+            $deleteaccount = [
+                'deletereason' => $_POST['deletereason']
+            ];
+            $result = $this->settingsModel->deleteaccounttutor($deleteaccount);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Delete Request Submitted!"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Delete Request Unsuccessful !"];
+
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
        
       
         $this->view('tutor/settings');
