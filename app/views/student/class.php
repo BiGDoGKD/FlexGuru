@@ -303,151 +303,102 @@
                                     ?>
 
 
-                    <?php if ($_SESSION['userdata']['role'] == 'st') { ?>
-                        <section class="chat-area">
-                            <header>
-                                <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="profile picture">
-                                <div class="details">
-                                    <span class="text-black name"><?php echo $data['tutor']->firstname . ' ' . $data['tutor']->lastname ?></span>
-                                    <p class="text-gray font-sm"><i class="fas text-success fa-circle"></i>&nbsp;Active Now </p>
-                                </div>
-                            </header>
-                            <div class="chat-box">
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
+
+                    <section class="chat-area">
+                        <header>
+                            <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="profile picture">
+                            <div class="details">
+                                <span class="text-black name"><?php echo $data['tutor']->firstname . ' ' . $data['tutor']->lastname ?></span>
+                                <p class="text-gray font-sm"><i class="fas text-success fa-circle"></i>&nbsp;Active Now </p>
                             </div>
-                            <form action="#" class="typing-area">
-                                <input type="text" placeholder="Type a message here...">
-                                <button><i class="fab fa-telegram-plane"></i></button>
-                            </form>
-                        </section>
-                    <?php   } else if ($_SESSION['userdata']['role'] == 'tu') {
-                    ?>
-                        <section class="chat-area">
-                            <header>
-                                <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="profile picture">
-                                <div class="details">
-                                    <span class="text-black name">Kesara Karannagoda</span>
-                                    <p class="text-gray font-sm"><i class="fas text-success fa-circle"></i>&nbsp;Active Now </p>
-                                </div>
-                            </header>
-                            <div class="chat-box">
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                                <div class="chat outgoing">
-                                    <div class="details">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, praesentium culpa esse debitis aliquam ut fuga. Dolore nobis exercitationem consectetur.</p>
-                                    </div>
-                                </div>
-                                <div class="chat incoming">
-                                    <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" alt="">
-                                    <div class="details">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ipsam!</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <form action="#" class="typing-area">
-                                <input type="text" placeholder="Type a message here...">
-                                <button><i class="fab fa-telegram-plane"></i></button>
-                            </form>
-                        </section>
-                    <?php
-                    } ?>
+                        </header>
+                        <div class="chat-box">
+
+                        </div>
+                        <form action="#" class="typing-area">
+                            <input type="hidden" name="userone" value="<?php echo $data['class']->studentuserid; ?>" />
+                            <input type="hidden" name="usertwo" value="<?php echo $data['class']->tutoruserid; ?>" />
+                            <input type="text" name="textcontent" placeholder="Type a message here...">
+                            <button onclick="" type="submit"><i class="fab fa-telegram-plane"></i></button>
+                        </form>
+                    </section>
+
+                    <!-- send chat message start  -->
+                    <script>
+                        let username = 'kesara';
+                        let password = '12345';
+                        $(document).ready(function() {
+                            $('.typing-area').submit(function(e) {
+                                e.preventDefault();
+                                let formData = JSON.stringify($('.typing-area').serializeArray());
+                                $.ajax({
+                                    url: '<?php echo APIURL . '/chat'; ?>',
+                                    beforeSend: function(xhr) {
+                                        xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password))
+                                    },
+                                    type: 'POST',
+                                    data: formData,
+                                    success: function(data) {
+                                        document.querySelector('.chat-box').scrollTop = document.querySelector('.chat-box').scrollHeight + 50;
+                                        document.querySelector('.typing-area input[name="textcontent"]').value = '';
+                                    },
+                                    cache: false,
+                                    contentType: 'application/json',
+                                    processData: false
+                                });
+                            });
+                        });
+                    </script>
+                    <!-- send chat message ends  -->
+
+                    <!-- chat area ajax js  -->
+                    <script>
+                        // import jason file from config folder 
+                        let headers = new Headers();
+                        let userone = <?php echo json_encode($data['class']->studentuserid) ?>;
+                        let usertwo = <?php echo json_encode($data['class']->tutoruserid) ?>;
+
+                        headers.append('Content-Type', 'application/json');
+                        headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+                        setInterval(() => {
+                            fetch('http://localhost/api.flexguru.tk/chat/getchat/2222', {
+                                    method: `POST`,
+                                    headers: headers,
+                                    body: JSON.stringify({
+                                        "userone": userone,
+                                        "usertwo": usertwo
+                                    })
+                                })
+                                .then(response => {
+                                    if (response.ok) {
+                                        return Promise.resolve(response);
+                                    } else {
+                                        return Promise.reject(new Error('Failed to load'));
+                                    }
+                                }).then(response => response.json()).then(data => {
+                                    let chatstream = '';
+                                    data['response']['result'].forEach((value, idx) => {
+                                        if (value['fromUserID'] == userone) {
+                                            chatstream += `<div class="chat outgoing">
+                                            <div class="details">
+                                                <p>${value['messagecontent']}</p>
+                                            </div></div>`;
+                                        } else {
+                                            chatstream += `<div class="chat incoming">
+                                            <img src="<?php echo URLROOT . '/public/uploads/users/' . $data['tutor']->photourl ?>" alt="">
+                                            <div class="details">
+                                                <p>${value['messagecontent']}</p>
+                                            </div></div>`;
+                                        }
+                                    })
+                                    document.querySelector(".chat-box").innerHTML = chatstream;
+                                }).catch((e) => {
+                                    console.log(e);
+                                })
+                        }, 1000)
+                    </script>
+                    <!-- chat area ajax js ends  -->
 
 
                 </div>
