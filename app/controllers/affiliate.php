@@ -202,5 +202,34 @@ class affiliate extends Controller
 
         $this->view('affiliate/complaint', $data);
     }
+
+    public function referrallinks(){
+
+        $data = [
+            'url' => ''
+
+        ];
+        if(isset($_POST['urlsubmit'])){
+            $data = [
+                'url' => $_POST['url']
+            ];
+
+        $_SESSION['referralurl'] = $data['url'];
+            
+        }
+        $this->view('affiliate/referrallinks',$data);
+
+
+    }
+
+    public function withdrawearnings()
+    {
+        $this->view('affiliate/withdrawearnings');
+    }
+
+
+
+
+
 }
 //

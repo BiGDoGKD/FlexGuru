@@ -69,6 +69,7 @@
                         //Set session variables
                         $_SESSION['type'] = 'affiliate';
                         $_SESSION['userdata'] = $res['data'][0];
+                        $_SESSION['roledata'] = $res['roleData'][0];
                         $_SESSION['AFFACCESS'] = $res['token'];
                         header('location:' . URLROOT . '/affiliate');
                         break;
