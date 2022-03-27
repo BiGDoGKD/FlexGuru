@@ -23,7 +23,7 @@
         <div class=" user-dashboard container mt-1 mb-3">
 
           <div class="gig-form col-12-xs col-8-lg">
-            <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row">
+            <form action="<?php echo URLROOT; ?>/affiliate/complaint" method="POST" style="width: 100%;" class="form-control row">
 
 
 

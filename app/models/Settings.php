@@ -17,16 +17,53 @@ class Settings
 
     public function __construct()
     {
+        $this->api = new API;
         $this->db = new Database;
     }
 
-    public function passwordchange($passwordchange){ 
-            if ($response = $this->api->call('POST', APIURL . 'tutor/passwordchange', json_encode($passwordchange))) {
-                $responseArray = (array)json_decode($response);
-                $result = (array)$responseArray["response"];
-                return $result;
-            }
+    public function passwordchangetutor($passwordchange){
+        $response = $this->api->usercall('POST', APIURL . 'Tutor/passwordchange', json_encode($passwordchange));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
         }
         
-
     }
+
+    public function passwordchangestudent($passwordchange)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Student/passwordchange', json_encode($passwordchange));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    public function passwordchangeaffiliate($passwordchange)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Affiliate/passwordchange', json_encode($passwordchange));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+}
+
+    
+

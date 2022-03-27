@@ -73,7 +73,7 @@ class Complaints
 
     public function complaintsendaffiliate($data)
     {
-        $response = $this->api->usercall('POST', APIURL . 'affiliate/addcomplaint', json_encode($data));
+        $response = $this->api->usercall('POST', APIURL . 'Affiliate/addcomplaint', json_encode($data));
         print_r($response);
         $status = json_decode($response)->response->status;
         if ($status == 200) {

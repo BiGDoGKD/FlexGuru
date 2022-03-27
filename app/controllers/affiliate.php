@@ -39,10 +39,28 @@ class affiliate extends Controller
     }
 
 
+
     public function settings()
     {
         $this->settingsModel = $this->model("Settings");
         $this->val = $this->model("Validate");
+        $data = [
+            'password' => '',
+            'newpassword' => '',
+            'confirmpassword' => ''
+        ];
+        $passwordchange = [
+            'password' => '',
+            'newpassword' => ''
+        ];
+        if (isset($_SESSION['toastmsg'])) {
+            if ($_SESSION['toastmsg'][0]) {
+                include APPROOT . "/views/includes/successtoast.php";
+            } else {
+                include APPROOT . "/views/includes/errortoast.php";
+            }
+            unset($_SESSION['toastmsg']);
+        }
         if (isset($_POST['button_password'])) {
             $data = [
                 'password' => $_POST['password'],
@@ -56,16 +74,26 @@ class affiliate extends Controller
                 ];
                 $passwordchange['password'] = hash('sha256', $passwordchange['password']);
                 $passwordchange['newpassword'] = hash('sha256', $passwordchange['newpassword']);
-                $response = $this->settingsModel->passwordchange($passwordchange);
-                if ($response['result']->message == "Password Changed Successfully") {
-                    header('location:' . URLROOT . '/tutor/tutorprofileview');
+
+                $result = $this->settingsModel->passwordchangeaffiliate($passwordchange);
+                if ($result) {
+                    $_SESSION['toastmsg'] = [true, "Password change successful !"];
+                    die(header('location:' . URLROOT . '/affiliate/settings'));
                 } else {
-                    $this->view('tutor/settings', ['error' => 'Password does not match']);
+                    $_SESSION['toastmsg'] = [false, "Password change unsuccessful !"];
+                    die(header('location:' . URLROOT . '/affiliate/settings'));
                 }
+            } else {
+                $_SESSION['toastmsg'] = [false, " Password Mismatch !"];
+                die(header('location:' . URLROOT . '/affiliate/settings'));
             }
         }
-        $this->view('tutor/settings');
+
+
+        $this->view('affiliate/settings');
     }
+
+
 
 
     public function messages(){
@@ -74,8 +102,6 @@ class affiliate extends Controller
 
     public function complaint()
     {
-
-
         if (isset($_SESSION['toastmsg'])) {
             if ($_SESSION['toastmsg'][0]) {
                 include APPROOT . "/views/includes/successtoast.php";
@@ -94,12 +120,7 @@ class affiliate extends Controller
             'complaint' => ''
         ];
 
-
-
-
         if (isset($_POST['complaintbtn'])) {
-
-
             $data = [
 
                 'contactnumber' => $_POST['contactnumber'],
@@ -119,11 +140,5 @@ class affiliate extends Controller
 
         $this->view('affiliate/complaint', $data);
     }
-
-
-
-
-
-    
 }
 //

@@ -21,10 +21,10 @@
     <div class="user-dashboard container  mt-3 mb-3">
 
         <div class="gig-form col-12-xs col-8-lg">
-            <form action="<?php echo URLROOT; ?>/tutor/settings" method="POST" style="width: 100%;" class="form-control row">
+            <form action="<?php echo URLROOT; ?>/student/settings" method="POST" style="width: 100%;" class="form-control row">
                 <div class="form-group col-12-xs">
-                    <label for="currentpassword">Current Password<span class="text-error">*</span> </label>
-                    <input type="password" class="form-control" name="currentpassword" id="currentpassword" placeholder="Enter the current password..." value="" required />
+                    <label for="password">Current Password<span class="text-error">*</span> </label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter the current password..." value="" required />
                     <p class="form-control form-feedback text-error">
 
                     </p>
@@ -59,7 +59,7 @@
 
 
 
-    <div class="user-dashboard container  mt-3 mb-3">
+    <!-- <div class="user-dashboard container  mt-3 mb-3">
 
         <div class="gig-form col-12-xs col-8-lg">
             <form action="<?php echo URLROOT; ?>/tutor/settings" method="POST" style="width: 100%;" class="form-control row">
@@ -75,8 +75,8 @@
 
 
                 <div class="form-group col-12-xs">
-                    <label for="phoneno">Phoneno<span class="text-error">*</span> </label>
-                    <input type="text" class="form-control" name="phoneno" id="phoneno" placeholder="Enter the phone number" value="" required />
+                    <label for="phoneno">Contact Number<span class="text-error">*</span> </label>
+                    <input type="text" class="form-control" name="contactnumber" id="phoneno" placeholder="Enter the phone number" value="" required />
                     <p class="form-control form-feedback text-error">
 
                     </p>
@@ -89,10 +89,10 @@
             </form>
 
         </div>
-    </div>
+    </div> -->
 
 
-
+<!-- 
     <div class="user-dashboard container  mt-3 mb-3">
         <div class="gig-form col-12-xs col-8-lg">
             <form action="<?php echo URLROOT; ?>/tutor/settings" method="POST" style="width: 100%;" class="form-control row">
@@ -119,7 +119,7 @@
             </form>
         </div>
 
-    </div>
+    </div> -->
 
     <?php
     include APPROOT . '/views/includes/footer.php';
