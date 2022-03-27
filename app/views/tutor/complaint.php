@@ -23,21 +23,15 @@
                 <div class=" user-dashboard container mt-1 mb-3">
 
                     <div class="gig-form col-12-xs col-8-lg">
-                        <form action="<?php echo URLROOT; ?>/gigs/publish" method="POST" style="width: 100%;" class="form-control row">
+                        <form action="<?php echo URLROOT; ?>/tutor/complaint" method="POST" style="width: 100%;" class="form-control row">
 
-                            <div class="form-group col-12-xs">
-                                <label for="complaintdate">Complaint Date<span class="text-error">*</span> </label>
-                                <input type="date" class="form-control" name="complaintdate" id="complaint" placeholder="DD-MM-YYYY" value="" required />
-                                <p class="form-control form-feedback text-error">
-
-                                </p>
-                            </div>
+                   
 
 
 
                             <div class="form-group col-12-xs">
                                 <label for="contactno">Contact Number<span class="text-error">*</span> </label>
-                                <input type="text" class="form-control" name="contactno" id="contactno" placeholder="+94 777 xxx xxxx" value="" required />
+                                <input type="text" class="form-control" name="contactnumber" id="contactnumber" placeholder="+94 777 xxx xxxx" value="" required />
                                 <p class="form-control form-feedback text-error">
 
                                 </p>
@@ -78,7 +72,7 @@
 
 
                             <div class="col-8-m display">
-                                <button class="marketplace__help-btn">Submit Complaint </button>
+                                <input type="submit" class="marketplace__help-btn" name="complaintbtn" value="Submit complaint"> 
                             </div>
 
                         </form>

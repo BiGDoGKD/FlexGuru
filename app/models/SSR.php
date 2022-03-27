@@ -19,6 +19,7 @@ class SSR
     {
         $this->db = new Database;
         $this->api = new API;
+    
     }
 
 

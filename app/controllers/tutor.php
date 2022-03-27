@@ -350,9 +350,53 @@ class Tutor extends Controller
 
     public function complaint()
     {
-        $this->view('tutor/complaint');
-    }
 
+
+        if (isset($_SESSION['toastmsg'])) {
+            if ($_SESSION['toastmsg'][0]) {
+                include APPROOT . "/views/includes/successtoast.php";
+            } else {
+                include APPROOT . "/views/includes/errortoast.php";
+            }
+            unset($_SESSION['toastmsg']);
+        }
+
+        $this->complaintsModel = $this->model("Complaints");
+        $data = [
+
+            'contactnumber' =>'',
+            'email' => '',
+            'complainttype' =>'' ,
+            'complaint' => ''
+        ];
+        
+
+
+
+        if (isset($_POST['complaintbtn'])) {
+
+
+            $data = [
+                
+                'contactnumber' => $_POST['contactnumber'],
+                'email' => $_POST['email'],
+                'complainttype' => $_POST['complainttype'],
+                'complaint' => $_POST['complaint']
+            ];
+            $result = $this->complaintsModel->complaintsendtutor($data);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, "Complaint submitted successfully"];
+                die(header('location:' . URLROOT . '/tutor/complaint'));
+            } else {
+                $_SESSION['toastmsg'] = [false, "Complaint submission failed"];
+                die(header('location:' . URLROOT . '/tutor/complaint'));
+            }
+     
+        }
+
+            $this->view('tutor/complaint', $data);
+        
+    }
     public function earnings()
     {
         $this->view('tutor/earnings');

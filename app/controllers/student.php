@@ -253,32 +253,48 @@ class Student extends Controller
 
   public function complaint()
   {
+
+
+    if (isset($_SESSION['toastmsg'])) {
+      if ($_SESSION['toastmsg'][0]) {
+        include APPROOT . "/views/includes/successtoast.php";
+      } else {
+        include APPROOT . "/views/includes/errortoast.php";
+      }
+      unset($_SESSION['toastmsg']);
+    }
+
     $this->complaintsModel = $this->model("Complaints");
     $data = [
-      'username' => '',
+
+      'contactnumber' => '',
       'email' => '',
-      'type' => '',
+      'complainttype' => '',
       'complaint' => ''
     ];
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+    if (isset($_POST['complaintbtn'])) {
+
+
       $data = [
-        'username' => trim($_POST['username']),
-        'email' => trim($_POST['email']),
-        'type' => trim($_POST['type']),
-        'complaint' => trim($_POST['complaint'])
+
+        'contactnumber' => $_POST['contactnumber'],
+        'email' => $_POST['email'],
+        'complainttype' => $_POST['complainttype'],
+        'complaint' => $_POST['complaint']
       ];
-
-      if ($this->complaintsModel->insert($data)) {
-
-        header('location:' . URLROOT . '/student/studentprofileview');
+      $result = $this->complaintsModel->complaintsendstudent($data);
+      if ($result) {
+        $_SESSION['toastmsg'] = [true, "Complaint submitted successfully"];
+        die(header('location:' . URLROOT . '/student/complaint'));
       } else {
-        die('Something went wrong.');
+        $_SESSION['toastmsg'] = [false, "Complaint submission failed"];
+        die(header('location:' . URLROOT . '/student/complaint'));
       }
     }
 
     $this->view('student/complaint', $data);
   }
+
 }
 //
