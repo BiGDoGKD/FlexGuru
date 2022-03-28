@@ -29,7 +29,7 @@ class Admin extends Controller
         //         die(header('location:' . URLROOT . '/tutor'));
         //     }
         // }
-        $this->tutor = $this->model("Tutor");
+        $this->tutor = $this->model("TutorModel");
     }
 
     public function cadmin()
@@ -172,7 +172,7 @@ class Admin extends Controller
     }
     public function verifications()
     {
-        $this->tutorModel = $this->model("Tutor");
+        $this->tutorModel = $this->model("TutorModel");
         $resultArray = $this->tutorModel->getVerifications();
         $this->view('admin/pages/verifications', $resultArray);
     }

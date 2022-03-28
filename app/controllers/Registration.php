@@ -65,7 +65,7 @@ class Registration extends Controller
         $this->mail = $this->model("Mailer");
         $this->val = $this->model("Validate");
         $this->student = $this->model("Student");
-        $this->tutor = $this->model("Tutor");
+        $this->tutor = $this->model("TutorModel");
         $this->affiliate = $this->model("Affiliate");
         $this->registration = $this->model("Register");
     }
