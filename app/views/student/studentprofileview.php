@@ -119,7 +119,7 @@
                     <div class="tutor-dashboard__create-gig col-12-xs mt-1 mb-1">
                         <span class="title">Total Gigs - 0</span>
                         <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/gigs/mygigs' ?>'">My Gigs</button>
-                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/student/pages/requests' ?>'">Create a Special Service Request</button>
+                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/student/request' ?>'">Create a Special Service Request</button>
                     </div>
 
 
