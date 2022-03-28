@@ -5,7 +5,7 @@
         </div>
         <div class="profile-navbar__menu col-6-md col-4-lg justify-content-around display-md-f display-xs-n">
             <ul class="display-f align-items-center justify-content-around" style="width: 100%">
-                <li><a href="<?php echo URLROOT ?>/affiliate/messages">Messages</a></li>
+            
                 <li><a href="<?php echo URLROOT ?>/info/terms">Terms and Conditions</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/faq">Help</a></li>
                 <li> <a href="<?php echo URLROOT ?>/marketplace">MarketPlace</a></li>

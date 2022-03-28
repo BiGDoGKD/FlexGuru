@@ -18,6 +18,7 @@ class Complaints
     public function __construct()
     {
         $this->db = new Database;
+        $this->api = new API;
     }
 
     public function insert($data)
@@ -41,4 +42,50 @@ class Complaints
         }
     }
 
+
+    public function complaintsendtutor($data){
+            $response = $this->api->usercall('POST', APIURL . 'tutor/addcomplaint', json_encode($data));
+            print_r($response);
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                return true;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
+        }
+
+    public function complaintsendstudent($data)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'student/addcomplaint', json_encode($data));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+
+    public function complaintsendaffiliate($data)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Affiliate/addcomplaint', json_encode($data));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    
 }
+ 
+
