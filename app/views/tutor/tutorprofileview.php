@@ -202,7 +202,7 @@
                                         become a leading tutor on Flexguru. <a class="text-primary" href="#"><u>learn more...</u></a> </p>
                                 </div>
                                 <div class="col-5-lg col-12-xs pl-2 pr-2 pt-1">
-                                    <img src="<?php echo URLROOT . '/public/img/studentprofileview/study.svg' ?>" id="study_img" alt="">
+                                    <img src="<?php echo URLROOT . '/public/updated/img/improve.svg' ?>" id="study_img" alt="">
 
                                 </div>
                             </div>
