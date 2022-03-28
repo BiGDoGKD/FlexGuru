@@ -7089,6 +7089,12 @@ img {
   .table-home table tbody tr .links a.error:hover {
     text-decoration: underline;
   }
+  .table-home table tbody tr .links a.success {
+    color: #52c41a;
+  }
+  .table-home table tbody tr .links a.success:hover {
+    text-decoration: underline;
+  }
   .table-home table tbody tr .links .sr-only {
     position: absolute;
     width: 1px;

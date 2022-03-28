@@ -95,30 +95,63 @@
                                                                 <td class="text-warning">
                                                                     Pending
                                                                 </td>
-                                                            <?php } elseif ($service['status'] == 'approved') {
+                                                            <?php } else if ($service['status'] == 'active') {
                                                             ?>
                                                                 <td class="text-success">
-                                                                    Approved
+                                                                    Active
                                                                 </td>
                                                             <?php
-                                                            } elseif (
-                                                                $service['status'] == 'rejected'
+                                                            } else if (
+                                                                $service['status'] == 'inactive'
                                                             ) {
                                                             ?>
-                                                                <td class="text-danger">
-                                                                    Rejected
+                                                                <td class="text-error">
+                                                                    Inactive
                                                                 </td>
                                                             <?php } ?>
 
                                                             <td class="links">
                                                                 <a href="<?php echo URLROOT . '/marketplace/service/' . $service['gigid'] ?>" class="info">View</a>
                                                             </td>
-                                                            <td class="links">
-                                                                <a href="<?php echo '/gigs/settings/' . $service['gigid'] ?>" class="info">Edit</a>
-                                                            </td>
-                                                            <td class="links">
-                                                                <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Deactivate</a>
-                                                            </td>
+
+                                                            <?php if ($service['status'] == 'pending') { ?>
+                                                                <td class="text-gray">
+                                                                    Edit
+                                                                </td>
+                                                            <?php } else if ($service['status'] == 'active') {
+                                                            ?>
+                                                                <td class="text-gray">
+                                                                    Edit
+                                                                </td>
+                                                            <?php
+                                                            } else if (
+                                                                $service['status'] == 'inactive'
+                                                            ) {
+                                                            ?>
+                                                                <td class="links">
+                                                                    <a href="<?php echo URLROOT . '/gigs/settings/' . $service['gigid'] ?>" class="info">Edit</a>
+                                                                </td>
+                                                            <?php } ?>
+
+                                                            <?php if ($service['status'] == 'pending') { ?>
+                                                                <td class="links">
+                                                                    <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Deactivate</a>
+                                                                </td>
+                                                            <?php } else if ($service['status'] == 'active') {
+                                                            ?>
+                                                                <td class="links">
+                                                                    <a onclick="modalDeleteGig(<?php echo $service['gigid']; ?>)" class="error pointer">Deactivate</a>
+                                                                </td>
+                                                            <?php
+                                                            } else if (
+                                                                $service['status'] == 'inactive'
+                                                            ) {
+                                                            ?>
+                                                                <td class="links">
+                                                                    <a onclick="modalActivateGig(<?php echo $service['gigid']; ?>)" class="success pointer">Activate</a>
+                                                                </td>
+                                                            <?php } ?>
+
                                                         </tr>
                                                 <?php
                                                         $i++;
@@ -137,6 +170,9 @@
     </main>
     <?php
     include APPROOT . '/views/includes/modals/modal-delete-gig.php';
+    ?>
+    <?php
+    include APPROOT . '/views/includes/modals/modal-activate-gig.php';
     ?>
     <?php
     include APPROOT . '/views/includes/footer.php';

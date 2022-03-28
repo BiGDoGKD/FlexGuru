@@ -44,6 +44,18 @@ class Gigs extends Controller
 
     public function mygigs()
     {
+        if (isset($_SESSION['toastmsg'])) {
+            if ($_SESSION['toastmsg'][0]) {
+                include APPROOT . "/views/includes/successtoast.php";
+            } else {
+                include APPROOT . "/views/includes/errortoast.php";
+            }
+            unset($_SESSION['toastmsg']);
+        }
+
+
+
+
         $this->gig = $this->model('Gig');
         $data = [
             'tuid' => $_SESSION['roledata']['tuid'],
@@ -65,7 +77,137 @@ class Gigs extends Controller
         ];
         $result = $this->gig->deleteGig($data);
         if ($result) {
-            header('Location: ' . URLROOT . '/tutor/mygigs');
+            $_SESSION['toastmsg'] = [true, "Gig Deactivated Successfully!"];
+            die(header('location:' . URLROOT . '/gigs/mygigs'));
+        } else {
+            $_SESSION['toastmsg'] = [false, "Gig Deactivated Unsuccessful!"];
+            die(header('location:' . URLROOT . '/gigs/mygigs'));
+        }
+    }
+
+    public function settings($gigid)
+    {
+        $validate = true;
+
+        $this->gig = $this->model('Gig');
+        $request = [
+            'gigid' => $gigid,
+            'tuid' => $_SESSION['roledata']['tuid'],
+        ];
+
+        $result = $this->gig->getGigSettings($request);
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            //form process
+            //Sanatize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            if ($_FILES['file']['name'] == null) {
+                $data = [
+                    'gigid' => $gigid,
+                    'title' => trim($_POST['title']),
+                    'description' => trim($_POST['description']),
+                    'price' => intval(trim($_POST['price'])),
+                    'revisions' => trim($_POST['revisions']),
+                    'duration' => intval(trim($_POST['duration'])),
+                    'method' => trim($_POST['method']),
+                    'medium' => trim($_POST['medium']),
+                    'subject' => trim($_POST['subject']),
+                    'lesson' => trim($_POST['lesson']),
+                    'image' => $result['image'],
+                    'tutorid' => intval($_SESSION["roledata"]["tuid"]),
+                    'imageError' => '',
+                ];
+            } else {
+                $data = [
+                    'gigid' => $gigid,
+                    'title' => trim($_POST['title']),
+                    'description' => trim($_POST['description']),
+                    'price' => intval(trim($_POST['price'])),
+                    'revisions' => trim($_POST['revisions']),
+                    'duration' => intval(trim($_POST['duration'])),
+                    'method' => trim($_POST['method']),
+                    'medium' => trim($_POST['medium']),
+                    'subject' => trim($_POST['subject']),
+                    'lesson' => trim($_POST['lesson']),
+                    'image' => $_FILES['file']['name'],
+                    'tutorid' => intval($_SESSION["roledata"]["tuid"]),
+                    'imageError' => '',
+                ];
+
+                $file = $_FILES['file'];
+                $fileName = $_FILES['file']['name'];
+                $fileTmpName = $_FILES['file']['tmp_name'];
+                $fileSize = $_FILES['file']['size'];
+                $fileError = $_FILES['file']['error'];
+                $fileType = $_FILES['file']['type'];
+
+                $fileExt = explode('.', $fileName);
+                $fileActualExt = strtolower(end($fileExt));
+
+                $allowed = array('jpg', 'jpeg', 'png', 'PNG', 'JPG', 'JPEG');
+
+                //if no errors
+                if (true) {
+                    if (in_array($fileActualExt, $allowed)) {
+                        if ($fileError === 0) {
+                            if ($fileSize < 1000000) {
+                                $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                                $data['image'] = $fileNameNew;
+                                $fileDestination = APPROOT . '/../public/uploads/services/' . $fileNameNew;
+                                move_uploaded_file($fileTmpName, $fileDestination);
+                            } else {
+                                $validate = false;
+                                $data['imageError'] = "Your file is too big";
+                            }
+                        } else {
+                            $validate = false;
+                            $data['imageError'] = "There was an error uploading your file";
+                        }
+                    } else {
+                        $validate = false;
+                        $data['imageError'] = "You cannot upload files of this type";
+                    }
+                } else {
+                    $validate = false;
+                    $data['imageError'] = "You need to upload an image";
+                }
+            }
+            if ($validate) {
+                $result = $this->gig->update($data);
+                if ($result) {
+                    $_SESSION['toastmsg'] = [true, "Service Updated Successfully!"];
+                    die(header('location:' . URLROOT . '/gigs/mygigs'));
+                } else {
+                    $_SESSION['toastmsg'] = [false, "Service Update Unsuccessfull!"];
+                    die(header('location:' . URLROOT . '/gigs/mygigs'));
+                }
+            } else {
+                $_SESSION['toastmsg'] = [false, $data['imageError']];
+                die(header('location:' . URLROOT . '/gigs/mygigs'));
+            }
+        } else {
+            if ($result) {
+                $this->view('tutor/gig/settings', $result);
+            } else {
+                $this->view('tutor/gig/settings', false);
+            }
+        }
+    }
+
+    public function activate($gigid)
+    {
+        $this->gig = $this->model('Gig');
+        $data = [
+            'gigid' => $gigid,
+            'tuid' => $_SESSION['roledata']['tuid'],
+        ];
+        $result = $this->gig->activateGig($data);
+        if ($result) {
+            $_SESSION['toastmsg'] = [true, "Activation Request Set Successfully!"];
+            die(header('location:' . URLROOT . '/gigs/mygigs'));
+        } else {
+            $_SESSION['toastmsg'] = [false, "Activation Request Set Unsuccessfull!"];
+            die(header('location:' . URLROOT . '/gigs/mygigs'));
         }
     }
 
