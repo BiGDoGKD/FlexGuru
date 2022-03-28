@@ -101,6 +101,12 @@
                 text-decoration: underline;
               }
             }
+            a.success {
+              color: #52c41a;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
             .sr-only {
               position: absolute;
               width: 1px;
