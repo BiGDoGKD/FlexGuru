@@ -10,7 +10,7 @@
      * LAST UPDATE DATA : Sep, 01, 2021
      * FILE TYPE: Model File
      */
-    class Tutor
+    class TutorModel
     {
         private $db;
 
@@ -20,15 +20,20 @@
             $this->api = new API;
         }
 
-        /* Test (database and table needs to exist before this works)
-        public function getUsers() {
-            $this->db->query("SELECT * FROM users");
+        public function getTutorData()
+        {
+            $response = $this->api->usercall("GET", APIURL . 'tutor/gettutor', null);
+            $status = json_decode($response)->response->status;
 
-            $result = $this->db->resultSet();
-
-            return $result;
+            if ($status == 200) {
+                return (array)json_decode($response)->response->result;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
         }
-        */
+
         //parameters: verification file name, username, tutor data(array)
         public function register($vfilename, $username, $datatutor)
         {

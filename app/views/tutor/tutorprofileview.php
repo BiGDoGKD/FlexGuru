@@ -37,26 +37,55 @@
                                     <?php echo '@' . $_SESSION['userdata']['username'] ?>
                                 </span>
                             </div>
+
                             <div class="profile-card-header__profile-ratings">
                                 <div class="star-bar display-f justify-content-center">
                                     <div class="star-bar__star-container">
-                                        <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                        <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                        <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                        <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                        <i class="fa fa-solid fa-star fa-lg text-gray" style="position: relative"><i style="
-													position: absolute;
-													top: 50%;
-													left: 50%;
-													transform: translate(-50%, -50%);
-													z-index: 1;
-												" class="fa fa-star-half text-orange"></i></i>
+                                        <?php
+                                        if ($data['tutor']['class'][0]->rating == null) {
+                                        ?>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                        <?php
+                                        } else {
+                                            if (fmod($data['tutor']['class'][0]->rating, 1) == 0) {
+                                                for ($i = 0; $i < round($data['tutor']['class'][0]->rating); $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-orange"></i>';
+                                                }
+                                            } else {
+                                                for ($i = 0; $i < ceil($data['tutor']['class'][0]->rating) - 1; $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-orange"></i>';
+                                                }
+                                            }
+                                            if (fmod((5 - $data['tutor']['class'][0]->rating), 1) == 0) {
+                                                for ($i = 0; $i < 5 - round($data['tutor']['class'][0]->rating); $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-gray"></i>';
+                                                }
+                                            } else {
+                                                echo '<i class="fas fa-star-half-alt fa-lg text-orange"></i>';
+                                                for ($i = 0; $i < round(4 - $data['tutor']['class'][0]->rating); $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-gray"></i>';
+                                                }
+                                            }
+                                        }
+                                        ?>
+
+                                        <!-- <i class="fas fa-star-half-alt fa-lg text-orange"></i> -->
                                     </div>
                                 </div>
                                 <div class="rating-count text-gray">
-                                    <span class="base-value font-lg text-black">4.5</span>
+                                    <span class="base-value font-lg text-black"> <?php
+                                                                                    if ($data['tutor']['class'][0]->rating == null) {
+                                                                                        echo 'N/A';
+                                                                                    } else {
+                                                                                        echo number_format((float)$data['tutor']['class'][0]->rating, 1, '.', '');
+                                                                                    }
+                                                                                    ?></span>
                                     <span class="feedback-count">(
-                                        <span class="feedback-count__count">12</span>
+                                        <span class="feedback-count__count"> <?php echo $data['tutor']['class'][0]->jobs; ?></span>
                                         <span class="feedback-count__text">feedbacks</span>
                                         )
                                     </span>
@@ -156,7 +185,7 @@
                             <?php
                         } else {
                             $i = 1;
-                            foreach ($data as $gig) {
+                            foreach ($data['gigs'] as $gig) {
                                 $service = (array)$gig;
                             ?>
 

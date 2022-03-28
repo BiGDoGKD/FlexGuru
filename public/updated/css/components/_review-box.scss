@@ -1,0 +1,41 @@
+@include xs {
+  .reviews {
+    margin: 2rem 0;
+    width: 100%;
+    padding: 2rem 0;
+    min-height: 500px;
+    // overflow-y: auto;
+    .review-box {
+      width: 100%;
+      padding: 0.75rem 1.5rem 1rem 0rem;
+      border-bottom: 1px solid #e6e6e6;
+      .header {
+        display: flex;
+        align-items: center;
+        .photo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .name {
+          display: flex;
+          padding-left: 0.25rem;
+          .full-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #000;
+            margin: 0 0.35rem;
+          }
+        }
+      }
+      .body {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+@include lg {
+}

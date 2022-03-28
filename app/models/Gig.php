@@ -85,4 +85,13 @@ class Gig
             return $result;
         }
     }
+
+    public function gigDetails($data)
+    {
+        if ($response = $this->api->call('POST', APIURL . 'visitor/gigdetails', json_encode($data))) {
+            $responseArray = (array)json_decode($response);
+            $result = (array)$responseArray["response"];
+            return $result;
+        }
+    }
 }

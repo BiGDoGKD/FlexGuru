@@ -174,13 +174,19 @@ class Tutor extends Controller
             include APPROOT . "/views/includes/errortoast.php";
         }
 
-        $this->gig = $this->model('Gig');
+        $gig = $this->model('Gig');
         $data = [
             'tuid' => $_SESSION['roledata']['tuid'],
         ];
-        $result = $this->gig->getGigsByTutor($data);
+        $result = $gig->getGigsByTutor($data);
+        $tutorData = $this->model('TutorModel')->getTutorData();
+        $tutorpage = [
+            'gigs' => $result['result'],
+            'tutor' => $tutorData,
+        ];
+
         if (!isset($result['result']->message)) {
-            $this->view('tutor/tutorprofileview', $result['result']);
+            $this->view('tutor/tutorprofileview', $tutorpage);
         } else {
             $this->view('tutor/tutorprofileview');
         }
