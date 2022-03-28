@@ -5,18 +5,12 @@
  * PROJECT DESCRIPTION: Flexguru is a tutor freelancing platform where students can find the best tutors to fullfill their requirements in a much more flexible manner and provide a platform for enthusiastic tutors to distribute knowledge in whatever the area  they are good at. 
  * @package flexguru
  * AUTHORS: Kesara Karannagoda, Avishka Hettiarachchi, Kavindhu Galagedara, Razeen Nizar
- * CO-AUTHORS: 
- * LAST UPDATE BY: Kesara Karannagoda
- * LAST UPDATE DATA : Sep, 01, 2021
- * FILE TYPE:   troller File
  */
 
 class Registration extends Controller
 {
     private $val;
-    private $student;
     private $tutor;
-    private $affiliate;
     private $registration;
     private $mail;
     private $data = [
@@ -70,41 +64,22 @@ class Registration extends Controller
         $this->registration = $this->model("Register");
     }
 
-    //validate function for every user
-    private function validate($data)
-    {
-        //validation begin
-        $data["firstnameError"] = $this->val->name($data['firstname']);
-        $data["lastnameError"] = $this->val->name($data['lastname']);
-        // $data["usernameError"] = $this->val->username($data['username']);
-        // $data["emailError"] = $this->val->email($data['email']);
-        // $data["phonenoError"] = $this->val->mobile($data['phoneno']);
-
-        $res = $this->val->validate($data['email'], $data['username'], $data['phoneno']);
-
-        $data["emailError"] = $res['emailError'];
-        $data["usernameError"] = $res['usernameError'];
-        $data["phonenoError"] = $res['phonenoError'];
-
-        if ($data["role"] == 'st') {
-            $data["dobError"] = $this->val->dob($data['dob']);
-        } else {
-            $data["dobError"] = $this->val->spdob($data['dob']);
-        }
-        $data["confpasswordError"] = $this->val->password($data['password'], $data['confpassword']);
-        //validation ends
-        return $data;
-    }
+    // DEFAULT ACTION PAGE OF THE REGISTRATION CONTROLLER
 
     public function index()
     {
         $this->view('registration/roles');
     }
 
+    // SELECT A ROLE TO REGISTER
+
     public function roles()
     {
         $this->view('registration/roles');
     }
+
+
+    // OTP CODE VALIDATION 
 
     public function verification()
     {
@@ -172,6 +147,8 @@ class Registration extends Controller
         }
     }
 
+    // SENDDATA FUNCTION IS USED TO SEND DATA TO THE COOKIE AND TO SEND THE OTP TO THE USER'S EMAIL 
+
     private function senddata($data)
     {
         if ($data["confpasswordError"] == null) {
@@ -196,6 +173,8 @@ class Registration extends Controller
             }
         }
     }
+
+    // TUTOR REGISTRATION PROCESS STARTS HERE
 
     public function tutor()
     {
@@ -327,6 +306,10 @@ class Registration extends Controller
         }
     }
 
+    // TUTOR REGISTRATION PROCESS ENDS HERE
+
+    // STUDENT REGISTRATION PROCESS STARTS HERE
+
     public function student()
     {
         //initialize array
@@ -370,6 +353,10 @@ class Registration extends Controller
         $this->view('registration/student', $data);
     }
 
+    // STUDENT REGISTRATION PROCESS ENDS HERE
+
+    // AFFILIATE REGISTRATION PROCESS STARTS HERE
+
     public function affiliate()
     {
         //initialize array
@@ -412,5 +399,33 @@ class Registration extends Controller
             $this->senddata($data);
         }
         $this->view('registration/affiliate', $data);
+    }
+
+    // AFFILIATE REGISTRATION PROCESS ENDS HERE
+
+    //validate function for every user
+    private function validate($data)
+    {
+        //validation begin
+        $data["firstnameError"] = $this->val->name($data['firstname']);
+        $data["lastnameError"] = $this->val->name($data['lastname']);
+        // $data["usernameError"] = $this->val->username($data['username']);
+        // $data["emailError"] = $this->val->email($data['email']);
+        // $data["phonenoError"] = $this->val->mobile($data['phoneno']);
+
+        $res = $this->val->validate($data['email'], $data['username'], $data['phoneno']);
+
+        $data["emailError"] = $res['emailError'];
+        $data["usernameError"] = $res['usernameError'];
+        $data["phonenoError"] = $res['phonenoError'];
+
+        if ($data["role"] == 'st') {
+            $data["dobError"] = $this->val->dob($data['dob']);
+        } else {
+            $data["dobError"] = $this->val->spdob($data['dob']);
+        }
+        $data["confpasswordError"] = $this->val->password($data['password'], $data['confpassword']);
+        //validation ends
+        return $data;
     }
 }

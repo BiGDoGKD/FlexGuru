@@ -37,28 +37,12 @@
         //parameters: verification file name, username, tutor data(array)
         public function register($vfilename, $username, $datatutor)
         {
-            $this->api->call("POST", APIURL . 'tutor/register', json_encode(array($vfilename, $username, $datatutor)));
-        }
-
-        public function getVerifications()
-        {
-            $this->db->query("SELECT * FROM tutor");
-            $result = $this->db->resultSet();
-            return $result;
-        }
-
-        public function approve($data)
-        {
-            $this->db->query("UPDATE `api`.`tutor` SET `status` = :approve WHERE (`tuid` = :tuid);");
-            $this->db->bind(':approve', 'verified');
-            $this->db->bind(':tuid', $data);
-            $this->db->execute();
-        }
-        public function decline($data)
-        {
-            $this->db->query("UPDATE `api`.`tutor` SET `status` = :declined WHERE (`tuid` = :tuid);");
-            $this->db->bind(':declined', 'disabled');
-            $this->db->bind(':tuid', $data);
-            $this->db->execute();
+            $response = $this->api->call("POST", APIURL . 'registration/tutregister', json_encode(array($vfilename, $username, $datatutor)));
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                return (array)json_decode($response)->response->result;
+            } else {
+                return false;
+            }
         }
     }

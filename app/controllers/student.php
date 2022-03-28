@@ -265,22 +265,33 @@ class Student extends Controller
   }
 
   // special service request send by the student
-  
+
   public function request()
   {
-    $data =
-    [
-      'title' => '',
-      'description' =>'',
-      'price' => '',
-      'duration' => '',
-      'method' => '',
-      'medium' =>'',
-      'subject' => '',
-      'lesson' => '',
-      'stuid' => ''
 
-    ];
+    if (isset($_SESSION['toastmsg'])) {
+      if ($_SESSION['toastmsg'][0]) {
+        include APPROOT . "/views/includes/successtoast.php";
+      } else {
+        include APPROOT . "/views/includes/errortoast.php";
+      }
+      unset($_SESSION['toastmsg']);
+    }
+
+    $data =
+      [
+        'title' => '',
+        'description' => '',
+        'price' => '',
+        'duration' => '',
+        'method' => '',
+        'medium' => '',
+        'subject' => '',
+        'lesson' => '',
+        'stuid' => ''
+
+      ];
+
     $validate = true;
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -290,24 +301,28 @@ class Student extends Controller
       $data = [
         'title' => trim($_POST['title']),
         'description' => trim($_POST['description']),
-        'price' => intval(trim($_POST['price'])),
+        'budget' => intval(trim($_POST['price'])),
         'duration' => intval(trim($_POST['duration'])),
-        'method' => trim($_POST['method']),
         'medium' => trim($_POST['medium']),
         'subject' => trim($_POST['subject']),
         'lesson' => trim($_POST['lesson']),
         'stuid' => intval($_SESSION["roledata"]["stid"])
-    
       ];
-      
-      if ($validate) {      
-        $this->ssr = $this->model('SSR');
-        $this->ssr->create($data);
+
+      if ($validate) {
+        $result = $this->ssr = $this->model('SSR');
+        if ($result) {
+          $_SESSION['toastmsg'] = [true, "Special Service Request Added Successfully !"];
+          die(header('location:' . URLROOT . '/student/request'));
+        } else {
+          $_SESSION['toastmsg'] = [false, "Special Service Request Unsuccessful !"];
+          die(header('location:' . URLROOT . '/student/requst'));
+        }
       }
     }
-    print_r($data);
     $this->view('student/request', $data);
   }
+
   public function requesttable()
   {
     $this->view('student/requesttable');
@@ -378,6 +393,5 @@ class Student extends Controller
 
     $this->view('student/complaint', $data);
   }
-
 }
 //

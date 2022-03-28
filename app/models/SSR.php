@@ -19,26 +19,19 @@ class SSR
     {
         $this->db = new Database;
         $this->api = new API;
-    
     }
 
     public function create($data)
     {
         if ($response = $this->api->usercall('POST', APIURL . 'SSR/create', json_encode($data))) {
-            // $status = json_decode($response)->response->status;
-            // if ($status == 200) {
-            //     $msg = json_decode($response)->response->result->message;
-            //     $_SESSION['toastmsg'] = $msg;
-            //     include APPROOT . "/views/includes/successtoast.php";
-            // } elseif ($status == 302) {
-            //     include APPROOT . "/views/includes/modals/modal-relog.php";
-            // } else {
-            //     $msg = json_decode($response)->response->result->message;
-            //     $_SESSION['toastmsg'] = $msg;
-            //     include APPROOT . "/views/includes/errortoast.php";
-            // }
-       print_r($response);
-       
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                return true;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
         }
     }
 }
