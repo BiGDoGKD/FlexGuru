@@ -34,4 +34,20 @@ class SSR
             }
         }
     }
+
+    public function read()
+    {
+        if ($response = $this->api->usercall('GET', APIURL . 'SSR/read', null)) {
+      
+            $status = json_decode($response)->response->result;
+            return $status;
+            // if ($status == 200) {
+            //     return true;
+            // } elseif ($status == 302) {
+            //     include APPROOT . "/views/includes/modals/modal-relog.php";
+            // } else {
+            //     return false;
+            // }
+        }
+    }
 }

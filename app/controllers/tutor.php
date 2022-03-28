@@ -491,4 +491,15 @@ class Tutor extends Controller
     {
         $this->view('tutor/earnings');
     }
+
+
+    public function tutorssr(){
+
+
+        $this->ssr = $this->model("SSR");
+        $data = $this->ssr->read();
+
+
+        $this->view('tutor/tutorssr',$data);
+    }
 }
