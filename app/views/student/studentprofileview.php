@@ -112,14 +112,11 @@
 
                 </div>
                 <div class="tutor-dashboard col-12-xs pl-lg-2 mt-xs-3 mt-lg-0 col-8-lg">
-                    <div class="tutor-dashboard__active-sessions col-12-xs">
-                        <span class="session-count">Active Sessions - 0</span>
-                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions">Check Sessions</button>
-                    </div>
+               
                     <div class="tutor-dashboard__create-gig col-12-xs mt-1 mb-1">
-                        <span class="title">Total Gigs - 0</span>
-                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/gigs/mygigs' ?>'">My Gigs</button>
-                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/gigs/publish' ?>'">Create a Gig</button>
+                        <span class="title">Special Service Requests</span>
+                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/gigs/mygigs' ?>'">My Requests</button>
+                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/student/request' ?>'">Create a Special Service Request</button>
                     </div>
 
 

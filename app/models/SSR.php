@@ -22,9 +22,23 @@ class SSR
     
     }
 
-
-    public function request($data)
+    public function create($data)
     {
-        $this->api->usercall("POST", APIURL . 'student/addssr', json_encode($data));
+        if ($response = $this->api->usercall('POST', APIURL . 'SSR/create', json_encode($data))) {
+            // $status = json_decode($response)->response->status;
+            // if ($status == 200) {
+            //     $msg = json_decode($response)->response->result->message;
+            //     $_SESSION['toastmsg'] = $msg;
+            //     include APPROOT . "/views/includes/successtoast.php";
+            // } elseif ($status == 302) {
+            //     include APPROOT . "/views/includes/modals/modal-relog.php";
+            // } else {
+            //     $msg = json_decode($response)->response->result->message;
+            //     $_SESSION['toastmsg'] = $msg;
+            //     include APPROOT . "/views/includes/errortoast.php";
+            // }
+       print_r($response);
+       
+        }
     }
 }
