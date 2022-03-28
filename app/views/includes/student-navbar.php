@@ -7,7 +7,7 @@
             <ul class="display-f align-items-center justify-content-around" style="width: 100%">
                 <li> <a href="<?php echo URLROOT ?>/student/messages">Messages</a></li>
                 <li> <a href="<?php echo URLROOT ?>/student/classes">Classes</a></li>
-                <li> <a href="<?php echo URLROOT ?>/student/requests">Requests</a></li>
+                <li> <a href="<?php echo URLROOT ?>/student/requesttable">Requests</a></li>
                 <li> <a href="<?php echo URLROOT ?>/marketplace">Marketplace</a></li>
             </ul>
         </div>

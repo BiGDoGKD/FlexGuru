@@ -15,7 +15,7 @@
 <body>
 
     <?php
-    include APPROOT . '/views/includes/tutor-navbar.php';
+    include APPROOT . '/views/includes/student-navbar.php';
     ?>
 
     <div class="user-dashboard container  mt-3 mb-3">

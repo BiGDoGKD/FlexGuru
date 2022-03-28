@@ -96,6 +96,7 @@ class Student extends Controller
   public function index()
   {
 
+    print_r($_SESSION['roledata']);
     $this->view('student/studentprofileview');
   }
 
@@ -156,36 +157,6 @@ class Student extends Controller
   }
 
 
-  public function specialrequest()
-  {
-    $data = [
-      'title' => '',
-      'description' => '',
-      'subject' => '',
-      'category' => '',
-      'days' => '',
-      'budget' => ''
-    ];
-
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      $this->ssr = $this->model("SSR");
-      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-      $data = [
-        'title' => $_POST['title'],
-        'description' => $_POST['description'],
-        'subject' => $_POST['subject'],
-        'category' => $_POST['category'],
-        'days' => $_POST['days'],
-        'budget' => $_POST['budget']
-      ];
-
-      if ($this->ssr->request($data)) {
-        header('location:' . URLROOT . '/student/requests');
-      }
-    }
-
-    $this->view('student/pages/specialservicerequest', $data);
-  }
 
 
   public function settings()
@@ -293,20 +264,55 @@ class Student extends Controller
     $this->view('student/settings');
   }
 
-
-
-
-
-
-
-  //requests
-
-  public function requests()
+  // special service request send by the student
+  
+  public function request()
   {
-    // $this->ssr = $this->model("SSR");
-    // $resultArray = $this->ssr->getRequests();
-    $this->view('student/pages/requests');
+    $data =
+    [
+      'title' => '',
+      'description' =>'',
+      'price' => '',
+      'duration' => '',
+      'method' => '',
+      'medium' =>'',
+      'subject' => '',
+      'lesson' => '',
+      'stuid' => ''
+
+    ];
+    $validate = true;
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+      //form process
+      //Sanatize post data
+      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      $data = [
+        'title' => trim($_POST['title']),
+        'description' => trim($_POST['description']),
+        'price' => intval(trim($_POST['price'])),
+        'duration' => intval(trim($_POST['duration'])),
+        'method' => trim($_POST['method']),
+        'medium' => trim($_POST['medium']),
+        'subject' => trim($_POST['subject']),
+        'lesson' => trim($_POST['lesson']),
+        'stuid' => intval($_SESSION["roledata"]["stid"])
+    
+      ];
+      
+      if ($validate) {      
+        $this->ssr = $this->model('SSR');
+        $this->ssr->create($data);
+      }
+    }
+    print_r($data);
+    $this->view('student/request', $data);
   }
+  public function requesttable()
+  {
+    $this->view('student/requesttable');
+  }
+
   public function responses()
   {
     $this->view('student/pages/responses');
