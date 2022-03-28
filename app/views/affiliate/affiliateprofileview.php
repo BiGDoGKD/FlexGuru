@@ -112,8 +112,7 @@
                         <img src=<?php echo URLROOT . "/public/img/affiliate/blog.svg" ?> alt="Register" />
                     </div>
                     <div>
-                        <h2 style="padding: 80px;
-}">Referral Code :  ?></h2>
+                        <h2 style="padding: 80px;"> Referral Code : <?php echo $_SESSION['roledata']['affiliatelink'] ?>  </h2>
                     </div>
                 </div>
                 <div class="tutor-dashboard__active-sessions col-12-xs">
@@ -126,8 +125,8 @@
                 <?php if ($approval) { ?>
                     <div class="tutor-dashboard__create-gig col-12-xs mt-1 mb-1">
                         <span class="title">Total Earnings </span>
-                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/affiliate/Dashboard' ?>'">Dashboard</button>
-                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/affiliate/withdraw' ?>'">Withdraw Earnings </button>
+                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/affiliate/referrallinks' ?>'">Get Referral Links for your sites </button>
+                        <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/affiliate/withdrawearnings' ?>'">Withdraw Earnings </button>
                     </div>
                 <?php } else { ?>
                     <div class="tutor-dashboard__approval-status mt-1 mb-1">

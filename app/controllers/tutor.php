@@ -192,6 +192,23 @@ class Tutor extends Controller
     {
         $this->settingsModel = $this->model("Settings");
         $this->val = $this->model("Validate");
+        $data = [
+                'password' => '',
+                'newpassword' => '',
+                'confirmpassword' => ''
+            ];
+        $passwordchange = [
+            'password' =>'' ,
+            'newpassword' =>'' 
+        ];
+        if (isset($_SESSION['toastmsg'])) {
+            if ($_SESSION['toastmsg'][0]) {
+                include APPROOT . "/views/includes/successtoast.php";
+            } else {
+                include APPROOT . "/views/includes/errortoast.php";
+            }
+            unset($_SESSION['toastmsg']);
+        }
         if (isset($_POST['button_password'])) {
             $data = [
                 'password' => $_POST['password'],
@@ -202,22 +219,93 @@ class Tutor extends Controller
                 $passwordchange = [
                     'password' => $data['password'],
                     'newpassword' => $data['newpassword'],
-                ];
+                ];   
                 $passwordchange['password'] = hash('sha256', $passwordchange['password']);
                 $passwordchange['newpassword'] = hash('sha256', $passwordchange['newpassword']);
-                $response = $this->settingsModel->passwordchange($passwordchange);
-                if ($response['result']->message == "Password Changed Successfully") {
-                    header('location:' . URLROOT . '/tutor/tutorprofileview');
+
+                $result = $this->settingsModel->passwordchangetutor($passwordchange);
+                if ($result) {     
+                    $_SESSION['toastmsg'] = [true, "Password change successful !"];
+                    die(header('location:' . URLROOT . '/tutor/settings'));     
                 } else {
-                    $this->view('tutor/settings', ['error' => 'Password does not match']);
+                    $_SESSION['toastmsg'] = [false, "Password change unsuccessful !"];
+                    die(header('location:' . URLROOT . '/tutor/settings'));
                 }
             }
+            else{
+                $_SESSION['toastmsg'] = [false, " Password Mismatch !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            }    
         }
+
+        // Change the EMAIL and CONTACT DETAILS
+        $dataemail = [
+            'email' => ''
+
+        ];
+        if (isset($_POST['button_email'])) {
+            $dataemail = [
+                'email' => $_POST['email'],
+            ];
+            $result = $this->settingsModel->changeemailtutor($dataemail);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Email Changed Successfully  !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Email change unsuccessful !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            }
+        }
+        $datacontactnumber = [
+            'contactnumber' => ''
+        ];
+        if (isset($_POST['button_contact'])) {
+            $datacontactnumber = [
+                'contactnumber' => $_POST['contactnumber']
+            ];
+            $result = $this->settingsModel->changecontactnumbertutor($datacontactnumber);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Contact Number change successful !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Contact Number change unsuccessful !"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            }
+        }
+        $deleteaccount = [
+            'deletereason' => ''
+        ];
+        if (isset($_POST['button_deleteaccount'])) {
+            $deleteaccount = [
+                'deletereason' => $_POST['deletereason']
+            ];
+            $result = $this->settingsModel->deleteaccounttutor($deleteaccount);
+            if ($result) {
+                $_SESSION['toastmsg'] = [true, " Delete Request Submitted!"];
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            } else {
+                $_SESSION['toastmsg'] = [false, " Delete Request Unsuccessful !"];
+
+                die(header('location:' . URLROOT . '/tutor/settings'));
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+       
+      
         $this->view('tutor/settings');
     }
-
     // accept a student class request
-
     public function acceptclass($id)
     {
         $this->order = $this->model("Order");
@@ -228,7 +316,6 @@ class Tutor extends Controller
             include APPROOT . "/views/includes/errortoast.php";
         }
     }
-
     //ask for review
     public function askforreview($classid = array())
     {
@@ -250,7 +337,6 @@ class Tutor extends Controller
             }
         }
     }
-
     public function feedback($classid = array())
     {
         if (empty($classid)) {

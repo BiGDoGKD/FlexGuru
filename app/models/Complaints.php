@@ -69,6 +69,23 @@ class Complaints
             return false;
         }
     }
+
+
+    public function complaintsendaffiliate($data)
+    {
+        $response = $this->api->usercall('POST', APIURL . 'Affiliate/addcomplaint', json_encode($data));
+        print_r($response);
+        $status = json_decode($response)->response->status;
+        if ($status == 200) {
+            return true;
+        } elseif ($status == 302) {
+            include APPROOT . "/views/includes/modals/modal-relog.php";
+        } else {
+            return false;
+        }
+    }
+
+    
 }
  
 
