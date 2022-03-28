@@ -67,7 +67,6 @@
                                 <option class="select-option" value="14">14 days</option>
                             </select>
                             <p class="form-control form-feedback text-error">
-
                             </p>
                         </div>
                         <div class="form-group col-12-xs">
@@ -134,10 +133,7 @@
                     <p class="font-lg mt-2 mb-1 text-xs-center text-lg-left">SSR Title</p>
                     <p class="text-gray text-xs-center text-lg-left">Mathematics Integral Differentation</p>
                     <p class="font-lg mt-2 mb-1 text-xs-center text-lg-left">SSR Description</p>
-                    <p class="text-gray text-xs-center text-lg-left">I am not confident in finding solutions for Integral differentiation problems 2018 A/L Maths Past Paper. Need Help . </p>
-
-
-                    <p class="text-gray text-xs-center text-lg-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p class="text-gray text-xs-center text-lg-left">ex: I am not confident in finding solutions for Integral differentiation problems 2018 A/L Maths Past Paper. Need Help . </p>
                 </div>
             </div>
 

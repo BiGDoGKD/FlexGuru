@@ -96,6 +96,7 @@ class Student extends Controller
   public function index()
   {
 
+    print_r($_SESSION['roledata']);
     $this->view('student/studentprofileview');
   }
 
@@ -156,36 +157,6 @@ class Student extends Controller
   }
 
 
-  public function specialrequest()
-  {
-    $data = [
-      'title' => '',
-      'description' => '',
-      'subject' => '',
-      'category' => '',
-      'days' => '',
-      'budget' => ''
-    ];
-
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      $this->ssr = $this->model("SSR");
-      $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-      $data = [
-        'title' => $_POST['title'],
-        'description' => $_POST['description'],
-        'subject' => $_POST['subject'],
-        'category' => $_POST['category'],
-        'days' => $_POST['days'],
-        'budget' => $_POST['budget']
-      ];
-
-      if ($this->ssr->request($data)) {
-        header('location:' . URLROOT . '/student/requests');
-      }
-    }
-
-    $this->view('student/pages/specialservicerequest', $data);
-  }
 
 
   public function settings()
@@ -293,10 +264,23 @@ class Student extends Controller
     $this->view('student/settings');
   }
 
-
+  // special service request send by the student
+  
   public function request()
   {
-    $data = $this->data;
+    $data =
+    [
+      'title' => '',
+      'description' =>'',
+      'price' => '',
+      'duration' => '',
+      'method' => '',
+      'medium' =>'',
+      'subject' => '',
+      'lesson' => '',
+      'stuid' => ''
+
+    ];
     $validate = true;
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -307,61 +291,26 @@ class Student extends Controller
         'title' => trim($_POST['title']),
         'description' => trim($_POST['description']),
         'price' => intval(trim($_POST['price'])),
-        'revisions' => trim($_POST['revisions']),
         'duration' => intval(trim($_POST['duration'])),
         'method' => trim($_POST['method']),
         'medium' => trim($_POST['medium']),
         'subject' => trim($_POST['subject']),
         'lesson' => trim($_POST['lesson']),
-        'stuid' => intval($_SESSION["roledata"]["tuid"]),
-        'imageError' => '',
+        'stuid' => intval($_SESSION["roledata"]["stid"])
+    
       ];
-
-      $file = $_FILES['file'];
-      $fileName = $_FILES['file']['name'];
-      $fileTmpName = $_FILES['file']['tmp_name'];
-      $fileSize = $_FILES['file']['size'];
-      $fileError = $_FILES['file']['error'];
-      $fileType = $_FILES['file']['type'];
-
-      $fileExt = explode('.', $fileName);
-      $fileActualExt = strtolower(end($fileExt));
-
-      $allowed = array('jpg', 'jpeg', 'png', 'PNG', 'JPG', 'JPEG');
-
-      //if no errors
-      if (true) {
-        if (in_array($fileActualExt, $allowed)) {
-          if ($fileError === 0) {
-            if ($fileSize < 1000000) {
-              $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-              $fileDestination = APPROOT . '/../public/uploads/services/' . $fileNameNew;
-              move_uploaded_file($fileTmpName, $fileDestination);
-              $data['image'] = $fileNameNew;
-            } else {
-              $validate = false;
-              $data['imageError'] = "Your file is too big";
-            }
-          } else {
-            $validate = false;
-            $data['imageError'] = "There was an error uploading your file";
-          }
-        } else {
-          $validate = false;
-          $data['imageError'] = "You cannot upload files of this type";
-        }
-      } else {
-        $validate = false;
-        $data['imageError'] = "You need to upload an image";
-      }
-
-      if ($validate) {
-        $this->gig = $this->model('Gig');
-        $this->gig->create($data);
+      
+      if ($validate) {      
+        $this->ssr = $this->model('SSR');
+        $this->ssr->create($data);
       }
     }
-
+    print_r($data);
     $this->view('student/request', $data);
+  }
+  public function requesttable()
+  {
+    $this->view('student/requesttable');
   }
 
   public function responses()
