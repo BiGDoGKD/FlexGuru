@@ -101,10 +101,10 @@
 	<div class="marketplace__details container mt-xs-2">
 		<div class="row">
 			<div class="col-12-xs display-f justify-xs-content-center justify-lg-content-start">
-				<h1 class="font-xs-xl font-lg-xxl">All Services</h1>
+				<h1 class="font-xs-xl font-lg-xxl mb-lg-3">All Services</h1>
 			</div>
 			<style></style>
-			<div class="advanced-filters col-12-xs col-6-lg">
+			<!-- <div class="advanced-filters col-12-xs col-6-lg">
 				<div class="row justify-content-center pt-2 mb-2 pb-xs-0">
 					<div class="col-3-md display-f justify-xs-content-center col-4-lg col-12-xs form-control">
 						<select name="price" id="price" class="form-control">
@@ -133,7 +133,7 @@
 						</select>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<!-- End of Marketplace Details  -->
@@ -168,7 +168,7 @@
 															if ($service['rating'] == '0') {
 																echo 'New Tutor';
 															} else {
-																echo 'Level ' . $service['rating'] . ' Tutor';
+																echo 'Level ' . $service['level'] . ' Tutor';
 															} ?>&nbsp;
 
 											<?php
@@ -183,10 +183,10 @@
 								<div class="service-gig__body__gig-details">
 									<div class="service-gig__body__gig-details__star-ratings">
 										<i class="fa fa-star"></i>&nbsp;<?php
-																		if ($service['rating'] == '0') {
-																			echo 'n/a';
+																		if ($service['rating'] == 0) {
+																			echo 'N/A';
 																		} else {
-																			echo $service['rating'];
+																			echo number_format((float)$service['rating'], 1, '.', '');
 																		} ?>
 									</div>
 									<div class="service-gig__body__gig-details__services-given">

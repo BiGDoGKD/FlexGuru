@@ -45,12 +45,25 @@ class Marketplace extends Controller
             $array = [
                 'gigid' => $optional,
             ];
+
             $data = $service->getGigDetails($array);
+            $result =  (array)$data["result"][0];
+            $gigd = [
+                'gigid' => $optional,
+                'tutorid' => $result['tuid'],
+            ];
+            $reviews = $service->gigDetails($gigd);
+            $result2 = (array)$reviews['result'];
+
+            $servicegig = [
+                'gigdetails' => $result,
+                'reviews' => $result2,
+            ];
 
             if (isset($data['result']->message)) {
                 die(header('location:' . URLROOT . '/marketplace'));
             } else {
-                $this->view('marketplace/pages/service', (array)$data["result"][0]);
+                $this->view('marketplace/pages/service', $servicegig);
             }
         } else {
             die(header('location:' . URLROOT . '/marketplace'));
