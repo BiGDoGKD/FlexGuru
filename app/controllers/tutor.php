@@ -180,12 +180,13 @@ class Tutor extends Controller
         ];
         $result = $gig->getGigsByTutor($data);
         $tutorData = $this->model('TutorModel')->getTutorData();
+
         $tutorpage = [
             'gigs' => $result['result'],
             'tutor' => $tutorData,
         ];
 
-        if (!isset($result['result']->message)) {
+        if (!boolval(isset($result['result']->message))) {
             $this->view('tutor/tutorprofileview', $tutorpage);
         } else {
             $this->view('tutor/tutorprofileview');
@@ -199,13 +200,13 @@ class Tutor extends Controller
         $this->settingsModel = $this->model("Settings");
         $this->val = $this->model("Validate");
         $data = [
-                'password' => '',
-                'newpassword' => '',
-                'confirmpassword' => ''
-            ];
+            'password' => '',
+            'newpassword' => '',
+            'confirmpassword' => ''
+        ];
         $passwordchange = [
-            'password' =>'' ,
-            'newpassword' =>'' 
+            'password' => '',
+            'newpassword' => ''
         ];
         if (isset($_SESSION['toastmsg'])) {
             if ($_SESSION['toastmsg'][0]) {
@@ -225,23 +226,22 @@ class Tutor extends Controller
                 $passwordchange = [
                     'password' => $data['password'],
                     'newpassword' => $data['newpassword'],
-                ];   
+                ];
                 $passwordchange['password'] = hash('sha256', $passwordchange['password']);
                 $passwordchange['newpassword'] = hash('sha256', $passwordchange['newpassword']);
 
                 $result = $this->settingsModel->passwordchangetutor($passwordchange);
-                if ($result) {     
+                if ($result) {
                     $_SESSION['toastmsg'] = [true, "Password change successful !"];
-                    die(header('location:' . URLROOT . '/tutor/settings'));     
+                    die(header('location:' . URLROOT . '/tutor/settings'));
                 } else {
                     $_SESSION['toastmsg'] = [false, "Password change unsuccessful !"];
                     die(header('location:' . URLROOT . '/tutor/settings'));
                 }
-            }
-            else{
+            } else {
                 $_SESSION['toastmsg'] = [false, " Password Mismatch !"];
                 die(header('location:' . URLROOT . '/tutor/settings'));
-            }    
+            }
         }
 
         // Change the EMAIL and CONTACT DETAILS
@@ -307,8 +307,8 @@ class Tutor extends Controller
 
 
 
-       
-      
+
+
         $this->view('tutor/settings');
     }
     // accept a student class request
@@ -456,12 +456,12 @@ class Tutor extends Controller
         $this->complaintsModel = $this->model("Complaints");
         $data = [
 
-            'contactnumber' =>'',
+            'contactnumber' => '',
             'email' => '',
-            'complainttype' =>'' ,
+            'complainttype' => '',
             'complaint' => ''
         ];
-        
+
 
 
 
@@ -469,7 +469,7 @@ class Tutor extends Controller
 
 
             $data = [
-                
+
                 'contactnumber' => $_POST['contactnumber'],
                 'email' => $_POST['email'],
                 'complainttype' => $_POST['complainttype'],
@@ -483,11 +483,9 @@ class Tutor extends Controller
                 $_SESSION['toastmsg'] = [false, "Complaint submission failed"];
                 die(header('location:' . URLROOT . '/tutor/complaint'));
             }
-     
         }
 
-            $this->view('tutor/complaint', $data);
-        
+        $this->view('tutor/complaint', $data);
     }
     public function earnings()
     {
