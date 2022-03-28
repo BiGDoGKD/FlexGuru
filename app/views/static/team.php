@@ -48,7 +48,7 @@
 				<div class="profile-card text-center pr-1 pl-1">
 					<div class="profile-card-header">
 						<div class="profile-card-header-image">
-							<img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/155068048_2985296311791296_7283950328328363223_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=QEOaQIi-YzcAX_vCNrT&tn=sA1KN6heWqyb69df&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT8PeqdhuWRFUVZQk_NzLElNo4XEQY0T9fFADP-HTi-cQQ&oe=6231E2C1" alt="Razzeen" class="profile-card-header-image-img" />
+							<img src="<?php echo URLROOT . '/public/updated/img/static/team/razzeen.webp' ?>" alt="Razzeen" class="profile-card-header-image-img" />
 						</div>
 					</div>
 					<div class="profile-card-body">
@@ -89,7 +89,7 @@
 				<div class="profile-card text-center pr-1 pl-1">
 					<div class="profile-card-header">
 						<div class="profile-card-header-image">
-							<img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/122449448_697050650939469_6873584063804574562_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=174925&_nc_ohc=S1G6maLSXpgAX-yTTtA&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_llzl4n9U-KwnylYXrsh1qyWQbcuCzTXX5gytl8qWi_Q&oe=623363EF" alt="Kesara" class="profile-card-header-image-img" />
+							<img src="<?php echo URLROOT . '/public/updated/img/static/team/kesara.webp' ?>" alt="Kesara" class="profile-card-header-image-img" />
 						</div>
 					</div>
 					<div class="profile-card-body">
@@ -125,11 +125,12 @@
 					</div>
 				</div>
 			</div>
+			<!-- Avishka  -->
 			<div class="col-3-lg col-12-xs display-f justify-content-center">
 				<div class="profile-card text-center pr-1 pl-1">
 					<div class="profile-card-header">
 						<div class="profile-card-header-image">
-							<img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/271807849_477991423932731_7149779331076424268_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=pYLgrXObd2IAX_HpWdk&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT98TMDysDRnhdbaYzJiJ81pBi1UUzquv_AxQLqNKb3k9Q&oe=621092B0" alt="Avishka" class="profile-card-header-image-img" />
+							<img src="<?php echo URLROOT . '/public/updated/img/static/team/avishka.webp' ?>" alt="Avishka" class="profile-card-header-image-img" />
 						</div>
 					</div>
 					<div class="profile-card-body">
@@ -165,11 +166,12 @@
 					</div>
 				</div>
 			</div>
+			<!-- Kavindu  -->
 			<div class="col-3-lg col-12-xs display-f justify-content-center">
 				<div class="profile-card text-center pr-1 pl-1">
 					<div class="profile-card-header">
 						<div class="profile-card-header-image">
-							<img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/80397244_153069409439865_5761535831143612416_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=fvx0K-syLioAX_q16K6&_nc_ht=scontent.fcmb1-2.fna&oh=00_AT_jnZy2qjLGvo5vJW4l-7--PU8DDmDuPNif8vF9GIIlgQ&oe=622FD21E" alt="Kavindu" class="profile-card-header-image-img" />
+							<img src="<?php echo URLROOT . '/public/updated/img/static/team/kavindu.webp' ?>" alt="Kavindu" class="profile-card-header-image-img" />
 						</div>
 					</div>
 					<div class="profile-card-body">

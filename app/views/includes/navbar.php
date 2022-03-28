@@ -5,8 +5,8 @@
         </div>
         <div class="visitor-navbar__menu col-6-md col-4-lg justify-content-around display-md-f display-xs-n">
             <ul class="display-f align-items-center justify-content-around" style="width: 100%">
-                <li><a href="<?php echo URLROOT ?>/marketplace">Services</a></li>
-                <li><a href="<?php echo URLROOT ?>/info/help">Help</a></li>
+                <li><a href="<?php echo URLROOT ?>/marketplace">Marketplace</a></li>
+                <li><a href="<?php echo URLROOT ?>/info/special_request">Request</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/about">About</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/contact">Contact</a></li>
             </ul>
@@ -25,8 +25,8 @@
             <ul class="display-f flex-col align-items-center justify-content-around">
 
                 <li><a href="<?php echo URLROOT ?>">Home</a></li>
-                <li><a href="<?php echo URLROOT ?>/marketplace">Services</a></li>
-                <li><a href="<?php echo URLROOT ?>/info/help">Help</a></li>
+                <li><a href="<?php echo URLROOT ?>/marketplace">Marketplace</a></li>
+                <li><a href="<?php echo URLROOT ?>/info/special_request">Request</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/about">About</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/contact">Contact</a></li>
                 <li><a href="<?php echo URLROOT ?>/login">Login</a></li>
