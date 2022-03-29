@@ -141,9 +141,12 @@ class Student extends Controller
 
   public function order()
   {
+    $mail = $this->model('Mailer');
     $orderid = $_GET['order_id'];
     $orderarray = (array)json_decode($_COOKIE['order_data']);
     if ($orderarray['orderid'] === $orderid) {
+      // $pdf = $this->model('PDF')->invoice($orderarray);
+      // $mail->transaction($pdf, $orderarray['email']);
       $orderid = $this->model('Order')->create($orderarray);
       if (isset($orderid)) {
         die(header('location:' . URLROOT . '/student/class/' . $orderid));
@@ -154,7 +157,6 @@ class Student extends Controller
       die(header('location:' . URLROOT . '/student'));
     }
   }
-
 
 
 
@@ -470,12 +472,5 @@ class Student extends Controller
       include APPROOT . "/views/includes/errortoast.php";
     }
   }
-
-
-
-
-
-
-
 }
 //
