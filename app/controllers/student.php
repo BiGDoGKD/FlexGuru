@@ -95,9 +95,8 @@ class Student extends Controller
 
   public function index()
   {
-
- 
-    $this->view('student/studentprofileview');
+    $data = $this->model("Order")->studentrating($_SESSION['roledata']['stid']);
+    $this->view('student/studentprofileview', $data);
   }
 
   public function billinginformation()
@@ -310,10 +309,10 @@ class Student extends Controller
       ];
 
       if ($validate) {
-       
+
         $this->ssr = $this->model('SSR');
         $result = $this->ssr->create($data);
-       
+
         if ($result) {
           $_SESSION['toastmsg'] = [true, "Special Service Request Added Successfully !"];
           die(header('location:' . URLROOT . '/student/request'));
