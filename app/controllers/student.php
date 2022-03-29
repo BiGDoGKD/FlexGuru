@@ -96,7 +96,7 @@ class Student extends Controller
   public function index()
   {
 
-    print_r($_SESSION['userdata']['role']);
+ 
     $this->view('student/studentprofileview');
   }
 
