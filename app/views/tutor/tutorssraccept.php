@@ -28,21 +28,21 @@
           <div class="gig-form col-12-xs col-8-lg">
             <form action="<?php echo URLROOT; ?>/tutor/tutorssraccept" method="POST" style="width: 100%;" class="form-control row" enctype="multipart/form-data">
               <div class="form-group col-12-xs">
-                <label for="firstname">Custom Order Title <span class="text-error">*</span> </label>
+                <label for="title">Custom Order Title <span class="text-error">*</span> </label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Enter the Subject Area... (ex:- Pure Maths)" value="" required />
                 <p class="form-control form-feedback text-error">
 
                 </p>
               </div>
               <div class="form-group col-12-xs">
-                <label for="firstname">Custom Order Description <span class="text-error">*</span></label>
+                <label for="description">Custom Order Description <span class="text-error">*</span></label>
                 <textarea class="form-control" style="resize: none;" placeholder="Enter the description..." maxlength="2000" minlength="255" name="description" id="description" cols="30" rows="10"></textarea>
                 <p class="form-control form-feedback text-error">
 
                 </p>
               </div>
               <div class="form-group col-12-xs">
-                <label for="firstname">Price <span class="text-error">*</span></label>
+                <label for="price">Price <span class="text-error">*</span></label>
                 <input type="text" class="form-control" name="price" id="price" placeholder="Price.." value="" required />
                 <p class="form-control form-feedback text-error">
 
