@@ -227,6 +227,81 @@ class affiliate extends Controller
         $this->view('affiliate/withdrawearnings');
     }
 
+    public function updateprofilepicture()
+    {
+        $data = [
+            'photourl' => '',
+            'photourlError' => '',
+            'userid' => '',
+            'bio' => '',
+            'bioError' => ''
+        ];
+
+        $validate = true;
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+            //Sanatize post data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'photourl' => $_FILES['photourl'],
+                'userid' => $_SESSION['roledata']['userid'],
+                'bio' => trim($_POST['bio']),
+            ];
+
+
+            $file = $_FILES['photourl'];
+            $fileName = $_FILES['photourl']['name'];
+            $fileTmpName = $_FILES['photourl']['tmp_name'];
+            $fileSize = $_FILES['photourl']['size'];
+            $fileError = $_FILES['photourl']['error'];
+            $fileType = $_FILES['photourl']['type'];
+
+            $fileExt = explode('.', $fileName);
+            $fileActualExt = strtolower(end($fileExt));
+
+            $allowed = array('jpg', 'jpeg', 'png', 'PNG', 'JPG', 'JPEG');
+            //if no errors
+            if (true) {
+                if (in_array($fileActualExt, $allowed)) {
+                    if ($fileError === 0) {
+                        if ($fileSize < 1000000) {
+                            $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                            $fileDestination = APPROOT . '/../public/uploads/users/' . $fileNameNew;
+                            move_uploaded_file($fileTmpName, $fileDestination);
+                            $data['photourl'] = $fileNameNew;
+                        } else {
+                            $validate = false;
+                            $data['photourlError'] = "Your photourl is too big";
+                        }
+                    } else {
+                        $validate = false;
+                        $data['photourlError'] = "There was an error uploading your photourl";
+                    }
+                } else {
+                    $validate = false;
+                    $data['photourlError'] = "You cannot upload files of this type";
+                }
+            } else {
+                $validate = false;
+                $data['photourlError'] = "You need to upload an image";
+            }
+            if ($validate) {
+                $this->affiliate = $this->model('User');
+                $status = $this->affiliate->affiliateDP($data);
+                if ($status == 200) {
+                    $_SESSION['userdata']['photourl'] = $fileNameNew;
+                    header('location:' . URLROOT . '/affiliate');
+                } else {
+                    header('location:' . URLROOT . '/affiliate/' . $status);
+                }
+            }
+        } else {
+            $_SESSION['toastmsg'] = 'Unknown Error Occured';
+            include APPROOT . "/views/includes/errortoast.php";
+        }
+    }
+
 
 
 
