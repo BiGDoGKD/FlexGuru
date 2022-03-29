@@ -26,7 +26,7 @@
           </div>
 
           <div class="gig-form col-12-xs col-8-lg">
-            <form action="<?php echo URLROOT; ?>/tutor/tutorssraccept" method="POST" style="width: 100%;" class="form-control row" enctype="multipart/form-data">
+            <form action="<?php echo URLROOT . '/tutor/tutorssraccept/' . $data['ssrid']; ?>" method="POST" style="width: 100%;" class="form-control row" enctype="multipart/form-data">
               <div class="form-group col-12-xs">
                 <label for="title">Custom Order Title <span class="text-error">*</span> </label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Enter the Subject Area... (ex:- Pure Maths)" value="" required />
@@ -36,7 +36,7 @@
               </div>
               <div class="form-group col-12-xs">
                 <label for="description">Custom Order Description <span class="text-error">*</span></label>
-                <textarea class="form-control" style="resize: none;" placeholder="Enter the description..." maxlength="2000" minlength="255" name="description" id="description" cols="30" rows="10"></textarea>
+                <textarea class="form-control" style="resize: none;" placeholder="Enter the description..." maxlength="2000" minlength="25" name="description" id="description" cols="30" rows="10"></textarea>
                 <p class="form-control form-feedback text-error">
 
                 </p>
@@ -133,13 +133,13 @@
 
                 </p>
               </div>
-   
+
               <div class="form-group col-12-xs">
-                <input type="submit"  id="submit" name="submitcustomoffer" value="submit" class="form-control" />
+                <input type="submit" id="submit" name="submit" value="submit" class="form-control" />
               </div>
             </form>
           </div>
-   
+
         </div>
 
       </div>

@@ -38,7 +38,7 @@
                             <a href="<?php echo URLROOT ?>/student/help"><i class="mdi mdi-logout"></i>Help</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/login/logout"><i class="mdi mdi-logout"></i>Logout</a>
+                            <a onclick="modalLogoutUser()"></i>Logout</a>
                         </li>
                     </ul>
                 </label>
@@ -61,7 +61,7 @@
                 <li>Complaints</li>
                 <li>Help</li>
                 <li>Settings</li>
-                <li>Logout</li>
+                <li onclick="modalLogoutUser()">Logout</li>
             </ul>
         </div>
     </div>

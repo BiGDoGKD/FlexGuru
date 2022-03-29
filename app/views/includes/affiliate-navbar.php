@@ -5,7 +5,7 @@
         </div>
         <div class="profile-navbar__menu col-6-md col-4-lg justify-content-around display-md-f display-xs-n">
             <ul class="display-f align-items-center justify-content-around" style="width: 100%">
-            
+
                 <li><a href="<?php echo URLROOT ?>/info/terms">Terms and Conditions</a></li>
                 <li><a href="<?php echo URLROOT ?>/info/faq">Help</a></li>
                 <li> <a href="<?php echo URLROOT ?>/marketplace">MarketPlace</a></li>
@@ -18,7 +18,7 @@
                     <!-- <input type="checkbox" id="profile2" /> -->
                     <div class="row align-items-center profile-dropdown-button">
                         <img src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" />
-                        <span class="display-xs-n display-xl-i"><?php /*echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] */ ?></span>
+                        <span class="display-xs-n display-xl-i"><?php echo $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></span>
                     </div>
 
                     <ul class="profile-dropdown-list shadow-md">
@@ -38,7 +38,7 @@
                             <a href="<?php echo URLROOT ?>/affiliate/help"><i class="mdi mdi-logout"></i>Help</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/login/logout"><i class="mdi mdi-logout"></i>Logout</a>
+                            <a onclick="modalLogoutUser()"><i class="mdi mdi-logout"></i>Logout</a>
                         </li>
                     </ul>
                 </label>
@@ -61,7 +61,7 @@
                 <li>Complaints</li>
                 <li>Help</li>
                 <li>Settings</li>
-                <li>Logout</li>
+                <li onclick="modalLogoutUser()">Logout</li>
             </ul>
         </div>
     </div>

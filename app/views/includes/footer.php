@@ -1,4 +1,5 @@
 <footer class="flexguru-footer container fluid bg-lightred pt-5 pb-5">
+    <?php include APPROOT . '/views/includes/modals/modal-logout.php'; ?>
     <div class="container">
         <div class="row text-xs-center text-lg-start">
             <div class="col-12-xs col-6-md col-4-lg mt-xs-2 mt-lg-0 text-lg-start text-xs-center">

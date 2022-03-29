@@ -79,6 +79,11 @@
             line-height: 1.25rem;
             white-space: nowrap;
           }
+
+          td.description {
+            white-space: normal !important;
+          }
+
           .links {
             padding-top: 1rem;
             padding-bottom: 1rem;
@@ -212,6 +217,11 @@
             line-height: 1.25rem;
             white-space: nowrap;
           }
+
+          td.description {
+            white-space: normal !important;
+          }
+
           .links {
             padding-top: 1rem;
             padding-bottom: 1rem;

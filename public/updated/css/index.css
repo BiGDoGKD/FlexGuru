@@ -7066,6 +7066,9 @@ img {
     line-height: 1.25rem;
     white-space: nowrap;
   }
+  .table-home table tbody tr td.description {
+    white-space: normal !important;
+  }
   .table-home table tbody tr .links {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -7196,6 +7199,9 @@ img {
     font-size: 0.875rem;
     line-height: 1.25rem;
     white-space: nowrap;
+  }
+  .table-home table tbody tr td.description {
+    white-space: normal !important;
   }
   .table-home table tbody tr .links {
     padding-top: 1rem;

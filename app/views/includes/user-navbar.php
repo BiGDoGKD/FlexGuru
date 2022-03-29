@@ -38,14 +38,14 @@
                             <a href="<?php echo URLROOT ?>/student/help"><i class="mdi mdi-logout"></i>Help</a>
                         </li>
                         <li>
-                            <a href="<?php echo URLROOT ?>/login/logout"><i class="mdi mdi-logout"></i>Logout</a>
+                            <a onclick="modalLogoutUser()"><i class="mdi mdi-logout"></i>Logout</a>
                         </li>
                     </ul>
                 </label>
             </div>
         </div>
         <div class="col-6-xs display-md-n text-end display-xs-f align-items-center justify-xs-content-end" style="margin-top: 0.2rem">
-            <img onclick="openMobileNav()" src="https://scontent.fcmb2-2.fna.fbcdn.net/v/t1.6435-1/p160x160/134691956_747241662587034_6827673938859173117_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=7206a8&_nc_ohc=jYwp15wcc5AAX_auwr5&_nc_ht=scontent.fcmb2-2.fna&oh=00_AT9hGxK4tlB6OaSlERWeea83Bo9WYu3B7TNL-LxTsFYk-g&oe=6237D1BE" />
+            <img onclick="openMobileNav()" src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" />
         </div>
     </div>
     <div id="mobile-nav" class="mobile-nav display-md-n close row">

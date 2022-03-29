@@ -24,7 +24,7 @@ class SSR
     public function create($data)
     {
         if ($response = $this->api->usercall('POST', APIURL . 'SSR/create', json_encode($data))) {
-            
+
             $status = json_decode($response)->response->status;
             if ($status == 200) {
                 return true;
@@ -39,7 +39,7 @@ class SSR
     public function read()
     {
         if ($response = $this->api->usercall('GET', APIURL . 'SSR/read', null)) {
-      
+
             $status = json_decode($response)->response->result;
             return $status;
             // if ($status == 200) {
@@ -54,24 +54,15 @@ class SSR
 
     public function createcustomoffer($data)
     {
-        if ($response = $this->api->usercall('POST', APIURL . 'Tutor/createcustomoffer', json_encode($data))) {
-      
+        if ($response = $this->api->usercall('POST', APIURL . 'tutor/createcustomoffer', json_encode($data))) {
             $status = json_decode($response)->response->status;
-            print_r($status);
-            // if ($status == 200) {
-            //     return true;
-            // } elseif ($status == 302) {
-            //     include APPROOT . "/views/includes/modals/modal-relog.php";
-            // } else {
-            //     return false;
-            // }
+            if ($status == 200) {
+                return true;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
         }
     }
-
-
-
-
-
-
-
 }

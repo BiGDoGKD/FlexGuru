@@ -96,7 +96,7 @@
                               </td>
 
                               <!-- request description -->
-                              <td style="max-width:400px; white-space:wrap !important;">
+                              <td class="description">
                                 <?php echo $class['description']; ?>
                               </td>
 
@@ -123,7 +123,7 @@
                               </td>
 
                               <td>
-                                <button class="btn" onclick=" location.href=' <?php echo URLROOT. '/tutor/tutorssraccept/'.$class['serviceid'] ?>'">Accept</button>
+                                <button class="btn" onclick=" location.href=' <?php echo URLROOT . '/tutor/tutorssraccept/' . $class['serviceid'] ?>'">Accept</button>
                               </td>
 
                             </tr>
@@ -138,6 +138,18 @@
                         } ?>
                       </tbody>
                     </table>
+                    <style>
+                      table td {
+                        vertical-align: top !important;
+                        text-align: left !important;
+                      }
+
+                      table td.description {
+                        max-width: 300px;
+                        white-space: none !important;
+                        overflow-x: wordwrap;
+                      }
+                    </style>
                   </div>
                 </div>
               </div>

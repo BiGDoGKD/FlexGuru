@@ -493,20 +493,8 @@ class Tutor extends Controller
     }
 
 
-    public function tutorssr(){
-
-
-        $this->ssr = $this->model("SSR");
-        $data = $this->ssr->read();
-
-
-        $this->view('tutor/tutorssr',$data);
-    }
-
-    public function tutorssraccept()
+    public function tutorssr()
     {
-
-        $this->ssr = $this->model("SSR");
         if (isset($_SESSION['toastmsg'])) {
             if ($_SESSION['toastmsg'][0]) {
                 include APPROOT . "/views/includes/successtoast.php";
@@ -515,66 +503,48 @@ class Tutor extends Controller
             }
             unset($_SESSION['toastmsg']);
         }
-        // check if we do have a tutorid 
-        // if(empty($optional)){
-        //     die(header('location:' . URLROOT . '/tutor/tutorssr'));
-        // }
-        $data =
-        [
-            'tuid' =>'',
-            'title' => '',
-            'description' => '',
-            'price' => '',
-            'duration' => '',
-            'revisions ' => '',
-            'medium' =>'',
-            'method' => '',
-            'subject' => '',
-            'lesson' => ''
+
+        $this->ssr = $this->model("SSR");
+        $data = $this->ssr->read();
+
+
+        $this->view('tutor/tutorssr', $data);
+    }
+
+    public function tutorssraccept($ssrid = [])
+    {
+
+        $this->ssr = $this->model("SSR");
+        $data = [
+            'ssrid' => $ssrid,
         ];
-        $validate = true;
-
-        if (isset($_POST['submitcustomoffer'])) {
-            //form process
-            //Sanatize post data
-        
-            $data = [
-
-                'tuid'=>$_SESSION['roledata']['tuid'],
-                'title'=>$_POST['title'],
-                'description'=>$_POST['description'],
-                'price'=>$_POST['price'],
-                'duration'=>$_POST['duration'],
-                'revisions '=>$_POST['revisions'],
-                'medium'=>$_POST['medium'],
-                'method'=>$_POST['method'],
-                'subject'=>$_POST['subject'],
-                'lesson'=>$_POST['lesson']
-              
-            ];
-
-
-
-            //  if ($validate) {
-
-            //     $result =  $this->ssr->createcustomoffer($data);
-            //     print_r($result);
-
-            //    if ($result) {
-            //        $_SESSION['toastmsg'] = [true, "Complaint submitted successfully"];
-            //         die(header('location:' . URLROOT . '/tutor/tutorssraccept'));
-            //   } else {
-            //          $_SESSION['toastmsg'] = [false, "Complaint submission failed"];
-            //          die(header('location:' . URLROOT . '/tutor/tutorssraccept'));
-            //      }
-            //  }
-
-            $result =  $this->ssr->createcustomoffer($data);
-             print_r($result);
-
-
+        if (empty($ssrid)) {
+            die(header('location:' . URLROOT . '/tutor/tutorssr'));
+        } else {
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                $postarray = [
+                    'title' => trim($_POST['title']),
+                    'description' => trim($_POST['description']),
+                    'price' => intval(trim($_POST['price'])),
+                    'revisions' => intval(trim($_POST['revisions'])),
+                    'duration' => intval(trim($_POST['duration'])),
+                    'method' => trim($_POST['method']),
+                    'medium' => trim($_POST['medium']),
+                    'subject' => trim($_POST['subject']),
+                    'lesson' => trim($_POST['lesson']),
+                    'ssrid' => trim($data['ssrid']),
+                    'tuid' => $_SESSION['roledata']['tuid']
+                ];
+                if ($this->ssr->createcustomoffer($postarray)) {
+                    $_SESSION['toastmsg'] = [true, "Custom offer submitted successfully"];
+                    die(header('location:' . URLROOT . '/tutor/tutorssr'));
+                } else {
+                    $_SESSION['toastmsg'] = [false, "Custom offer submission failed"];
+                    die(header('location:' . URLROOT . '/tutor/tutorssr'));
+                }
+            } else {
+                $this->view('tutor/tutorssraccept', $data);
+            }
         }
-
-        $this->view('tutor/tutorssraccept');
     }
 }
