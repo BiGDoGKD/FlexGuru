@@ -49,13 +49,45 @@ class Gig
         }
     }
 
+    public function update($gigdata)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'gig/update', json_encode($gigdata))) {
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                return true;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
+        }
+    }
+
     public function deleteGig($gigdata)
     {
         if ($response = $this->api->usercall('POST', APIURL . 'gig/delete', json_encode($gigdata))) {
             $status = json_decode($response)->response->status;
-            $msg = json_decode($response)->response->result->message;
-            $_SESSION['toastmsg'] = $msg;
-            return $status;
+            if ($status == 200) {
+                return true;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function activateGig($gigdata)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'gig/activate', json_encode($gigdata))) {
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                return true;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
         }
     }
 
@@ -74,6 +106,23 @@ class Gig
             $responseArray = (array)json_decode($response);
             $result = (array)$responseArray["response"];
             return $result;
+        }
+    }
+
+    public function getGigSettings($data)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'tutor/gigsettings', json_encode($data))) {
+            $responseArray = (array)json_decode($response);
+            $result = (array)$responseArray["response"];
+            $gigdata = (array)$result["result"][0];
+
+            if ($result['status'] == 200) {
+                return $gigdata;
+            } elseif ($result['status'] == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
         }
     }
 

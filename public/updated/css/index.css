@@ -7089,6 +7089,12 @@ img {
   .table-home table tbody tr .links a.error:hover {
     text-decoration: underline;
   }
+  .table-home table tbody tr .links a.success {
+    color: #52c41a;
+  }
+  .table-home table tbody tr .links a.success:hover {
+    text-decoration: underline;
+  }
   .table-home table tbody tr .links .sr-only {
     position: absolute;
     width: 1px;
@@ -7097,8 +7103,8 @@ img {
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    whitespace: nowrap;
-    borderwidth: 0;
+    white-space: nowrap;
+    border-width: 0;
   }
   .table-home table .text-info {
     color: #2563eb;

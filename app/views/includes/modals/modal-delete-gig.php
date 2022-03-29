@@ -6,7 +6,7 @@
             <!-- Modal header -->
             <div class="modal-header">
                 <h3>
-                    Delete the Gig
+                    Deactivate the Gig
                 </h3>
                 <button type="button" onclick="closeModal()">
                     <i class="fas fa-times"></i>
@@ -15,13 +15,13 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit aperiam, natus ab exercitationem hic minima?
+                    This will set the gig status to inactive, and the student will not be able to accept the gig anymore.<br />
+                    This will enable you to edit the gig details.
                 </p>
-
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" onclick="deleteGig()" class="error">Delete</button>
+                <button type="button" onclick="deleteGig()" class="error">Deactivate</button>
                 <button onclick="closeModal()" type="button" class="cancel">Cancel</button>
             </div>
         </div>
