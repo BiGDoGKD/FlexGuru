@@ -24,6 +24,7 @@ class SSR
     public function create($data)
     {
         if ($response = $this->api->usercall('POST', APIURL . 'SSR/create', json_encode($data))) {
+            
             $status = json_decode($response)->response->status;
             if ($status == 200) {
                 return true;
