@@ -503,7 +503,7 @@ class Tutor extends Controller
         $this->view('tutor/tutorssr',$data);
     }
 
-    public function tutorssraccept($optional = [])
+    public function tutorssraccept()
     {
 
         $this->ssr = $this->model("SSR");
@@ -521,18 +521,16 @@ class Tutor extends Controller
         // }
         $data =
         [
+            'tuid' =>'',
             'title' => '',
             'description' => '',
             'price' => '',
-            'revisions' => '',
             'duration' => '',
+            'revisions ' => '',
+            'medium' =>'',
             'method' => '',
-            'medium' => '',
-            'subject' =>'',
-            'lesson' => '',
-            'tuid' => '',
-            'stid' => '',
-
+            'subject' => '',
+            'lesson' => ''
         ];
         $validate = true;
 
@@ -541,36 +539,42 @@ class Tutor extends Controller
             //Sanatize post data
         
             $data = [
-                'title' => trim($_POST['title']),
-                'description' => trim($_POST['description']),
-                'price' => intval(trim($_POST['price'])),
-                'revisions' => trim($_POST['revisions']),
-                'duration' => intval(trim($_POST['duration'])),
-                'method' => trim($_POST['method']),
-                'medium' => trim($_POST['medium']), 
-                'subject' => trim($_POST['subject']),
-                'lesson' => trim($_POST['lesson']),
-                'tuid' => intval($_SESSION["roledata"]["tuid"]),
-                'stid' => '2'
+
+                'tuid'=>$_SESSION['roledata']['tuid'],
+                'title'=>$_POST['title'],
+                'description'=>$_POST['description'],
+                'price'=>$_POST['price'],
+                'duration'=>$_POST['duration'],
+                'revisions '=>$_POST['revisions'],
+                'medium'=>$_POST['medium'],
+                'method'=>$_POST['method'],
+                'subject'=>$_POST['subject'],
+                'lesson'=>$_POST['lesson']
               
             ];
 
-   
 
-            if ($validate) {
-              
-                $results =  $this->ssr->createcustomoffer($data);
-                print_r($results);
 
-                if ($results) {
-                    $_SESSION['toastmsg'] = [true, "Complaint submitted successfully"];
-                    die(header('location:' . URLROOT . '/tutor/tutorssraccept'));
-                } else {
-                    $_SESSION['toastmsg'] = [false, "Complaint submission failed"];
-                    die(header('location:' . URLROOT . '/tutor/tutorssraccept'));
-                }
-            }
+            //  if ($validate) {
+
+            //     $result =  $this->ssr->createcustomoffer($data);
+            //     print_r($result);
+
+            //    if ($result) {
+            //        $_SESSION['toastmsg'] = [true, "Complaint submitted successfully"];
+            //         die(header('location:' . URLROOT . '/tutor/tutorssraccept'));
+            //   } else {
+            //          $_SESSION['toastmsg'] = [false, "Complaint submission failed"];
+            //          die(header('location:' . URLROOT . '/tutor/tutorssraccept'));
+            //      }
+            //  }
+
+            $result =  $this->ssr->createcustomoffer($data);
+             print_r($result);
+
+
         }
-        $this->view('tutor/tutorssraccept', $data);
+
+        $this->view('tutor/tutorssraccept');
     }
 }
