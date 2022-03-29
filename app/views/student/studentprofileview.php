@@ -13,7 +13,6 @@
     <?php
     include APPROOT . '/views/includes/student-navbar.php';
     ?>
-
     <main>
         <div class="user-dashboard container base-container mt-3 mb-3">
             <div class="row">
@@ -126,7 +125,7 @@
                         if (!$data) {
                         ?>
                             <div class="container row br-xs basic-border pt-2 pb-3 pr-2 pl-2">
-                                <div class="col-7-lg col-12-xs">
+                                <div class="col-12-lg col-12-xs">
                                     <h2 class="text-black font-lg mt-2 mb-1">FlexGuru helps you to improve</h2>
                                     <span class="mb-1">
                                         <b class="text-gray"> How to be succesfull in Flexguru in simple steps</b>
