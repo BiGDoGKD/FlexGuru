@@ -502,4 +502,15 @@ class Tutor extends Controller
 
         $this->view('tutor/tutorssr',$data);
     }
+
+    public function tutorssraccept($optional = [])
+    {
+        if(empty($optional)){
+            die(header('location:' . URLROOT . '/tutor/tutorssr'));
+        }
+        print_r($optional);
+        $this->view('tutor/tutorssraccept');
+    }
+
+
 }

@@ -91,7 +91,7 @@
                               </td>
 
                               <!-- request title  -->
-                              <td class="links" style="text-align: center;">
+                              <td class="main" style="text-align: center;">
                                 <a href="#" class="info"> <?php echo $class['title']; ?></a>
                               </td>
 
@@ -120,6 +120,10 @@
                               <!-- request lesson -->
                               <td>
                                 <?php echo $class['lesson']; ?>
+                              </td>
+
+                              <td>
+                                <button class="btn" onclick=" location.href=' <?php echo URLROOT. '/tutor/tutorssraccept/'.$class['serviceid'] ?>'">Accept</button>
                               </td>
 
                             </tr>
