@@ -74,4 +74,38 @@ class Mailer
             echo "Could not be sent. Mailer Error:{$this->mail->ErrorInfo}";
         }
     }
+
+    public function transaction($transactiondetails, $email)
+    {
+
+        try {
+            //Sender
+            $this->mail->isSMTP();
+            $this->mail->Host = 'smtp.gmail.com';
+            $this->mail->SMTPAuth = true;
+            $this->mail->Username = 'm10644887@gmail.com';
+            $this->mail->Password = 'Mirando57@#';
+            $this->mail->SMTPSecure = 'tls';
+            $this->mail->Port = 587;
+
+
+            //Reciever & Sender
+            $this->mail->setFrom('kdkarannagoda@gmail.com', 'Flexguru Services');
+            $this->mail->addAddress($email);
+
+
+            $this->mail->isHTML(true);
+            //Content
+            $this->mail->Subject = "Flexguru Payment Successfull..";
+            $this->mail->Body = $transactiondetails;
+
+            if (!$this->mail->send()) {
+                echo "Could not be sent. Mailer Error:{$this->mail->ErrorInfo}";
+            } else {
+                echo "Message has been sent.";
+            }
+        } catch (Exception $e) {
+            echo "Could not be sent. Mailer Error:{$this->mail->ErrorInfo}";
+        }
+    }
 }
