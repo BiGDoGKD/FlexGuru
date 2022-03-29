@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo 'My Class List | ' . $_SESSION['userdata']['firstname'] . ' ' . $_SESSION['userdata']['lastname'] ?></title>
     <?php include APPROOT . '/views/includes/header.php'; ?>
 </head>
 

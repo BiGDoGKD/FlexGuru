@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complaints</title>
+    <title>Tutor Complaints</title>
     <?php include APPROOT . '/views/includes/header.php'; ?>
 </head>
 
@@ -25,7 +25,7 @@
                     <div class="gig-form col-12-xs col-8-lg">
                         <form action="<?php echo URLROOT; ?>/tutor/complaint" method="POST" style="width: 100%;" class="form-control row">
 
-                   
+
 
 
 
@@ -72,7 +72,7 @@
 
 
                             <div class="col-8-m display">
-                                <input type="submit" class="marketplace__help-btn" name="complaintbtn" value="Submit complaint"> 
+                                <input type="submit" class="marketplace__help-btn" name="complaintbtn" value="Submit complaint">
                             </div>
 
                         </form>
