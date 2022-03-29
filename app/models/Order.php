@@ -177,4 +177,20 @@ class Order
             return false;
         }
     }
+
+    public function studentrating($stuid)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'order/studentrating', json_encode($stuid))) {
+            $responseArray = (array)json_decode($response);
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                $result = (array)$responseArray["response"];
+                return $result;
+            } elseif ($status == 302) {
+                include APPROOT . "/views/includes/modals/modal-relog.php";
+            } else {
+                return false;
+            }
+        }
+    }
 }
