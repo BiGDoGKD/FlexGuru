@@ -211,10 +211,14 @@ class Registration extends Controller
             ];
 
             //form validation
-            // $data = $this->validate($data);
+            $data = $this->validate($data);
 
             //send to verify email
-            $this->senddata($data);
+            if (empty($data['usernameError']) && empty($data['firstnameError']) && empty($data['lastnameError']) && empty($data['emailError']) && empty($data['phonenoError']) && empty($data['passwordError']) && empty($data['confpasswordError']) && empty($data['genderError']) && empty($data['dobError'])) {
+                $this->senddata($data);
+            } else {
+                $this->view('registration/affiliate', $data);
+            }
         }
         $this->view('registration/tutor', $data);
     }
@@ -345,10 +349,14 @@ class Registration extends Controller
             ];
 
             //form validation
-            // $data = $this->validate($data);
+            $data = $this->validate($data);
 
             //send to verify email
-            $this->senddata($data);
+            if (empty($data['usernameError']) && empty($data['firstnameError']) && empty($data['lastnameError']) && empty($data['emailError']) && empty($data['phonenoError']) && empty($data['passwordError']) && empty($data['confpasswordError']) && empty($data['genderError']) && empty($data['dobError'])) {
+                $this->senddata($data);
+            } else {
+                $this->view('registration/affiliate', $data);
+            }
         }
         $this->view('registration/student', $data);
     }
@@ -393,10 +401,14 @@ class Registration extends Controller
             ];
 
             //form validation
-            // $data = $this->validate($data);
+            $data = $this->validate($data);
 
             //send to verify email
-            $this->senddata($data);
+            if (empty($data['usernameError']) && empty($data['firstnameError']) && empty($data['lastnameError']) && empty($data['emailError']) && empty($data['phonenoError']) && empty($data['passwordError']) && empty($data['confpasswordError']) && empty($data['genderError']) && empty($data['dobError'])) {
+                $this->senddata($data);
+            } else {
+                $this->view('registration/affiliate', $data);
+            }
         }
         $this->view('registration/affiliate', $data);
     }
@@ -409,9 +421,7 @@ class Registration extends Controller
         //validation begin
         $data["firstnameError"] = $this->val->name($data['firstname']);
         $data["lastnameError"] = $this->val->name($data['lastname']);
-        // $data["usernameError"] = $this->val->username($data['username']);
-        // $data["emailError"] = $this->val->email($data['email']);
-        // $data["phonenoError"] = $this->val->mobile($data['phoneno']);
+        $data["phonenoError"] = $this->val->mobile($data['phoneno']);
 
         $res = $this->val->validate($data['email'], $data['username'], $data['phoneno']);
 

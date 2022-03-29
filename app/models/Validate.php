@@ -1,12 +1,10 @@
 <?php
 class Validate
 {
-    private $db;
     private $api;
 
     public function __construct()
     {
-        $this->db = new Database;
         $this->api = new API;
     }
 
@@ -37,8 +35,7 @@ class Validate
 
     public function validate($email, $username, $phoneno)
     {
-        //REQUEST METHOD
-        $url = APIURL . 'validate.php';
+
         $data = [
             'email' => $email,
             'username' => $username,
@@ -48,16 +45,20 @@ class Validate
             'phonenoError' => ''
         ];
         //Validate email
-        $get_data = $this->api->call('POST', $url, json_encode($data));
-        $response = json_decode($get_data, true);
-        if ($response['emailStatus']) {
-            $data['emailError'] = $response['emailMessage'];
+        $email_status = (array)json_decode($this->api->call('POST', APIURL . 'validation/email', json_encode(['email' => $email])));
+        $username_status = (array)json_decode($this->api->call('POST', APIURL . 'validation/username', json_encode(['username' => $username])));
+        $phoneno_status = (array)json_decode($this->api->call('POST', APIURL . 'validation/mobile', json_encode(['phoneno' => $phoneno])));
+
+        if (!$email_status['status']) {
+            $data['emailError'] = 'Email already exists.';
         }
-        if ($response['usernameStatus']) {
-            $data['usernameError'] = $response['usernameMessage'];
+
+        if (!$username_status['status']) {
+            $data['usernameError'] = 'Username already exists.';
         }
-        if ($response['phonenoStatus']) {
-            $data['phonenoError'] = $response['phonenoMessage'];
+
+        if (!$phoneno_status['status']) {
+            $data['phonenoError'] = 'Phone number already exists.';
         }
 
         return $data;
@@ -67,34 +68,22 @@ class Validate
     {
         if (empty($username)) {
             $res = "Please enter username.";
+            return $res;
         } else if (!preg_match("/^[A-Za-z0-9]{5,10}$/i", $username)) {
             $res = "Username must between (5-10) characters";
-        } else {
-            //Check if email exists.
-            if ($this->db->findUserByUsername($username)) {
-                $res = $username . ' is already taken.';
-            } else {
-                $res = null;
-            }
+            return $res;
         }
-        return $res;
     }
 
     public function mobile($mobile)
     {
         if (empty($mobile)) {
             $res = "Please enter mobile.";
-        } elseif (!preg_match('/^0[0-9]{9}+$/', $mobile)) {
+            return $res;
+        } else if (!preg_match('/^0[0-9]{9}+$/', $mobile)) {
             $res = "Should be 10-digit format starting with 0 Ex. 0771234567";
-        } else {
-            //Check if mobile exists.
-            if ($this->db->findUserByMobile($mobile)) {
-                $res = $mobile . ' is already taken.';
-            } else {
-                $res = null;
-            }
+            return $res;
         }
-        return $res;
     }
 
     public function name($name)
