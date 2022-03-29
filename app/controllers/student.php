@@ -310,13 +310,16 @@ class Student extends Controller
       ];
 
       if ($validate) {
-        $result = $this->ssr = $this->model('SSR');
+       
+        $this->ssr = $this->model('SSR');
+        $result = $this->ssr->create($data);
+       
         if ($result) {
           $_SESSION['toastmsg'] = [true, "Special Service Request Added Successfully !"];
           die(header('location:' . URLROOT . '/student/request'));
         } else {
           $_SESSION['toastmsg'] = [false, "Special Service Request Unsuccessful !"];
-          die(header('location:' . URLROOT . '/student/requst'));
+          die(header('location:' . URLROOT . '/student/request'));
         }
       }
     }

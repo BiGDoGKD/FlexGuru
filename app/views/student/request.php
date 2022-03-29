@@ -69,18 +69,7 @@
                             <p class="form-control form-feedback text-error">
                             </p>
                         </div>
-                        <div class="form-group col-12-xs">
-                            <label for="method">Delivery Method <span class="text-error">*</span></label>
-                            <select name="method" id="method" value="<?php echo $data['method'] ?>" required>
-                                <option class="select-option" value="" disabled selected>Select the delivery method.</option>
-                                <option class="select-option" value="zoom">Zoom</option>
-                                <option class="select-option" value="teams">Microsoft Teams</option>
-                                <option class="select-option" value="google">Google Meet</option>
-                                <option class="select-option" value="other">Other</option>
-                            </select>
-                            <p class="form-control form-feedback text-error">
-                            </p>
-                        </div>
+ 
                         <div class="form-group col-12-xs">
                             <label for="medium">Medium <span class="text-error">*</span></label>
                             <select name="medium" id="medium" value="<?php echo $data['medium'] ?>" required>
