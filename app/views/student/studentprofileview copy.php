@@ -69,55 +69,55 @@
 
                 <!-- values of the social media links -->
 
-    <div id="socialmediahidden facebook"></div>
-    <div id="socialmediahidden twitter"></div>
-    <div id="socialmediahidden youtube"></div>
-    <div id="socialmediahidden linkedin"></div>
-    </div>
-
-    </div>
-
-    <div class="right">
-        <div class="activesessions">
-            <p style="font-size:15px; margin-top:24px; padding-left:20px;">Active Sessions-0 </p>
-            <select name="" id="activesessionselect" style="font-size: 14px; padding-left:20px">
-                <option default>Active Sessions(0)</option>
-            </select>
-        </div>
-        <div class="requestsessions">
-
-            <span>Request Sessions </span>
-            <button onclick="location.href='<?php echo URLROOT . '/student/specialrequest' ?>'">POST</button>
-
-        </div>
-
-        <div class="content" id="content1">
-
-            <p id="firstheading"><b>FlexGuru helps you to improve</br></b> </p>
-
-            <div id="contentpara1">
-                <div class="text">
-                    <span>
-                        <b> How to be succesfull in Flexguru in simple steps</b>
-                    </span>
-                    <p>The key to your success on Flexguru is the brand you build for yourself through
-                        your Flexguru reputation. We gathered some tips and resources to help you
-                        become a leading tutor on Flexguru.</p>
-                </div>
-                <div class="study_img_div">
-                    <img src="<?php echo URLROOT . '/public/img/studentprofileview/study.svg' ?>" id="study_img" alt="">
-
-                </div>
-
-
+                <div id="socialmediahidden facebook"></div>
+                <div id="socialmediahidden twitter"></div>
+                <div id="socialmediahidden youtube"></div>
+                <div id="socialmediahidden linkedin"></div>
             </div>
 
         </div>
-        <div class="content" id="content2">
-            <span><b>Take these steps to become a popular tutor on Flexguru</b></span>
-        </div>
 
-    </div>
+        <div class="right">
+            <div class="activesessions">
+                <p style="font-size:15px; margin-top:24px; padding-left:20px;">Active Sessions-0 </p>
+                <select name="" id="activesessionselect" style="font-size: 14px; padding-left:20px">
+                    <option default>Active Sessions(0)</option>
+                </select>
+            </div>
+            <div class="requestsessions">
+
+                <span>Request Sessions </span>
+                <button onclick="location.href='<?php echo URLROOT . '/student/specialrequest' ?>'">POST</button>
+
+            </div>
+
+            <div class="content" id="content1">
+
+                <p id="firstheading"><b>FlexGuru helps you to improve</br></b> </p>
+
+                <div id="contentpara1">
+                    <div class="text">
+                        <span>
+                            <b> How to be succesfull in Flexguru in simple steps</b>
+                        </span>
+                        <p>The key to your success on Flexguru is the brand you build for yourself through
+                            your Flexguru reputation. We gathered some tips and resources to help you
+                            become a leading tutor on Flexguru.</p>
+                    </div>
+                    <div class="study_img_div">
+                        <img src="<?php echo URLROOT . '/public/img/studentprofileview/study.svg' ?>" id="study_img" alt="">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="content" id="content2">
+                <span><b>Take these steps to become a popular tutor on Flexguru</b></span>
+            </div>
+
+        </div>
     </div>
     <?php
     include APPROOT . '/views/includes/footer.php';
