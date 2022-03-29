@@ -56,6 +56,25 @@ class User
         }
     }
 
+    public function affiliateDP($data)
+    {
+        if ($response = $this->api->usercall('POST', APIURL . 'affiliate/updatedp', json_encode($data))) {
+            $status = json_decode($response)->response->status;
+            if ($status == 200) {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
+                return $status;
+            } elseif ($status == 302) {
+                return $status;
+            } else {
+                $msg = json_decode($response)->response->result->message;
+                $_SESSION['toastmsg'] = $msg;
+                return $status;
+            }
+        }
+    }
+
+
 
 
 }

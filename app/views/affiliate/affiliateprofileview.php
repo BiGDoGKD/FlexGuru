@@ -20,42 +20,102 @@
                 <div class="profile-card br-xs">
                     <div class="profile-card-header">
                         <div class="profile-card-header-image">
-                            <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/img/studentprofileview/user.png' ?>" id="userimg" alt="Kesara Karannagoda" />
+                            <img class="profile-card-header-image-img" src="<?php echo URLROOT . '/public/uploads/users/' . $_SESSION['userdata']['photourl'] ?>" id="userimg" alt="Kesara Karannagoda" />
+                            <div class="profile-card-header-image__upload" onclick="openModal()">
+                                <i class="fa fa-camera"></i>
+
+                            </div>
+                            <?php include APPROOT . '/views/includes/modals/modal-profile-picture.php'; ?>
                         </div>
+
                         <div class="profile-card-header__profile-name">
-                            <span class="first-name"><?php  echo $_SESSION['userdata']['firstname']  ?></span>
-                            <span class="last-name"><?php  echo $_SESSION['userdata']['lastname']  ?></span>
+                            <span class="first-name"><?php echo $_SESSION['userdata']['firstname'] ?></span>
+                            <span class="last-name"><?php echo $_SESSION['userdata']['lastname'] ?></span>
                         </div>
                         <div class="profile-card-header__profile-handle">
                             <span class="username text-gray font-md">
-                                <?php  echo '@' . $_SESSION['userdata']['username']  ?>
+                                <?php echo '@' . $_SESSION['userdata']['username'] ?>
                             </span>
                         </div>
-                        <div class="profile-card-header__profile-ratings">
-                            <div class="star-bar display-f justify-content-center">
-                                <div class="star-bar__star-container">
-                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                    <i class="fa fa-solid fa-star fa-lg text-orange"></i>
-                                    <i class="fa fa-solid fa-star fa-lg text-gray" style="position: relative"><i style="
-													position: absolute;
-													top: 50%;
-													left: 50%;
-													transform: translate(-50%, -50%);
-													z-index: 1;
-												" class="fa fa-star-half text-orange"></i></i>
+                        <?php if (empty($data)) { ?>
+                            <div class="profile-card-header__profile-ratings">
+                                <div class="star-bar display-f justify-content-center">
+                                    <div class="star-bar__star-container">
+
+                                        <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                        <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                        <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                        <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                        <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+
+
+                                        <!-- <i class="fas fa-star-half-alt fa-lg text-orange"></i> -->
+                                    </div>
+                                </div>
+                                <div class="rating-count text-gray">
+                                    <span class="base-value font-md text-black"> N/A
+                                        <span class="feedback-count text-gray">
+                                            <span class="feedback-count__count"> 0</span>
+                                            <span class="feedback-count__text">feedbacks</span>
+                                        </span>
                                 </div>
                             </div>
-                            <div class="rating-count text-gray">
-                                <span class="base-value font-lg text-black">4.5</span>
-                                <span class="feedback-count">(
-                                    <span class="feedback-count__count">12</span>
-                                    <span class="feedback-count__text">feedbacks</span>
-                                    )
-                                </span>
+                        <?php } else { ?>
+                            <div class="profile-card-header__profile-ratings">
+                                <div class="star-bar display-f justify-content-center">
+                                    <div class="star-bar__star-container">
+
+                                        <?php
+                                        if ($data['tutor']['class'][0]->rating == null) {
+                                        ?>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                            <i class="fa fa-solid fa-star fa-lg text-gray"></i>
+                                        <?php
+                                        } else {
+                                            if (fmod($data['tutor']['class'][0]->rating, 1) == 0) {
+                                                for ($i = 0; $i < round($data['tutor']['class'][0]->rating); $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-orange"></i>';
+                                                }
+                                            } else {
+                                                for ($i = 0; $i < ceil($data['tutor']['class'][0]->rating) - 1; $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-orange"></i>';
+                                                }
+                                            }
+                                            if (fmod((5 - $data['tutor']['class'][0]->rating), 1) == 0) {
+                                                for ($i = 0; $i < 5 - round($data['tutor']['class'][0]->rating); $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-gray"></i>';
+                                                }
+                                            } else {
+                                                echo '<i class="fas fa-star-half-alt fa-lg text-orange"></i>';
+                                                for ($i = 0; $i < round(4 - $data['tutor']['class'][0]->rating); $i++) {
+                                                    echo '<i class="fa fa-solid fa-star fa-lg text-gray"></i>';
+                                                }
+                                            }
+                                        }
+                                        ?>
+
+                                        <!-- <i class="fas fa-star-half-alt fa-lg text-orange"></i> -->
+                                    </div>
+                                </div>
+                                <div class="rating-count text-gray">
+                                    <span class="base-value font-lg text-black"> <?php
+                                                                                    if ($data['tutor']['class'][0]->rating == null) {
+                                                                                        echo 'N/A';
+                                                                                    } else {
+                                                                                        echo number_format((float)$data['tutor']['class'][0]->rating, 1, '.', '');
+                                                                                    }
+                                                                                    ?></span>
+                                    <span class="feedback-count">(
+                                        <span class="feedback-count__count"> <?php echo $data['tutor']['class'][0]->jobs; ?></span>
+                                        <span class="feedback-count__text">feedbacks</span>
+                                        )
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                     <div class="profile-card-body">
                         <div class="profile-card-address">
@@ -63,15 +123,15 @@
                                 <i class="fa fa-solid fa-location-arrow fa-lg text-gray"></i>
                                 From
                             </p>
-                            <p class="city"><?php  echo $_SESSION['userdata']['city']  ?></p>
+                            <p class="city"><?php echo $_SESSION['userdata']['city']  ?></p>
                         </div>
                         <div class="profile-card-duration">
                             <span class="label">
                                 <i class="fa fa-solid fa-user fa-lg text-gray"></i> Member
                                 since</span>
-                            <span class="date"><?php 
+                            <span class="date"><?php
                                                 echo date('M, Y', strtotime(date($_SESSION['userdata']['startdate'])));
-                                                  ?></span>
+                                                ?></span>
                         </div>
                     </div>
                     <div class="profile-card-footer">
@@ -112,7 +172,7 @@
                         <img src=<?php echo URLROOT . "/public/img/affiliate/blog.svg" ?> alt="Register" />
                     </div>
                     <div>
-                        <h2 style="padding: 80px;"> Referral Code : <?php echo $_SESSION['roledata']['affiliatelink'] ?>  </h2>
+                        <h2 style="padding: 80px;"> Referral Code : <?php echo $_SESSION['roledata']['affiliatelink'] ?> </h2>
                     </div>
                 </div>
                 <div class="tutor-dashboard__active-sessions col-12-xs">
@@ -147,7 +207,7 @@
 
         </div>
     </div>
-    </div>
+
 
     <?php
     include APPROOT . '/views/includes/footer.php';
