@@ -135,7 +135,7 @@
               </div>
    
               <div class="form-group col-12-xs">
-                <input type="submit" onclick="this.form.submit();this.disabled=true;this.value='Sending, please wait...';" id="submit" name="submit" value="submit" class="form-control" />
+                <input type="submit"  id="submit" name="submitcustomoffer" value="submit" class="form-control" />
               </div>
             </form>
           </div>
