@@ -67,10 +67,11 @@
 
 
                         <?php
-                        if (!$data) {
+
+                        if ($data->message == 'Special Services Message Read Failed.') {
                         ?>
                           <tr>
-                            <td colspan="7" class="text-center">
+                            <td colspan="8" class="text-center">
                               You have no classes yet.
                             </td>
                           </tr>

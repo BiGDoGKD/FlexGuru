@@ -170,8 +170,7 @@
                         <span class="session-count">Active Sessions - 0</span>
                         <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions">Check Sessions</button>
                     </div>
-                    <?php $approval = true; ?>
-                    <?php if ($approval) { ?>
+                    <?php if ($_SESSION['roledata']['status'] != 'pending') { ?>
                         <div class="tutor-dashboard__create-gig col-12-xs mt-1 mb-1">
                             <span class="title">Total Gigs - 0</span>
                             <button class="bg-primary br-xs text-white  pl-2 pr-2 pt-1 pb-1 check-sessions" onclick="location.href=' <?php echo URLROOT . '/gigs/mygigs' ?>'">My Gigs</button>
@@ -181,7 +180,7 @@
                         <div class="tutor-dashboard__approval-status mt-1 mb-1">
                             <p class="text-error">
                                 <span class="font-lg-lg font-xs-md">Approval Inprogress...</span>
-                                You need to pass the approval process to be able to start tutoring. <i><u class="text-primary"><a href="#">learn more.</a></u></i>
+                                You need to pass the approval process to be able to start tutoring. This will take upto 2 days. you can relog to the system to proceed.<i><u class="text-primary"><a class="pointer" onclick="modalLogoutUser()">relog</a></u></i>
                             </p>
                         </div>
                     <?php
