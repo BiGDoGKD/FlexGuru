@@ -49,6 +49,10 @@ class Tutor extends Controller
 
     public function class($class = array())
     {
+        if ($_SESSION['roledata']['status'] == 'pending') {
+            header("Location: " . URLROOT . "/tutor");
+        }
+
         if (isset($_SESSION['toastmsg'])) {
             if ($_SESSION['toastmsg'][0]) {
                 include APPROOT . "/views/includes/successtoast.php";
@@ -78,6 +82,9 @@ class Tutor extends Controller
 
     public function classes()
     {
+        if ($_SESSION['roledata']['status'] == 'pending') {
+            header("Location: " . URLROOT . "/tutor");
+        }
         $result = $this->model("Order")->tutorClasses($_SESSION['roledata']['tuid']);
         if ($result) {
             $this->view('tutor/classlist', $result['result']);
@@ -314,6 +321,9 @@ class Tutor extends Controller
     // accept a student class request
     public function acceptclass($id)
     {
+        if ($_SESSION['roledata']['status'] == 'pending') {
+            header("Location: " . URLROOT . "/tutor");
+        }
         $this->order = $this->model("Order");
         $response = $this->order->acceptClass($id);
         if ($response) {
@@ -325,6 +335,9 @@ class Tutor extends Controller
     //ask for review
     public function askforreview($classid = array())
     {
+        if ($_SESSION['roledata']['status'] == 'pending') {
+            header("Location: " . URLROOT . "/tutor");
+        }
         if (empty($classid)) {
             die(header('location:' . URLROOT . '/tutor/classes'));
         } else {
@@ -345,6 +358,9 @@ class Tutor extends Controller
     }
     public function feedback($classid = array())
     {
+        if ($_SESSION['roledata']['status'] == 'pending') {
+            header("Location: " . URLROOT . "/tutor");
+        }
         if (empty($classid)) {
             die(header('location:' . URLROOT . '/tutor/classes'));
         } else {
@@ -495,6 +511,9 @@ class Tutor extends Controller
 
     public function tutorssr()
     {
+        if ($_SESSION['roledata']['status'] == 'pending') {
+            header("Location: " . URLROOT . "/tutor");
+        }
         if (isset($_SESSION['toastmsg'])) {
             if ($_SESSION['toastmsg'][0]) {
                 include APPROOT . "/views/includes/successtoast.php";
@@ -513,6 +532,9 @@ class Tutor extends Controller
 
     public function tutorssraccept($ssrid = [])
     {
+        if ($_SESSION['roledata']['status'] == 'pending') {
+            header("Location: " . URLROOT . "/tutor");
+        }
 
         $this->ssr = $this->model("SSR");
         $data = [
