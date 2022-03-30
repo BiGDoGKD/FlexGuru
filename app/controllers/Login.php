@@ -14,12 +14,13 @@
 
 class Login extends Controller
 {
-    error_reporting(E_ERROR | E_PARSE);
+    
     private $loginModel;
     private $session;
 
     public function __construct()
     {
+        error_reporting(E_ERROR | E_PARSE);
     }
 
     public function index()

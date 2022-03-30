@@ -14,9 +14,10 @@
 
 class Marketplace extends Controller
 {
-    error_reporting(E_ERROR | E_PARSE);
+    
     public function __construct()
     {
+        error_reporting(E_ERROR | E_PARSE);
         session_start();
     }
 

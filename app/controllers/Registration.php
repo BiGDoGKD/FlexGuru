@@ -9,7 +9,7 @@
 
 class Registration extends Controller
 {
-    error_reporting(E_ERROR | E_PARSE);
+    
     private $val;
     private $tutor;
     private $registration;
@@ -41,6 +41,7 @@ class Registration extends Controller
 
     public function __construct()
     {
+        error_reporting(E_ERROR | E_PARSE);
         session_start();
         if (isset($_SESSION['type'])) {
             switch ($_SESSION['type']) {
