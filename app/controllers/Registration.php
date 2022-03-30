@@ -9,6 +9,7 @@
 
 class Registration extends Controller
 {
+    error_reporting(E_ERROR | E_PARSE);
     private $val;
     private $tutor;
     private $registration;

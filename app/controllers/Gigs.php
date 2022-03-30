@@ -2,6 +2,7 @@
 
 class Gigs extends Controller
 {
+      error_reporting(E_ERROR | E_PARSE);
     private $gig;
     private $data = [
         'title' => '',

@@ -15,6 +15,7 @@ class Pages extends Controller
 {
     public function __construct()
     {
+        error_reporting(E_ERROR | E_PARSE);
         session_start();
         if (isset($_SESSION['STUACCESS'])) {
             if ($_SESSION['STUACCESS'] === hash('sha256', $_SESSION['userdata']['username'])) {

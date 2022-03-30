@@ -7,6 +7,7 @@ class Tutor extends Controller
 
     public function __construct()
     {
+        error_reporting(E_ERROR | E_PARSE);
         $api = new API;
         $session = $this->model("Session");
         session_start();

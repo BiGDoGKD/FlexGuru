@@ -14,6 +14,7 @@
 
 class Login extends Controller
 {
+    error_reporting(E_ERROR | E_PARSE);
     private $loginModel;
     private $session;
 

@@ -4,6 +4,7 @@ class Info extends Controller
 {
     public function __construct()
     {
+        error_reporting(E_ERROR | E_PARSE);
     }
 
     public function index()
